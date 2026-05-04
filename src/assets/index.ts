@@ -1,7 +1,19 @@
 export const Images = {
   // Backgrounds
   bgHome: require('../../assets/images/bg-homepage.png'),
-  bgHomeAlt: require('../../assets/images/bg-homepage-2.png'),
+
+  // City backgrounds
+  cityDubai: require('../../assets/images/city-dubai.png'),
+  cityLondon: require('../../assets/images/city-london.png'),
+  citySingapore: require('../../assets/images/city-singapore.png'),
+  cityTokyo: require('../../assets/images/city-tokyo.png'),
+  cityIstanbul: require('../../assets/images/city-istanbul.png'),
+  cityParis: require('../../assets/images/city-paris.png'),
+  cityRome: require('../../assets/images/city-rome.png'),
+  cityBerlin: require('../../assets/images/city-berlin.png'),
+  cityNewDelhi: require('../../assets/images/city-newdelhi.png'),
+  cityBrazil: require('../../assets/images/city-brazil.png'),
+  cityDoha: require('../../assets/images/city-doha.png'),
 
   // Board
   boardMini: require('../../assets/images/board-mini.png'),
@@ -28,7 +40,7 @@ export const Images = {
   giftBox: require('../../assets/images/gift-box.png'),
   dailyRewardsBanner: require('../../assets/images/daily-rewards-banner.png'),
 
-  // Buttons (use as Image inside TouchableOpacity when needed)
+  // Buttons
   btnRollDice: require('../../assets/images/btn-roll-dice.png'),
   btnCollect: require('../../assets/images/btn-collect.png'),
 

@@ -1,35 +1,30 @@
 import { router } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
-import {
-  Dimensions,
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, {
   Easing,
   FadeIn,
-  FadeInDown,
   useAnimatedStyle,
   useSharedValue,
+  withRepeat,
+  withSequence,
   withTiming,
   interpolate,
   runOnJS,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { Images } from '@/src/assets';
 import { useAuthStore } from '@/src/stores/auth';
 import { useSettingsStore } from '@/src/stores/settings';
 import { colors } from '@/src/theme/colors';
 
 const { width: SCREEN_W } = Dimensions.get('window');
 const BAR_W = SCREEN_W - 80;
+const SPLASH_MS = 3000;
+const TIP_MS = 520;
 
-const LOADING_TIPS = [
+const TIPS = [
   'Loading your kingdom…',
   'Polishing the golden dice…',
   'Preparing the royal board…',
@@ -38,9 +33,6 @@ const LOADING_TIPS = [
   'Ready to roll!',
 ];
 
-const SPLASH_DURATION = 3200; // ms — minimum display time
-const TIP_INTERVAL = 530;     // ms per tip
-
 export default function SplashScreen() {
   const insets = useSafeAreaInsets();
   const hydrateSettings = useSettingsStore((s) => s.hydrate);
@@ -48,268 +40,197 @@ export default function SplashScreen() {
   const session = useAuthStore((s) => s.session);
 
   const [splashDone, setSplashDone] = useState(false);
-  const [tipIndex, setTipIndex] = useState(0);
-  const [tipVisible, setTipVisible] = useState(true);
+  const [tipIdx, setTipIdx] = useState(0);
+  const tipTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Progress bar 0 → 1 over SPLASH_DURATION
   const progress = useSharedValue(0);
-  // Board entrance: scale + opacity
-  const boardScale = useSharedValue(0.7);
-  const boardOpacity = useSharedValue(0);
-  // Logo glow pulse
-  const glow = useSharedValue(0.5);
-
-  const tipRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const glowOpacity = useSharedValue(0.3);
 
   useEffect(() => {
     hydrateSettings();
 
-    // Start progress bar
     progress.value = withTiming(1, {
-      duration: SPLASH_DURATION,
-      easing: Easing.out(Easing.quad),
-    }, (finished) => {
-      if (finished) runOnJS(setSplashDone)(true);
-    });
+      duration: SPLASH_MS,
+      easing: Easing.out(Easing.cubic),
+    }, (done) => { if (done) runOnJS(setSplashDone)(true); });
 
-    // Board entrance
-    boardScale.value = withTiming(1, { duration: 900, easing: Easing.out(Easing.back(1.1)) });
-    boardOpacity.value = withTiming(1, { duration: 700 });
+    glowOpacity.value = withRepeat(
+      withSequence(
+        withTiming(0.9, { duration: 1400, easing: Easing.inOut(Easing.quad) }),
+        withTiming(0.3, { duration: 1400, easing: Easing.inOut(Easing.quad) }),
+      ),
+      -1,
+    );
 
-    // Glow pulse
-    glow.value = withTiming(1, { duration: 1200, easing: Easing.inOut(Easing.quad) });
+    let i = 0;
+    tipTimer.current = setInterval(() => {
+      i = Math.min(i + 1, TIPS.length - 1);
+      setTipIdx(i);
+    }, TIP_MS);
 
-    // Cycle loading tips
-    let idx = 0;
-    tipRef.current = setInterval(() => {
-      setTipVisible(false);
-      setTimeout(() => {
-        idx = Math.min(idx + 1, LOADING_TIPS.length - 1);
-        setTipIndex(idx);
-        setTipVisible(true);
-      }, 180);
-    }, TIP_INTERVAL);
-
-    return () => {
-      if (tipRef.current) clearInterval(tipRef.current);
-    };
+    return () => { if (tipTimer.current) clearInterval(tipTimer.current); };
   }, []);
 
-  // Navigate once splash played AND auth resolved
   useEffect(() => {
     if (!splashDone || isHydrating) return;
-    if (tipRef.current) clearInterval(tipRef.current);
-    if (session) {
-      router.replace('/(tabs)/home');
-    } else {
-      router.replace('/auth/login');
-    }
+    if (tipTimer.current) clearInterval(tipTimer.current);
+    router.replace(session ? '/(tabs)/home' : '/auth/login');
   }, [splashDone, isHydrating, session]);
 
   const barStyle = useAnimatedStyle(() => ({
     width: interpolate(progress.value, [0, 1], [0, BAR_W]),
   }));
 
-  const boardStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: boardScale.value }],
-    opacity: boardOpacity.value,
-  }));
-
   const glowStyle = useAnimatedStyle(() => ({
-    opacity: interpolate(glow.value, [0, 1], [0.3, 0.75]),
+    opacity: glowOpacity.value,
   }));
 
   return (
-    <ImageBackground source={Images.bgHome} style={styles.root} resizeMode="cover">
-      {/* Dark overlay */}
-      <View style={styles.overlay} />
+    <LinearGradient
+      colors={['#0A0800', '#120F05', '#0A0800']}
+      locations={[0, 0.5, 1]}
+      style={styles.root}
+    >
+      {/* Ambient glow orb behind logo */}
+      <Animated.View style={[styles.glowOrb, glowStyle]} />
 
-      {/* Top logo area */}
+      {/* Logo */}
       <Animated.View
-        entering={FadeIn.delay(100).duration(700)}
-        style={[styles.logoSection, { paddingTop: insets.top + 40 }]}
+        entering={FadeIn.delay(200).duration(800)}
+        style={[styles.logoWrap, { marginTop: insets.top + 60 }]}
       >
-        {/* Glow bloom behind text */}
-        <Animated.View style={[styles.logoGlow, glowStyle]} />
         <Text style={styles.logoElite}>ELITE</Text>
         <View style={styles.logoDivider} />
         <Text style={styles.logoLudo}>LUDO</Text>
         <Text style={styles.logoTagline}>ROLL LIKE ROYALTY</Text>
       </Animated.View>
 
-      {/* Hero board */}
-      <Animated.View style={[styles.boardWrap, boardStyle]}>
-        <Image
-          source={Images.boardMini}
-          style={styles.boardImg}
-          resizeMode="contain"
-        />
-        {/* Soft glow under the board */}
-        <View style={styles.boardGlow} />
-      </Animated.View>
+      {/* Spacer */}
+      <View style={{ flex: 1 }} />
 
-      {/* Bottom loading section */}
+      {/* Bottom loading area */}
       <Animated.View
-        entering={FadeInDown.delay(400).duration(600)}
-        style={[styles.bottomSection, { paddingBottom: insets.bottom + 32 }]}
+        entering={FadeIn.delay(500).duration(600)}
+        style={[styles.bottomWrap, { paddingBottom: insets.bottom + 40 }]}
       >
-        {/* Loading tip */}
-        <Animated.Text
-          key={tipIndex}
-          entering={FadeIn.duration(200)}
-          style={[styles.tipText, !tipVisible && styles.tipHidden]}
-        >
-          {LOADING_TIPS[tipIndex]}
+        {/* Tip text */}
+        <Animated.Text key={tipIdx} entering={FadeIn.duration(300)} style={styles.tipText}>
+          {TIPS[tipIdx]}
         </Animated.Text>
 
-        {/* Progress bar track */}
+        {/* Bar track */}
         <View style={styles.barTrack}>
-          {/* Inner shimmer segments for texture */}
-          <LinearGradient
-            colors={['rgba(212,175,55,0.08)', 'rgba(212,175,55,0.12)', 'rgba(212,175,55,0.08)']}
-            start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
-            style={StyleSheet.absoluteFill}
-          />
-          {/* Filled portion */}
           <Animated.View style={[styles.barFill, barStyle]}>
             <LinearGradient
-              colors={[colors.goldDark, colors.gold, colors.goldLight, colors.gold]}
-              start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
+              colors={[colors.goldDark, colors.gold, '#FFF0A0', colors.gold]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
               style={StyleSheet.absoluteFill}
             />
-            {/* Shine dot at the leading edge */}
+            {/* Leading shine dot */}
             <View style={styles.barShine} />
           </Animated.View>
         </View>
 
-        {/* Version / edition */}
-        <Text style={styles.versionText}>2026 Edition · Elite Season</Text>
+        <Text style={styles.edition}>2026 Edition · Elite Season</Text>
       </Animated.View>
-    </ImageBackground>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: colors.bg },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.60)',
+  root: {
+    flex: 1,
+    alignItems: 'center',
   },
 
-  // Logo
-  logoSection: {
-    alignItems: 'center',
-    zIndex: 1,
-  },
-  logoGlow: {
+  glowOrb: {
     position: 'absolute',
-    top: 36,
-    width: 280,
-    height: 120,
-    borderRadius: 60,
-    backgroundColor: 'rgba(212,175,55,0.25)',
-    transform: [{ scaleX: 1.4 }],
+    top: '20%',
+    alignSelf: 'center',
+    width: 320,
+    height: 200,
+    borderRadius: 160,
+    backgroundColor: 'rgba(212,175,55,0.15)',
+    transform: [{ scaleX: 1.6 }],
+  },
+
+  logoWrap: {
+    alignItems: 'center',
+    gap: 2,
   },
   logoElite: {
-    fontSize: 52,
+    fontSize: 58,
     fontWeight: '900',
     color: colors.gold,
-    letterSpacing: 12,
+    letterSpacing: 14,
     textShadowColor: 'rgba(212,175,55,0.9)',
     textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 24,
-    lineHeight: 58,
+    textShadowRadius: 28,
+    lineHeight: 66,
   },
   logoDivider: {
-    width: 56,
+    width: 60,
     height: 1.5,
     backgroundColor: colors.gold,
-    opacity: 0.7,
-    marginVertical: 4,
+    opacity: 0.65,
+    marginVertical: 6,
   },
   logoLudo: {
-    fontSize: 32,
-    fontWeight: '300',
+    fontSize: 34,
+    fontWeight: '200',
     color: colors.goldLight,
-    letterSpacing: 16,
+    letterSpacing: 18,
     textShadowColor: 'rgba(212,175,55,0.6)',
     textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 14,
+    textShadowRadius: 16,
   },
   logoTagline: {
     fontSize: 10,
     fontWeight: '600',
-    color: 'rgba(212,175,55,0.55)',
+    color: 'rgba(212,175,55,0.45)',
     letterSpacing: 5,
-    marginTop: 12,
+    marginTop: 14,
   },
 
-  // Board
-  boardWrap: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  boardImg: {
-    width: SCREEN_W * 0.78,
-    height: SCREEN_W * 0.78,
-  },
-  boardGlow: {
-    position: 'absolute',
-    bottom: -20,
-    width: SCREEN_W * 0.6,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: 'rgba(212,175,55,0.12)',
-    transform: [{ scaleX: 1.2 }],
-  },
-
-  // Bottom
-  bottomSection: {
+  bottomWrap: {
+    width: '100%',
     alignItems: 'center',
     gap: 14,
     paddingHorizontal: 40,
-    zIndex: 1,
   },
   tipText: {
-    color: colors.textMuted,
+    color: 'rgba(255,255,255,0.45)',
     fontSize: 13,
-    fontWeight: '500',
-    letterSpacing: 0.5,
+    fontWeight: '400',
+    letterSpacing: 0.3,
     textAlign: 'center',
     minHeight: 18,
   },
-  tipHidden: { opacity: 0 },
-
-  // Progress bar
   barTrack: {
     width: BAR_W,
-    height: 5,
-    borderRadius: 3,
-    backgroundColor: 'rgba(212,175,55,0.12)',
-    borderWidth: 0.5,
-    borderColor: 'rgba(212,175,55,0.2)',
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: 'rgba(212,175,55,0.1)',
     overflow: 'hidden',
   },
   barFill: {
     height: '100%',
-    borderRadius: 3,
+    borderRadius: 2,
     overflow: 'hidden',
   },
   barShine: {
     position: 'absolute',
     right: 0,
     top: -1,
-    width: 6,
-    height: 7,
+    width: 5,
+    height: 6,
     borderRadius: 3,
-    backgroundColor: 'rgba(255,255,255,0.9)',
+    backgroundColor: 'rgba(255,255,255,0.95)',
   },
-
-  versionText: {
-    color: 'rgba(255,255,255,0.2)',
+  edition: {
+    color: 'rgba(255,255,255,0.15)',
     fontSize: 10,
-    letterSpacing: 1.5,
-    fontWeight: '500',
+    letterSpacing: 2,
   },
 });
