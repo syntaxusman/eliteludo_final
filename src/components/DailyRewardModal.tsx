@@ -1,19 +1,14 @@
-// Daily login reward modal. Shows the 7-day reward ladder with claimed days
-// marked, today's day highlighted with a gold ring, and a single CLAIM button.
-//
-// Pure presentational — the home screen owns the show/hide logic and decides
-// when to call the wallet store's `claimDaily()`.
-
-import { Ionicons } from '@expo/vector-icons';
-import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, StyleSheet, Text, View, Image } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeIn, ZoomIn } from 'react-native-reanimated';
+import { Ionicons } from '@expo/vector-icons';
 
 import { DAILY_REWARDS } from '@/src/stores/wallet';
+import { Images } from '@/src/assets';
 import { colors } from '@/src/theme/colors';
 
 type Props = {
   visible: boolean;
-  /** Day index (1..7) the user is about to claim. */
   pendingDay: number;
   onClaim: () => void;
   onClose: () => void;
@@ -26,38 +21,75 @@ export function DailyRewardModal({ visible, pendingDay, onClaim, onClose }: Prop
     <Modal visible={visible} transparent animationType="none" statusBarTranslucent onRequestClose={onClose}>
       <Animated.View entering={FadeIn.duration(220)} style={styles.backdrop}>
         <Pressable style={StyleSheet.absoluteFill} onPress={onClose} />
-        <Animated.View entering={ZoomIn.duration(280)} style={styles.card}>
-          <Text style={styles.kicker}>WELCOME BACK</Text>
-          <Text style={styles.title}>Daily Reward</Text>
-          <Text style={styles.subtitle}>Day {pendingDay} of 7 — keep your streak alive</Text>
 
-          <View style={styles.grid}>
-            {DAILY_REWARDS.map((amount, i) => {
-              const day = i + 1;
-              const claimed = day < pendingDay;
-              const today = day === pendingDay;
-              const bonus = day === 7;
-              return (
-                <DayCard
-                  key={day}
-                  day={day}
-                  amount={amount}
-                  claimed={claimed}
-                  today={today}
-                  bonus={bonus}
-                />
-              );
-            })}
+        <Animated.View entering={ZoomIn.delay(80).duration(300)} style={styles.container}>
+          {/* Gift box header — sits above the card */}
+          <View style={styles.giftWrap}>
+            <Image source={Images.giftBox} style={styles.giftBox} resizeMode="contain" />
           </View>
 
-          <Pressable style={({ pressed }) => [styles.claimBtn, pressed && styles.claimBtnPressed]} onPress={onClaim}>
-            <Ionicons name="logo-bitcoin" size={22} color={colors.bg} />
-            <Text style={styles.claimText}>CLAIM {todayReward}</Text>
-          </Pressable>
+          {/* Main card */}
+          <LinearGradient
+            colors={['#1A1208', '#0F0C06']}
+            style={styles.card}
+          >
+            {/* Gold top border accent */}
+            <LinearGradient
+              colors={[colors.goldDark, colors.gold, colors.goldDark]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+              style={styles.goldTopBorder}
+            />
 
-          <Pressable onPress={onClose} hitSlop={12}>
-            <Text style={styles.skip}>Skip</Text>
-          </Pressable>
+            {/* Banner */}
+            <Image
+              source={Images.dailyRewardsBanner}
+              style={styles.bannerImg}
+              resizeMode="contain"
+            />
+
+            <Text style={styles.streakText}>Day {pendingDay} of 7 — keep your streak alive</Text>
+
+            {/* Day grid */}
+            <View style={styles.grid}>
+              {DAILY_REWARDS.map((amount, i) => {
+                const day = i + 1;
+                const claimed = day < pendingDay;
+                const today = day === pendingDay;
+                const bonus = day === 7;
+                return (
+                  <DayCard
+                    key={day}
+                    day={day}
+                    amount={amount}
+                    claimed={claimed}
+                    today={today}
+                    bonus={bonus}
+                  />
+                );
+              })}
+            </View>
+
+            {/* Collect button */}
+            <Pressable
+              onPress={onClaim}
+              style={({ pressed }) => [styles.collectOuter, pressed && { opacity: 0.85 }]}
+            >
+              <LinearGradient
+                colors={['#3EC55A', '#2D8C3E']}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 0, y: 1 }}
+                style={styles.collectGradient}
+              >
+                <Image source={Images.coinSingle} style={styles.collectCoin} />
+                <Text style={styles.collectText}>Collect {todayReward}</Text>
+              </LinearGradient>
+            </Pressable>
+
+            <Pressable onPress={onClose} hitSlop={12} style={{ marginTop: 8 }}>
+              <Text style={styles.skipText}>Skip</Text>
+            </Pressable>
+          </LinearGradient>
         </Animated.View>
       </Animated.View>
     </Modal>
@@ -65,78 +97,91 @@ export function DailyRewardModal({ visible, pendingDay, onClaim, onClose }: Prop
 }
 
 function DayCard({
-  day,
-  amount,
-  claimed,
-  today,
-  bonus,
+  day, amount, claimed, today, bonus,
 }: {
-  day: number;
-  amount: number;
-  claimed: boolean;
-  today: boolean;
-  bonus: boolean;
+  day: number; amount: number; claimed: boolean; today: boolean; bonus: boolean;
 }) {
   return (
-    <View
-      style={[
-        styles.dayCard,
-        bonus && styles.dayCardBonus,
-        today && styles.dayCardToday,
-        claimed && styles.dayCardClaimed,
-      ]}
-    >
-      <Text style={[styles.dayLabel, today && styles.dayLabelToday]}>Day {day}</Text>
+    <View style={[
+      styles.dayCard,
+      bonus && styles.dayCardBonus,
+      today && styles.dayCardToday,
+      claimed && styles.dayCardClaimed,
+    ]}>
+      {today && (
+        <LinearGradient
+          colors={['rgba(212,175,55,0.18)', 'rgba(212,175,55,0.06)']}
+          style={StyleSheet.absoluteFill}
+        />
+      )}
+      <Text style={[styles.dayLabel, today && styles.dayLabelToday, bonus && styles.dayLabelBonus]}>
+        {bonus ? 'Day 7' : today ? 'Today' : `Day ${day}`}
+      </Text>
       {claimed ? (
         <Ionicons name="checkmark-circle" size={26} color={colors.gold} />
       ) : (
         <View style={styles.amountRow}>
-          <Ionicons name="logo-bitcoin" size={16} color={colors.gold} />
-          <Text style={[styles.amount, bonus && styles.amountBonus]}>{amount}</Text>
+          <Image source={Images.coinSingle} style={{ width: 18, height: 18 }} />
+          <Text style={[styles.amountText, bonus && styles.amountBonus]}>{amount}</Text>
         </View>
       )}
-      {bonus && !claimed && <Text style={styles.bonusTag}>BONUS</Text>}
+      {bonus && !claimed && (
+        <View style={styles.bonusTag}>
+          <Text style={styles.bonusTagText}>BONUS</Text>
+        </View>
+      )}
     </View>
   );
 }
 
-const CARD_W = '23%';
-
 const styles = StyleSheet.create({
   backdrop: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.72)',
+    backgroundColor: 'rgba(0,0,0,0.82)',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
+  },
+  container: {
+    width: '100%',
+    maxWidth: 420,
+    alignItems: 'center',
+  },
+  giftWrap: {
+    zIndex: 2,
+    marginBottom: -40,
+  },
+  giftBox: {
+    width: 120,
+    height: 120,
   },
   card: {
     width: '100%',
-    maxWidth: 420,
-    backgroundColor: colors.bgElevated,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: colors.border,
-    padding: 24,
+    borderColor: 'rgba(212,175,55,0.4)',
+    paddingTop: 52,
+    paddingBottom: 20,
+    paddingHorizontal: 16,
     alignItems: 'center',
+    overflow: 'hidden',
   },
-  kicker: {
-    color: colors.gold,
-    fontSize: 11,
-    letterSpacing: 3,
-    fontWeight: '700',
+  goldTopBorder: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 2,
   },
-  title: {
-    color: colors.text,
-    fontSize: 26,
-    fontWeight: '700',
-    marginTop: 4,
+  bannerImg: {
+    width: '90%',
+    height: 56,
+    marginBottom: 8,
   },
-  subtitle: {
+  streakText: {
     color: colors.textMuted,
-    fontSize: 13,
-    marginTop: 6,
-    marginBottom: 20,
+    fontSize: 12,
+    marginBottom: 16,
     textAlign: 'center',
   },
   grid: {
@@ -145,87 +190,91 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
     marginBottom: 20,
+    width: '100%',
   },
   dayCard: {
-    width: CARD_W,
-    aspectRatio: 0.85,
-    backgroundColor: colors.surface,
-    borderRadius: 12,
+    width: '22%',
+    aspectRatio: 0.82,
+    backgroundColor: 'rgba(255,255,255,0.04)',
+    borderRadius: 10,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: 'rgba(255,255,255,0.08)',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 8,
-    gap: 6,
+    gap: 5,
+    overflow: 'hidden',
   },
   dayCardClaimed: {
-    backgroundColor: 'rgba(212,175,55,0.08)',
-    borderColor: 'rgba(212,175,55,0.35)',
+    borderColor: 'rgba(212,175,55,0.3)',
+    backgroundColor: 'rgba(212,175,55,0.06)',
   },
   dayCardToday: {
     borderColor: colors.gold,
-    borderWidth: 2,
-    backgroundColor: 'rgba(212,175,55,0.12)',
+    borderWidth: 1.5,
   },
   dayCardBonus: {
-    width: '48%',
-    aspectRatio: 1.7,
-    backgroundColor: 'rgba(212,175,55,0.06)',
+    width: '47%',
+    aspectRatio: 1.8,
+    borderColor: 'rgba(212,175,55,0.4)',
+    backgroundColor: 'rgba(212,175,55,0.05)',
   },
   dayLabel: {
     color: colors.textDim,
-    fontSize: 11,
+    fontSize: 10,
     fontWeight: '600',
-    letterSpacing: 1,
+    letterSpacing: 0.5,
   },
-  dayLabelToday: {
-    color: colors.gold,
-  },
+  dayLabelToday: { color: colors.gold },
+  dayLabelBonus: { color: colors.goldLight, fontSize: 11 },
   amountRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
+    gap: 3,
   },
-  amount: {
+  amountText: {
     color: colors.text,
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '700',
   },
-  amountBonus: {
-    fontSize: 18,
-    color: colors.gold,
-  },
+  amountBonus: { fontSize: 18, color: colors.gold },
   bonusTag: {
-    color: colors.gold,
-    fontSize: 9,
-    letterSpacing: 1.5,
-    fontWeight: '700',
+    backgroundColor: 'rgba(212,175,55,0.2)',
+    borderRadius: 4,
+    paddingHorizontal: 5,
+    paddingVertical: 2,
   },
-  claimBtn: {
+  bonusTagText: {
+    color: colors.gold,
+    fontSize: 8,
+    fontWeight: '800',
+    letterSpacing: 1,
+  },
+  collectOuter: {
+    width: '88%',
+    borderRadius: 14,
+    overflow: 'hidden',
+    borderWidth: 1.5,
+    borderColor: 'rgba(212,175,55,0.5)',
+    elevation: 6,
+  },
+  collectGradient: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical: 15,
     gap: 8,
-    backgroundColor: colors.gold,
-    paddingHorizontal: 28,
-    paddingVertical: 14,
-    borderRadius: 999,
-    minWidth: 220,
-    marginBottom: 12,
   },
-  claimBtnPressed: {
-    backgroundColor: colors.goldDark,
-  },
-  claimText: {
-    color: colors.bg,
-    fontSize: 15,
+  collectCoin: { width: 22, height: 22, resizeMode: 'contain' },
+  collectText: {
+    color: '#fff',
+    fontSize: 16,
     fontWeight: '800',
-    letterSpacing: 1.5,
+    letterSpacing: 1,
   },
-  skip: {
+  skipText: {
     color: colors.textDim,
     fontSize: 13,
-    marginTop: 4,
     textDecorationLine: 'underline',
   },
 });

@@ -1,10 +1,13 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Animated, { FadeIn, FadeInDown, ZoomIn } from 'react-native-reanimated';
 
 import type { Color } from '@/src/game/types';
+import { Images } from '@/src/assets';
 import { colors } from '@/src/theme/colors';
-import { radius, spacing, typography } from '@/src/theme/typography';
+import { spacing } from '@/src/theme/typography';
 
 const PLAYER_HEX: Record<Color, string> = {
   red: colors.red,
@@ -18,84 +21,137 @@ export default function ResultScreen() {
   const isHumanWin = winner === 'red';
 
   return (
-    <SafeAreaView style={styles.root}>
-      <View style={styles.center}>
-        <Text style={styles.heading}>{isHumanWin ? 'VICTORY' : 'DEFEAT'}</Text>
-        <View
-          style={[
-            styles.crown,
-            { borderColor: winner ? PLAYER_HEX[winner] : colors.gold },
-          ]}
-        >
-          <Text style={[styles.crownText, { color: winner ? PLAYER_HEX[winner] : colors.gold }]}>
-            {winner ? winner.toUpperCase() : '—'}
-          </Text>
-        </View>
-        <Text style={styles.subtitle}>
-          {isHumanWin ? 'Roll like royalty.' : 'The throne is not yet yours.'}
-        </Text>
-      </View>
+    <ImageBackground source={Images.bgHome} style={styles.root} resizeMode="cover">
+      <View style={styles.overlay} />
+      <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
 
-      <View style={styles.actions}>
-        <Pressable
-          style={({ pressed }) => [styles.primary, pressed && { opacity: 0.85 }]}
-          onPress={() => router.replace('/game/local')}
-        >
-          <Text style={styles.primaryText}>PLAY AGAIN</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) => [styles.secondary, pressed && { opacity: 0.7 }]}
-          onPress={() => router.replace('/')}
-        >
-          <Text style={styles.secondaryText}>BACK TO MENU</Text>
-        </Pressable>
-      </View>
-    </SafeAreaView>
+        {/* Heading */}
+        <Animated.View entering={FadeIn.duration(600)} style={styles.headingWrap}>
+          <Text style={[styles.heading, { color: isHumanWin ? colors.gold : colors.red }]}>
+            {isHumanWin ? 'VICTORY' : 'DEFEAT'}
+          </Text>
+          <Text style={styles.subtitle}>
+            {isHumanWin ? 'You roll like royalty.' : 'The throne is not yet yours.'}
+          </Text>
+        </Animated.View>
+
+        {/* Trophy / defeat icon */}
+        <Animated.View entering={ZoomIn.delay(200).duration(600)} style={styles.trophyWrap}>
+          {isHumanWin ? (
+            <Image source={Images.trophyGold} style={styles.trophy} resizeMode="contain" />
+          ) : (
+            <View style={styles.defeatCircle}>
+              <Text style={styles.defeatX}>✕</Text>
+            </View>
+          )}
+        </Animated.View>
+
+        {/* Winner badge */}
+        {winner && (
+          <Animated.View entering={FadeInDown.delay(400).duration(500)} style={styles.winnerBadge}>
+            <View style={[styles.colorDot, { backgroundColor: PLAYER_HEX[winner] }]} />
+            <Text style={[styles.winnerText, { color: PLAYER_HEX[winner] }]}>
+              {winner.toUpperCase()} wins
+            </Text>
+          </Animated.View>
+        )}
+
+        {/* Actions */}
+        <Animated.View entering={FadeInDown.delay(600).duration(500)} style={styles.actions}>
+          <Pressable
+            onPress={() => router.replace('/game/new')}
+            style={({ pressed }) => [styles.primaryOuter, { opacity: pressed ? 0.88 : 1 }]}
+          >
+            <LinearGradient
+              colors={['#3EC55A', '#2D8C3E']}
+              start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }}
+              style={styles.primaryGradient}
+            >
+              <Text style={styles.primaryText}>PLAY AGAIN</Text>
+            </LinearGradient>
+          </Pressable>
+
+          <Pressable
+            onPress={() => router.replace('/')}
+            style={({ pressed }) => [styles.secondaryBtn, { opacity: pressed ? 0.7 : 1 }]}
+          >
+            <Text style={styles.secondaryText}>BACK TO MENU</Text>
+          </Pressable>
+        </Animated.View>
+
+      </SafeAreaView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  root: {
+  root: { flex: 1, backgroundColor: colors.bg },
+  overlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0,0,0,0.65)' },
+  safe: {
     flex: 1,
-    backgroundColor: colors.bg,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: spacing.xxl,
     paddingHorizontal: spacing.lg,
   },
-  center: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: spacing.lg },
+  headingWrap: { alignItems: 'center', gap: 8, marginTop: 20 },
   heading: {
-    ...typography.display,
-    color: colors.gold,
-    textShadowColor: 'rgba(212, 175, 55, 0.4)',
+    fontSize: 52,
+    fontWeight: '900',
+    letterSpacing: 6,
     textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 18,
+    textShadowRadius: 20,
+    textShadowColor: 'rgba(212,175,55,0.6)',
   },
-  crown: {
-    width: 140,
-    height: 140,
-    borderRadius: 70,
+  subtitle: {
+    color: colors.textMuted,
+    fontSize: 15,
+    letterSpacing: 2,
+    fontWeight: '500',
+  },
+  trophyWrap: { alignItems: 'center', flex: 1, justifyContent: 'center' },
+  trophy: { width: 220, height: 280 },
+  defeatCircle: {
+    width: 160,
+    height: 160,
+    borderRadius: 80,
     borderWidth: 3,
+    borderColor: colors.red,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.bgElevated,
+    backgroundColor: 'rgba(226,87,76,0.1)',
   },
-  crownText: { ...typography.h2, letterSpacing: 4 },
-  subtitle: { ...typography.tagline, color: colors.textMuted },
-  actions: { gap: spacing.md, alignSelf: 'stretch' },
-  primary: {
-    backgroundColor: colors.gold,
-    paddingVertical: spacing.md,
-    borderRadius: radius.md,
+  defeatX: { fontSize: 64, color: colors.red, fontWeight: '200' },
+  winnerBadge: {
+    flexDirection: 'row',
     alignItems: 'center',
-  },
-  primaryText: { ...typography.h3, color: colors.bg, letterSpacing: 3 },
-  secondary: {
+    gap: 8,
+    backgroundColor: 'rgba(255,255,255,0.06)',
+    borderRadius: 20,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
     borderWidth: 1,
-    borderColor: colors.border,
-    paddingVertical: spacing.md,
-    borderRadius: radius.md,
-    alignItems: 'center',
+    borderColor: 'rgba(255,255,255,0.1)',
+    marginBottom: 16,
   },
-  secondaryText: { ...typography.h3, color: colors.textMuted, letterSpacing: 3 },
+  colorDot: { width: 12, height: 12, borderRadius: 6 },
+  winnerText: { fontSize: 15, fontWeight: '700', letterSpacing: 2 },
+  actions: { gap: spacing.md, alignSelf: 'stretch' },
+  primaryOuter: {
+    borderRadius: 14,
+    overflow: 'hidden',
+    borderWidth: 1.5,
+    borderColor: 'rgba(212,175,55,0.5)',
+  },
+  primaryGradient: { height: 54, alignItems: 'center', justifyContent: 'center' },
+  primaryText: { color: '#fff', fontSize: 18, fontWeight: '800', letterSpacing: 3 },
+  secondaryBtn: {
+    height: 50,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.15)',
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  secondaryText: { color: colors.textMuted, fontSize: 15, fontWeight: '600', letterSpacing: 2 },
 });
