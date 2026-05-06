@@ -1,0 +1,150 @@
+import { supabase } from './client';
+
+// ── Types ─────────────────────────────────────────────────────────────────────
+
+export type DeductEntryFeeResult = {
+  success: boolean;
+  deducted?: number;
+  remaining?: number;
+  reason?: string;
+  current?: number;
+  required?: number;
+};
+
+export type CollectDailyRewardResult = {
+  success: boolean;
+  dayNumber?: number;
+  rewardAmount?: number;
+  streakActive?: boolean;
+  nextAvailable?: string;
+  reason?: string;
+};
+
+export type AwardMatchRewardResult = {
+  success: boolean;
+  winnerUserId?: string;
+  prize?: number;
+  winnerNewBalance?: number;
+};
+
+// ── Entry fee deduction ─────────────────────────────────────────────────────────
+
+export async function deductEntryFee(
+  entryFee: number,
+): Promise<DeductEntryFeeResult | null> {
+  const { data, error } = await supabase.functions.invoke<DeductEntryFeeResult>(
+    'deduct-entry-fee',
+    { body: { entryFee } },
+  );
+  if (error) {
+    console.warn('[transactions] deduct-entry-fee error:', error.message);
+    return null;
+  }
+  return data;
+}
+
+// ── Daily reward collection ─────────────────────────────────────────────────────
+
+export async function collectDailyReward(): Promise<CollectDailyRewardResult | null> {
+  const { data, error } = await supabase.functions.invoke<CollectDailyRewardResult>(
+    'collect-daily-reward',
+    { body: {} },
+  );
+  if (error) {
+    console.warn('[transactions] collect-daily-reward error:', error.message);
+    return null;
+  }
+  return data;
+}
+
+// ── Get daily reward status ─────────────────────────────────────────────────────
+
+export type DailyRewardStatus = {
+  dayNumber: number;
+  lastCollectedAt: string | null;
+  streakActive: boolean;
+  canCollect: boolean;
+  nextAvailable: string | null;
+};
+
+export async function getDailyRewardStatus(): Promise<DailyRewardStatus | null> {
+  const { data, error } = await supabase
+    .from('daily_rewards')
+    .select('*')
+    .single();
+
+  if (error) {
+    console.warn('[transactions] get daily rewards error:', error.message);
+    return null;
+  }
+
+  const now = new Date();
+  const lastCollected = data.last_collected_at ? new Date(data.last_collected_at) : null;
+  const isSameDay =
+    lastCollected &&
+    lastCollected.getFullYear() === now.getFullYear() &&
+    lastCollected.getMonth() === now.getMonth() &&
+    lastCollected.getDate() === now.getDate();
+
+  // Calculate next available time
+  let nextAvailable: string | null = null;
+  if (isSameDay) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    nextAvailable = tomorrow.toISOString();
+  }
+
+  return {
+    dayNumber: data.day_number,
+    lastCollectedAt: data.last_collected_at,
+    streakActive: data.streak_active,
+    canCollect: !isSameDay,
+    nextAvailable,
+  };
+}
+
+// ── Get user transactions ───────────────────────────────────────────────────────
+
+export type Transaction = {
+  id: string;
+  type: string;
+  amount: number;
+  currency: string;
+  metadata: Record<string, unknown>;
+  created_at: string;
+};
+
+export async function getTransactions(limit = 20): Promise<Transaction[]> {
+  const { data, error } = await supabase
+    .from('transactions')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(limit);
+
+  if (error) {
+    console.warn('[transactions] get transactions error:', error.message);
+    return [];
+  }
+
+  return data as Transaction[];
+}
+
+// ── Award match reward ───────────────────────────────────────────────────────────
+
+export async function awardMatchReward(params: {
+  matchId: string;
+  winnerUserId: string;
+  loserUserId?: string;
+  entryFee: number;
+}): Promise<AwardMatchRewardResult | null> {
+  const { data, error } = await supabase.functions.invoke<AwardMatchRewardResult>(
+    'award-match-reward',
+    { body: params },
+  );
+  if (error) {
+    console.warn('[transactions] award-match-reward error:', error.message);
+    return null;
+  }
+  return data;
+}
