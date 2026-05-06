@@ -195,6 +195,7 @@ export default function HomeScreen() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [rewardOpen, setRewardOpen] = useState(false);
   const [pendingDay, setPendingDay] = useState(1);
+  const [claiming, setClaiming] = useState(false);
 
   const scrollX = useSharedValue(0);
 
@@ -344,7 +345,14 @@ export default function HomeScreen() {
       <DailyRewardModal
         visible={rewardOpen}
         pendingDay={pendingDay}
-        onClaim={() => { const r = claimDaily(); if (r) haptics.success(); setRewardOpen(false); }}
+        onClaim={async () => {
+          if (claiming) return;
+          setClaiming(true);
+          const r = await claimDaily();
+          if (r) haptics.success();
+          setClaiming(false);
+          setRewardOpen(false);
+        }}
         onClose={() => setRewardOpen(false)}
       />
     </View>
