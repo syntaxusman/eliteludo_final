@@ -123,7 +123,13 @@ export default function MatchmakingScreen() {
       if (fee > 0) {
         const feeResult = await deductEntryFee(fee, { mode: queueMode, city_slug: citySlug });
         if (!feeResult?.success) {
-          Alert.alert('Not enough coins', 'Collect a daily reward or visit the shop to get more coins.');
+          await refreshWallet();
+          const current = feeResult?.current ?? useWalletStore.getState().coins;
+          const required = feeResult?.required ?? fee;
+          Alert.alert(
+            'Not enough coins',
+            `This table needs ${required.toLocaleString()} coins. Your current balance is ${current.toLocaleString()}.`,
+          );
           router.back();
           return;
         }

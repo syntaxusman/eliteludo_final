@@ -16,6 +16,7 @@ export type CollectDailyRewardResult = {
   success: boolean;
   dayNumber?: number;
   rewardAmount?: number;
+  balance?: number;
   streakActive?: boolean;
   nextAvailable?: string;
   reason?: string;
@@ -65,7 +66,7 @@ export async function deductEntryFee(
   );
   if (error) {
     console.warn('[transactions] deduct-entry-fee error:', error.message);
-    return null;
+    return data ?? null;
   }
   return data;
 }

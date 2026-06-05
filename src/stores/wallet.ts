@@ -72,11 +72,11 @@ export const useWalletStore = create<WalletState>((set, get) => ({
 
     const result = await collectDailyReward();
     if (result?.success) {
-      // Refresh daily status and coins from profile
-      await get().refreshDailyStatus();
-      const reward = result.rewardAmount ?? pending.reward;
-      set((state) => ({ coins: state.coins + reward }));
-      return pending;
+      await get().refresh();
+      return {
+        day: result.dayNumber ?? pending.day,
+        reward: result.rewardAmount ?? pending.reward,
+      };
     }
     return null;
   },

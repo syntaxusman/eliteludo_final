@@ -250,6 +250,9 @@ export default function GameScreen() {
   useEffect(() => {
     if (!state.winnerColor) return;
     const winColor = state.winnerColor;
+    const humanColor = isLocalBotGame
+      ? state.players.find((p) => !p.isAI)?.color
+      : myColor;
     const youWon = isLocalBotGame
       ? !state.players.find((p) => p.color === winColor)?.isAI
       : winColor === myColor;
@@ -274,6 +277,7 @@ export default function GameScreen() {
           matchId: matchId ?? '',
           entryFee: entryFee ?? '0',
           citySlug: citySlug ?? '',
+          humanColor: humanColor ?? '',
         },
       });
     }, 1500);

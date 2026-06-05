@@ -15,6 +15,7 @@ export const rewardedAdUnitId = adMobExtra.rewardedAdUnitId ?? 'ca-app-pub-39402
 // when running in Expo Go or when the native module isn't linked.
 let nativeMod: any = null;
 try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   nativeMod = require('react-native-google-mobile-ads');
 } catch {
   // Native module not available (Expo Go, web, etc.)
@@ -32,11 +33,6 @@ const mobileAds = nativeMod?.default;
 const RewardedAd = nativeMod?.RewardedAd;
 const AdEventType = nativeMod?.AdEventType;
 const RewardedAdEventType = nativeMod?.RewardedAdEventType;
-const TestIds = nativeMod?.TestIds ?? {
-  BANNER: 'ca-app-pub-3940256099942544/6300978111',
-  REWARDED: 'ca-app-pub-3940256099942544/5224354917',
-};
-
 let initialized = false;
 
 export async function initializeAds() {

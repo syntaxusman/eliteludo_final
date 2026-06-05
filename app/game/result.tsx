@@ -23,16 +23,24 @@ const PLAYER_HEX: Record<Color, string> = {
 };
 
 export default function ResultScreen() {
-  const { winner, matchId, entryFee, citySlug } = useLocalSearchParams<{
+  const { winner, matchId, entryFee, citySlug, humanColor } = useLocalSearchParams<{
     winner: Color;
     matchId?: string;
     entryFee?: string;
     citySlug?: string;
+    humanColor?: Color;
   }>();
-  const isHumanWin = winner === 'red';
+  const profile = useProfileStore((s) => s.profile);
+  const hydrateProfile = useProfileStore((s) => s.hydrate);
+  const playerColor = humanColor || profile?.colorId || 'red';
+  const isHumanWin = winner === playerColor;
   const refreshWallet = useWalletStore((s) => s.refresh);
   const refreshProfile = useProfileStore((s) => s.refresh);
   const [settled, setSettled] = useState(false);
+
+  useEffect(() => {
+    hydrateProfile();
+  }, [hydrateProfile]);
 
   useEffect(() => {
     const settle = async () => {
