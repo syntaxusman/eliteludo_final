@@ -77,22 +77,19 @@ serve(async (req) => {
     }
   }
 
-  // Determine reward amount and day number
+  // Determine reward for the current visible day, then store the next day.
   let dayNumber = daily.day_number;
   if (!streakActive) {
     dayNumber = 1; // Reset to day 1
-  } else if (dayNumber < 7) {
-    dayNumber += 1; // Advance to next day
   }
-  // If dayNumber is 7, stay at 7 (max reward)
-
   const rewardAmount = REWARDS[dayNumber - 1];
+  const nextDayNumber = dayNumber >= 7 ? 7 : dayNumber + 1;
 
   // Update daily rewards
   const { error: updateErr } = await svc
     .from("daily_rewards")
     .update({
-      day_number: dayNumber,
+      day_number: nextDayNumber,
       last_collected_at: now.toISOString(),
       streak_active: true,
     })
@@ -113,9 +110,10 @@ serve(async (req) => {
     return new Response("Profile not found", { status: 404, headers: cors });
   }
 
+  const nextBalance = profile.coins + rewardAmount;
   const { error: coinsErr } = await svc
     .from("profiles")
-    .update({ coins: profile.coins + rewardAmount })
+    .update({ coins: nextBalance })
     .eq("id", user.id);
 
   if (coinsErr) {
@@ -140,6 +138,7 @@ serve(async (req) => {
       success: true,
       dayNumber,
       rewardAmount,
+      balance: nextBalance,
       streakActive: true,
       nextAvailable: getNextAvailableTime(),
     }),
