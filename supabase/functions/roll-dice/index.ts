@@ -88,7 +88,7 @@ function addRoll(state: GameState, value: number): GameState {
     ...state,
     dicePool: [...state.dicePool, value],
     consecutiveSixes: sixes,
-    status: isSix ? "awaiting_roll" : "awaiting_move",
+    status: "awaiting_move",
     lastRollByColor,
   };
 }
@@ -238,13 +238,19 @@ serve(async (req) => {
   const nextPlayer = matchPlayers.find((p) => p.color === nextColor);
   const nextTurnUserId = nextPlayer?.user_id ?? match.current_turn_user_id;
 
-  const { error: updateErr } = await svc
+  const { data: updatedRows, error: updateErr } = await svc
     .from("matches")
     .update({ board_state: newBoardState, current_turn_user_id: nextTurnUserId })
-    .eq("id", matchId);
+    .eq("id", matchId)
+    .eq("current_turn_user_id", user.id)
+    .eq("status", "active")
+    .select("id");
 
   if (updateErr) {
     return json({ success: false, reason: "Update failed" }, 500);
+  }
+  if (!updatedRows || updatedRows.length !== 1) {
+    return json({ success: false, reason: "Turn already advanced", boardState }, 409);
   }
 
   await svc.from("match_moves").insert({

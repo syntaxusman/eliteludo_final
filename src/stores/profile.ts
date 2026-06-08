@@ -22,8 +22,8 @@ export type Profile = {
   selectedCrown: string | null;
 };
 
-type ProfileInput = Pick<Profile, 'username' | 'avatarId' | 'colorId'> &
-  Partial<Omit<Profile, 'username' | 'avatarId' | 'colorId'>>;
+type ProfileInput = Pick<Profile, 'username' | 'avatarId'> &
+  Partial<Omit<Profile, 'username' | 'avatarId'>>;
 
 type ProfileState = {
   profile: Profile | null;
@@ -118,7 +118,7 @@ export const useProfileStore = create<ProfileState>((set, get) => ({
     const next: Profile = {
       username: p.username,
       avatarId: p.avatarId,
-      colorId: p.colorId,
+      colorId: p.colorId ?? current?.colorId ?? 'red',
       coins: p.coins ?? current?.coins ?? 1000,
       gems: p.gems ?? current?.gems ?? 0,
       wins: p.wins ?? current?.wins ?? 0,
@@ -138,7 +138,11 @@ export const useProfileStore = create<ProfileState>((set, get) => ({
     if (!session) return;
     await supabase
       .from('profiles')
-      .update({ username: p.username, avatar_id: p.avatarId, color_id: p.colorId })
+      .update({
+        username: p.username,
+        avatar_id: p.avatarId,
+        color_id: p.colorId ?? current?.colorId ?? 'red',
+      })
       .eq('id', session.user.id);
   },
 

@@ -11,13 +11,15 @@ import {
   makeInitialGameState,
   tryMove,
 } from '../src/game/rules';
+import { assignRuntimeColors, isOppositePair, oppositeColor } from '../src/game/seating';
+import { visualCornerForColor } from '../src/game/perspective';
 import type { GameState, MoveOption, TokenId } from '../src/game/types';
 
-test('rolling a six keeps the player on roll and adds to dice pool', () => {
+test('rolling a six creates a playable move and adds to dice pool', () => {
   const state = makeInitialGameState('red', 1);
   const next = addRoll(state, 6);
 
-  assert.equal(next.status, 'awaiting_roll');
+  assert.equal(next.status, 'awaiting_move');
   assert.deepEqual(next.dicePool, [6]);
   assert.equal(next.currentPlayerIdx, state.currentPlayerIdx);
 });
@@ -124,4 +126,72 @@ test('checkWin returns true when all tokens are finished', () => {
   });
 
   assert.equal(checkWin(state, 'red'), true);
+});
+
+test('moving with a six grants a bonus roll after the move', () => {
+  const state: GameState = makeInitialGameState('red', 1);
+  const rolled = addRoll(state, 6);
+  const move = getValidMoves(rolled, 'red').find((m) => m.tokenId === 'red-0' && m.dieValue === 6);
+
+  assert.ok(move);
+  const moved = applyMove(rolled, move);
+  const settled = finishMove(moved);
+
+  assert.equal(settled.status, 'awaiting_roll');
+  assert.equal(settled.currentPlayerIdx, 0);
+  assert.deepEqual(settled.dicePool, []);
+});
+
+test('six can open a token and the next non-six ends the turn after moving', () => {
+  let state: GameState = makeInitialGameState('red', 1);
+  state = addRoll(state, 6);
+  let move = getValidMoves(state, 'red').find((m) => m.tokenId === 'red-0' && m.dieValue === 6);
+  assert.ok(move);
+  state = finishMove(applyMove(state, move));
+
+  assert.equal(state.status, 'awaiting_roll');
+  assert.equal(state.currentPlayerIdx, 0);
+
+  state = addRoll(state, 3);
+  move = getValidMoves(state, 'red').find((m) => m.tokenId === 'red-0' && m.dieValue === 3);
+  assert.ok(move);
+  state = finishMove(applyMove(state, move));
+
+  assert.equal(state.status, 'awaiting_roll');
+  assert.equal(state.currentPlayerIdx, 1);
+});
+
+test('runtime 1v1 color assignment always uses opposite corners', () => {
+  for (let i = 0; i < 30; i++) {
+    const seats = assignRuntimeColors(2);
+    assert.equal(seats.length, 2);
+    assert.equal(isOppositePair(seats[0], seats[1]), true);
+  }
+});
+
+test('runtime 4p color assignment uses each color exactly once', () => {
+  const seats = assignRuntimeColors(4);
+  assert.deepEqual([...seats].sort(), ['blue', 'green', 'red', 'yellow']);
+});
+
+test('perspective mapping places each assigned color bottom-left', () => {
+  for (const color of ['red', 'green', 'yellow', 'blue'] as const) {
+    assert.equal(visualCornerForColor(color, color), 'bottomLeft');
+  }
+});
+
+test('opposite 2p color renders diagonally across from local player', () => {
+  for (const color of ['red', 'green', 'yellow', 'blue'] as const) {
+    assert.equal(visualCornerForColor(oppositeColor(color), color), 'topRight');
+  }
+});
+
+test('local 2p bot game uses an opposite-corner opponent', () => {
+  const seats = assignRuntimeColors(2, () => 0);
+  const state = makeInitialGameState(seats[0], 1, undefined, seats);
+
+  assert.equal(state.players.length, 2);
+  assert.equal(state.players[0].isAI, false);
+  assert.equal(state.players[1].isAI, true);
+  assert.equal(isOppositePair(state.players[0].color, state.players[1].color), true);
 });

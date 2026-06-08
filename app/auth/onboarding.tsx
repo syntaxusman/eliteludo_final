@@ -19,9 +19,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Images } from '@/src/assets';
 import {
   AVATARS,
-  TOKEN_COLORS,
   USERNAME_MAX,
-  type TokenColorId,
   isUsernameValid,
   validateUsername,
 } from '@/src/constants/profile';
@@ -36,20 +34,19 @@ export default function OnboardingScreen() {
 
   const [username, setUsername] = useState('');
   const [avatarId, setAvatarId] = useState<number | null>(null);
-  const [colorId, setColorId] = useState<TokenColorId | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const usernameError = validateUsername(username);
   const usernameOk = isUsernameValid(username);
-  const canSubmit = usernameOk && avatarId !== null && colorId !== null && !loading;
+  const canSubmit = usernameOk && avatarId !== null && !loading;
 
   const onContinue = async () => {
-    if (!canSubmit || avatarId === null || colorId === null) return;
+    if (!canSubmit || avatarId === null) return;
     haptics.tap();
     setLoading(true);
     setError(null);
-    await setProfile({ username: username.trim(), avatarId, colorId });
+    await setProfile({ username: username.trim(), avatarId });
     setLoading(false);
     haptics.success();
     router.replace('/(tabs)/home');
@@ -140,36 +137,6 @@ export default function OnboardingScreen() {
               })}
             </View>
           </Animated.View>
-
-          <Animated.View entering={FadeInDown.delay(300).duration(400)} style={styles.section}>
-            <Text style={styles.sectionLabel}>PICK YOUR COLOR</Text>
-            <View style={styles.colorRow}>
-              {TOKEN_COLORS.map((c) => {
-                const selected = colorId === c.id;
-                return (
-                  <Pressable
-                    key={c.id}
-                    onPress={() => { haptics.tap(); setColorId(c.id); }}
-                    style={styles.colorTile}
-                  >
-                    <View
-                      style={[
-                        styles.colorSwatch,
-                        { backgroundColor: c.value },
-                        selected && styles.colorSwatchSelected,
-                      ]}
-                    >
-                      {selected && <Ionicons name="checkmark" size={22} color={colors.white} />}
-                    </View>
-                    <Text style={[styles.colorLabel, selected && styles.colorLabelSelected]}>
-                      {c.label}
-                    </Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-          </Animated.View>
-
           {error && (
             <Text style={styles.globalError}>{error}</Text>
           )}

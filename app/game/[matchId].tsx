@@ -5,25 +5,30 @@
 // Turn flow handled by independent effects. Each effect schedules at most one
 // timer and cleans up on state change to avoid timer-clobber bugs.
 
+import { Ionicons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Alert,
+  Image,
   ImageBackground,
+  Platform,
   Pressable,
   StyleSheet,
   Text,
   useWindowDimensions,
   View,
+  type ImageSourcePropType,
+  type ViewStyle,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { DiceTray } from '@/src/components/DiceTray';
-import { PlayerProfile } from '@/src/components/PlayerProfile';
 import { TokenDicePicker } from '@/src/components/TokenDicePicker';
+import { getAvatar } from '@/src/constants/profile';
 import { BOARD_SIZE, cellForToken } from '@/src/game/board';
+import { cellForPerspective, visualCornerForColor } from '@/src/game/perspective';
 import { pathCellsForMove } from '@/src/game/rules';
+import { assignRuntimeColors, isOppositePair, oppositeColor } from '@/src/game/seating';
 import type { Color, MatchPlayer, Player, TokenId } from '@/src/game/types';
 import { Images } from '@/src/assets';
 import { supabase } from '@/src/supabase/client';
@@ -32,18 +37,19 @@ import {
   getMatch,
   forfeitMatch,
   moveTokenServer,
-  pushBoardState,
   rollDiceServer,
   skipRollTurnServer,
   subscribeMatch,
 } from '@/src/supabase/matches';
 import { BoardCanvas } from '@/src/skia/Board';
+import { Dice } from '@/src/skia/Dice';
 import { Particles, type Burst } from '@/src/skia/Particles';
 import { Token as TokenView } from '@/src/skia/Token';
 import { haptics } from '@/src/utils/haptics';
 import { sound } from '@/src/utils/sound';
 import { useProfileStore } from '@/src/stores/profile';
 import { chooseMove, useGameStore } from '@/src/stores/game';
+import { useWalletStore } from '@/src/stores/wallet';
 import { colors } from '@/src/theme/colors';
 import { spacing, typography } from '@/src/theme/typography';
 
@@ -59,10 +65,10 @@ const ROLL_ANIM_MS = 360;
 const MP_ROLL_SETTLE_MS = 120;
 const ROLL_TIMEOUT_MS = 5000;
 const ROLL_TIMER_TICK_MS = 100;
-const LOCAL_MOVE_COMMIT_GRACE_MS = 5000;
 const HOP_MS = 130;
 const MIN_MOVE_MS = 220;
 const CAPTURE_TAIL_MS = 260;
+type MatchPlayerEntry = MatchPlayer & { is_bot?: boolean };
 
 export default function GameScreen() {
   const { matchId, mode, entryFee, citySlug } = useLocalSearchParams<{
@@ -71,7 +77,7 @@ export default function GameScreen() {
     entryFee?: string;
     citySlug?: string;
   }>();
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const gameMode = mode === '4p' ? '4p' : '2p';
 
   // Solo = client-only path; multiplayer = server dice + Realtime sync
@@ -91,25 +97,22 @@ export default function GameScreen() {
 
   const [pickerForToken, setPickerForToken] = useState<TokenId | null>(null);
   const [bursts, setBursts] = useState<Burst[]>([]);
-  const [displayDiceValue, setDisplayDiceValue] = useState<number | null>(null);
   const [rollTimerRemaining, setRollTimerRemaining] = useState(ROLL_TIMEOUT_MS);
 
   const profile = useProfileStore((s) => s.profile);
   const hydrateProfile = useProfileStore((s) => s.hydrate);
+  const coins = useWalletStore((s) => s.coins);
 
   // ── Multiplayer-specific state ──
   const [myColor, setMyColor] = useState<Color | null>(null);
   // Stable refs to avoid stale closures in Realtime callbacks
   const stateRef = useRef(state);
   const myColorRef = useRef(myColor);
-  const mpPlayersRef = useRef<MatchPlayer[] | null>(null);
-  const prevPlayerIdxRef = useRef(-1);
-  const prevStatusRef = useRef(state.status);
+  const matchPlayersRef = useRef<MatchPlayerEntry[]>([]);
   const leavingRef = useRef(false);
-  const suppressNextSyncRef = useRef(false);
   const timeoutInFlightRef = useRef(false);
   const localMovePendingRef = useRef(false);
-  const localMoveReleaseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const localSeatColorsRef = useRef<Color[] | null>(null);
 
   useEffect(() => { stateRef.current = state; }, [state]);
   useEffect(() => { myColorRef.current = myColor; }, [myColor]);
@@ -118,25 +121,24 @@ export default function GameScreen() {
     hydrateProfile();
   }, [hydrateProfile]);
 
-  const boardSize = Math.min(width - spacing.md * 2, 380);
+  useEffect(() => {
+    localSeatColorsRef.current = null;
+  }, [matchId, gameMode]);
+
+  const boardSize = Math.min(
+    width - spacing.md * 2,
+    height * (Platform.OS === 'android' ? 0.4 : 0.46),
+    Platform.OS === 'android' ? 350 : 380,
+  );
   const cellPx = boardSize / BOARD_SIZE;
   const tokenSize = cellPx * 0.98;
 
   const holdLocalMoveCommit = useCallback(() => {
     localMovePendingRef.current = true;
-    if (localMoveReleaseTimerRef.current) clearTimeout(localMoveReleaseTimerRef.current);
-    localMoveReleaseTimerRef.current = setTimeout(() => {
-      localMovePendingRef.current = false;
-      localMoveReleaseTimerRef.current = null;
-    }, LOCAL_MOVE_COMMIT_GRACE_MS);
   }, []);
 
   const releaseLocalMoveCommit = useCallback(() => {
     localMovePendingRef.current = false;
-    if (localMoveReleaseTimerRef.current) {
-      clearTimeout(localMoveReleaseTimerRef.current);
-      localMoveReleaseTimerRef.current = null;
-    }
   }, []);
 
   const shouldHydrateRemoteBoard = useCallback(() => {
@@ -155,18 +157,19 @@ export default function GameScreen() {
     );
   }, []);
 
-  useEffect(() => () => {
-    if (localMoveReleaseTimerRef.current) clearTimeout(localMoveReleaseTimerRef.current);
-  }, []);
-
   // ── Effect: Solo init - new game when mount or profile settles. ──
   useEffect(() => {
     if (!isSoloMatchId) return;
-    const humanColor = (profile?.colorId as Color | undefined) ?? 'red';
+    const targetCount = gameMode === '2p' ? 2 : 4;
+    if (!localSeatColorsRef.current || localSeatColorsRef.current.length !== targetCount) {
+      localSeatColorsRef.current = assignRuntimeColors(targetCount);
+    }
+    const seatColors = localSeatColorsRef.current;
+    const humanColor = seatColors[0];
     const human = profile
       ? { name: profile.username, avatarId: profile.avatarId }
       : undefined;
-    newGame(humanColor, gameMode === '2p' ? 1 : 3, human);
+    newGame(humanColor, gameMode === '2p' ? 1 : 3, human, seatColors);
   }, [isSoloMatchId, matchId, gameMode, newGame, profile]);
 
   // ── Effect: Multiplayer init - load from DB and subscribe to Realtime. ──
@@ -190,17 +193,20 @@ export default function GameScreen() {
       if (!me) return;
 
       setMyColor(me.color);
-      setBotBackedMatch(match.players.some((p: MatchPlayer & { is_bot?: boolean }) => p.is_bot) ||
-        match.board_state.players.some((p) => p.isAI));
+      const matchPlayers = match.players as MatchPlayerEntry[];
+      matchPlayersRef.current = matchPlayers;
+      const isBotBacked = matchPlayers.some((p) => p.is_bot) ||
+        match.board_state.players.some((p) => p.isAI);
+      setBotBackedMatch(isBotBacked);
       myColorRef.current = me.color;
-      mpPlayersRef.current = match.players;
-      prevPlayerIdxRef.current = match.board_state.currentPlayerIdx;
-      loadGame(match.board_state);
+      loadGame(normalizeMatchBoardState(match.board_state, matchPlayers, me.color));
 
-      unsubscribeRealtime = subscribeMatch(matchId, (newBoardState) => {
-        if (!shouldHydrateRemoteBoard()) return;
-        loadGame(newBoardState);
-      });
+      if (!isBotBacked) {
+        unsubscribeRealtime = subscribeMatch(matchId, (newBoardState) => {
+          if (!shouldHydrateRemoteBoard()) return;
+          loadGame(normalizeMatchBoardState(newBoardState, matchPlayersRef.current, myColorRef.current));
+        });
+      }
     };
 
     init();
@@ -210,7 +216,7 @@ export default function GameScreen() {
   // Realtime should be the fast path, but polling prevents a stuck board if a
   // mobile socket drops or the channel fails to join.
   useEffect(() => {
-    if (isSoloMatchId || !matchId || !myColor) return;
+    if (isSoloMatchId || botBackedMatch || !matchId || !myColor) return;
 
     let cancelled = false;
     const poll = async () => {
@@ -219,7 +225,7 @@ export default function GameScreen() {
 
       if (!shouldHydrateRemoteBoard()) return;
 
-      loadGame(match.board_state);
+      loadGame(normalizeMatchBoardState(match.board_state, matchPlayersRef.current, myColorRef.current));
     };
 
     const interval = setInterval(poll, 1800);
@@ -227,9 +233,10 @@ export default function GameScreen() {
       cancelled = true;
       clearInterval(interval);
     };
-  }, [isSoloMatchId, matchId, myColor, loadGame, shouldHydrateRemoteBoard]);
+  }, [isSoloMatchId, botBackedMatch, matchId, myColor, loadGame, shouldHydrateRemoteBoard]);
 
   const currentPlayer: Player | undefined = state.players[state.currentPlayerIdx];
+  const perspectiveColor = getPerspectiveColor(state, isLocalBotGame, myColor);
 
   const isMyTurn = isLocalBotGame
     ? !!currentPlayer && !currentPlayer.isAI
@@ -250,8 +257,7 @@ export default function GameScreen() {
 
     if (isLocalBotGame) {
       const t = setTimeout(() => {
-        const value = finishRoll();
-        setDisplayDiceValue(value);
+        finishRoll();
         haptics.medium();
         sound.play('roll');
       }, ROLL_ANIM_MS);
@@ -273,21 +279,14 @@ export default function GameScreen() {
         }
         if (typeof result.value !== 'number') {
           if (result.boardState) {
-            suppressNextSyncRef.current = true;
-            prevPlayerIdxRef.current = result.boardState.currentPlayerIdx;
-            prevStatusRef.current = result.boardState.status;
-            loadGame(result.boardState);
+            loadGame(normalizeMatchBoardState(result.boardState, matchPlayersRef.current, myColorRef.current));
             return;
           }
           loadGame({ ...stateRef.current, status: 'awaiting_roll' });
           return;
         }
-        setDisplayDiceValue(result.value);
         if (result.boardState) {
-          suppressNextSyncRef.current = true;
-          prevPlayerIdxRef.current = result.boardState.currentPlayerIdx;
-          prevStatusRef.current = result.boardState.status;
-          loadGame(result.boardState);
+          loadGame(normalizeMatchBoardState(result.boardState, matchPlayersRef.current, myColorRef.current));
         } else {
           finishRoll(result.value);
         }
@@ -322,10 +321,7 @@ export default function GameScreen() {
       if (!matchId) return;
       const result = await skipRollTurnServer(matchId, turnPlayerIdx);
       if (result?.boardState) {
-        suppressNextSyncRef.current = true;
-        prevPlayerIdxRef.current = result.boardState.currentPlayerIdx;
-        prevStatusRef.current = result.boardState.status;
-        loadGame(result.boardState);
+        loadGame(normalizeMatchBoardState(result.boardState, matchPlayersRef.current, myColorRef.current));
       }
     };
 
@@ -349,7 +345,6 @@ export default function GameScreen() {
     if (state.status !== 'awaiting_roll' || !currentPlayer?.isAI) return;
     if (state.winnerColor) return;
     const t = setTimeout(() => {
-      setDisplayDiceValue(null);
       beginRoll();
     }, THINK_MS);
     return () => clearTimeout(t);
@@ -379,13 +374,10 @@ export default function GameScreen() {
       if (!isLocalBotGame && isMyTurn && matchId && move) {
         void moveTokenServer(matchId, move.tokenId, move.dieValue).then((result) => {
           if (result?.boardState) {
-            suppressNextSyncRef.current = true;
-            prevPlayerIdxRef.current = result.boardState.currentPlayerIdx;
-            prevStatusRef.current = result.boardState.status;
-            loadGame(result.boardState);
+            loadGame(normalizeMatchBoardState(result.boardState, matchPlayersRef.current, myColorRef.current));
           } else {
             void getMatch(matchId).then((match) => {
-              if (match) loadGame(match.board_state);
+              if (match) loadGame(normalizeMatchBoardState(match.board_state, matchPlayersRef.current, myColorRef.current));
             });
           }
           releaseLocalMoveCommit();
@@ -454,7 +446,7 @@ export default function GameScreen() {
     const tokens = state.players.flatMap((p) => p.tokens);
     const moving = tokens.find((tt) => tt.id === move.tokenId);
     if (!moving) return;
-    const dest = cellForToken(moving);
+    const dest = cellForPerspective(cellForToken(moving), perspectiveColor);
     const cx = (dest.col + 0.5) * cellPx;
     const cy = (dest.row + 0.5) * cellPx;
     const arriveMs = Math.max(1, hopsForMove(move.from, move.dieValue)) * HOP_MS;
@@ -477,7 +469,7 @@ export default function GameScreen() {
       ]);
     }, arriveMs);
     return () => clearTimeout(t);
-  }, [state.lastMove, state.players, cellPx]);
+  }, [state.lastMove, state.players, cellPx, perspectiveColor]);
 
   // ── Effect: prune stale bursts. ──
   useEffect(() => {
@@ -491,48 +483,11 @@ export default function GameScreen() {
     setPickerForToken(null);
   }, [state.currentPlayerIdx, state.dicePool.length, state.status]);
 
-  // ── Effect (multiplayer): push board state to DB when my turn ends. ──
-  useEffect(() => {
-    const prevStatus = prevStatusRef.current;
-    prevStatusRef.current = state.status;
-
-    if (isLocalBotGame || !matchId || !myColor) return;
-    if (suppressNextSyncRef.current) {
-      suppressNextSyncRef.current = false;
-      prevPlayerIdxRef.current = state.currentPlayerIdx;
-      return;
-    }
-    if (
-      state.status !== 'awaiting_roll' &&
-      state.status !== 'awaiting_move' &&
-      state.status !== 'finished'
-    ) {
-      return;
-    }
-
-    const myIdx = state.players.findIndex((p) => p.color === myColor);
-    const prev = prevPlayerIdxRef.current;
-    prevPlayerIdxRef.current = state.currentPlayerIdx;
-
-    const completedLocalMove = prevStatus === 'animating' && prev === myIdx;
-
-    // Push after every local move settles, and when my turn ends.
-    if (prev === myIdx && (state.currentPlayerIdx !== myIdx || completedLocalMove)) {
-      const nextColor = state.players[state.currentPlayerIdx].color;
-      const nextEntry = mpPlayersRef.current?.find((p) => p.color === nextColor);
-      void pushBoardStateWithRetry(matchId, state, nextEntry?.user_id ?? null)
-        .then((synced) => {
-          if (synced) releaseLocalMoveCommit();
-        });
-    }
-  }, [state, isLocalBotGame, matchId, myColor, releaseLocalMoveCommit]);
-
   // ── handlers ──
 
   function onHumanRoll() {
     if (!isMyTurn || state.status !== 'awaiting_roll') return;
     haptics.tap();
-    setDisplayDiceValue(null);
     beginRoll();
   }
 
@@ -613,14 +568,17 @@ export default function GameScreen() {
     const movingToken = state.players.flatMap((p) => p.tokens).find((t) => t.id === move.tokenId);
     if (!movingToken) return null;
     const cells = pathCellsForMove(movingToken.color, move.from, move.dieValue);
-    const hopPath = cells.map((c) => ({
-      cx: (c.col + 0.5) * cellPx,
-      cy: (c.row + 0.5) * cellPx,
-    }));
+    const hopPath = cells.map((c) => {
+      const visual = cellForPerspective(c, perspectiveColor);
+      return {
+        cx: (visual.col + 0.5) * cellPx,
+        cy: (visual.row + 0.5) * cellPx,
+      };
+    });
     const captureDelayMs = Math.max(0, hopPath.length - 1) * HOP_MS;
     const capturedIds = new Set(move.captures);
     return { movingTokenId: move.tokenId, hopPath, capturedIds, captureDelayMs };
-  }, [state.lastMove, state.players, cellPx]);
+  }, [state.lastMove, state.players, cellPx, perspectiveColor]);
 
   const pickerValues = pickerForToken
     ? Array.from(
@@ -634,20 +592,27 @@ export default function GameScreen() {
     if (!pickerForToken) return null;
     const tok = allTokens.find((t) => t.id === pickerForToken);
     if (!tok) return null;
-    const cell = cellForToken(tok);
+    const cell = cellForPerspective(cellForToken(tok), perspectiveColor);
     return { cx: (cell.col + 0.5) * cellPx, cy: (cell.row + 0.5) * cellPx };
   })();
 
-  const byColor = new Map<Color, Player>(state.players.map((p) => [p.color, p]));
-  const isTwoPlayerGame = state.players.length <= 2;
-  const topLeft = isTwoPlayerGame ? state.players[0] : byColor.get('red');
-  const topRight = isTwoPlayerGame ? state.players[1] : byColor.get('green');
-  const bottomLeft = isTwoPlayerGame ? undefined : byColor.get('blue');
-  const bottomRight = isTwoPlayerGame ? undefined : byColor.get('yellow');
-  const rollLabel = state.dicePool.length > 0 ? 'ROLL AGAIN' : 'ROLL';
+  const byCorner = seatPlayersByCorner(state.players, perspectiveColor);
   const hint = makeHint(state, isMyTurn, currentPlayer);
   const timerProgress = shouldRunRollTimer ? rollTimerRemaining / ROLL_TIMEOUT_MS : null;
   const timerSeconds = shouldRunRollTimer ? Math.ceil(rollTimerRemaining / 1000) : null;
+  const localPlayer = byCorner.bottomLeft;
+  const opponentPlayer = byCorner.topRight ?? byCorner.topLeft ?? byCorner.bottomRight;
+  const sidePlayers = [byCorner.topLeft, byCorner.bottomRight]
+    .filter((p): p is Player => !!p && p.color !== localPlayer?.color && p.color !== opponentPlayer?.color);
+  const activeDiceProps = {
+    dicePool: state.dicePool,
+    displayRoll: state.lastRollByColor[currentPlayer.color] ?? null,
+    isRolling: state.status === 'rolling',
+    canRoll: isMyTurn && state.status === 'awaiting_roll' && !state.winnerColor,
+    onRoll: onHumanRoll,
+    timerProgress,
+    timerSeconds,
+  };
 
   if (!currentPlayer) return null;
 
@@ -657,43 +622,39 @@ export default function GameScreen() {
         <View style={styles.tableOverlay} />
       </ImageBackground>
 
-      <View style={styles.header}>
-        <Pressable onPress={onExitPress} hitSlop={12} style={styles.exitBtn}>
-          <Text style={styles.back}>EXIT</Text>
-        </Pressable>
-        <View style={styles.turnBadge}>
-          <View
-            style={[styles.dot, { backgroundColor: PLAYER_HEX[currentPlayer.color] }]}
-          />
-          <Text style={styles.turnText}>
-            {isMyTurn ? 'Your turn' : `${currentPlayer.name}'s turn`}
-          </Text>
-        </View>
-        <Text style={styles.matchId}>#{(matchId ?? 'local').slice(-6)}</Text>
-      </View>
-
-      <LinearGradient
-        colors={['rgba(212,175,55,0.22)', 'rgba(212,175,55,0.03)', 'rgba(212,175,55,0.22)']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-        style={styles.titlePlaque}
-      >
-        <Text style={styles.titleText}>ELITE LUDO</Text>
-      </LinearGradient>
-
-      <ProfileRow
-        left={topLeft}
-        right={topRight}
-        currentColor={currentPlayer.color}
-        lastRollByColor={state.lastRollByColor}
+      <TopHud
+        coins={coins}
+        gems={profile?.gems ?? 0}
+        matchId={matchId ?? 'local'}
+        onExit={onExitPress}
       />
+
+      <View style={styles.opponentLayer} pointerEvents="box-none">
+        {sidePlayers.map((player, index) => (
+          <MiniSeat
+            key={player.color}
+            player={player}
+            active={currentPlayer.color === player.color}
+            lastRoll={state.lastRollByColor[player.color] ?? null}
+            style={index === 0 ? styles.sideSeatLeft : styles.sideSeatRight}
+          />
+        ))}
+        {opponentPlayer && (
+          <RemoteSeat
+            player={opponentPlayer}
+            active={currentPlayer.color === opponentPlayer.color}
+            lastRoll={state.lastRollByColor[opponentPlayer.color] ?? null}
+            dice={currentPlayer.color === opponentPlayer.color ? activeDiceProps : null}
+          />
+        )}
+      </View>
 
       <View style={styles.boardWrap}>
         <View style={[styles.boardSquare, { width: boardSize, height: boardSize }]}>
-          <BoardCanvas size={boardSize} />
+          <BoardCanvas size={boardSize} perspectiveColor={perspectiveColor} />
           <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
             {allTokens.map((t) => {
-              const cell = cellForToken(t);
+              const cell = cellForPerspective(cellForToken(t), perspectiveColor);
               const cx = (cell.col + 0.5) * cellPx;
               const cy = (cell.row + 0.5) * cellPx;
               const movable = isMyTurn && state.status === 'awaiting_move' && movableTokenIds.has(t.id);
@@ -731,63 +692,299 @@ export default function GameScreen() {
         </View>
       </View>
 
-      {(bottomLeft || bottomRight) && (
-        <ProfileRow
-          left={bottomLeft}
-          right={bottomRight}
-          currentColor={currentPlayer.color}
-          lastRollByColor={state.lastRollByColor}
-        />
-      )}
-
-      <DiceTray
-        pool={state.dicePool}
-        isRolling={state.status === 'rolling'}
-        displayValue={displayDiceValue}
-        canRoll={isMyTurn && state.status === 'awaiting_roll' && !state.winnerColor}
-        rollLabel={rollLabel}
-        onRoll={onHumanRoll}
-        timerProgress={timerProgress}
-        timerSeconds={timerSeconds}
-        hint={hint}
+      <LocalCommandBar
+        player={localPlayer}
+        active={!!localPlayer && currentPlayer.color === localPlayer.color}
+        lastRoll={localPlayer ? state.lastRollByColor[localPlayer.color] ?? null : null}
+        dice={localPlayer && currentPlayer.color === localPlayer.color ? activeDiceProps : null}
+        canUndo={state.status === 'awaiting_move' && isMyTurn}
       />
+      <Text style={styles.hint}>{hint}</Text>
     </SafeAreaView>
   );
 }
 
-function ProfileRow({
-  left,
-  right,
-  currentColor,
-  lastRollByColor,
+type DiceHudProps = {
+  dicePool: number[];
+  displayRoll: number | null;
+  isRolling: boolean;
+  canRoll: boolean;
+  onRoll: () => void;
+  timerProgress: number | null;
+  timerSeconds: number | null;
+};
+
+function TopHud({
+  coins,
+  gems,
+  matchId,
+  onExit,
 }: {
-  left?: Player;
-  right?: Player;
-  currentColor: Color;
-  lastRollByColor: Partial<Record<Color, number>>;
+  coins: number;
+  gems: number;
+  matchId: string;
+  onExit: () => void;
 }) {
   return (
-    <View style={styles.row}>
-      {left ? (
-        <PlayerProfile
-          player={left}
-          isActive={currentColor === left.color}
-          lastRoll={lastRollByColor[left.color] ?? null}
-          align="left"
-        />
-      ) : (
-        <View style={styles.rowSpacer} />
+    <View style={styles.topHud}>
+      <View style={styles.topButtons}>
+        <HudButton icon="menu" onPress={onExit} />
+        <HudButton icon="people" />
+        <HudButton icon="trophy" label="WIN" />
+      </View>
+      <View style={styles.resources}>
+        <ResourcePill icon="flash" value="2" />
+        <ResourcePill icon="diamond" value={gems.toLocaleString()} plus />
+        <ResourcePill image={Images.coinSingle} value={coins.toLocaleString()} />
+      </View>
+      <Text style={styles.matchChip}>#{matchId.slice(-6)}</Text>
+    </View>
+  );
+}
+
+function HudButton({
+  icon,
+  label,
+  badge,
+  onPress,
+}: {
+  icon: keyof typeof Ionicons.glyphMap;
+  label?: string;
+  badge?: string;
+  onPress?: () => void;
+}) {
+  return (
+    <Pressable onPress={onPress} style={({ pressed }) => [styles.hudButton, pressed && { opacity: 0.78 }]}>
+      <Ionicons name={icon} size={24} color="rgba(255,255,255,0.82)" />
+      {label && <Text style={styles.hudButtonLabel}>{label}</Text>}
+      {badge && (
+        <View style={styles.hudBadge}>
+          <Text style={styles.hudBadgeText}>{badge}</Text>
+        </View>
       )}
-      {right ? (
-        <PlayerProfile
-          player={right}
-          isActive={currentColor === right.color}
-          lastRoll={lastRollByColor[right.color] ?? null}
-          align="right"
-        />
+    </Pressable>
+  );
+}
+
+function ResourcePill({
+  icon,
+  image,
+  value,
+  plus,
+}: {
+  icon?: keyof typeof Ionicons.glyphMap;
+  image?: ImageSourcePropType;
+  value: string;
+  plus?: boolean;
+}) {
+  return (
+    <View style={styles.resourcePill}>
+      {image ? (
+        <Image source={image} style={styles.resourceImage} resizeMode="contain" />
       ) : (
-        <View style={styles.rowSpacer} />
+        <Ionicons name={icon ?? 'diamond'} size={24} color={colors.goldLight} />
       )}
+      <Text style={styles.resourceText}>{value}</Text>
+      {plus && (
+        <View style={styles.plusBadge}>
+          <Ionicons name="add" size={12} color="#fff" />
+        </View>
+      )}
+    </View>
+  );
+}
+
+function RemoteSeat({
+  player,
+  active,
+  lastRoll,
+  dice,
+}: {
+  player: Player;
+  active: boolean;
+  lastRoll: number | null;
+  dice: DiceHudProps | null;
+}) {
+  return (
+    <View style={styles.remoteSeat}>
+      <DiceBubble dice={dice} value={lastRoll} active={active} remote />
+      <PlayerAvatar player={player} active={active} size={66} />
+      <Text style={styles.remoteName} numberOfLines={1}>{player.name}</Text>
+    </View>
+  );
+}
+
+function MiniSeat({
+  player,
+  active,
+  lastRoll,
+  style,
+}: {
+  player: Player;
+  active: boolean;
+  lastRoll: number | null;
+  style: ViewStyle;
+}) {
+  return (
+    <View style={[styles.miniSeat, style]}>
+      <PlayerAvatar player={player} active={active} size={44} />
+      <View style={styles.miniDie}>
+        <Text style={styles.miniDieText}>{lastRoll ?? '-'}</Text>
+      </View>
+    </View>
+  );
+}
+
+function LocalCommandBar({
+  player,
+  active,
+  lastRoll,
+  dice,
+  canUndo,
+}: {
+  player?: Player;
+  active: boolean;
+  lastRoll: number | null;
+  dice: DiceHudProps | null;
+  canUndo: boolean;
+}) {
+  if (!player) return <View style={styles.localBarPlaceholder} />;
+
+  return (
+    <View style={styles.localBar}>
+      <Text style={styles.localName} numberOfLines={1}>{player.name}</Text>
+      <View style={styles.localControls}>
+        <PlayerAvatar player={player} active={active} size={72} />
+        <DiceBubble dice={dice} value={lastRoll} active={active} />
+        <View style={styles.quickStack}>
+          <Pressable disabled={!canUndo} style={[styles.quickButton, !canUndo && styles.quickButtonDisabled]}>
+            <Ionicons name="arrow-undo" size={25} color="#fff" />
+          </Pressable>
+          <View style={styles.gemCost}>
+            <Ionicons name="diamond" size={19} color="#35E46F" />
+            <Text style={styles.gemCostText}>2</Text>
+          </View>
+        </View>
+      </View>
+      <View style={styles.chatRow}>
+        <Pressable style={styles.chatButton}>
+          <Text style={styles.chatButtonText}>EMOJI</Text>
+        </Pressable>
+        <Pressable style={styles.chatButton}>
+          <Text style={styles.chatButtonText}>CHAT</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+function DiceBubble({
+  dice,
+  value,
+  active,
+  remote = false,
+}: {
+  dice: DiceHudProps | null;
+  value: number | null;
+  active: boolean;
+  remote?: boolean;
+}) {
+  const rolling = dice?.isRolling ?? false;
+  const diceValue = dice?.displayRoll ?? dice?.dicePool[dice.dicePool.length - 1] ?? value;
+  const pool = dice?.dicePool ?? [];
+  const shouldShow = !!dice || value !== null || active;
+  if (!shouldShow) return null;
+
+  return (
+    <Pressable
+      disabled={rolling}
+      hitSlop={10}
+      onPress={() => {
+        if (dice?.canRoll) dice.onRoll();
+      }}
+      style={({ pressed }) => [
+        styles.diceBubble,
+        remote && styles.remoteDiceBubble,
+        active && styles.diceBubbleActive,
+        pressed && dice?.canRoll && !rolling && { transform: [{ scale: 0.96 }] },
+      ]}
+    >
+      {dice && dice.timerProgress !== null && (
+        <DiceProgressRing progress={dice.timerProgress} remote={remote} />
+      )}
+      <View style={styles.dicePointer} />
+      <Dice size={remote ? 54 : 58} value={rolling ? null : diceValue} rolling={rolling} />
+      {pool.length > 0 && (
+        <View style={styles.poolBadge}>
+          <Text style={styles.poolBadgeText}>{pool.slice(0, 3).join(' ')}</Text>
+        </View>
+      )}
+      {dice && dice.timerSeconds !== null && <Text style={styles.rollTimerText}>{dice.timerSeconds}s</Text>}
+    </Pressable>
+  );
+}
+
+function DiceProgressRing({
+  progress,
+  remote,
+}: {
+  progress: number;
+  remote: boolean;
+}) {
+  const ticks = 28;
+  const clamped = Math.max(0, Math.min(1, progress));
+  const radius = remote ? 47 : 50;
+
+  return (
+    <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+      {Array.from({ length: ticks }, (_, index) => {
+        const active = index / ticks <= clamped;
+        return (
+          <View
+            key={index}
+            style={[
+              styles.progressTick,
+              {
+                opacity: active ? 1 : 0.14,
+                transform: [
+                  { rotate: `${(360 / ticks) * index}deg` },
+                  { translateY: -radius },
+                ],
+              },
+            ]}
+          />
+        );
+      })}
+    </View>
+  );
+}
+
+function PlayerAvatar({
+  player,
+  active,
+  size,
+}: {
+  player: Player;
+  active: boolean;
+  size: number;
+}) {
+  const avatar = getAvatar(player.avatarId);
+  return (
+    <View
+      style={[
+        styles.avatarShell,
+        {
+          width: size,
+          height: size,
+          borderRadius: size / 2,
+          borderColor: active ? colors.gold : PLAYER_HEX[player.color],
+        },
+      ]}
+    >
+      <View style={[styles.avatarFace, { backgroundColor: avatar.bg, borderRadius: size / 2 }]}>
+        <Ionicons name={avatar.icon} size={size * 0.46} color="#fff" />
+      </View>
+      <View style={[styles.playerColorRing, { backgroundColor: PLAYER_HEX[player.color] }]} />
     </View>
   );
 }
@@ -797,21 +994,79 @@ function hopsForMove(from: { kind: string }, dieValue: number): number {
   return dieValue;
 }
 
-async function pushBoardStateWithRetry(
-  matchId: string,
+function getPerspectiveColor(
   state: ReturnType<typeof useGameStore.getState>['state'],
-  nextTurnUserId: string | null,
-): Promise<boolean> {
-  for (let attempt = 0; attempt < 3; attempt++) {
-    const synced = await pushBoardState(matchId, state, nextTurnUserId);
-    if (synced) return true;
-    await delay(350 * (attempt + 1));
-  }
-  return false;
+  isLocalBotGame: boolean,
+  myColor: Color | null,
+): Color {
+  if (!isLocalBotGame && myColor) return myColor;
+  return state.players.find((p) => !p.isAI)?.color ?? state.players[0]?.color ?? 'blue';
 }
 
-function delay(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+function seatPlayersByCorner(players: Player[], perspectiveColor: Color) {
+  const seats: Partial<Record<'topLeft' | 'topRight' | 'bottomRight' | 'bottomLeft', Player>> = {};
+  for (const player of players) {
+    seats[visualCornerForColor(player.color, perspectiveColor)] = player;
+  }
+  return seats;
+}
+
+function normalizeMatchBoardState(
+  boardState: ReturnType<typeof useGameStore.getState>['state'],
+  matchPlayers: MatchPlayerEntry[],
+  anchorColor?: Color | null,
+): ReturnType<typeof useGameStore.getState>['state'] {
+  if (matchPlayers.length === 0) return boardState;
+  const byColor = new Map(matchPlayers.map((p) => [p.color, p]));
+  let changed = false;
+  let players = boardState.players.map((player) => {
+    const matchPlayer = byColor.get(player.color);
+    if (!matchPlayer) return player;
+    const isAI = !!matchPlayer.is_bot;
+    if (player.isAI === isAI) return player;
+    changed = true;
+    return { ...player, isAI };
+  });
+
+  if (
+    players.length === 2 &&
+    !isOppositePair(players[0].color, players[1].color)
+  ) {
+    const localIdx = anchorColor ? players.findIndex((p) => p.color === anchorColor) : -1;
+    const humanIdx = players.findIndex((p) => !p.isAI);
+    const anchorIdx = localIdx >= 0 ? localIdx : humanIdx >= 0 ? humanIdx : 0;
+    const otherIdx = anchorIdx === 0 ? 1 : 0;
+    const otherColor = oppositeColor(players[anchorIdx].color);
+    players = players.map((player, index) =>
+      index === otherIdx ? recolorPlayer(player, otherColor) : player,
+    );
+    changed = true;
+  }
+
+  return changed ? { ...boardState, players, lastRollByColor: remapLastRolls(boardState.lastRollByColor, players) } : boardState;
+}
+
+function recolorPlayer(player: Player, color: Color): Player {
+  return {
+    ...player,
+    color,
+    tokens: player.tokens.map((token, index) => ({
+      ...token,
+      id: `${color}-${index}` as TokenId,
+      color,
+    })) as Player['tokens'],
+  };
+}
+
+function remapLastRolls(
+  rolls: ReturnType<typeof useGameStore.getState>['state']['lastRollByColor'],
+  players: Player[],
+) {
+  const next: ReturnType<typeof useGameStore.getState>['state']['lastRollByColor'] = {};
+  for (const player of players) {
+    if (rolls[player.color]) next[player.color] = rolls[player.color];
+  }
+  return next;
 }
 
 function makeHint(
@@ -845,70 +1100,253 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: '#050201' },
   tableOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(5,2,1,0.78)',
+    backgroundColor: 'rgba(24,7,28,0.86)',
   },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: spacing.md,
-    paddingTop: 4,
+  topHud: {
+    paddingHorizontal: 10,
+    paddingTop: 8,
     paddingBottom: 6,
-  },
-  exitBtn: {
-    borderWidth: 1,
-    borderColor: 'rgba(212,175,55,0.35)',
-    backgroundColor: 'rgba(0,0,0,0.45)',
-    borderRadius: 11,
-    paddingHorizontal: 12,
-    paddingVertical: 7,
-  },
-  back: { color: colors.gold, fontWeight: '900', fontSize: 12, letterSpacing: 1 },
-  turnBadge: {
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0,0.36)',
+    backgroundColor: 'rgba(33,12,39,0.72)',
     flexDirection: 'row',
     alignItems: 'center',
-    gap: spacing.sm,
-    backgroundColor: 'rgba(25,10,4,0.88)',
+    gap: 6,
+  },
+  topButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+    flexShrink: 0,
+  },
+  hudButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    backgroundColor: 'rgba(255,255,255,0.13)',
     borderWidth: 1,
-    borderColor: 'rgba(212,175,55,0.5)',
-    paddingHorizontal: spacing.md,
-    paddingVertical: 8,
-    borderRadius: 999,
-    shadowColor: colors.gold,
+    borderColor: 'rgba(255,255,255,0.08)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
     shadowOpacity: 0.28,
-    shadowRadius: 12,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
     elevation: 8,
   },
-  dot: { width: 10, height: 10, borderRadius: 5 },
-  turnText: { ...typography.caption, color: colors.text, fontWeight: '800' },
-  matchId: { ...typography.caption, color: 'rgba(212,175,55,0.55)' },
-  titlePlaque: {
-    alignSelf: 'center',
-    minWidth: 190,
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: 'rgba(212,175,55,0.35)',
-    paddingVertical: 6,
-    paddingHorizontal: 26,
-    marginBottom: 3,
-  },
-  titleText: {
-    color: colors.gold,
-    textAlign: 'center',
+  hudButtonLabel: {
+    position: 'absolute',
+    bottom: 7,
+    color: colors.text,
+    fontSize: 8,
     fontWeight: '900',
-    fontSize: 16,
-    letterSpacing: 4,
-    textShadowColor: 'rgba(212,175,55,0.55)',
-    textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 10,
+    letterSpacing: 0.2,
   },
-  row: {
+  hudBadge: {
+    position: 'absolute',
+    top: -6,
+    right: -5,
+    minWidth: 22,
+    height: 22,
+    borderRadius: 7,
+    backgroundColor: '#E21D2D',
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.82)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  hudBadgeText: { color: '#fff', fontSize: 12, fontWeight: '900' },
+  resources: {
     flexDirection: 'row',
-    paddingHorizontal: spacing.md,
-    paddingVertical: 3,
-    gap: 10,
+    alignItems: 'center',
+    gap: 4,
+    flex: 1,
+    justifyContent: 'flex-end',
+    minWidth: 0,
   },
-  rowSpacer: { flex: 1 },
+  resourcePill: {
+    minWidth: 44,
+    height: 32,
+    borderRadius: 18,
+    paddingLeft: 6,
+    paddingRight: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 5,
+    backgroundColor: 'rgba(26,10,33,0.88)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.08)',
+  },
+  resourceImage: { width: 22, height: 22 },
+  resourceText: { color: colors.text, fontSize: 14, fontWeight: '900' },
+  plusBadge: {
+    position: 'absolute',
+    left: 18,
+    top: -4,
+    width: 18,
+    height: 18,
+    borderRadius: 9,
+    backgroundColor: '#27C94E',
+    borderWidth: 1,
+    borderColor: '#BEFFB5',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  matchChip: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: -16,
+    textAlign: 'center',
+    color: 'rgba(255,255,255,0.38)',
+    fontSize: 10,
+    fontWeight: '900',
+    letterSpacing: 1.5,
+  },
+  opponentLayer: {
+    minHeight: 118,
+    paddingHorizontal: 10,
+    paddingTop: 18,
+  },
+  remoteSeat: {
+    position: 'absolute',
+    right: 10,
+    top: 6,
+    alignItems: 'flex-end',
+  },
+  remoteName: {
+    marginTop: 4,
+    maxWidth: 150,
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: '800',
+    textShadowColor: '#000',
+    textShadowRadius: 4,
+  },
+  miniSeat: {
+    position: 'absolute',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    opacity: 0.9,
+  },
+  sideSeatLeft: { left: 10, top: 18 },
+  sideSeatRight: { left: 10, top: 72 },
+  miniDie: {
+    width: 26,
+    height: 26,
+    borderRadius: 8,
+    backgroundColor: '#E3E5EA',
+    borderWidth: 2,
+    borderColor: '#705531',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  miniDieText: { color: '#1E1E24', fontWeight: '900', fontSize: 12 },
+  avatarShell: {
+    padding: 3,
+    borderWidth: 3,
+    backgroundColor: '#281035',
+    shadowColor: '#000',
+    shadowOpacity: 0.32,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 10,
+  },
+  avatarFace: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  playerColorRing: {
+    position: 'absolute',
+    right: 1,
+    bottom: 3,
+    width: 15,
+    height: 15,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#fff',
+  },
+  diceBubble: {
+    minWidth: 82,
+    minHeight: 78,
+    borderRadius: 15,
+    backgroundColor: '#7A4B35',
+    borderWidth: 4,
+    borderColor: '#A75A33',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.38,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 5 },
+    elevation: 10,
+    overflow: 'visible',
+  },
+  remoteDiceBubble: {
+    position: 'absolute',
+    right: 60,
+    top: 18,
+    minWidth: 76,
+    minHeight: 72,
+    backgroundColor: '#8B7928',
+    borderColor: colors.goldDark,
+  },
+  diceBubbleActive: {
+    borderColor: colors.gold,
+    shadowColor: colors.gold,
+    shadowOpacity: 0.45,
+  },
+  dicePointer: {
+    position: 'absolute',
+    right: -14,
+    width: 0,
+    height: 0,
+    borderTopWidth: 11,
+    borderBottomWidth: 11,
+    borderLeftWidth: 15,
+    borderTopColor: 'transparent',
+    borderBottomColor: 'transparent',
+    borderLeftColor: '#A75A33',
+  },
+  poolBadge: {
+    position: 'absolute',
+    right: -8,
+    top: -9,
+    minWidth: 24,
+    minHeight: 22,
+    borderRadius: 10,
+    backgroundColor: '#0E9AC5',
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.75)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 5,
+  },
+  poolBadgeText: { color: '#fff', fontWeight: '900', fontSize: 11 },
+  progressTick: {
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    width: 3,
+    height: 8,
+    marginLeft: -1.5,
+    marginTop: -4,
+    borderRadius: 2,
+    backgroundColor: colors.goldLight,
+  },
+  rollTimerText: {
+    position: 'absolute',
+    right: 5,
+    bottom: 2,
+    color: colors.goldLight,
+    fontSize: 9,
+    fontWeight: '900',
+  },
   boardWrap: {
     flex: 1,
     alignItems: 'center',
@@ -922,5 +1360,73 @@ const styles = StyleSheet.create({
     shadowRadius: 24,
     shadowOffset: { width: 0, height: 0 },
     elevation: 18,
+  },
+  localBarPlaceholder: { minHeight: 154 },
+  localBar: {
+    minHeight: 154,
+    paddingHorizontal: 10,
+    paddingTop: 8,
+    paddingBottom: 4,
+  },
+  localName: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '800',
+    marginBottom: 5,
+    textShadowColor: '#000',
+    textShadowRadius: 4,
+  },
+  localControls: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  quickStack: {
+    gap: 5,
+    alignItems: 'center',
+  },
+  quickButton: {
+    width: 42,
+    height: 42,
+    borderRadius: 21,
+    backgroundColor: 'rgba(255,255,255,0.20)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.12)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  quickButtonDisabled: { opacity: 0.58 },
+  gemCost: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+  },
+  gemCostText: { color: colors.text, fontWeight: '900', fontSize: 13 },
+  chatRow: {
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 8,
+  },
+  chatButton: {
+    minWidth: 96,
+    height: 39,
+    borderRadius: 16,
+    backgroundColor: 'rgba(255,255,255,0.22)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.08)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  chatButtonText: {
+    color: '#fff',
+    fontWeight: '900',
+    fontSize: 16,
+  },
+  hint: {
+    ...typography.caption,
+    color: colors.textMuted,
+    height: 18,
+    paddingHorizontal: spacing.md,
+    paddingTop: 1,
+    textAlign: 'center',
   },
 });

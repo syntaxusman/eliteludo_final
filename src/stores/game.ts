@@ -22,7 +22,12 @@ type GameStore = {
   /** Legal moves for the current player given the current dice pool. */
   validMoves: MoveOption[];
 
-  newGame: (humanColor?: Color, botCount?: number, human?: HumanProfile) => void;
+  newGame: (
+    humanColor?: Color,
+    botCount?: number,
+    human?: HumanProfile,
+    seatColors?: Color[],
+  ) => void;
   /** Load an existing game state (used for multiplayer matches loaded from DB). */
   loadGame: (state: GameState) => void;
   /** Begin the dice tumble animation. status: awaiting_roll → rolling. */
@@ -44,9 +49,9 @@ export const useGameStore = create<GameStore>((set, get) => ({
   state: makeInitialGameState('red', 3),
   validMoves: [],
 
-  newGame: (humanColor = 'red', botCount = 3, human) =>
+  newGame: (humanColor = 'red', botCount = 3, human, seatColors) =>
     set({
-      state: makeInitialGameState(humanColor, botCount, human),
+      state: makeInitialGameState(humanColor, botCount, human, seatColors),
       validMoves: [],
     }),
 

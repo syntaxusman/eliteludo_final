@@ -13,6 +13,7 @@ type Player = {
 };
 
 const COLORS: Color[] = ["red", "green", "yellow", "blue"];
+const OPPOSITE_PAIRS: [Color, Color][] = [["red", "yellow"], ["green", "blue"]];
 const cors = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -43,6 +44,28 @@ function makeBoardState(players: Player[]) {
     lastRollByColor: {},
     lastMove: null,
   };
+}
+
+function oppositeColor(color: Color): Color {
+  if (color === "red") return "yellow";
+  if (color === "yellow") return "red";
+  if (color === "green") return "blue";
+  return "green";
+}
+
+function assignRuntimeColors(playerCount: 2 | 4): Color[] {
+  if (playerCount === 2) {
+    return shuffle([...OPPOSITE_PAIRS[Math.floor(Math.random() * OPPOSITE_PAIRS.length)]]);
+  }
+  return shuffle([...COLORS]);
+}
+
+function shuffle<T>(items: T[]): T[] {
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  return items;
 }
 
 function roomCode() {
@@ -103,7 +126,8 @@ serve(async (req) => {
 
   if (mode === "private" && privateAction === "create") {
     const code = roomCode();
-    const players = [makePlayer("red", myProfile?.username ?? "Host", myProfile?.avatar_id ?? 0)];
+    const hostColor = assignRuntimeColors(2)[0];
+    const players = [makePlayer(hostColor, myProfile?.username ?? "Host", myProfile?.avatar_id ?? 0)];
     const { data: match, error } = await svc
       .from("matches")
       .insert({
@@ -111,7 +135,7 @@ serve(async (req) => {
         status: "waiting",
         room_code: code,
         host_user_id: user.id,
-        players: [{ user_id: user.id, color: "red", username: myProfile?.username, avatar_id: myProfile?.avatar_id ?? 0 }],
+        players: [{ user_id: user.id, color: hostColor, username: myProfile?.username, avatar_id: myProfile?.avatar_id ?? 0 }],
         current_turn_user_id: user.id,
         board_state: makeBoardState(players),
         entry_fee: entryFee,
@@ -141,7 +165,10 @@ serve(async (req) => {
       });
     }
     const matchPlayers = Array.isArray(match.players) ? match.players : [];
-    const color = COLORS[matchPlayers.length] ?? "green";
+    const firstColor = matchPlayers[0]?.color as Color | undefined;
+    const color = matchPlayers.length === 1 && firstColor
+      ? oppositeColor(firstColor)
+      : COLORS.find((c) => !matchPlayers.some((p: any) => p.color === c)) ?? "green";
     const nextPlayers = [
       ...matchPlayers,
       { user_id: user.id, color, username: myProfile?.username, avatar_id: myProfile?.avatar_id ?? 0 },
@@ -163,9 +190,10 @@ serve(async (req) => {
   if (botFallback) {
     await svc.from("match_queue").delete().eq("user_id", user.id).is("match_id", null);
     const target = mode === "4p" ? 4 : 2;
+    const seatColors = assignRuntimeColors(target);
     const players = [
-      makePlayer("red", myProfile?.username ?? "You", myProfile?.avatar_id ?? 0),
-      ...COLORS.slice(1, target).map((color, i) => makePlayer(color, `Bot ${i + 1}`, i + 1, true)),
+      makePlayer(seatColors[0], myProfile?.username ?? "You", myProfile?.avatar_id ?? 0),
+      ...seatColors.slice(1).map((color, i) => makePlayer(color, `Bot ${i + 1}`, i + 1, true)),
     ];
     const matchPlayers = players.map((p, i) => ({
       user_id: i === 0 ? user.id : `bot-${crypto.randomUUID()}`,
@@ -219,9 +247,10 @@ serve(async (req) => {
     .select("id, username, avatar_id")
     .in("id", userIds);
   const byId = new Map((profiles ?? []).map((p: any) => [p.id, p]));
+  const seatColors = assignRuntimeColors(targetCount);
   const matchPlayers = userIds.map((id: string, i: number) => ({
     user_id: id,
-    color: COLORS[i],
+    color: seatColors[i],
     username: byId.get(id)?.username ?? `Player ${i + 1}`,
     avatar_id: byId.get(id)?.avatar_id ?? i,
   }));
@@ -240,7 +269,19 @@ serve(async (req) => {
 
   if (matchErr || !newMatch) return new Response("Failed to create match", { status: 500, headers: cors });
 
-  await svc.from("match_queue").update({ match_id: newMatch.id }).in("user_id", userIds).is("match_id", null);
+  const { data: claimed } = await svc
+    .from("match_queue")
+    .update({ match_id: newMatch.id })
+    .in("user_id", userIds)
+    .is("match_id", null)
+    .select("user_id");
+
+  if (!claimed || claimed.length !== targetCount) {
+    await svc.from("matches").delete().eq("id", newMatch.id);
+    return new Response(JSON.stringify({ matchId: null, matched: false, reason: "queue_claim_lost" }), {
+      headers: { ...cors, "Content-Type": "application/json" },
+    });
+  }
 
   return new Response(JSON.stringify({ matchId: newMatch.id, matched: true }), {
     headers: { ...cors, "Content-Type": "application/json" },

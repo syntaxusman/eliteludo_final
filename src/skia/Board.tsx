@@ -9,6 +9,7 @@ import {
   OUTER_TRACK,
   SAFE_TRACK_INDICES,
 } from '@/src/game/board';
+import { cellForPerspective } from '@/src/game/perspective';
 import type { Color } from '@/src/game/types';
 import { COLORS as ALL_COLORS } from '@/src/game/types';
 import { colors } from '@/src/theme/colors';
@@ -16,6 +17,7 @@ import { colors } from '@/src/theme/colors';
 type Props = {
   /** Pixel size of the board (square). */
   size: number;
+  perspectiveColor?: Color;
 };
 
 const PLAYER_HEX: Record<Color, string> = {
@@ -32,7 +34,7 @@ const HOME_BASE_TL: Record<Color, { col: number; row: number }> = {
   blue: { col: 0, row: 9 },
 };
 
-export function BoardCanvas({ size }: Props) {
+export function BoardCanvas({ size, perspectiveColor = 'blue' }: Props) {
   const cell = size / BOARD_SIZE;
 
   return (
@@ -42,7 +44,7 @@ export function BoardCanvas({ size }: Props) {
 
       {/* 4 colored home bases (6x6 corners) */}
       {ALL_COLORS.map((c) => {
-        const tl = HOME_BASE_TL[c];
+        const tl = rectTopLeftForPerspective(HOME_BASE_TL[c], 6, perspectiveColor);
         return (
           <RoundedRect
             key={`home-${c}`}
@@ -58,12 +60,13 @@ export function BoardCanvas({ size }: Props) {
 
       {/* inner "circle" inside each home base (where tokens park) */}
       {ALL_COLORS.map((c) => {
-        const tl = HOME_BASE_TL[c];
+        const raw = HOME_BASE_TL[c];
+        const tl = rectTopLeftForPerspective({ col: raw.col + 1, row: raw.row + 1 }, 4, perspectiveColor);
         return (
           <RoundedRect
             key={`home-inner-${c}`}
-            x={(tl.col + 1) * cell}
-            y={(tl.row + 1) * cell}
+            x={tl.col * cell}
+            y={tl.row * cell}
             width={cell * 4}
             height={cell * 4}
             r={cell * 0.3}
@@ -74,13 +77,10 @@ export function BoardCanvas({ size }: Props) {
 
       {/* outer track cells */}
       {OUTER_TRACK.map((p, i) => (
-        <RoundedRect
+        <TrackCell
           key={`t-${i}`}
-          x={p.col * cell + 1}
-          y={p.row * cell + 1}
-          width={cell - 2}
-          height={cell - 2}
-          r={4}
+          cell={cellForPerspective(p, perspectiveColor)}
+          cellSize={cell}
           color={SAFE_TRACK_INDICES.has(i) ? withAlpha(colors.gold, 0.18) : colors.surface}
         />
       ))}
@@ -88,7 +88,7 @@ export function BoardCanvas({ size }: Props) {
       {/* color start cells get a thicker tint */}
       {ALL_COLORS.map((c) => {
         const idx = startIndexFor(c);
-        const p = OUTER_TRACK[idx];
+        const p = cellForPerspective(OUTER_TRACK[idx], perspectiveColor);
         return (
           <RoundedRect
             key={`start-${c}`}
@@ -104,17 +104,20 @@ export function BoardCanvas({ size }: Props) {
 
       {/* home columns */}
       {ALL_COLORS.map((c) =>
-        HOME_COL_CELLS[c].map((p, i) => (
-          <RoundedRect
-            key={`hc-${c}-${i}`}
-            x={p.col * cell + 1}
-            y={p.row * cell + 1}
-            width={cell - 2}
-            height={cell - 2}
-            r={4}
-            color={withAlpha(PLAYER_HEX[c], 0.4)}
-          />
-        )),
+        HOME_COL_CELLS[c].map((p, i) => {
+          const visual = cellForPerspective(p, perspectiveColor);
+          return (
+            <RoundedRect
+              key={`hc-${c}-${i}`}
+              x={visual.col * cell + 1}
+              y={visual.row * cell + 1}
+              width={cell - 2}
+              height={cell - 2}
+              r={4}
+              color={withAlpha(PLAYER_HEX[c], 0.4)}
+            />
+          );
+        }),
       )}
 
       {/* center 3x3 finish (gold diamond) */}
@@ -131,6 +134,46 @@ export function BoardCanvas({ size }: Props) {
         style="fill"
       />
     </Canvas>
+  );
+}
+
+function rectTopLeftForPerspective(
+  topLeft: { col: number; row: number },
+  sideCells: number,
+  perspectiveColor: Color,
+): { col: number; row: number } {
+  const maxOffset = sideCells - 1;
+  const corners = [
+    topLeft,
+    { col: topLeft.col + maxOffset, row: topLeft.row },
+    { col: topLeft.col, row: topLeft.row + maxOffset },
+    { col: topLeft.col + maxOffset, row: topLeft.row + maxOffset },
+  ].map((c) => cellForPerspective(c, perspectiveColor));
+
+  return {
+    col: Math.min(...corners.map((c) => c.col)),
+    row: Math.min(...corners.map((c) => c.row)),
+  };
+}
+
+function TrackCell({
+  cell,
+  cellSize,
+  color,
+}: {
+  cell: { col: number; row: number };
+  cellSize: number;
+  color: string;
+}) {
+  return (
+    <RoundedRect
+      x={cell.col * cellSize + 1}
+      y={cell.row * cellSize + 1}
+      width={cellSize - 2}
+      height={cellSize - 2}
+      r={4}
+      color={color}
+    />
   );
 }
 

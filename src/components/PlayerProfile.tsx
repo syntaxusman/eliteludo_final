@@ -4,11 +4,12 @@
 
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Image, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
 
 import { Images } from '@/src/assets';
 import { tokensFinished } from '@/src/game/rules';
 import type { Player } from '@/src/game/types';
+import { Dice } from '@/src/skia/Dice';
 import { colors } from '@/src/theme/colors';
 
 const PLAYER_HEX: Record<string, string> = {
@@ -31,11 +32,33 @@ type Props = {
   /** Most-recent die rolled by this player, or null if they haven't rolled yet. */
   lastRoll: number | null;
   align: 'left' | 'right';
+  dicePool?: number[];
+  displayRoll?: number | null;
+  isRolling?: boolean;
+  canRoll?: boolean;
+  onRoll?: () => void;
+  timerProgress?: number | null;
+  timerSeconds?: number | null;
 };
 
-export function PlayerProfile({ player, isActive, lastRoll, align }: Props) {
+export function PlayerProfile({
+  player,
+  isActive,
+  lastRoll,
+  align,
+  dicePool = [],
+  displayRoll = null,
+  isRolling = false,
+  canRoll = false,
+  onRoll,
+  timerProgress = null,
+  timerSeconds = null,
+}: Props) {
   const tint = PLAYER_HEX[player.color];
   const finished = tokensFinished(player);
+  const showActiveDice = isActive;
+  const smallDice = showActiveDice ? dicePool : [];
+  const activeDieValue = displayRoll ?? dicePool[dicePool.length - 1] ?? lastRoll;
 
   return (
     <View
@@ -83,10 +106,85 @@ export function PlayerProfile({ player, isActive, lastRoll, align }: Props) {
         </Text>
       </View>
 
-      <MiniDie value={lastRoll} faded={!isActive} tint={tint} />
+      {showActiveDice ? (
+        <ActiveDice
+          value={activeDieValue}
+          smallDice={smallDice}
+          rolling={isRolling}
+          canRoll={canRoll}
+          align={align}
+          onRoll={onRoll}
+          timerProgress={timerProgress}
+          timerSeconds={timerSeconds}
+        />
+      ) : (
+        <MiniDie value={lastRoll} faded={!isActive} tint={tint} />
+      )}
       {isActive && (
         <View style={styles.activeCrown}>
           <Ionicons name="diamond" size={8} color={colors.bg} />
+        </View>
+      )}
+    </View>
+  );
+}
+
+function ActiveDice({
+  value,
+  smallDice,
+  rolling,
+  canRoll,
+  align,
+  onRoll,
+  timerProgress,
+  timerSeconds,
+}: {
+  value: number | null;
+  smallDice: number[];
+  rolling: boolean;
+  canRoll: boolean;
+  align: 'left' | 'right';
+  onRoll?: () => void;
+  timerProgress: number | null;
+  timerSeconds: number | null;
+}) {
+  const showTimer = timerProgress !== null && timerSeconds !== null;
+  return (
+    <View style={[styles.activeDiceWrap, align === 'right' && styles.activeDiceRight]}>
+      <View style={styles.diceLine}>
+        <View style={styles.bigDie}>
+          <Dice size={42} value={rolling ? null : value} rolling={rolling} />
+        </View>
+        {smallDice.length > 0 && (
+          <View style={styles.smallDiceStack}>
+            {smallDice.slice(0, 3).map((die, index) => (
+              <View key={`${die}-${index}`} style={styles.poolDie}>
+                <Text style={styles.poolDieText}>{die}</Text>
+              </View>
+            ))}
+          </View>
+        )}
+      </View>
+      <Pressable
+        onPress={onRoll}
+        disabled={!canRoll || rolling}
+        style={({ pressed }) => [
+          styles.rollButton,
+          (!canRoll || rolling) && styles.rollButtonDisabled,
+          pressed && canRoll && !rolling && { transform: [{ scale: 0.96 }] },
+        ]}
+      >
+        <Text style={styles.rollButtonText}>{smallDice.length > 0 ? 'AGAIN' : 'ROLL'}</Text>
+      </Pressable>
+      {showTimer && (
+        <View style={styles.timerTrack}>
+          <View
+            style={[
+              styles.timerFill,
+              { width: `${Math.max(0, Math.min(1, timerProgress)) * 100}%` },
+            ]}
+          />
+          <Text style={styles.timerText}>{timerSeconds}s</Text>
         </View>
       )}
     </View>
@@ -119,7 +217,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    minHeight: 70,
+    minHeight: 78,
     borderRadius: 12,
     borderWidth: 1,
     borderColor: '#7A5428',
@@ -217,6 +315,86 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   dieText: { color: '#190B02', fontWeight: '900', fontSize: 14 },
+  activeDiceWrap: {
+    width: 86,
+    alignItems: 'center',
+    gap: 4,
+  },
+  activeDiceRight: {
+    alignItems: 'center',
+  },
+  diceLine: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    minHeight: 44,
+  },
+  bigDie: {
+    width: 48,
+    height: 48,
+    borderRadius: 12,
+    backgroundColor: '#180904',
+    borderWidth: 1.5,
+    borderColor: colors.goldDark,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  smallDiceStack: {
+    gap: 3,
+    maxHeight: 48,
+    justifyContent: 'center',
+  },
+  poolDie: {
+    width: 20,
+    height: 20,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#5B2A16',
+    backgroundColor: '#F5D96E',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  poolDieText: { color: '#190B02', fontWeight: '900', fontSize: 10 },
+  rollButton: {
+    minWidth: 58,
+    height: 24,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.gold,
+    backgroundColor: '#2A1207',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 7,
+  },
+  rollButtonDisabled: {
+    opacity: 0.38,
+  },
+  rollButtonText: {
+    color: '#FFF2B0',
+    fontWeight: '900',
+    fontSize: 10,
+    letterSpacing: 0.8,
+  },
+  timerTrack: {
+    width: 72,
+    height: 4,
+    borderRadius: 999,
+    backgroundColor: 'rgba(255,255,255,0.12)',
+    overflow: 'hidden',
+  },
+  timerFill: {
+    height: '100%',
+    borderRadius: 999,
+    backgroundColor: colors.goldLight,
+  },
+  timerText: {
+    position: 'absolute',
+    right: 0,
+    bottom: 3,
+    color: colors.goldLight,
+    fontSize: 8,
+    fontWeight: '900',
+  },
   activeCrown: {
     position: 'absolute',
     top: -1,

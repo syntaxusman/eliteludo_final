@@ -135,25 +135,6 @@ export async function getMatch(matchId: string): Promise<MatchRow | null> {
   return data as MatchRow;
 }
 
-export async function pushBoardState(
-  matchId: string,
-  boardState: MatchBoardState,
-  nextTurnUserId: string | null,
-): Promise<boolean> {
-  const { data, error } = await supabase.functions.invoke<{ success?: boolean; reason?: string }>('sync-board-state', {
-    body: { matchId, boardState, nextTurnUserId },
-  });
-  if (error) {
-    console.warn('[matches] sync-board-state error:', error.message);
-    return false;
-  }
-  if (data?.success === false) {
-    console.warn('[matches] sync-board-state skipped:', data.reason ?? 'unknown');
-    return false;
-  }
-  return data?.success === true;
-}
-
 // ── Server dice roll ──────────────────────────────────────────────────────────
 
 export async function rollDiceServer(

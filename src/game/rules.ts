@@ -53,8 +53,9 @@ export function makeInitialGameState(
   humanColor: Color = 'red',
   botCount = 3,
   human?: HumanProfile,
+  seatColors?: Color[],
 ): GameState {
-  const seats = [
+  const seats = seatColors ?? [
     humanColor,
     ...COLORS.filter((color) => color !== humanColor).slice(0, botCount),
   ];
@@ -110,7 +111,7 @@ export function addRoll(state: GameState, value: number): GameState {
     ...state,
     dicePool: [...state.dicePool, value],
     consecutiveSixes: sixes,
-    status: isSix ? 'awaiting_roll' : 'awaiting_move',
+    status: 'awaiting_move',
     lastRollByColor,
   };
 }
@@ -234,7 +235,7 @@ export function applyMove(state: GameState, move: MoveOption): GameState {
     dicePool: removeOne(state.dicePool, move.dieValue),
     winnerColor: won ? movedPlayer.color : state.winnerColor,
     status: 'animating',
-    consecutiveSixes: 0,
+    consecutiveSixes: move.dieValue === 6 ? state.consecutiveSixes : 0,
     lastMove: move,
   };
 }
@@ -248,7 +249,11 @@ export function applyMove(state: GameState, move: MoveOption): GameState {
  */
 export function finishMove(state: GameState): GameState {
   const move = state.lastMove;
-  const earnedBonusRoll = !!move && (move.captures.length > 0 || move.to.kind === 'finished');
+  const earnedBonusRoll = !!move && (
+    move.dieValue === 6 ||
+    move.captures.length > 0 ||
+    move.to.kind === 'finished'
+  );
   const cleared = { ...state, lastMove: null };
   if (cleared.winnerColor) return { ...cleared, status: 'finished' };
   if (cleared.dicePool.length > 0) {

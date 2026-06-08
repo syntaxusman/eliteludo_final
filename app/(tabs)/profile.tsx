@@ -6,7 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 
 import { Images } from '@/src/assets';
-import { getAvatar, getTokenColor } from '@/src/constants/profile';
+import { getAvatar } from '@/src/constants/profile';
 import { useProfileStore } from '@/src/stores/profile';
 import { useWalletStore } from '@/src/stores/wallet';
 import { colors } from '@/src/theme/colors';
@@ -38,7 +38,6 @@ export default function ProfileScreen() {
     rank: wins >= 25 ? 'Elite' : wins >= 10 ? 'Gold' : 'Bronze',
   };
   const avatar = getAvatar(profile?.avatarId);
-  const tokenColor = getTokenColor(profile?.colorId);
   const displayName = profile?.username ?? 'Player';
 
   return (
@@ -89,11 +88,7 @@ export default function ProfileScreen() {
               <Text style={styles.rankText}>{stats.rank} Rank</Text>
             </LinearGradient>
 
-            {/* Token color */}
-            <View style={styles.metaRow}>
-              <View style={[styles.tokenDot, { backgroundColor: tokenColor.value }]} />
-              <Text style={styles.metaText}>{tokenColor.label} tokens</Text>
-            </View>
+            <Text style={styles.metaText}>Runtime match colors</Text>
           </LinearGradient>
         </Animated.View>
 
@@ -147,7 +142,7 @@ export default function ProfileScreen() {
 
         {!profile && hydrated && (
           <Text style={styles.hint}>
-            Tip: tap Edit Profile to set your username, avatar, and token color.
+            Tip: tap Edit Profile to set your username and avatar.
           </Text>
         )}
       </ScrollView>

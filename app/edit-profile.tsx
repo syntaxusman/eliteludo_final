@@ -19,9 +19,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Images } from '@/src/assets';
 import {
   AVATARS,
-  TOKEN_COLORS,
   USERNAME_MAX,
-  type TokenColorId,
   isUsernameValid,
   validateUsername,
 } from '@/src/constants/profile';
@@ -37,7 +35,6 @@ export default function EditProfileScreen() {
 
   const [username, setUsername] = useState(profile?.username ?? '');
   const [avatarId, setAvatarId] = useState<number>(profile?.avatarId ?? 0);
-  const [colorId, setColorId] = useState<TokenColorId>(profile?.colorId ?? 'red');
 
   const usernameError = validateUsername(username);
   const usernameOk = isUsernameValid(username);
@@ -45,15 +42,14 @@ export default function EditProfileScreen() {
   const dirty =
     !profile ||
     username.trim() !== profile.username ||
-    avatarId !== profile.avatarId ||
-    colorId !== profile.colorId;
+    avatarId !== profile.avatarId;
 
   const canSave = usernameOk && dirty;
 
   const onSave = async () => {
     if (!canSave) return;
     haptics.success();
-    await setProfile({ username: username.trim(), avatarId, colorId });
+    await setProfile({ username: username.trim(), avatarId });
     router.back();
   };
 
@@ -148,38 +144,6 @@ export default function EditProfileScreen() {
                         <Ionicons name="checkmark" size={12} color={colors.bg} />
                       </View>
                     )}
-                  </Pressable>
-                );
-              })}
-            </View>
-          </Animated.View>
-
-          <Animated.View entering={FadeInDown.delay(150).duration(300)} style={styles.section}>
-            <Text style={styles.sectionLabel}>TOKEN COLOR</Text>
-            <View style={styles.colorRow}>
-              {TOKEN_COLORS.map((c) => {
-                const selected = colorId === c.id;
-                return (
-                  <Pressable
-                    key={c.id}
-                    onPress={() => {
-                      haptics.tap();
-                      setColorId(c.id);
-                    }}
-                    style={styles.colorTile}
-                  >
-                    <View
-                      style={[
-                        styles.colorSwatch,
-                        { backgroundColor: c.value },
-                        selected && styles.colorSwatchSelected,
-                      ]}
-                    >
-                      {selected && <Ionicons name="checkmark" size={22} color={colors.white} />}
-                    </View>
-                    <Text style={[styles.colorLabel, selected && styles.colorLabelSelected]}>
-                      {c.label}
-                    </Text>
                   </Pressable>
                 );
               })}

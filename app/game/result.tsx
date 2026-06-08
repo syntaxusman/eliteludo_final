@@ -30,9 +30,8 @@ export default function ResultScreen() {
     citySlug?: string;
     humanColor?: Color;
   }>();
-  const profile = useProfileStore((s) => s.profile);
   const hydrateProfile = useProfileStore((s) => s.hydrate);
-  const playerColor = humanColor || profile?.colorId || 'red';
+  const playerColor = humanColor || 'red';
   const isHumanWin = winner === playerColor;
   const refreshWallet = useWalletStore((s) => s.refresh);
   const refreshProfile = useProfileStore((s) => s.refresh);

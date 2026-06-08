@@ -137,7 +137,7 @@ function advanceToNextPlayer(state: GameState): GameState {
     ...state,
     currentPlayerIdx: nextIdx,
     dicePool: [],
-    consecutiveSixes: 0,
+    consecutiveSixes: move.dieValue === 6 ? state.consecutiveSixes : 0,
     status: "awaiting_roll",
     lastMove: null,
   };
@@ -173,7 +173,11 @@ function applyMove(state: GameState, move: MoveOption): GameState {
 
 function finishMove(state: GameState): GameState {
   const move = state.lastMove;
-  const earnedBonusRoll = !!move && (move.captures.length > 0 || move.to.kind === "finished");
+  const earnedBonusRoll = !!move && (
+    move.dieValue === 6 ||
+    move.captures.length > 0 ||
+    move.to.kind === "finished"
+  );
   const cleared = { ...state, lastMove: null };
   if (cleared.winnerColor) return { ...cleared, status: "finished" };
   if (cleared.dicePool.length > 0) {
