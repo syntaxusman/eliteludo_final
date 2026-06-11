@@ -29,7 +29,12 @@ function EliteTabBar({ state }: BottomTabBarProps) {
           <Pressable
             key={item.key}
             onPress={() => router.push(item.route as never)}
-            style={[styles.tabItem, isPrimary && styles.homeItem]}
+            style={({ pressed }) => [
+              styles.tabItem,
+              isPrimary && styles.homeItem,
+              focused && !isPrimary && styles.tabItemFocused,
+              pressed && styles.tabItemPressed,
+            ]}
           >
             <View style={[styles.iconPlate, isPrimary && styles.homePlate]}>
               <View style={[styles.sparkle, styles.sparkleTop, focused && styles.sparkleActive]} />
@@ -110,8 +115,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
+  tabItemFocused: {
+    transform: [{ scale: 1.06 }],
+  },
+  tabItemPressed: {
+    transform: [{ scale: 1.12 }],
+  },
   homeItem: {
     height: 104,
+    transform: [{ scale: 1.04 }],
   },
   iconPlate: {
     width: 58,

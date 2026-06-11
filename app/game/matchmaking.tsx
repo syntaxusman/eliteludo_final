@@ -84,6 +84,9 @@ export default function MatchmakingScreen() {
   const unsubscribeQueueRef = useRef<(() => void) | null>(null);
   const queueStartedRef = useRef(false);
   const entryDeductedRef = useRef(false);
+  const goHome = useCallback(() => {
+    router.replace('/(tabs)/home');
+  }, [router]);
 
   const navigate = useCallback((matchId: string) => {
     if (navigatedRef.current) return;
@@ -131,7 +134,7 @@ export default function MatchmakingScreen() {
             'Not enough coins',
             `This table needs ${required.toLocaleString()} coins. Your current balance is ${current.toLocaleString()}.`,
           );
-          router.back();
+          goHome();
           return;
         }
         entryDeductedRef.current = true;
@@ -164,7 +167,7 @@ export default function MatchmakingScreen() {
 
     startQueue().catch(() => {
       Alert.alert('Matchmaking failed', 'Please try again.');
-      router.back();
+      goHome();
     });
 
     return () => {
@@ -172,7 +175,7 @@ export default function MatchmakingScreen() {
       clearTimeout(fallbackRef.current!);
       unsubscribeQueueRef.current?.();
     };
-  }, [citySlug, fee, navigate, pulseScale, queueMode, refreshWallet, router]);
+  }, [citySlug, fee, goHome, navigate, pulseScale, queueMode, refreshWallet, router]);
 
   const pulseStyle = useAnimatedStyle(() => ({
     transform: [{ scale: pulseScale.value }],
@@ -205,7 +208,7 @@ export default function MatchmakingScreen() {
               await cancelMatchmaking({ entryFee: fee, mode: queueMode });
               await refreshWallet();
             }
-            router.back();
+            goHome();
           }}
           style={styles.backBtn}
           hitSlop={8}
@@ -306,7 +309,7 @@ export default function MatchmakingScreen() {
               await cancelMatchmaking({ entryFee: fee, mode: queueMode });
               await refreshWallet();
             }
-            router.back();
+            goHome();
           }}
           style={({ pressed }) => [styles.cancelBtn, pressed && { opacity: 0.7 }]}
         >

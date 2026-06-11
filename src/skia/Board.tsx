@@ -40,7 +40,7 @@ export function BoardCanvas({ size, perspectiveColor = 'blue' }: Props) {
   return (
     <Canvas style={{ width: size, height: size }}>
       {/* board background */}
-      <Rect x={0} y={0} width={size} height={size} color={colors.bgElevated} />
+      <Rect x={0} y={0} width={size} height={size} color="rgba(24, 18, 28, 0.78)" />
 
       {/* 4 colored home bases (6x6 corners) */}
       {ALL_COLORS.map((c) => {

@@ -12,6 +12,7 @@ import {
   Alert,
   Image,
   ImageBackground,
+  Modal,
   Platform,
   Pressable,
   StyleSheet,
@@ -60,6 +61,20 @@ const PLAYER_HEX: Record<Color, string> = {
   blue: colors.blue,
 };
 
+const CITY_BACKGROUNDS: Record<string, ImageSourcePropType> = {
+  newdelhi: Images.cityNewDelhi,
+  london: Images.cityLondon,
+  istanbul: Images.cityIstanbul,
+  dubai: Images.cityDubai,
+  doha: Images.cityDoha,
+  singapore: Images.citySingapore,
+  tokyo: Images.cityTokyo,
+  paris: Images.cityParis,
+  rome: Images.cityRome,
+  berlin: Images.cityBerlin,
+  brazil: Images.cityBrazil,
+};
+
 const THINK_MS = 700;
 const ROLL_ANIM_MS = 360;
 const MP_ROLL_SETTLE_MS = 120;
@@ -99,6 +114,7 @@ export default function GameScreen() {
   const [bursts, setBursts] = useState<Burst[]>([]);
   const [rollTimerRemaining, setRollTimerRemaining] = useState(ROLL_TIMEOUT_MS);
   const [statsPlayer, setStatsPlayer] = useState<Player | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const profile = useProfileStore((s) => s.profile);
   const hydrateProfile = useProfileStore((s) => s.hydrate);
@@ -236,7 +252,7 @@ export default function GameScreen() {
   }, [isSoloMatchId, botBackedMatch, matchId, myColor, loadGame, shouldHydrateRemoteBoard]);
 
   const currentPlayer: Player | undefined = state.players[state.currentPlayerIdx];
-  const perspectiveColor = getPerspectiveColor(state, isLocalBotGame, myColor);
+  const perspectiveColor = getPerspectiveColor(state, myColor);
 
   const isMyTurn = isLocalBotGame
     ? !!currentPlayer && !currentPlayer.isAI
@@ -528,28 +544,18 @@ export default function GameScreen() {
     if (leavingRef.current) return;
     leavingRef.current = true;
     haptics.tap();
+    setMenuOpen(false);
 
     if (!isLocalBotGame && matchId && !state.winnerColor) {
       await forfeitMatch(matchId);
     }
 
-    router.back();
+    router.replace('/(tabs)/home');
   }
 
   function onExitPress() {
-    if (isLocalBotGame || state.winnerColor) {
-      leaveMatch();
-      return;
-    }
-
-    Alert.alert(
-      'Leave match?',
-      'Leaving gives the win to your opponent.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Leave', style: 'destructive', onPress: leaveMatch },
-      ],
-    );
+    haptics.tap();
+    setMenuOpen(true);
   }
 
   const allTokens = useMemo(
@@ -613,6 +619,7 @@ export default function GameScreen() {
     timerProgress,
     timerSeconds,
   };
+  const cityBoardSource = typeof citySlug === 'string' && citySlug ? CITY_BACKGROUNDS[citySlug] : undefined;
 
   if (!currentPlayer) return null;
 
@@ -652,7 +659,15 @@ export default function GameScreen() {
 
       <View style={styles.boardWrap}>
         <View style={[styles.boardSquare, { width: boardSize, height: boardSize }]}>
-          <BoardCanvas size={boardSize} perspectiveColor={perspectiveColor} />
+          <ImageBackground
+            source={cityBoardSource ?? Images.bgHome}
+            style={StyleSheet.absoluteFill}
+            imageStyle={styles.boardCityImage}
+            resizeMode="cover"
+          >
+            <View style={styles.boardCityTint} />
+            <BoardCanvas size={boardSize} perspectiveColor={perspectiveColor} />
+          </ImageBackground>
           <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
             {allTokens.map((t) => {
               const cell = cellForPerspective(cellForToken(t), perspectiveColor);
@@ -709,7 +724,53 @@ export default function GameScreen() {
           onClose={() => setStatsPlayer(null)}
         />
       )}
+      <GameMenuModal
+        visible={menuOpen}
+        online={!isLocalBotGame && !state.winnerColor}
+        onResume={() => setMenuOpen(false)}
+        onQuit={leaveMatch}
+      />
     </SafeAreaView>
+  );
+}
+
+function GameMenuModal({
+  visible,
+  online,
+  onResume,
+  onQuit,
+}: {
+  visible: boolean;
+  online: boolean;
+  onResume: () => void;
+  onQuit: () => void;
+}) {
+  return (
+    <Modal visible={visible} transparent animationType="fade" onRequestClose={onResume}>
+      <View style={styles.menuOverlay}>
+        <Pressable style={StyleSheet.absoluteFill} onPress={onResume} />
+        <View style={styles.menuCard}>
+          <Text style={styles.menuTitle}>Game Menu</Text>
+          <Text style={styles.menuSubtitle}>
+            {online ? 'Leaving gives the win to your opponent.' : 'Pause or leave this table.'}
+          </Text>
+          <Pressable
+            onPress={onResume}
+            style={({ pressed }) => [styles.menuButton, pressed && styles.menuButtonPressed]}
+          >
+            <Ionicons name="play" size={20} color={colors.bg} />
+            <Text style={styles.menuButtonText}>RESUME</Text>
+          </Pressable>
+          <Pressable
+            onPress={onQuit}
+            style={({ pressed }) => [styles.menuQuitButton, pressed && styles.menuButtonPressed]}
+          >
+            <Ionicons name="exit-outline" size={20} color="#fff" />
+            <Text style={styles.menuQuitText}>QUIT GAME</Text>
+          </Pressable>
+        </View>
+      </View>
+    </Modal>
   );
 }
 
@@ -1088,10 +1149,9 @@ function hopsForMove(from: { kind: string }, dieValue: number): number {
 
 function getPerspectiveColor(
   state: ReturnType<typeof useGameStore.getState>['state'],
-  isLocalBotGame: boolean,
   myColor: Color | null,
 ): Color {
-  if (!isLocalBotGame && myColor) return myColor;
+  if (myColor) return myColor;
   return state.players.find((p) => !p.isAI)?.color ?? state.players[0]?.color ?? 'blue';
 }
 
@@ -1451,11 +1511,20 @@ const styles = StyleSheet.create({
   },
   boardSquare: {
     position: 'relative',
+    overflow: 'hidden',
+    borderRadius: 18,
     shadowColor: colors.gold,
     shadowOpacity: 0.42,
     shadowRadius: 24,
     shadowOffset: { width: 0, height: 0 },
     elevation: 18,
+  },
+  boardCityImage: {
+    opacity: 0.6,
+  },
+  boardCityTint: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(20,8,24,0.38)',
   },
   localBarPlaceholder: { minHeight: 154 },
   localBar: {
@@ -1527,6 +1596,84 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 18,
     backgroundColor: 'rgba(0,0,0,0.68)',
+  },
+  menuOverlay: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 24,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+  },
+  menuCard: {
+    width: '100%',
+    maxWidth: 360,
+    borderRadius: 18,
+    borderWidth: 2,
+    borderColor: 'rgba(212,175,55,0.55)',
+    backgroundColor: 'rgba(29,9,31,0.97)',
+    padding: 18,
+    shadowColor: '#000',
+    shadowOpacity: 0.55,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 20,
+  },
+  menuTitle: {
+    color: colors.goldLight,
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
+    fontSize: 24,
+    letterSpacing: 1,
+    textAlign: 'center',
+  },
+  menuSubtitle: {
+    color: 'rgba(255,255,255,0.62)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
+    fontSize: 13,
+    lineHeight: 19,
+    textAlign: 'center',
+    marginTop: 6,
+    marginBottom: 18,
+  },
+  menuButton: {
+    height: 50,
+    borderRadius: 14,
+    backgroundColor: colors.gold,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    marginBottom: 10,
+  },
+  menuQuitButton: {
+    height: 50,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.16)',
+    backgroundColor: 'rgba(226,87,76,0.24)',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  menuButtonPressed: {
+    transform: [{ scale: 0.97 }],
+    opacity: 0.86,
+  },
+  menuButtonText: {
+    color: colors.bg,
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
+    fontSize: 15,
+    letterSpacing: 1.5,
+  },
+  menuQuitText: {
+    color: '#fff',
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
+    fontSize: 15,
+    letterSpacing: 1.5,
   },
   statsCard: {
     width: '100%',
