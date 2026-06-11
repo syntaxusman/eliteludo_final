@@ -9,6 +9,7 @@ import { createPrivateRoom, joinPrivateRoom } from '@/src/supabase/matches';
 import { deductEntryFee } from '@/src/supabase/transactions';
 import { useWalletStore } from '@/src/stores/wallet';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 const PRIVATE_ENTRY_FEE = 250;
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'rgba(212,175,55,0.1)',
   },
-  title: { color: colors.gold, fontSize: 22, fontWeight: '900', letterSpacing: 1 },
+  title: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 22, letterSpacing: 1 },
   body: { flex: 1, padding: 20, justifyContent: 'center', gap: 18 },
   createBtn: {
     height: 58,
@@ -138,9 +139,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 10,
   },
-  createText: { color: colors.bg, fontWeight: '900', fontSize: 17 },
+  createText: { color: colors.bg, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 17 },
   divider: { height: 1, backgroundColor: 'rgba(212,175,55,0.16)', marginVertical: 8 },
-  label: { color: colors.gold, fontWeight: '900', letterSpacing: 1 },
+  label: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400', letterSpacing: 1 },
   inputWrap: {
     minHeight: 58,
     borderRadius: 16,
@@ -152,8 +153,8 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     overflow: 'hidden',
   },
-  input: { flex: 1, color: '#fff', fontSize: 20, fontWeight: '900', letterSpacing: 3 },
+  input: { flex: 1, color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 20, letterSpacing: 3 },
   joinBtn: { alignSelf: 'stretch', paddingHorizontal: 22, justifyContent: 'center', backgroundColor: colors.gold },
-  joinText: { color: colors.bg, fontWeight: '900' },
-  note: { color: 'rgba(255,255,255,0.45)', lineHeight: 20, textAlign: 'center' },
+  joinText: { color: colors.bg, fontFamily: fontFamilies.heading, fontWeight: '400' },
+  note: { color: 'rgba(255,255,255,0.45)', fontFamily: fontFamilies.body, fontWeight: '400', lineHeight: 20, textAlign: 'center' },
 });

@@ -51,7 +51,7 @@ import { useProfileStore } from '@/src/stores/profile';
 import type { Profile } from '@/src/stores/profile';
 import { chooseMove, useGameStore } from '@/src/stores/game';
 import { colors } from '@/src/theme/colors';
-import { spacing, typography } from '@/src/theme/typography';
+import { fontFamilies, spacing, typography } from '@/src/theme/typography';
 
 const PLAYER_HEX: Record<Color, string> = {
   red: colors.red,
@@ -1230,8 +1230,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 7,
     color: colors.text,
+    fontFamily: fontFamilies.heading,
     fontSize: 8,
-    fontWeight: '900',
+    fontWeight: '400',
     letterSpacing: 0.2,
   },
   hudBadge: {
@@ -1247,7 +1248,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  hudBadgeText: { color: '#fff', fontSize: 12, fontWeight: '900' },
+  hudBadgeText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 12 },
   resources: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -1271,7 +1272,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255,255,255,0.08)',
   },
   resourceImage: { width: 22, height: 22 },
-  resourceText: { color: colors.text, fontSize: 14, fontWeight: '900' },
+  resourceText: { color: colors.text, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 14 },
   plusBadge: {
     position: 'absolute',
     left: 18,
@@ -1292,8 +1293,9 @@ const styles = StyleSheet.create({
     bottom: -16,
     textAlign: 'center',
     color: 'rgba(255,255,255,0.38)',
+    fontFamily: fontFamilies.heading,
     fontSize: 10,
-    fontWeight: '900',
+    fontWeight: '400',
     letterSpacing: 1.5,
   },
   opponentLayer: {
@@ -1311,8 +1313,9 @@ const styles = StyleSheet.create({
     marginTop: 4,
     maxWidth: 150,
     color: '#fff',
+    fontFamily: fontFamilies.heading,
     fontSize: 15,
-    fontWeight: '800',
+    fontWeight: '400',
     textShadowColor: '#000',
     textShadowRadius: 4,
   },
@@ -1335,7 +1338,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  miniDieText: { color: '#1E1E24', fontWeight: '900', fontSize: 12 },
+  miniDieText: { color: '#1E1E24', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 12 },
   avatarShell: {
     padding: 3,
     borderWidth: 3,
@@ -1419,7 +1422,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 5,
   },
-  poolBadgeText: { color: '#fff', fontWeight: '900', fontSize: 11 },
+  poolBadgeText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 11 },
   progressTick: {
     position: 'absolute',
     left: '50%',
@@ -1436,8 +1439,9 @@ const styles = StyleSheet.create({
     right: 5,
     bottom: 2,
     color: colors.goldLight,
+    fontFamily: fontFamilies.heading,
     fontSize: 9,
-    fontWeight: '900',
+    fontWeight: '400',
   },
   boardWrap: {
     flex: 1,
@@ -1462,8 +1466,9 @@ const styles = StyleSheet.create({
   },
   localName: {
     color: '#fff',
+    fontFamily: fontFamilies.heading,
     fontSize: 16,
-    fontWeight: '800',
+    fontWeight: '400',
     marginBottom: 5,
     textShadowColor: '#000',
     textShadowRadius: 4,
@@ -1492,7 +1497,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 3,
   },
-  gemCostText: { color: colors.text, fontWeight: '900', fontSize: 13 },
+  gemCostText: { color: colors.text, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 13 },
   chatRow: {
     flexDirection: 'row',
     gap: 8,
@@ -1510,7 +1515,8 @@ const styles = StyleSheet.create({
   },
   chatButtonText: {
     color: '#fff',
-    fontWeight: '900',
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
     fontSize: 16,
   },
   modalOverlay: {
@@ -1572,8 +1578,9 @@ const styles = StyleSheet.create({
   },
   statsName: {
     color: '#fff',
+    fontFamily: fontFamilies.heading,
     fontSize: 21,
-    fontWeight: '900',
+    fontWeight: '400',
   },
   countryRow: {
     marginTop: 7,
@@ -1589,14 +1596,16 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     color: '#fff',
     backgroundColor: '#0A7B36',
+    fontFamily: fontFamilies.heading,
     fontSize: 11,
-    fontWeight: '900',
+    fontWeight: '400',
     textAlign: 'center',
   },
   countryText: {
     color: colors.text,
+    fontFamily: fontFamilies.heading,
     fontSize: 14,
-    fontWeight: '900',
+    fontWeight: '400',
     textTransform: 'uppercase',
   },
   statsColorDot: {
@@ -1624,8 +1633,9 @@ const styles = StyleSheet.create({
   featureText: {
     marginTop: 7,
     color: colors.goldLight,
+    fontFamily: fontFamilies.heading,
     fontSize: 20,
-    fontWeight: '900',
+    fontWeight: '400',
     textAlign: 'center',
   },
   statsGrid: {
@@ -1651,14 +1661,16 @@ const styles = StyleSheet.create({
   },
   statLabel: {
     color: 'rgba(255,255,255,0.72)',
+    fontFamily: fontFamilies.body,
     fontSize: 12,
-    fontWeight: '800',
+    fontWeight: '400',
   },
   statValue: {
     marginTop: 3,
     color: '#fff',
+    fontFamily: fontFamilies.heading,
     fontSize: 17,
-    fontWeight: '900',
+    fontWeight: '400',
   },
   statsFooter: {
     marginTop: 14,
@@ -1696,8 +1708,9 @@ const styles = StyleSheet.create({
   },
   muteText: {
     color: '#143400',
+    fontFamily: fontFamilies.heading,
     fontSize: 16,
-    fontWeight: '900',
+    fontWeight: '400',
   },
   hint: {
     ...typography.caption,

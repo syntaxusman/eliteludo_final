@@ -18,6 +18,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/src/stores/auth';
 import { useSettingsStore } from '@/src/stores/settings';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 
 const { width: SCREEN_W } = Dimensions.get('window');
 const BAR_W = SCREEN_W - 80;
@@ -160,8 +161,9 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   logoElite: {
+    fontFamily: fontFamilies.heading,
     fontSize: 58,
-    fontWeight: '900',
+    fontWeight: '400',
     color: colors.gold,
     letterSpacing: 14,
     textShadowColor: 'rgba(212,175,55,0.9)',
@@ -177,8 +179,9 @@ const styles = StyleSheet.create({
     marginVertical: 6,
   },
   logoLudo: {
+    fontFamily: fontFamilies.heading,
     fontSize: 34,
-    fontWeight: '200',
+    fontWeight: '400',
     color: colors.goldLight,
     letterSpacing: 18,
     textShadowColor: 'rgba(212,175,55,0.6)',
@@ -186,8 +189,9 @@ const styles = StyleSheet.create({
     textShadowRadius: 16,
   },
   logoTagline: {
+    fontFamily: fontFamilies.heading,
     fontSize: 10,
-    fontWeight: '600',
+    fontWeight: '400',
     color: 'rgba(212,175,55,0.45)',
     letterSpacing: 5,
     marginTop: 14,
@@ -201,6 +205,7 @@ const styles = StyleSheet.create({
   },
   tipText: {
     color: 'rgba(255,255,255,0.45)',
+    fontFamily: fontFamilies.body,
     fontSize: 13,
     fontWeight: '400',
     letterSpacing: 0.3,
@@ -230,6 +235,8 @@ const styles = StyleSheet.create({
   },
   edition: {
     color: 'rgba(255,255,255,0.15)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 10,
     letterSpacing: 2,
   },

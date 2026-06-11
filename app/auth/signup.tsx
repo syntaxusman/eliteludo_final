@@ -20,7 +20,7 @@ import { Images } from '@/src/assets';
 import { supabase } from '@/src/supabase/client';
 import { getSupabaseErrorMessage } from '@/src/supabase/errors';
 import { colors } from '@/src/theme/colors';
-import { spacing, typography } from '@/src/theme/typography';
+import { fontFamilies, spacing, typography } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 export default function SignupScreen() {
@@ -60,7 +60,7 @@ export default function SignupScreen() {
             <Text style={styles.confirmTitle}>Check your inbox</Text>
             <Text style={styles.confirmBody}>
               We sent a confirmation link to{' '}
-              <Text style={{ color: colors.gold, fontWeight: '600' }}>{email.trim()}</Text>
+              <Text style={{ color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400' }}>{email.trim()}</Text>
               {'. '}Tap it, then come back and sign in.
             </Text>
             <Pressable
@@ -218,8 +218,9 @@ const styles = StyleSheet.create({
   },
   brandWrap: { alignItems: 'center', marginBottom: 28, marginTop: 16 },
   brandElite: {
+    fontFamily: fontFamilies.heading,
     fontSize: 44,
-    fontWeight: '900',
+    fontWeight: '400',
     color: colors.gold,
     letterSpacing: 10,
     textShadowColor: 'rgba(212,175,55,0.8)',
@@ -231,8 +232,9 @@ const styles = StyleSheet.create({
     width: 48, height: 1.5, backgroundColor: colors.gold, opacity: 0.6, marginVertical: 4,
   },
   brandLudo: {
+    fontFamily: fontFamilies.heading,
     fontSize: 28,
-    fontWeight: '300',
+    fontWeight: '400',
     color: colors.goldLight,
     letterSpacing: 12,
     textShadowColor: 'rgba(212,175,55,0.5)',
@@ -240,7 +242,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   brandTagline: {
-    fontSize: 10, fontWeight: '600', color: 'rgba(212,175,55,0.55)', letterSpacing: 4, marginTop: 8,
+    fontFamily: fontFamilies.heading, fontSize: 10, fontWeight: '400', color: 'rgba(212,175,55,0.55)', letterSpacing: 4, marginTop: 8,
   },
   card: {
     borderRadius: 20,
@@ -250,8 +252,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   cardTopBorder: { position: 'absolute', top: 0, left: 0, right: 0, height: 2 },
-  cardTitle: { fontSize: 22, fontWeight: '800', color: colors.text, marginBottom: 4 },
-  cardSubtitle: { fontSize: 14, color: colors.textMuted, marginBottom: 20 },
+  cardTitle: { fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 22, color: colors.text, marginBottom: 4 },
+  cardSubtitle: { fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 14, color: colors.textMuted, marginBottom: 20 },
   inputWrap: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -264,23 +266,23 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   inputIcon: { marginRight: 10 },
-  input: { flex: 1, color: colors.text, fontSize: 15 },
-  errorText: { color: colors.danger, fontSize: 12, marginBottom: 6 },
+  input: { flex: 1, color: colors.text, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 15 },
+  errorText: { color: colors.danger, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 12, marginBottom: 6 },
   agreeRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 18 },
   checkbox: {
     width: 20, height: 20, borderRadius: 5, borderWidth: 1.5,
     borderColor: colors.gold, alignItems: 'center', justifyContent: 'center', marginRight: 10,
   },
   checkboxChecked: { backgroundColor: colors.gold },
-  agreeText: { color: colors.textMuted, fontSize: 13, flex: 1 },
-  agreeLink: { color: colors.gold, fontWeight: '600' },
+  agreeText: { color: colors.textMuted, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 13, flex: 1 },
+  agreeLink: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400' },
   submitOuter: {
     borderRadius: 12, overflow: 'hidden',
     borderWidth: 1, borderColor: 'rgba(212,175,55,0.4)', marginBottom: 20,
   },
   submitGradient: { height: 52, alignItems: 'center', justifyContent: 'center' },
-  submitText: { color: colors.bg, fontSize: 16, fontWeight: '800', letterSpacing: 1.5 },
+  submitText: { color: colors.bg, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 16, letterSpacing: 1.5 },
   footer: { flexDirection: 'row', justifyContent: 'center' },
-  footerText: { color: colors.textMuted, fontSize: 14 },
-  footerLink: { color: colors.gold, fontSize: 14, fontWeight: '700' },
+  footerText: { color: colors.textMuted, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 14 },
+  footerLink: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 14 },
 });

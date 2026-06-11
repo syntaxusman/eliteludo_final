@@ -25,6 +25,7 @@ import {
 } from '@/src/constants/profile';
 import { useProfileStore } from '@/src/stores/profile';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 export default function OnboardingScreen() {
@@ -192,19 +193,22 @@ const styles = StyleSheet.create({
   },
   stepText: {
     color: colors.gold,
+    fontFamily: fontFamilies.heading,
     fontSize: 10,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 2,
   },
   title: {
     color: colors.text,
+    fontFamily: fontFamilies.heading,
     fontSize: 28,
-    fontWeight: '800',
+    fontWeight: '400',
     marginBottom: 6,
     letterSpacing: -0.5,
   },
   subtitle: {
     color: 'rgba(255,255,255,0.45)',
+    fontFamily: fontFamilies.body,
     fontSize: 14,
     fontWeight: '400',
   },
@@ -213,8 +217,9 @@ const styles = StyleSheet.create({
   },
   sectionLabel: {
     color: 'rgba(212,175,55,0.5)',
+    fontFamily: fontFamilies.heading,
     fontSize: 11,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 2,
     marginBottom: 10,
     marginLeft: 4,
@@ -248,9 +253,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  input: { flex: 1, color: colors.text, fontSize: 15, fontWeight: '500' },
+  input: { flex: 1, color: colors.text, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 15 },
   hint: {
     color: 'rgba(255,255,255,0.25)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 12,
     marginTop: 8,
     marginLeft: 4,
@@ -258,10 +265,11 @@ const styles = StyleSheet.create({
   hintError: { color: 'rgba(226,87,76,0.8)' },
   globalError: {
     color: 'rgba(226,87,76,0.9)',
+    fontFamily: fontFamilies.body,
     fontSize: 13,
     textAlign: 'center',
     marginBottom: 16,
-    fontWeight: '500',
+    fontWeight: '400',
   },
   avatarGrid: {
     flexDirection: 'row',
@@ -327,13 +335,15 @@ const styles = StyleSheet.create({
   },
   colorLabel: {
     color: 'rgba(255,255,255,0.3)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 12,
     marginTop: 8,
-    fontWeight: '500',
   },
   colorLabelSelected: {
     color: colors.gold,
-    fontWeight: '700',
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
   },
   footer: {
     paddingHorizontal: 20,
@@ -356,12 +366,15 @@ const styles = StyleSheet.create({
   },
   primaryBtnText: {
     color: colors.bg,
+    fontFamily: fontFamilies.heading,
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 1,
   },
   starter: {
     color: 'rgba(255,255,255,0.25)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 12,
     textAlign: 'center',
     marginTop: 10,

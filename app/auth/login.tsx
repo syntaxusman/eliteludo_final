@@ -22,7 +22,7 @@ import { supabase } from '@/src/supabase/client';
 import { getSupabaseErrorMessage } from '@/src/supabase/errors';
 import { signInWithGoogle } from '@/src/supabase/oauth';
 import { colors } from '@/src/theme/colors';
-import { spacing } from '@/src/theme/typography';
+import { fontFamilies, spacing } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 export default function LoginScreen() {
@@ -211,8 +211,9 @@ const styles = StyleSheet.create({
   // Brand
   brandWrap: { alignItems: 'center', marginBottom: 32, marginTop: 20 },
   brandElite: {
+    fontFamily: fontFamilies.heading,
     fontSize: 44,
-    fontWeight: '900',
+    fontWeight: '400',
     color: colors.gold,
     letterSpacing: 10,
     textShadowColor: 'rgba(212,175,55,0.8)',
@@ -228,8 +229,9 @@ const styles = StyleSheet.create({
     marginVertical: 4,
   },
   brandLudo: {
+    fontFamily: fontFamilies.heading,
     fontSize: 28,
-    fontWeight: '300',
+    fontWeight: '400',
     color: colors.goldLight,
     letterSpacing: 12,
     textShadowColor: 'rgba(212,175,55,0.5)',
@@ -237,8 +239,9 @@ const styles = StyleSheet.create({
     textShadowRadius: 10,
   },
   brandTagline: {
+    fontFamily: fontFamilies.heading,
     fontSize: 10,
-    fontWeight: '600',
+    fontWeight: '400',
     color: 'rgba(212,175,55,0.55)',
     letterSpacing: 4,
     marginTop: 8,
@@ -256,12 +259,15 @@ const styles = StyleSheet.create({
     position: 'absolute', top: 0, left: 0, right: 0, height: 2,
   },
   cardTitle: {
+    fontFamily: fontFamilies.heading,
     fontSize: 22,
-    fontWeight: '800',
+    fontWeight: '400',
     color: colors.text,
     marginBottom: 4,
   },
   cardSubtitle: {
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 14,
     color: colors.textMuted,
     marginBottom: 20,
@@ -276,7 +282,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   dividerLine: { flex: 1, height: 1, backgroundColor: 'rgba(255,255,255,0.08)' },
-  dividerText: { color: colors.textDim, fontSize: 12, letterSpacing: 1 },
+  dividerText: { color: colors.textDim, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 12, letterSpacing: 1 },
 
   inputWrap: {
     flexDirection: 'row',
@@ -290,12 +296,12 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   inputIcon: { marginRight: 10 },
-  input: { flex: 1, color: colors.text, fontSize: 15 },
+  input: { flex: 1, color: colors.text, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 15 },
 
-  errorText: { color: colors.danger, fontSize: 12, marginBottom: 6 },
+  errorText: { color: colors.danger, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 12, marginBottom: 6 },
 
   forgotWrap: { alignSelf: 'flex-end', marginBottom: 18 },
-  forgotText: { color: colors.gold, fontSize: 13 },
+  forgotText: { color: colors.gold, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 13 },
 
   submitOuter: {
     borderRadius: 12,
@@ -311,12 +317,13 @@ const styles = StyleSheet.create({
   },
   submitText: {
     color: colors.bg,
+    fontFamily: fontFamilies.heading,
     fontSize: 16,
-    fontWeight: '800',
+    fontWeight: '400',
     letterSpacing: 1.5,
   },
 
   footer: { flexDirection: 'row', justifyContent: 'center' },
-  footerText: { color: colors.textMuted, fontSize: 14 },
-  footerLink: { color: colors.gold, fontSize: 14, fontWeight: '700' },
+  footerText: { color: colors.textMuted, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 14 },
+  footerLink: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 14 },
 });

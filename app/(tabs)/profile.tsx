@@ -10,6 +10,7 @@ import { getAvatar } from '@/src/constants/profile';
 import { useProfileStore } from '@/src/stores/profile';
 import { useWalletStore } from '@/src/stores/wallet';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 const MENU_ITEMS = [
@@ -163,8 +164,9 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   headerTitle: {
+    fontFamily: fontFamilies.heading,
     fontSize: 28,
-    fontWeight: '800',
+    fontWeight: '400',
     color: colors.gold,
     letterSpacing: 2,
     textShadowColor: 'rgba(212,175,55,0.5)',
@@ -183,7 +185,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
   },
   coinIcon: { width: 18, height: 18, resizeMode: 'contain' },
-  coinText: { color: colors.gold, fontWeight: '700', fontSize: 14 },
+  coinText: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 14 },
   scroll: { paddingHorizontal: 16, paddingBottom: 100 },
 
   // Profile card
@@ -216,8 +218,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   username: {
+    fontFamily: fontFamilies.heading,
     fontSize: 22,
-    fontWeight: '800',
+    fontWeight: '400',
     color: colors.text,
     letterSpacing: 0.5,
     marginBottom: 8,
@@ -228,10 +231,10 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     marginBottom: 10,
   },
-  rankText: { color: colors.bg, fontWeight: '800', fontSize: 12, letterSpacing: 1 },
+  rankText: { color: colors.bg, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 12, letterSpacing: 1 },
   metaRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   tokenDot: { width: 10, height: 10, borderRadius: 5 },
-  metaText: { color: colors.textMuted, fontSize: 13 },
+  metaText: { color: colors.textMuted, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 13 },
 
   // Stats
   statsRow: {
@@ -253,14 +256,15 @@ const styles = StyleSheet.create({
     position: 'absolute', top: 0, left: 0, right: 0, height: 2,
   },
   statValue: {
+    fontFamily: fontFamilies.heading,
     fontSize: 26,
-    fontWeight: '800',
+    fontWeight: '400',
     color: colors.gold,
     textShadowColor: 'rgba(212,175,55,0.4)',
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 8,
   },
-  statLabel: { fontSize: 11, color: colors.textMuted, marginTop: 2, letterSpacing: 0.5 },
+  statLabel: { fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 11, color: colors.textMuted, marginTop: 2, letterSpacing: 0.5 },
 
   // Menu
   menuSection: {
@@ -289,9 +293,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 12,
   },
-  menuLabel: { flex: 1, color: colors.text, fontSize: 15, fontWeight: '500' },
+  menuLabel: { flex: 1, color: colors.text, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 15 },
   hint: {
     color: colors.textDim,
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 12,
     textAlign: 'center',
     marginTop: 20,

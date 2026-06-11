@@ -20,6 +20,7 @@ import { useProfileStore } from '@/src/stores/profile';
 import { useSettingsStore, type Language } from '@/src/stores/settings';
 import { supabase } from '@/src/supabase/client';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 export default function SettingsScreen() {
@@ -288,8 +289,9 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     color: colors.gold,
+    fontFamily: fontFamilies.heading,
     fontSize: 14,
-    fontWeight: '800',
+    fontWeight: '400',
     letterSpacing: 4,
     textShadowColor: 'rgba(212,175,55,0.5)',
     textShadowOffset: { width: 0, height: 0 },
@@ -303,8 +305,9 @@ const styles = StyleSheet.create({
 
   sectionLabel: {
     color: 'rgba(212,175,55,0.45)',
+    fontFamily: fontFamilies.heading,
     fontSize: 10,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 2.5,
     marginTop: 20,
     marginBottom: 8,
@@ -341,8 +344,9 @@ const styles = StyleSheet.create({
   rowLabel: {
     flex: 1,
     color: colors.text,
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 15,
-    fontWeight: '500',
   },
 
   langRow: {
@@ -367,17 +371,21 @@ const styles = StyleSheet.create({
   },
   langFlag: { fontSize: 18 },
   langText: {
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 14,
-    fontWeight: '500',
     color: colors.textMuted,
   },
   langTextSelected: {
     color: colors.gold,
-    fontWeight: '700',
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
   },
 
   version: {
     color: 'rgba(255,255,255,0.12)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 11,
     letterSpacing: 1.5,
     textAlign: 'center',

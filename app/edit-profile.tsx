@@ -25,6 +25,7 @@ import {
 } from '@/src/constants/profile';
 import { useProfileStore } from '@/src/stores/profile';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 export default function EditProfileScreen() {
@@ -198,8 +199,9 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     color: colors.gold,
+    fontFamily: fontFamilies.heading,
     fontSize: 14,
-    fontWeight: '800',
+    fontWeight: '400',
     letterSpacing: 4,
     textShadowColor: 'rgba(212,175,55,0.5)',
     textShadowOffset: { width: 0, height: 0 },
@@ -213,8 +215,9 @@ const styles = StyleSheet.create({
   section: { marginBottom: 28 },
   sectionLabel: {
     color: 'rgba(212,175,55,0.5)',
+    fontFamily: fontFamilies.heading,
     fontSize: 11,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 2,
     marginBottom: 10,
     marginLeft: 4,
@@ -248,9 +251,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  input: { flex: 1, color: colors.text, fontSize: 15, fontWeight: '500' },
+  input: { flex: 1, color: colors.text, fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 15 },
   hint: {
     color: 'rgba(255,255,255,0.25)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 12,
     marginTop: 8,
     marginLeft: 4,
@@ -320,13 +325,15 @@ const styles = StyleSheet.create({
   },
   colorLabel: {
     color: 'rgba(255,255,255,0.3)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 12,
     marginTop: 8,
-    fontWeight: '500',
   },
   colorLabelSelected: {
     color: colors.gold,
-    fontWeight: '700',
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
   },
   footer: {
     paddingHorizontal: 20,
@@ -347,8 +354,9 @@ const styles = StyleSheet.create({
   },
   primaryBtnText: {
     color: colors.bg,
+    fontFamily: fontFamilies.heading,
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 1,
   },
 });

@@ -16,7 +16,7 @@ import Animated, { FadeInDown } from 'react-native-reanimated';
 import { supabase } from '@/src/supabase/client';
 import { getSupabaseErrorMessage } from '@/src/supabase/errors';
 import { colors } from '@/src/theme/colors';
-import { radius, spacing, typography } from '@/src/theme/typography';
+import { fontFamilies, radius, spacing, typography } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 type Step = 'enter_phone' | 'enter_otp';
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   section: { gap: spacing.sm },
   label: { ...typography.h3, color: colors.text },
   hint: { ...typography.caption, color: colors.textMuted },
-  phoneHighlight: { color: colors.gold, fontWeight: '600' },
+  phoneHighlight: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400' },
   inputWrap: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -221,7 +221,8 @@ const styles = StyleSheet.create({
   primaryBtnText: {
     ...typography.body,
     color: colors.bg,
-    fontWeight: '700',
+    fontFamily: fontFamilies.heading,
+    fontWeight: '400',
     letterSpacing: 1,
   },
   resendBtn: { alignItems: 'center', marginTop: spacing.md },

@@ -13,7 +13,7 @@ import { awardMatchReward } from '@/src/supabase/transactions';
 import { useProfileStore } from '@/src/stores/profile';
 import { useWalletStore } from '@/src/stores/wallet';
 import { colors } from '@/src/theme/colors';
-import { spacing } from '@/src/theme/typography';
+import { fontFamilies, spacing } from '@/src/theme/typography';
 
 const PLAYER_HEX: Record<Color, string> = {
   red: colors.red,
@@ -152,8 +152,9 @@ const styles = StyleSheet.create({
   },
   headingWrap: { alignItems: 'center', gap: 8, marginTop: 20 },
   heading: {
+    fontFamily: fontFamilies.heading,
     fontSize: 52,
-    fontWeight: '900',
+    fontWeight: '400',
     letterSpacing: 6,
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 20,
@@ -161,15 +162,17 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     color: colors.textMuted,
+    fontFamily: fontFamilies.body,
     fontSize: 15,
     letterSpacing: 2,
-    fontWeight: '500',
+    fontWeight: '400',
   },
   settleText: {
     color: 'rgba(212,175,55,0.65)',
+    fontFamily: fontFamilies.body,
     fontSize: 12,
     letterSpacing: 1,
-    fontWeight: '700',
+    fontWeight: '400',
   },
   trophyWrap: { alignItems: 'center', flex: 1, justifyContent: 'center' },
   trophy: { width: 220, height: 280 },
@@ -183,7 +186,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'rgba(226,87,76,0.1)',
   },
-  defeatX: { fontSize: 64, color: colors.red, fontWeight: '200' },
+  defeatX: { fontFamily: fontFamilies.heading, fontSize: 64, color: colors.red, fontWeight: '400' },
   winnerBadge: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -197,7 +200,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   colorDot: { width: 12, height: 12, borderRadius: 6 },
-  winnerText: { fontSize: 15, fontWeight: '700', letterSpacing: 2 },
+  winnerText: { fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 15, letterSpacing: 2 },
   actions: { gap: spacing.md, alignSelf: 'stretch' },
   primaryOuter: {
     borderRadius: 14,
@@ -206,7 +209,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(212,175,55,0.5)',
   },
   primaryGradient: { height: 54, alignItems: 'center', justifyContent: 'center' },
-  primaryText: { color: '#fff', fontSize: 18, fontWeight: '800', letterSpacing: 3 },
+  primaryText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 18, letterSpacing: 3 },
   secondaryBtn: {
     height: 50,
     borderWidth: 1,
@@ -215,5 +218,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  secondaryText: { color: colors.textMuted, fontSize: 15, fontWeight: '600', letterSpacing: 2 },
+  secondaryText: { color: colors.textMuted, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 15, letterSpacing: 2 },
 });

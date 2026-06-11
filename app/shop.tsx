@@ -12,6 +12,7 @@ import { useProfileStore } from '@/src/stores/profile';
 import { useShopStore } from '@/src/stores/shop';
 import { useWalletStore } from '@/src/stores/wallet';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
 
 export default function ShopScreen() {
@@ -150,7 +151,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'rgba(212,175,55,0.1)',
   },
-  title: { flex: 1, color: colors.gold, fontSize: 24, fontWeight: '900', letterSpacing: 1 },
+  title: { flex: 1, color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 24, letterSpacing: 1 },
   walletPill: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
     backgroundColor: 'rgba(255,255,255,0.06)',
   },
-  walletText: { color: '#fff', fontWeight: '900' },
+  walletText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400' },
   scroll: { padding: 16, paddingBottom: 32, gap: 12 },
   featureRow: { flexDirection: 'row', gap: 12, marginBottom: 14 },
   featureCard: {
@@ -174,11 +175,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.14)',
   },
-  featureTitle: { color: '#fff', fontWeight: '900', textAlign: 'center', paddingHorizontal: 8 },
+  featureTitle: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', textAlign: 'center', paddingHorizontal: 8 },
   sectionLabel: {
     color: 'rgba(212,175,55,0.55)',
+    fontFamily: fontFamilies.heading,
     fontSize: 11,
-    fontWeight: '900',
+    fontWeight: '400',
     letterSpacing: 2,
     textTransform: 'uppercase',
     marginBottom: 4,
@@ -202,8 +204,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   itemCopy: { flex: 1 },
-  itemTitle: { color: '#fff', fontWeight: '900', fontSize: 15 },
-  itemSub: { color: 'rgba(255,255,255,0.45)', fontWeight: '700', textTransform: 'capitalize' },
+  itemTitle: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 15 },
+  itemSub: { color: 'rgba(255,255,255,0.45)', fontFamily: fontFamilies.body, fontWeight: '400', textTransform: 'capitalize' },
   buyBtn: {
     minWidth: 84,
     height: 40,
@@ -214,6 +216,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   ownedBtn: { backgroundColor: 'rgba(255,255,255,0.08)' },
-  buyText: { color: colors.bg, fontWeight: '900' },
+  buyText: { color: colors.bg, fontFamily: fontFamilies.heading, fontWeight: '400' },
   ownedText: { color: 'rgba(255,255,255,0.55)' },
 });

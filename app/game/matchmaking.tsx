@@ -22,6 +22,7 @@ import { supabase } from '@/src/supabase/client';
 import { cancelMatchmaking, findMatch, subscribeQueue } from '@/src/supabase/matches';
 import { deductEntryFee } from '@/src/supabase/transactions';
 import { colors } from '@/src/theme/colors';
+import { fontFamilies } from '@/src/theme/typography';
 
 const BOT_FALLBACK_MS = 10_000;
 
@@ -339,8 +340,9 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     color: colors.gold,
+    fontFamily: fontFamilies.heading,
     fontSize: 14,
-    fontWeight: '800',
+    fontWeight: '400',
     letterSpacing: 4,
     textShadowColor: 'rgba(212,175,55,0.5)',
     textShadowOffset: { width: 0, height: 0 },
@@ -368,8 +370,9 @@ const styles = StyleSheet.create({
   },
   playerCountText: {
     color: colors.gold,
+    fontFamily: fontFamilies.heading,
     fontSize: 12,
-    fontWeight: '900',
+    fontWeight: '400',
     letterSpacing: 1.8,
   },
   matchTable: {
@@ -419,8 +422,9 @@ const styles = StyleSheet.create({
   },
   playerName: {
     color: colors.text,
+    fontFamily: fontFamilies.heading,
     fontSize: 13,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 1.5,
     textTransform: 'uppercase',
     maxWidth: 100,
@@ -438,7 +442,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255,255,255,0.08)',
   },
   readyDot: { width: 5, height: 5, borderRadius: 3 },
-  readyText: { fontSize: 9, fontWeight: '800', letterSpacing: 1.5 },
+  readyText: { fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 9, letterSpacing: 1.5 },
 
   // Radar
   radarWrap: {
@@ -475,8 +479,9 @@ const styles = StyleSheet.create({
   },
   vsText: {
     color: colors.gold,
+    fontFamily: fontFamilies.heading,
     fontSize: 20,
-    fontWeight: '900',
+    fontWeight: '400',
     letterSpacing: 2,
     textShadowColor: 'rgba(212,175,55,0.9)',
     textShadowOffset: { width: 0, height: 0 },
@@ -498,16 +503,18 @@ const styles = StyleSheet.create({
   },
   statusLabel: {
     color: colors.textMuted,
+    fontFamily: fontFamilies.body,
     fontSize: 13,
-    fontWeight: '600',
+    fontWeight: '400',
     letterSpacing: 1.5,
     textTransform: 'uppercase',
   },
 
   timer: {
     color: colors.gold,
+    fontFamily: fontFamilies.heading,
     fontSize: 32,
-    fontWeight: '200',
+    fontWeight: '400',
     letterSpacing: 4,
     textShadowColor: 'rgba(212,175,55,0.4)',
     textShadowOffset: { width: 0, height: 0 },
@@ -515,6 +522,8 @@ const styles = StyleSheet.create({
   },
   fallbackHint: {
     color: 'rgba(255,255,255,0.2)',
+    fontFamily: fontFamilies.body,
+    fontWeight: '400',
     fontSize: 11,
     letterSpacing: 0.5,
     marginTop: -8,
@@ -540,8 +549,9 @@ const styles = StyleSheet.create({
   },
   cancelText: {
     color: 'rgba(255,255,255,0.35)',
+    fontFamily: fontFamilies.heading,
     fontSize: 13,
-    fontWeight: '700',
+    fontWeight: '400',
     letterSpacing: 3,
   },
 });
