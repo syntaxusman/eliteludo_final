@@ -19,6 +19,8 @@
     "@react-navigation/native": "^7.1.8",
     "@shopify/react-native-skia": "2.2.12",
     "@supabase/supabase-js": "^2.104.1",
+    "autoskill": "^0.1.0",
+    "autoskills": "^0.3.6",
     "expo": "~54.0.33",
     "expo-constants": "~18.0.13",
     "expo-font": "~14.0.11",
