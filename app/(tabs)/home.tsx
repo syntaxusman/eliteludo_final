@@ -30,8 +30,11 @@ import { DailyRewardModal } from "@/src/components/DailyRewardModal";
 import { BannerAd, BannerAdSize, homeBannerAdUnitId } from "@/src/services/ads";
 import {
   HomeModeCanvas,
+  RoyalCornerActionCanvas,
+  RoyalAvatarIcon,
   RoyalCurrencyIcon,
   RoyalHomeBackdrop,
+  RoyalSettingsIcon,
 } from "@/src/skia/HomeArtwork";
 import { useProfileStore } from "@/src/stores/profile";
 import { useWalletStore } from "@/src/stores/wallet";
@@ -46,6 +49,7 @@ const CLUB_W = Math.min(W - (COMPACT_CLUB ? 56 : 64), COMPACT_CLUB ? 318 : 326);
 const CLUB_H = COMPACT_CLUB ? 348 : 386;
 const CLUB_GAP = 18;
 const SIDE_INSET = (W - CLUB_W) / 2;
+const WORLD_CUP_END = new Date(2026, 6, 19);
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 type HomeView = "modes" | "clubs";
@@ -250,6 +254,24 @@ function fmt(n: number) {
   return `${n}`;
 }
 
+function daysUntil(target: Date) {
+  const today = new Date();
+  const todayStart = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  );
+  const targetStart = new Date(
+    target.getFullYear(),
+    target.getMonth(),
+    target.getDate(),
+  );
+  return Math.max(
+    0,
+    Math.round((targetStart.getTime() - todayStart.getTime()) / 86_400_000),
+  );
+}
+
 export default function HomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -273,12 +295,22 @@ export default function HomeScreen() {
     null,
   );
   const [claiming, setClaiming] = useState(false);
+  const [eventDaysLeft, setEventDaysLeft] = useState(() =>
+    daysUntil(WORLD_CUP_END),
+  );
   const scrollX = useSharedValue(0);
 
   useEffect(() => {
     hydrateWallet();
     hydrateProfile();
   }, [hydrateWallet, hydrateProfile]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setEventDaysLeft(daysUntil(WORLD_CUP_END));
+    }, 60_000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     if (!hydrated || rewardOpen) return;
@@ -361,33 +393,43 @@ export default function HomeScreen() {
         top={insets.top}
         coins={coins}
         username={profile?.username ?? "Player"}
+        onProfile={() => {
+          haptics.tap();
+          router.push("/profile" as never);
+        }}
         onSettings={() => {
           haptics.tap();
           router.push("/settings");
         }}
       />
-
       {view === "modes" ? (
-        <ModesHome
-          bottom={insets.bottom}
-          onMode={openMode}
-          onReward={() => {
-            const p = pendingClaim();
-            if (!p) {
-              Alert.alert(
-                "Reward already collected",
-                "Come back tomorrow for the next daily reward.",
-              );
-              return;
-            }
-            setPendingDay(p.day);
-            setRewardOpen(true);
-          }}
-          onShop={() => {
-            haptics.tap();
-            router.push("/shop" as never);
-          }}
-        />
+        <>
+          <HomeCornerRails
+            top={insets.top}
+            eventDaysLeft={eventDaysLeft}
+            onReward={() => {
+              const p = pendingClaim();
+              if (!p) {
+                Alert.alert(
+                  "Reward already collected",
+                  "Come back tomorrow for the next daily reward.",
+                );
+                return;
+              }
+              setPendingDay(p.day);
+              setRewardOpen(true);
+            }}
+            onDiceSkins={() => {
+              haptics.tap();
+              router.push("/shop" as never);
+            }}
+            onShop={() => {
+              haptics.tap();
+              router.push("/shop" as never);
+            }}
+          />
+          <ModesHome bottom={insets.bottom} onMode={openMode} />
+        </>
       ) : (
         <ClubSlides
           bottom={insets.bottom}
@@ -439,11 +481,13 @@ function Header({
   top,
   coins,
   username,
+  onProfile,
   onSettings,
 }: {
   top: number;
   coins: number;
   username: string;
+  onProfile: () => void;
   onSettings: () => void;
 }) {
   return (
@@ -451,20 +495,19 @@ function Header({
       entering={FadeIn.duration(300)}
       style={[styles.header, { marginTop: top + 4 }]}
     >
-      <View style={styles.avatarWrap}>
-        <LinearGradient
-          colors={["#5A351C", "#130602"]}
-          style={styles.avatarRing}
-        >
-          <Text style={styles.avatarInitial}>
-            {username.charAt(0).toUpperCase()}
-          </Text>
-        </LinearGradient>
+      <Pressable
+        onPress={onProfile}
+        accessibilityRole="button"
+        accessibilityLabel="Open profile"
+        hitSlop={8}
+        style={styles.avatarWrap}
+      >
+        <RoyalAvatarIcon initial={username.charAt(0).toUpperCase()} size={66} />
         <View style={styles.levelBadge}>
           <Ionicons name="star" size={11} color="#FFF2A6" />
           <Text style={styles.levelText}>180</Text>
         </View>
-      </View>
+      </Pressable>
 
       <View style={styles.walletRow}>
         <CurrencyPill kind="coin" value={fmt(coins)} />
@@ -472,9 +515,85 @@ function Header({
       </View>
 
       <Pressable onPress={onSettings} style={styles.settingsBtn} hitSlop={8}>
-        <Ionicons name="settings-sharp" size={22} color="#F2D273" />
+        <RoyalSettingsIcon size={36} />
       </Pressable>
     </Animated.View>
+  );
+}
+
+function HomeCornerRails({
+  top,
+  eventDaysLeft,
+  onReward,
+  onDiceSkins,
+  onShop,
+}: {
+  top: number;
+  eventDaysLeft: number;
+  onReward: () => void;
+  onDiceSkins: () => void;
+  onShop: () => void;
+}) {
+  return (
+    <>
+      <Animated.View
+        entering={FadeInDown.delay(70).duration(320)}
+        style={[styles.cornerRail, styles.leftRail, { top: top + 72 }]}
+      >
+        <CornerAction
+          kind="video"
+          label="Free"
+          badge="Ad"
+          onPress={onReward}
+        />
+        <CornerAction kind="dice" label="Dice" onPress={onDiceSkins} />
+      </Animated.View>
+      <Animated.View
+        entering={FadeInDown.delay(110).duration(320)}
+        style={[styles.cornerRail, styles.rightRail, { top: top + 72 }]}
+      >
+        <CornerAction kind="shop" label="Shop" onPress={onShop} />
+        <CornerAction
+          kind="event"
+          label="World Cup"
+          badge={`${eventDaysLeft}d`}
+        />
+      </Animated.View>
+    </>
+  );
+}
+
+function CornerAction({
+  kind,
+  label,
+  badge,
+  onPress,
+}: {
+  kind: "video" | "dice" | "shop" | "event";
+  label: string;
+  badge?: string;
+  onPress?: () => void;
+}) {
+  const scale = useSharedValue(1);
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }));
+
+  return (
+    <AnimatedPressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={badge ? `${label}, ${badge}` : label}
+      onPressIn={() => {
+        scale.value = withSpring(0.94, { damping: 18, stiffness: 260 });
+      }}
+      onPressOut={() => {
+        scale.value = withSpring(1, { damping: 15, stiffness: 210 });
+      }}
+      style={[styles.cornerAction, animatedStyle]}
+    >
+      <RoyalCornerActionCanvas kind={kind} label={label} badge={badge} />
+    </AnimatedPressable>
   );
 }
 
@@ -507,33 +626,18 @@ function CurrencyPill({
 function ModesHome({
   bottom,
   onMode,
-  onReward,
-  onShop,
 }: {
   bottom: number;
   onMode: (mode: ModeId) => void;
-  onReward: () => void;
-  onShop: () => void;
 }) {
   const large = MODES.filter((m) => m.size === "large");
   const small = MODES.filter((m) => m.size === "small");
 
   return (
     <View style={[styles.modeScreen, { paddingBottom: bottom + 130 }]}>
-      <Animated.View
-        entering={FadeInDown.delay(80).duration(360)}
-        style={styles.brandArea}
-      >
-        <View style={styles.eventRow}>
-          <QuickTile icon="play" label="Free" badge="6" onPress={onReward} />
-          <QuickTile icon="shield" label="Mega Win" badge="2h" />
-          <QuickTile icon="gift" label="Shop" badge="+" onPress={onShop} />
-        </View>
-      </Animated.View>
-
       <View style={styles.cardStack}>
         <Animated.View
-          entering={FadeInDown.delay(120).duration(360)}
+          entering={FadeInDown.delay(80).duration(360)}
           style={styles.royalBrand}
         >
           <Image
@@ -545,7 +649,7 @@ function ModesHome({
           <Text style={styles.brandTag}>PLAY LIKE ROYALTY</Text>
         </Animated.View>
         <Animated.View
-          entering={FadeInDown.delay(160).duration(360)}
+          entering={FadeInDown.delay(120).duration(360)}
           style={styles.largeGrid}
         >
           {large.map((mode) => (
@@ -558,7 +662,7 @@ function ModesHome({
         </Animated.View>
 
         <Animated.View
-          entering={FadeInDown.delay(220).duration(360)}
+          entering={FadeInDown.delay(180).duration(360)}
           style={styles.smallGrid}
         >
           {small.map((mode) => (
@@ -571,28 +675,6 @@ function ModesHome({
         </Animated.View>
       </View>
     </View>
-  );
-}
-
-function QuickTile({
-  icon,
-  label,
-  badge,
-  onPress,
-}: {
-  icon: keyof typeof Ionicons.glyphMap;
-  label: string;
-  badge: string;
-  onPress?: () => void;
-}) {
-  return (
-    <Pressable onPress={onPress} style={styles.quickTile}>
-      <Ionicons name={icon} size={28} color={colors.gold} />
-      <Text style={styles.quickLabel}>{label}</Text>
-      <View style={styles.redBadge}>
-        <Text style={styles.redBadgeText}>{badge}</Text>
-      </View>
-    </Pressable>
   );
 }
 
@@ -918,24 +1000,9 @@ const styles = StyleSheet.create({
     zIndex: 5,
   },
   avatarWrap: {
-    width: 58,
-    height: 58,
+    width: 68,
+    height: 68,
     justifyContent: "center",
-  },
-  avatarRing: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    borderWidth: 2,
-    borderColor: colors.gold,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  avatarInitial: {
-    color: "#fff",
-    fontFamily: fontFamilies.heading,
-    fontSize: 23,
-    fontWeight: "400",
   },
   levelBadge: {
     position: "absolute",
@@ -1011,10 +1078,6 @@ const styles = StyleSheet.create({
   settingsBtn: {
     width: 36,
     height: 36,
-    borderRadius: 14,
-    backgroundColor: "rgba(53,38,14,0.68)",
-    borderWidth: 1,
-    borderColor: "rgba(212,175,55,0.24)",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -1024,10 +1087,20 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     justifyContent: "flex-start",
   },
-  brandArea: {
-    minHeight: COMPACT_CLUB ? 58 : 66,
-    alignItems: "center",
-    justifyContent: "flex-start",
+  cornerRail: {
+    position: "absolute",
+    gap: 8,
+    zIndex: 4,
+  },
+  leftRail: {
+    left: 7,
+  },
+  rightRail: {
+    right: 7,
+  },
+  cornerAction: {
+    width: COMPACT_CLUB ? 78 : 86,
+    height: COMPACT_CLUB ? 78 : 84,
   },
   cardStack: {
     width: "100%",
@@ -1073,55 +1146,6 @@ const styles = StyleSheet.create({
     width: COMPACT_CLUB ? 150 : 178,
     height: COMPACT_CLUB ? 150 : 178,
     opacity: 0.1,
-  },
-  eventRow: {
-    position: "absolute",
-    top: COMPACT_CLUB ? 8 : 12,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
-  },
-  quickTile: {
-    width: COMPACT_CLUB ? 82 : 88,
-    height: COMPACT_CLUB ? 45 : 50,
-    borderRadius: 15,
-    backgroundColor: "rgba(20,12,5,0.76)",
-    borderWidth: 1,
-    borderColor: "rgba(212,175,55,0.38)",
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: colors.gold,
-    shadowOpacity: 0.18,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
-  },
-  quickLabel: {
-    color: "#FFF0B5",
-    fontFamily: fontFamilies.heading,
-    fontWeight: "400",
-    marginTop: 1,
-    fontSize: 11,
-  },
-  redBadge: {
-    position: "absolute",
-    top: -6,
-    right: -6,
-    minWidth: 22,
-    height: 22,
-    borderRadius: 8,
-    backgroundColor: "#E91B25",
-    borderWidth: 2,
-    borderColor: "#FFE2D5",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 4,
-  },
-  redBadgeText: {
-    color: "#fff",
-    fontFamily: fontFamilies.heading,
-    fontWeight: "400",
-    fontSize: 10,
   },
   largeGrid: {
     flexDirection: "row",

@@ -1008,6 +1008,410 @@ export function RoyalCurrencyIcon({
   );
 }
 
+export function RoyalAvatarIcon({
+  initial,
+  size = 56,
+}: {
+  initial: string;
+  size?: number;
+}) {
+  const pulse = useLoop(3600);
+  const glow = useDerivedValue(() => 0.22 + pulse.value * 0.1);
+  const crownLift = useDerivedValue(() => -1.2 - pulse.value * 1.4);
+  const crownTransform = useDerivedValue(() => [
+    { translateY: crownLift.value },
+  ]);
+  const initialFont = useFont(
+    require("../../assets/fonts/CinzelDecorative-Regular.ttf"),
+    size * 0.18,
+  );
+  const text = initial.slice(0, 1);
+  const textWidth = initialFont?.measureText(text).width ?? size * 0.1;
+  const crown = useMemo(() => {
+    const p = Skia.Path.Make();
+    p.moveTo(size * 0.23, size * 0.27);
+    p.lineTo(size * 0.27, size * 0.1);
+    p.lineTo(size * 0.38, size * 0.22);
+    p.lineTo(size * 0.5, size * 0.06);
+    p.lineTo(size * 0.62, size * 0.22);
+    p.lineTo(size * 0.73, size * 0.1);
+    p.lineTo(size * 0.77, size * 0.27);
+    p.close();
+    return p;
+  }, [size]);
+
+  return (
+    <Canvas style={{ width: size, height: size }} pointerEvents="none">
+      <Circle cx={size * 0.5} cy={size * 0.52} r={size * 0.43} color={GOLD} opacity={glow}>
+        <BlurMask blur={8} style="normal" />
+      </Circle>
+      <Circle cx={size * 0.5} cy={size * 0.54} r={size * 0.4} color="#120C08" />
+      <Circle cx={size * 0.5} cy={size * 0.54} r={size * 0.37}>
+        <LinearGradient
+          start={vec(size * 0.14, size * 0.13)}
+          end={vec(size * 0.82, size * 0.92)}
+          colors={["#FFF2A4", "#D6A943", "#5C3307"]}
+          positions={[0, 0.46, 1]}
+        />
+      </Circle>
+      <Circle cx={size * 0.5} cy={size * 0.55} r={size * 0.29}>
+        <LinearGradient
+          start={vec(size * 0.28, size * 0.29)}
+          end={vec(size * 0.68, size * 0.82)}
+          colors={["#F4C59D", "#A15A36"]}
+        />
+      </Circle>
+      <Path path={shoulderPath(size)} color="#16110C" />
+      <Path path={hairPath(size)} color="#F0C65C" />
+      <Path path={hairShadowPath(size)} color="#8F5918" opacity={0.52} />
+      <Circle cx={size * 0.5} cy={size * 0.48} r={size * 0.15} color="#F3BF96" />
+      <Circle cx={size * 0.445} cy={size * 0.475} r={size * 0.018} color="#2A170C" />
+      <Circle cx={size * 0.555} cy={size * 0.475} r={size * 0.018} color="#2A170C" />
+      <Circle cx={size * 0.438} cy={size * 0.468} r={size * 0.006} color="#FFFFFF" />
+      <Circle cx={size * 0.548} cy={size * 0.468} r={size * 0.006} color="#FFFFFF" />
+      <Circle cx={size * 0.5} cy={size * 0.51} r={size * 0.014} color="#C77D5B" opacity={0.62} />
+      <Path path={avatarSmilePath(size)} color="#6E2A1E" style="stroke" strokeWidth={1.2} />
+      <Circle cx={size * 0.39} cy={size * 0.515} r={size * 0.02} color="#EF8C7D" opacity={0.38} />
+      <Circle cx={size * 0.61} cy={size * 0.515} r={size * 0.02} color="#EF8C7D" opacity={0.38} />
+      <RoundedRect
+        x={size * 0.29}
+        y={size * 0.29}
+        width={size * 0.42}
+        height={size * 0.48}
+        r={size * 0.18}
+        style="stroke"
+        strokeWidth={1}
+        color="#FFE8A0"
+        opacity={0.34}
+      />
+      {initialFont && (
+        <Group>
+          <Circle cx={size * 0.5} cy={size * 0.72} r={size * 0.11} color="#4B2B09" />
+          <Circle cx={size * 0.5} cy={size * 0.72} r={size * 0.095} color={GOLD} />
+          <SkiaText
+            x={(size - textWidth) / 2}
+            y={size * 0.755}
+            text={text}
+            font={initialFont}
+            color="#17110A"
+            opacity={0.92}
+          />
+        </Group>
+      )}
+      <Group transform={crownTransform}>
+        <Path path={crown}>
+          <LinearGradient
+            start={vec(size * 0.31, size * 0.07)}
+            end={vec(size * 0.7, size * 0.3)}
+            colors={["#FFF5B7", "#D6A943", "#754708"]}
+          />
+        </Path>
+        <RoundedRect x={size * 0.23} y={size * 0.265} width={size * 0.54} height={size * 0.08} r={size * 0.035}>
+          <LinearGradient
+            start={vec(size * 0.23, size * 0.26)}
+            end={vec(size * 0.77, size * 0.34)}
+            colors={["#80500B", "#FFE895", "#8A570F"]}
+          />
+        </RoundedRect>
+        <Circle cx={size * 0.31} cy={size * 0.29} r={size * 0.025} color="#C82346" />
+        <Circle cx={size * 0.5} cy={size * 0.285} r={size * 0.03} color="#2FC76E" />
+        <Circle cx={size * 0.69} cy={size * 0.29} r={size * 0.025} color="#3E62D6" />
+      </Group>
+    </Canvas>
+  );
+}
+
+export function RoyalCornerActionCanvas({
+  kind,
+  label,
+  badge,
+  width = 86,
+  height = 84,
+}: {
+  kind: "video" | "dice" | "shop" | "event";
+  label: string;
+  badge?: string;
+  width?: number;
+  height?: number;
+}) {
+  const pulse = useLoop(kind === "event" ? 1900 : 2800);
+  const bob = useDerivedValue(() => Math.sin(pulse.value * Math.PI * 2) * 1.3);
+  const glow = useDerivedValue(() => 0.16 + pulse.value * 0.12);
+  const iconTransform = useDerivedValue(() => [{ translateY: bob.value }]);
+  const labelFont = useFont(
+    require("../../assets/fonts/CinzelDecorative-Regular.ttf"),
+    label.length > 7 ? 8.8 : 10.8,
+  );
+  const badgeFont = useFont(
+    require("../../assets/fonts/CinzelDecorative-Regular.ttf"),
+    9.6,
+  );
+  const labelWidth = labelFont?.measureText(label).width ?? width * 0.55;
+  const badgeWidth = badge
+    ? badgeFont?.measureText(badge).width ?? width * 0.24
+    : 0;
+
+  return (
+    <Canvas style={{ width, height }} pointerEvents="none">
+      <Circle cx={width * 0.5} cy={height * 0.34} r={width * 0.36} color={GOLD} opacity={glow}>
+        <BlurMask blur={10} style="normal" />
+      </Circle>
+      <RoundedRect x={width * 0.14} y={height * 0.15} width={width * 0.72} height={height * 0.52} r={14} color="#070604" opacity={0.74} />
+      <RoundedRect x={width * 0.14} y={height * 0.12} width={width * 0.72} height={height * 0.52} r={14}>
+        <LinearGradient
+          start={vec(width * 0.16, height * 0.12)}
+          end={vec(width * 0.86, height * 0.64)}
+          colors={["#FFF1B8", "#D4AF37", "#8A6414", "#FFF1B8"]}
+          positions={[0, 0.35, 0.75, 1]}
+        />
+      </RoundedRect>
+      <RoundedRect
+        x={width * 0.2}
+        y={height * 0.18}
+        width={width * 0.6}
+        height={height * 0.39}
+        r={10}
+        color="#9F7D2B"
+        opacity={0.95}
+      />
+      <RoundedRect
+        x={width * 0.1}
+        y={height * 0.68}
+        width={width * 0.8}
+        height={height * 0.22}
+        r={9}
+      >
+        <LinearGradient
+          start={vec(width * 0.1, height * 0.68)}
+          end={vec(width * 0.9, height * 0.9)}
+          colors={["#FFF1B8", "#D4AF37", "#8A6414", "#FFF1B8"]}
+          positions={[0, 0.35, 0.75, 1]}
+        />
+      </RoundedRect>
+      <RoundedRect
+        x={width * 0.15}
+        y={height * 0.715}
+        width={width * 0.7}
+        height={height * 0.12}
+        r={5}
+        color="#1D150D"
+        opacity={0.9}
+      />
+      <Group transform={iconTransform}>
+        {kind === "video" && <VideoGlyph width={width} height={height} />}
+        {kind === "dice" && <DiceGlyph width={width} height={height} />}
+        {kind === "shop" && <ShopGlyph width={width} height={height} />}
+        {kind === "event" && <WorldCupGlyph width={width} height={height} />}
+      </Group>
+      {labelFont && (
+        <SkiaText
+          x={(width - labelWidth) / 2}
+          y={height * 0.815}
+          text={label}
+          font={labelFont}
+          color="#FFE9A2"
+        />
+      )}
+      {badge && badgeFont && (
+        <Group>
+          <Circle cx={width * 0.78} cy={height * 0.14} r={height * 0.13} color="#7A152B" />
+          <Circle cx={width * 0.78} cy={height * 0.14} r={height * 0.13} color="#FFE2A0" opacity={0.5} style="stroke" strokeWidth={1.4} />
+          <SkiaText
+            x={width * 0.78 - badgeWidth / 2}
+            y={height * 0.17}
+            text={badge}
+            font={badgeFont}
+            color="#FFF6D0"
+          />
+        </Group>
+      )}
+    </Canvas>
+  );
+}
+
+export function RoyalSettingsIcon({ size = 36 }: { size?: number }) {
+  const sweep = useSweep(4800);
+  const rotation = useDerivedValue(() => [
+    { rotate: sweep.value * Math.PI * 2 },
+  ]);
+  const center = size / 2;
+  const toothW = size * 0.13;
+  const toothH = size * 0.24;
+
+  return (
+    <Canvas style={{ width: size, height: size }} pointerEvents="none">
+      <Circle cx={center} cy={center} r={size * 0.48} color="#090705" />
+      <Circle cx={center} cy={center} r={size * 0.43}>
+        <LinearGradient
+          start={vec(size * 0.08, size * 0.06)}
+          end={vec(size * 0.86, size * 0.88)}
+          colors={["#FFF1A4", "#D6A943", "#71430B"]}
+        />
+      </Circle>
+      <Circle cx={center} cy={center} r={size * 0.33} color="#15100B" />
+      <Group origin={vec(center, center)} transform={rotation}>
+        {Array.from({ length: 8 }, (_, index) => {
+          const angle = (index * Math.PI) / 4;
+          return (
+            <RoundedRect
+              key={index}
+              x={center - toothW / 2}
+              y={size * 0.06}
+              width={toothW}
+              height={toothH}
+              r={toothW * 0.35}
+              origin={vec(center, center)}
+              transform={[{ rotate: angle }]}
+            >
+              <LinearGradient
+                start={vec(center - toothW, size * 0.06)}
+                end={vec(center + toothW, size * 0.3)}
+                colors={["#FFF2A4", GOLD, "#83510D"]}
+              />
+            </RoundedRect>
+          );
+        })}
+      </Group>
+      <Circle cx={center} cy={center} r={size * 0.28}>
+        <LinearGradient
+          start={vec(size * 0.25, size * 0.22)}
+          end={vec(size * 0.72, size * 0.76)}
+          colors={["#FFF4B8", GOLD, "#76500F"]}
+        />
+      </Circle>
+      <Circle cx={center} cy={center} r={size * 0.14} color="#11100D" />
+      <Circle cx={size * 0.35} cy={size * 0.27} r={size * 0.05} color="#FFFFFF" opacity={0.42} />
+      <Circle cx={center} cy={center} r={size * 0.45} color="#FFF4BB" opacity={0.2} style="stroke" strokeWidth={1} />
+    </Canvas>
+  );
+}
+
+function VideoGlyph({ width, height }: { width: number; height: number }) {
+  const x = width * 0.27;
+  const y = height * 0.28;
+  const w = width * 0.46;
+  const h = height * 0.26;
+  const clapper = clapperStripePath(x, y - height * 0.12, w, height * 0.11);
+  return (
+    <Group>
+      <Group origin={vec(x, y)} transform={[{ rotate: -0.18 }]}>
+        <RoundedRect x={x - 1} y={y - height * 0.13} width={w + 2} height={height * 0.1} r={3}>
+          <LinearGradient
+            start={vec(x, y - height * 0.13)}
+            end={vec(x + w, y)}
+            colors={["#FFF1B8", "#D4AF37", "#8A6414"]}
+          />
+        </RoundedRect>
+        <Path path={clapper} color="#1C1A17" opacity={0.88} />
+      </Group>
+      <RoundedRect x={x} y={y + 3} width={w} height={h} r={7} color="#000000" opacity={0.5} />
+      <RoundedRect x={x} y={y} width={w} height={h} r={7}>
+        <LinearGradient
+          start={vec(x, y)}
+          end={vec(x + w, y + h)}
+          colors={["#FFF1B8", GOLD, "#8A6414"]}
+        />
+      </RoundedRect>
+      <RoundedRect x={x + 4} y={y + 4} width={w - 8} height={h - 8} r={5} color="#B08D30" />
+      <Path path={playPath(x + w * 0.43, y + h * 0.28, h * 0.5)} color="#17110A" />
+      <Circle cx={x + w * 0.12} cy={y + h * 0.12} r={2} color="#FFFFFF" opacity={0.55} />
+    </Group>
+  );
+}
+
+function DiceGlyph({ width, height }: { width: number; height: number }) {
+  const plateX = width * 0.21;
+  const plateY = height * 0.2;
+  const plate = width * 0.58;
+  return (
+    <Group>
+      <RoundedRect x={plateX} y={plateY + 2} width={plate} height={height * 0.42} r={15} color="#000000" opacity={0.35} />
+      <RoundedRect x={plateX} y={plateY} width={plate} height={height * 0.42} r={15}>
+        <LinearGradient
+          start={vec(plateX, plateY)}
+          end={vec(plateX + plate, plateY + height * 0.42)}
+          colors={["#FFF1B8", GOLD, "#8A6414"]}
+        />
+      </RoundedRect>
+      <Circle cx={width * 0.35} cy={height * 0.31} r={height * 0.105}>
+        <LinearGradient
+          start={vec(width * 0.25, height * 0.2)}
+          end={vec(width * 0.46, height * 0.41)}
+          colors={["#FFF4B9", GOLD, "#80500B"]}
+        />
+      </Circle>
+      <Path path={coinStarPath(width * 0.35, height * 0.31, height * 0.055)} color="#7B4B0A" opacity={0.8} />
+      <Die
+        x={width * 0.43}
+        y={height * 0.25}
+        size={height * 0.22}
+        dark={false}
+        rotate={-0.16}
+        value={5}
+      />
+      <Die
+        x={width * 0.55}
+        y={height * 0.31}
+        size={height * 0.2}
+        dark
+        showShadow={false}
+        rotate={0.18}
+        value={4}
+      />
+    </Group>
+  );
+}
+
+function ShopGlyph({ width, height }: { width: number; height: number }) {
+  const x = width * 0.24;
+  const y = height * 0.24;
+  const w = width * 0.52;
+  return (
+    <Group>
+      <Path path={basketPath(x, y + 3, w, height * 0.31)} color="#080604" opacity={0.45} />
+      <Path path={basketPath(x, y - 2, w, height * 0.29)}>
+        <LinearGradient
+          start={vec(x, y)}
+          end={vec(x + w, y + height * 0.3)}
+          colors={["#FFF2A4", GOLD, "#7B4B0A"]}
+        />
+      </Path>
+      <Path path={basketHandlePath(x + w * 0.5, y - 1, w * 0.42)} color="#FFE9A2" style="stroke" strokeWidth={2} />
+      <Rect x={x + w * 0.18} y={y + height * 0.08} width={w * 0.64} height={2} color="#1B130B" opacity={0.45} />
+      <Rect x={x + w * 0.24} y={y + height * 0.17} width={w * 0.52} height={2} color="#1B130B" opacity={0.45} />
+      <Rect x={x + w * 0.34} y={y + height * 0.03} width={2} height={height * 0.23} color="#1B130B" opacity={0.45} />
+      <Rect x={x + w * 0.62} y={y + height * 0.03} width={2} height={height * 0.23} color="#1B130B" opacity={0.45} />
+      <Circle cx={x + w * 0.24} cy={y + height * 0.31} r={height * 0.035} color="#18100A" />
+      <Circle cx={x + w * 0.78} cy={y + height * 0.31} r={height * 0.035} color="#18100A" />
+    </Group>
+  );
+}
+
+function WorldCupGlyph({ width, height }: { width: number; height: number }) {
+  const cx = width * 0.5;
+  const top = height * 0.16;
+  const ballR = width * 0.19;
+  return (
+    <Group>
+      <Circle cx={cx} cy={top + height * 0.18} r={ballR} color="#FBFBFB" />
+      <Path path={soccerPanelPath(cx, top + height * 0.18, ballR * 0.72)} color="#171717" />
+      <Circle cx={cx - ballR * 0.5} cy={top + height * 0.1} r={ballR * 0.15} color="#171717" />
+      <Circle cx={cx + ballR * 0.56} cy={top + height * 0.18} r={ballR * 0.15} color="#171717" />
+      <Path path={lowerCrownPath(cx, top + height * 0.34, width * 0.32, height * 0.22)}>
+        <LinearGradient
+          start={vec(cx - width * 0.28, top + height * 0.25)}
+          end={vec(cx + width * 0.28, top + height * 0.46)}
+          colors={["#FFF1B8", GOLD, "#8A6414", "#FFF1B8"]}
+          positions={[0, 0.35, 0.75, 1]}
+        />
+      </Path>
+      <Circle cx={cx - width * 0.28} cy={top + height * 0.32} r={4.5} color={PALE_GOLD} />
+      <Circle cx={cx} cy={top + height * 0.29} r={5.2} color={PALE_GOLD} />
+      <Circle cx={cx + width * 0.28} cy={top + height * 0.32} r={4.5} color={PALE_GOLD} />
+    </Group>
+  );
+}
+
 function TeamFriendsEmblem({ width, height }: { width: number; height: number }) {
   return (
     <Group>
@@ -1078,6 +1482,118 @@ function OfflineEmblem({ width, height }: { width: number; height: number }) {
       <Path path={wifiOffPath(width * 0.8, height * 0.17, height * 0.1)} color="#E8C768" style="stroke" strokeWidth={1.4} />
     </Group>
   );
+}
+
+function hairPath(size: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(size * 0.3, size * 0.5);
+  p.cubicTo(size * 0.28, size * 0.28, size * 0.43, size * 0.22, size * 0.56, size * 0.25);
+  p.cubicTo(size * 0.7, size * 0.29, size * 0.75, size * 0.43, size * 0.68, size * 0.57);
+  p.cubicTo(size * 0.62, size * 0.45, size * 0.5, size * 0.38, size * 0.36, size * 0.41);
+  p.cubicTo(size * 0.35, size * 0.46, size * 0.33, size * 0.49, size * 0.3, size * 0.5);
+  p.close();
+  return p;
+}
+
+function hairShadowPath(size: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(size * 0.37, size * 0.35);
+  p.cubicTo(size * 0.43, size * 0.3, size * 0.52, size * 0.29, size * 0.62, size * 0.36);
+  p.cubicTo(size * 0.55, size * 0.36, size * 0.48, size * 0.39, size * 0.4, size * 0.46);
+  p.cubicTo(size * 0.4, size * 0.41, size * 0.39, size * 0.38, size * 0.37, size * 0.35);
+  p.close();
+  return p;
+}
+
+function shoulderPath(size: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(size * 0.26, size * 0.78);
+  p.cubicTo(size * 0.31, size * 0.62, size * 0.43, size * 0.58, size * 0.5, size * 0.58);
+  p.cubicTo(size * 0.57, size * 0.58, size * 0.69, size * 0.62, size * 0.74, size * 0.78);
+  p.lineTo(size * 0.26, size * 0.78);
+  p.close();
+  return p;
+}
+
+function avatarSmilePath(size: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(size * 0.46, size * 0.55);
+  p.cubicTo(size * 0.48, size * 0.58, size * 0.53, size * 0.58, size * 0.55, size * 0.55);
+  return p;
+}
+
+function playPath(x: number, y: number, size: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(x, y);
+  p.lineTo(x, y + size);
+  p.lineTo(x + size * 0.82, y + size * 0.5);
+  p.close();
+  return p;
+}
+
+function basketPath(x: number, y: number, width: number, height: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(x, y + height * 0.22);
+  p.lineTo(x + width, y + height * 0.22);
+  p.lineTo(x + width * 0.86, y + height);
+  p.lineTo(x + width * 0.16, y + height);
+  p.close();
+  return p;
+}
+
+function basketHandlePath(cx: number, y: number, width: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(cx - width * 0.5, y + width * 0.18);
+  p.cubicTo(cx - width * 0.38, y - width * 0.28, cx + width * 0.38, y - width * 0.28, cx + width * 0.5, y + width * 0.18);
+  return p;
+}
+
+function clapperStripePath(x: number, y: number, width: number, height: number) {
+  const p = Skia.Path.Make();
+  for (let index = 0; index < 4; index += 1) {
+    const left = x + width * (0.1 + index * 0.22);
+    p.moveTo(left, y + height);
+    p.lineTo(left + width * 0.08, y);
+    p.lineTo(left + width * 0.16, y);
+    p.lineTo(left + width * 0.08, y + height);
+    p.close();
+  }
+  return p;
+}
+
+function soccerPanelPath(cx: number, cy: number, radius: number) {
+  const p = Skia.Path.Make();
+  for (let index = 0; index < 5; index += 1) {
+    const angle = -Math.PI / 2 + (index * Math.PI * 2) / 5;
+    const x = cx + Math.cos(angle) * radius * 0.42;
+    const y = cy + Math.sin(angle) * radius * 0.42;
+    if (index === 0) p.moveTo(x, y);
+    else p.lineTo(x, y);
+  }
+  p.close();
+  p.moveTo(cx, cy - radius * 0.42);
+  p.lineTo(cx - radius * 0.58, cy - radius * 0.72);
+  p.moveTo(cx + radius * 0.34, cy - radius * 0.14);
+  p.lineTo(cx + radius * 0.78, cy - radius * 0.04);
+  p.moveTo(cx + radius * 0.22, cy + radius * 0.34);
+  p.lineTo(cx + radius * 0.42, cy + radius * 0.68);
+  p.moveTo(cx - radius * 0.22, cy + radius * 0.34);
+  p.lineTo(cx - radius * 0.42, cy + radius * 0.68);
+  p.moveTo(cx - radius * 0.34, cy - radius * 0.14);
+  p.lineTo(cx - radius * 0.78, cy - radius * 0.04);
+  return p;
+}
+
+function lowerCrownPath(cx: number, cy: number, width: number, height: number) {
+  const p = Skia.Path.Make();
+  p.moveTo(cx - width, cy);
+  p.quadTo(cx - width * 0.82, cy + height * 0.78, cx, cy + height * 0.82);
+  p.quadTo(cx + width * 0.82, cy + height * 0.78, cx + width, cy);
+  p.lineTo(cx + width * 0.86, cy + height * 0.34);
+  p.quadTo(cx + width * 0.46, cy - height * 0.02, cx, cy + height * 0.5);
+  p.quadTo(cx - width * 0.46, cy - height * 0.02, cx - width * 0.86, cy + height * 0.34);
+  p.close();
+  return p;
 }
 
 function smilePath(cx: number, cy: number, r: number) {
