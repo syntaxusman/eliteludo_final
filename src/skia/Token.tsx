@@ -10,7 +10,7 @@
 //    current move so each die point reads as one discrete hop.
 
 import { useEffect } from 'react';
-import { Image, Pressable, StyleSheet, View, type ImageSourcePropType } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import Animated, {
   Easing,
   useAnimatedStyle,
@@ -21,15 +21,8 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import type { Color } from '@/src/game/types';
-import { Images } from '@/src/assets';
 import { colors } from '@/src/theme/colors';
-
-const TOKEN_IMAGE: Record<Color, ImageSourcePropType> = {
-  red: Images.tokenRed,
-  green: Images.tokenGreen,
-  yellow: Images.tokenYellow,
-  blue: Images.tokenBlue,
-};
+import { OrnateTokenCanvas } from '@/src/skia/OrnateToken';
 
 type HopStop = { cx: number; cy: number };
 
@@ -126,21 +119,7 @@ export function Token({
             ringStyle,
           ]}
         />
-        <View
-          style={[
-            styles.tokenShadow,
-            {
-              width: size * 0.68,
-              height: size * 0.16,
-              borderRadius: size * 0.08,
-            },
-          ]}
-        />
-        <Image
-          source={TOKEN_IMAGE[color]}
-          resizeMode="contain"
-          style={{ width: size * 1.18, height: size * 1.18 }}
-        />
+        <OrnateTokenCanvas color={color} size={size} />
       </Pressable>
     </Animated.View>
   );
@@ -159,10 +138,5 @@ const styles = StyleSheet.create({
     position: 'absolute',
     borderWidth: 2,
     borderColor: colors.gold,
-  },
-  tokenShadow: {
-    position: 'absolute',
-    bottom: 1,
-    backgroundColor: 'rgba(0,0,0,0.42)',
   },
 });

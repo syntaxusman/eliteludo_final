@@ -1,0 +1,161 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-use-deferred-value.md",
+      "type": "document",
+      "name": "rerender-use-deferred-value.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-use-deferred-value.md",
+      "summary": "rerender-use-deferred-value.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-use-ref-transient-values.md",
+      "type": "document",
+      "name": "rerender-use-ref-transient-values.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-use-ref-transient-values.md",
+      "summary": "rerender-use-ref-transient-values.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-after-nonblocking.md",
+      "type": "document",
+      "name": "server-after-nonblocking.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-after-nonblocking.md",
+      "summary": "server-after-nonblocking.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-auth-actions.md",
+      "type": "document",
+      "name": "server-auth-actions.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-auth-actions.md",
+      "summary": "server-auth-actions.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-cache-lru.md",
+      "type": "document",
+      "name": "server-cache-lru.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-cache-lru.md",
+      "summary": "server-cache-lru.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-cache-react.md",
+      "type": "document",
+      "name": "server-cache-react.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-cache-react.md",
+      "summary": "server-cache-react.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-dedup-props.md",
+      "type": "document",
+      "name": "server-dedup-props.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-dedup-props.md",
+      "summary": "server-dedup-props.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-hoist-static-io.md",
+      "type": "document",
+      "name": "server-hoist-static-io.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-hoist-static-io.md",
+      "summary": "server-hoist-static-io.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-no-shared-module-state.md",
+      "type": "document",
+      "name": "server-no-shared-module-state.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-no-shared-module-state.md",
+      "summary": "server-no-shared-module-state.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-parallel-fetching.md",
+      "type": "document",
+      "name": "server-parallel-fetching.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-parallel-fetching.md",
+      "summary": "server-parallel-fetching.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-parallel-nested-fetching.md",
+      "type": "document",
+      "name": "server-parallel-nested-fetching.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-parallel-nested-fetching.md",
+      "summary": "server-parallel-nested-fetching.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/server-serialization.md",
+      "type": "document",
+      "name": "server-serialization.md",
+      "filePath": ".agents/skills/react-best-practices/rules/server-serialization.md",
+      "summary": "server-serialization.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

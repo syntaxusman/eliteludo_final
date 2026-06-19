@@ -1,0 +1,3275 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "app/(tabs)/home.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1566,
+      "nonEmptyLines": 1514,
+      "functions": [
+        {
+          "name": "rewardErrorMessage",
+          "startLine": 91,
+          "endLine": 105,
+          "params": [
+            "reason"
+          ]
+        },
+        {
+          "name": "fmt",
+          "startLine": 107,
+          "endLine": 111,
+          "params": [
+            "n"
+          ]
+        },
+        {
+          "name": "HomeScreen",
+          "startLine": 113,
+          "endLine": 282,
+          "params": []
+        },
+        {
+          "name": "Header",
+          "startLine": 284,
+          "endLine": 317,
+          "params": [
+            "{\r\n  top,\r\n  coins,\r\n  username,\r\n  onSettings,\r\n}"
+          ]
+        },
+        {
+          "name": "CurrencyPill",
+          "startLine": 319,
+          "endLine": 335,
+          "params": [
+            "{ kind, value }"
+          ]
+        },
+        {
+          "name": "CoinIcon",
+          "startLine": 337,
+          "endLine": 356,
+          "params": [
+            "{ size = 34 }"
+          ]
+        },
+        {
+          "name": "ModesHome",
+          "startLine": 358,
+          "endLine": 415,
+          "params": [
+            "{\r\n  bottom,\r\n  onMode,\r\n  onReward,\r\n  onShop,\r\n  coins,\r\n}"
+          ]
+        },
+        {
+          "name": "QuickTile",
+          "startLine": 417,
+          "endLine": 437,
+          "params": [
+            "{\r\n  icon,\r\n  label,\r\n  badge,\r\n  onPress,\r\n}"
+          ]
+        },
+        {
+          "name": "ModeCard",
+          "startLine": 439,
+          "endLine": 473,
+          "params": [
+            "{ mode, onPress }"
+          ]
+        },
+        {
+          "name": "ModeScene",
+          "startLine": 475,
+          "endLine": 535,
+          "params": [
+            "{ mode }"
+          ]
+        },
+        {
+          "name": "LudoPlate",
+          "startLine": 537,
+          "endLine": 576,
+          "params": [
+            "{\r\n  size,\r\n  x,\r\n  y,\r\n  rotate,\r\n  colors: plateColors,\r\n}"
+          ]
+        },
+        {
+          "name": "TokenDisc",
+          "startLine": 578,
+          "endLine": 585,
+          "params": [
+            "{ color, x, y, size }"
+          ]
+        },
+        {
+          "name": "DiceBlock",
+          "startLine": 587,
+          "endLine": 620,
+          "params": [
+            "{\r\n  x,\r\n  y,\r\n  size,\r\n  value,\r\n  color = '#F3F0E7',\r\n}"
+          ]
+        },
+        {
+          "name": "diceDots",
+          "startLine": 622,
+          "endLine": 632,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "ClubMedal",
+          "startLine": 634,
+          "endLine": 641,
+          "params": [
+            "{ accentColor, crown }"
+          ]
+        },
+        {
+          "name": "ClubSlides",
+          "startLine": 643,
+          "endLine": 725,
+          "params": [
+            "{\r\n  bottom,\r\n  selectedMode,\r\n  activeClub,\r\n  scrollX,\r\n  onBack,\r\n  onPlay,\r\n  onScroll,\r\n  onMomentumEnd,\r\n}"
+          ]
+        },
+        {
+          "name": "ClubCard",
+          "startLine": 727,
+          "endLine": 806,
+          "params": [
+            "{\r\n  city,\r\n  index,\r\n  scrollX,\r\n  onPlay,\r\n}"
+          ]
+        },
+        {
+          "name": "PrizeChest",
+          "startLine": 808,
+          "endLine": 821,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HomeScreen",
+          "line": 113,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rewardErrorMessage",
+          "callee": "/collect_daily_reward_for_user|function/i.test",
+          "lineNumber": 95
+        },
+        {
+          "caller": "rewardErrorMessage",
+          "callee": "/unauthorized|jwt|session/i.test",
+          "lineNumber": 98
+        },
+        {
+          "caller": "rewardErrorMessage",
+          "callee": "/network|fetch|reach supabase|internet|dns/i.test",
+          "lineNumber": 101
+        },
+        {
+          "caller": "fmt",
+          "callee": "(n / 1_000_000).toFixed",
+          "lineNumber": 108
+        },
+        {
+          "caller": "fmt",
+          "callee": "(n / 1_000).toFixed",
+          "lineNumber": 109
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useRouter",
+          "lineNumber": 114
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useSafeAreaInsets",
+          "lineNumber": 115
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 116
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 117
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 118
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 119
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 120
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 121
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 122
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 123
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 124
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useState",
+          "lineNumber": 126
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useState",
+          "lineNumber": 127
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useState",
+          "lineNumber": 128
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useState",
+          "lineNumber": 129
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useState",
+          "lineNumber": 130
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useState",
+          "lineNumber": 131
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useState",
+          "lineNumber": 132
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useSharedValue",
+          "lineNumber": 133
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useEffect",
+          "lineNumber": 135
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "hydrateWallet",
+          "lineNumber": 136
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "hydrateProfile",
+          "lineNumber": 137
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useEffect",
+          "lineNumber": 140
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "pendingClaim",
+          "lineNumber": 142
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setPendingDay",
+          "lineNumber": 144
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setRewardOpen",
+          "lineNumber": 145
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useCallback",
+          "lineNumber": 156
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 157
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "router.push",
+          "lineNumber": 159
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "router.push",
+          "lineNumber": 163
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setSelectedMode",
+          "lineNumber": 166
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setView",
+          "lineNumber": 167
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setActiveClub",
+          "lineNumber": 168
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useCallback",
+          "lineNumber": 171
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 172
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "router.push",
+          "lineNumber": 174
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "refreshWallet",
+          "lineNumber": 177
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useWalletStore.getState",
+          "lineNumber": 178
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "Alert.alert",
+          "lineNumber": 180
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "city.entry.toLocaleString",
+          "lineNumber": 182
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "serverCoins.toLocaleString",
+          "lineNumber": 182
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "router.push",
+          "lineNumber": 186
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "String",
+          "lineNumber": 190
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "useAnimatedScrollHandler",
+          "lineNumber": 196
+        },
+        {
+          "caller": "onClubMomentumEnd",
+          "callee": "Math.round",
+          "lineNumber": 201
+        },
+        {
+          "caller": "onClubMomentumEnd",
+          "callee": "setActiveClub",
+          "lineNumber": 202
+        },
+        {
+          "caller": "onClubMomentumEnd",
+          "callee": "Math.max",
+          "lineNumber": 202
+        },
+        {
+          "caller": "onClubMomentumEnd",
+          "callee": "Math.min",
+          "lineNumber": 202
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 216
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "router.push",
+          "lineNumber": 217
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "pendingClaim",
+          "lineNumber": 226
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "Alert.alert",
+          "lineNumber": 228
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setPendingDay",
+          "lineNumber": 231
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setRewardOpen",
+          "lineNumber": 232
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 235
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "router.push",
+          "lineNumber": 236
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 247
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setView",
+          "lineNumber": 248
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setClaiming",
+          "lineNumber": 261
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "claimDaily",
+          "lineNumber": 262
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "haptics.success",
+          "lineNumber": 264
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setDismissedRewardDay",
+          "lineNumber": 265
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setRewardOpen",
+          "lineNumber": 266
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "Alert.alert",
+          "lineNumber": 268
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "rewardErrorMessage",
+          "lineNumber": 268
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setClaiming",
+          "lineNumber": 270
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setDismissedRewardDay",
+          "lineNumber": 273
+        },
+        {
+          "caller": "HomeScreen",
+          "callee": "setRewardOpen",
+          "lineNumber": 274
+        },
+        {
+          "caller": "Header",
+          "callee": "FadeIn.duration",
+          "lineNumber": 296
+        },
+        {
+          "caller": "Header",
+          "callee": "username.charAt(0).toUpperCase",
+          "lineNumber": 299
+        },
+        {
+          "caller": "Header",
+          "callee": "username.charAt",
+          "lineNumber": 299
+        },
+        {
+          "caller": "Header",
+          "callee": "fmt",
+          "lineNumber": 308
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "MODES.filter",
+          "lineNumber": 371
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "MODES.filter",
+          "lineNumber": 372
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "FadeInDown.delay(80).duration",
+          "lineNumber": 376
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 376
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "fmt",
+          "lineNumber": 397
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "FadeInDown.delay(160).duration",
+          "lineNumber": 402
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 402
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "large.map",
+          "lineNumber": 403
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "onMode",
+          "lineNumber": 404
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "FadeInDown.delay(220).duration",
+          "lineNumber": 408
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 408
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "small.map",
+          "lineNumber": 409
+        },
+        {
+          "caller": "ModesHome",
+          "callee": "onMode",
+          "lineNumber": 410
+        },
+        {
+          "caller": "DiceBlock",
+          "callee": "diceDots",
+          "lineNumber": 600
+        },
+        {
+          "caller": "DiceBlock",
+          "callee": "dots.map",
+          "lineNumber": 603
+        },
+        {
+          "caller": "ClubSlides",
+          "callee": "MODES.find",
+          "lineNumber": 662
+        },
+        {
+          "caller": "ClubSlides",
+          "callee": "mode.label.toUpperCase",
+          "lineNumber": 673
+        },
+        {
+          "caller": "ClubSlides",
+          "callee": "['CLASSIC', 'ARROW', 'BLITZ'].map",
+          "lineNumber": 681
+        },
+        {
+          "caller": "ClubSlides",
+          "callee": "CITIES.map",
+          "lineNumber": 711
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 738
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "Math.abs",
+          "lineNumber": 740
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "interpolate",
+          "lineNumber": 741
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "interpolate",
+          "lineNumber": 742
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "interpolate",
+          "lineNumber": 743
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "onPlay",
+          "lineNumber": 748
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "fmt",
+          "lineNumber": 767
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "onPlay",
+          "lineNumber": 790
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "fmt",
+          "lineNumber": 794
+        },
+        {
+          "caller": "ClubCard",
+          "callee": "fmt",
+          "lineNumber": 800
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 18,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/(tabs)/profile.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 306,
+      "nonEmptyLines": 286,
+      "functions": [
+        {
+          "name": "ProfileScreen",
+          "startLine": 24,
+          "endLine": 152,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProfileScreen",
+          "line": 24,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ProfileScreen",
+          "callee": "useRouter",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "useEffect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "hydrate",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "getAvatar",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "coins.toLocaleString",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "FadeInDown.delay(100).duration",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 59
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "FadeInDown.delay(200).duration",
+          "lineNumber": 97
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 97
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "[\r\n            { label: 'Games', value: stats.gamesPlayed },\r\n            { label: 'Wins', value: stats.wins },\r\n            { label: 'Crowns', value: stats.crowns },\r\n          ].map",
+          "lineNumber": 98
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "FadeInDown.delay(300).duration",
+          "lineNumber": 120
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 120
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "MENU_ITEMS.map",
+          "lineNumber": 121
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 125
+        },
+        {
+          "caller": "ProfileScreen",
+          "callee": "router.push",
+          "lineNumber": 126
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/auth/onboarding.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 383,
+      "nonEmptyLines": 372,
+      "functions": [
+        {
+          "name": "OnboardingScreen",
+          "startLine": 31,
+          "endLine": 170,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "OnboardingScreen",
+          "line": 31,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "OnboardingScreen",
+          "callee": "useRouter",
+          "lineNumber": 32
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "useSafeAreaInsets",
+          "lineNumber": 33
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 34
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "useState",
+          "lineNumber": 36
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "useState",
+          "lineNumber": 37
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "useState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "useState",
+          "lineNumber": 39
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "validateUsername",
+          "lineNumber": 41
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "isUsernameValid",
+          "lineNumber": 42
+        },
+        {
+          "caller": "onContinue",
+          "callee": "haptics.tap",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onContinue",
+          "callee": "setLoading",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onContinue",
+          "callee": "setError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onContinue",
+          "callee": "setProfile",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onContinue",
+          "callee": "username.trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onContinue",
+          "callee": "setLoading",
+          "lineNumber": 51
+        },
+        {
+          "caller": "onContinue",
+          "callee": "haptics.success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "onContinue",
+          "callee": "router.replace",
+          "lineNumber": 53
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 71
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "FadeInDown.delay(100).duration",
+          "lineNumber": 79
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 79
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "setUsername",
+          "lineNumber": 96
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "setError",
+          "lineNumber": 96
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "username.trim",
+          "lineNumber": 107
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "FadeInDown.delay(200).duration",
+          "lineNumber": 111
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 111
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "AVATARS.map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 119
+        },
+        {
+          "caller": "OnboardingScreen",
+          "callee": "setAvatarId",
+          "lineNumber": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/edit-profile.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 362,
+      "nonEmptyLines": 348,
+      "functions": [
+        {
+          "name": "EditProfileScreen",
+          "startLine": 31,
+          "endLine": 175,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "EditProfileScreen",
+          "line": 31,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "EditProfileScreen",
+          "callee": "useRouter",
+          "lineNumber": 32
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "useSafeAreaInsets",
+          "lineNumber": 33
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 34
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 35
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "useState",
+          "lineNumber": 37
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "useState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "validateUsername",
+          "lineNumber": 40
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "isUsernameValid",
+          "lineNumber": 41
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "username.trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "onSave",
+          "callee": "haptics.success",
+          "lineNumber": 52
+        },
+        {
+          "caller": "onSave",
+          "callee": "setProfile",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onSave",
+          "callee": "username.trim",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onSave",
+          "callee": "router.back",
+          "lineNumber": 54
+        },
+        {
+          "caller": "onCancel",
+          "callee": "haptics.tap",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onCancel",
+          "callee": "router.back",
+          "lineNumber": 59
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 73
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "FadeInDown.delay(50).duration",
+          "lineNumber": 88
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 88
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "username.trim",
+          "lineNumber": 116
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "FadeInDown.delay(100).duration",
+          "lineNumber": 120
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 120
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "AVATARS.map",
+          "lineNumber": 123
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 129
+        },
+        {
+          "caller": "EditProfileScreen",
+          "callee": "setAvatarId",
+          "lineNumber": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/game/matchmaking.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 562,
+      "nonEmptyLines": 521,
+      "functions": [
+        {
+          "name": "RadarRing",
+          "startLine": 30,
+          "endLine": 62,
+          "params": [
+            "{ delay }"
+          ]
+        },
+        {
+          "name": "MatchmakingScreen",
+          "startLine": 64,
+          "endLine": 323,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MatchmakingScreen",
+          "line": 64,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RadarRing",
+          "callee": "useSharedValue",
+          "lineNumber": 31
+        },
+        {
+          "caller": "RadarRing",
+          "callee": "useSharedValue",
+          "lineNumber": 32
+        },
+        {
+          "caller": "RadarRing",
+          "callee": "useEffect",
+          "lineNumber": 34
+        },
+        {
+          "caller": "start",
+          "callee": "withRepeat",
+          "lineNumber": 38
+        },
+        {
+          "caller": "start",
+          "callee": "withTiming",
+          "lineNumber": 39
+        },
+        {
+          "caller": "start",
+          "callee": "Easing.out",
+          "lineNumber": 39
+        },
+        {
+          "caller": "start",
+          "callee": "withRepeat",
+          "lineNumber": 43
+        },
+        {
+          "caller": "start",
+          "callee": "withSequence",
+          "lineNumber": 44
+        },
+        {
+          "caller": "start",
+          "callee": "withTiming",
+          "lineNumber": 45
+        },
+        {
+          "caller": "start",
+          "callee": "withTiming",
+          "lineNumber": 46
+        },
+        {
+          "caller": "start",
+          "callee": "Easing.out",
+          "lineNumber": 46
+        },
+        {
+          "caller": "RadarRing",
+          "callee": "setTimeout",
+          "lineNumber": 52
+        },
+        {
+          "caller": "RadarRing",
+          "callee": "clearTimeout",
+          "lineNumber": 53
+        },
+        {
+          "caller": "RadarRing",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 56
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useRouter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useLocalSearchParams",
+          "lineNumber": 66
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useSafeAreaInsets",
+          "lineNumber": 71
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 72
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 73
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "Number",
+          "lineNumber": 78
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useSharedValue",
+          "lineNumber": 80
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useState",
+          "lineNumber": 81
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useState",
+          "lineNumber": 82
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useRef",
+          "lineNumber": 83
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useRef",
+          "lineNumber": 84
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useRef",
+          "lineNumber": 85
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useRef",
+          "lineNumber": 86
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useRef",
+          "lineNumber": 87
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useRef",
+          "lineNumber": 88
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useCallback",
+          "lineNumber": 89
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "router.replace",
+          "lineNumber": 90
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useCallback",
+          "lineNumber": 93
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "clearInterval",
+          "lineNumber": 96
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 97
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "setLabel",
+          "lineNumber": 98
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "setTimeout",
+          "lineNumber": 99
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "router.replace",
+          "lineNumber": 100
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "String",
+          "lineNumber": 102
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useEffect",
+          "lineNumber": 107
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "withRepeat",
+          "lineNumber": 108
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "withSequence",
+          "lineNumber": 109
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "withTiming",
+          "lineNumber": 110
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "Easing.inOut",
+          "lineNumber": 110
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "withTiming",
+          "lineNumber": 111
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "Easing.inOut",
+          "lineNumber": 111
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "setInterval",
+          "lineNumber": 116
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "setElapsed",
+          "lineNumber": 116
+        },
+        {
+          "caller": "startQueue",
+          "callee": "supabase.auth.getSession",
+          "lineNumber": 122
+        },
+        {
+          "caller": "startQueue",
+          "callee": "Alert.alert",
+          "lineNumber": 124
+        },
+        {
+          "caller": "startQueue",
+          "callee": "router.replace",
+          "lineNumber": 125
+        },
+        {
+          "caller": "startQueue",
+          "callee": "deductEntryFee",
+          "lineNumber": 130
+        },
+        {
+          "caller": "startQueue",
+          "callee": "refreshWallet",
+          "lineNumber": 132
+        },
+        {
+          "caller": "startQueue",
+          "callee": "useWalletStore.getState",
+          "lineNumber": 133
+        },
+        {
+          "caller": "startQueue",
+          "callee": "Alert.alert",
+          "lineNumber": 135
+        },
+        {
+          "caller": "startQueue",
+          "callee": "required.toLocaleString",
+          "lineNumber": 137
+        },
+        {
+          "caller": "startQueue",
+          "callee": "current.toLocaleString",
+          "lineNumber": 137
+        },
+        {
+          "caller": "startQueue",
+          "callee": "goHome",
+          "lineNumber": 139
+        },
+        {
+          "caller": "startQueue",
+          "callee": "refreshWallet",
+          "lineNumber": 143
+        },
+        {
+          "caller": "startQueue",
+          "callee": "subscribeQueue",
+          "lineNumber": 146
+        },
+        {
+          "caller": "startQueue",
+          "callee": "navigate",
+          "lineNumber": 146
+        },
+        {
+          "caller": "startQueue",
+          "callee": "findMatch",
+          "lineNumber": 147
+        },
+        {
+          "caller": "startQueue",
+          "callee": "navigate",
+          "lineNumber": 154
+        },
+        {
+          "caller": "startQueue",
+          "callee": "setTimeout",
+          "lineNumber": 158
+        },
+        {
+          "caller": "startQueue",
+          "callee": "setLabel",
+          "lineNumber": 159
+        },
+        {
+          "caller": "startQueue",
+          "callee": "findMatch",
+          "lineNumber": 160
+        },
+        {
+          "caller": "startQueue",
+          "callee": "navigate",
+          "lineNumber": 166
+        },
+        {
+          "caller": "startQueue",
+          "callee": "Date.now",
+          "lineNumber": 166
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "startQueue().catch",
+          "lineNumber": 170
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "startQueue",
+          "lineNumber": 170
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "Alert.alert",
+          "lineNumber": 171
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "goHome",
+          "lineNumber": 172
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "clearInterval",
+          "lineNumber": 176
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 177
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "unsubscribeQueueRef.current",
+          "lineNumber": 178
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 182
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "String(Math.floor(elapsed / 60)).padStart",
+          "lineNumber": 187
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "String",
+          "lineNumber": 187
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "Math.floor",
+          "lineNumber": 187
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "String(elapsed % 60).padStart",
+          "lineNumber": 188
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "String",
+          "lineNumber": 188
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "Array.from",
+          "lineNumber": 189
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 204
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "cancelMatchmaking",
+          "lineNumber": 210
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "refreshWallet",
+          "lineNumber": 211
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "goHome",
+          "lineNumber": 213
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "FadeInDown.delay(150).duration",
+          "lineNumber": 225
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 225
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "playerSlots.map",
+          "lineNumber": 248
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "[Images.tokenRed, Images.tokenBlue, Images.tokenGreen, Images.tokenYellow].map",
+          "lineNumber": 296
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "FadeIn.delay(400).duration",
+          "lineNumber": 305
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "FadeIn.delay",
+          "lineNumber": 305
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "cancelMatchmaking",
+          "lineNumber": 311
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "refreshWallet",
+          "lineNumber": 312
+        },
+        {
+          "caller": "MatchmakingScreen",
+          "callee": "goHome",
+          "lineNumber": 314
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/game/private.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 148,
+      "functions": [
+        {
+          "name": "PrivateRoomScreen",
+          "startLine": 17,
+          "endLine": 110,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PrivateRoomScreen",
+          "line": 17,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "useRouter",
+          "lineNumber": 18
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 19
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "useState",
+          "lineNumber": 20
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "useState",
+          "lineNumber": 21
+        },
+        {
+          "caller": "payEntry",
+          "callee": "deductEntryFee",
+          "lineNumber": 24
+        },
+        {
+          "caller": "payEntry",
+          "callee": "refreshWallet",
+          "lineNumber": 25
+        },
+        {
+          "caller": "payEntry",
+          "callee": "Alert.alert",
+          "lineNumber": 27
+        },
+        {
+          "caller": "onCreate",
+          "callee": "haptics.tap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onCreate",
+          "callee": "setLoading",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onCreate",
+          "callee": "payEntry",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onCreate",
+          "callee": "createPrivateRoom",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onCreate",
+          "callee": "Alert.alert",
+          "lineNumber": 41
+        },
+        {
+          "caller": "onCreate",
+          "callee": "router.replace",
+          "lineNumber": 42
+        },
+        {
+          "caller": "onCreate",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "onCreate",
+          "callee": "Alert.alert",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onCreate",
+          "callee": "setLoading",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onJoin",
+          "callee": "roomCode.trim().toUpperCase",
+          "lineNumber": 54
+        },
+        {
+          "caller": "onJoin",
+          "callee": "roomCode.trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "onJoin",
+          "callee": "haptics.tap",
+          "lineNumber": 56
+        },
+        {
+          "caller": "onJoin",
+          "callee": "setLoading",
+          "lineNumber": 57
+        },
+        {
+          "caller": "onJoin",
+          "callee": "payEntry",
+          "lineNumber": 59
+        },
+        {
+          "caller": "onJoin",
+          "callee": "joinPrivateRoom",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onJoin",
+          "callee": "router.replace",
+          "lineNumber": 62
+        },
+        {
+          "caller": "onJoin",
+          "callee": "String",
+          "lineNumber": 64
+        },
+        {
+          "caller": "onJoin",
+          "callee": "Alert.alert",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onJoin",
+          "callee": "setLoading",
+          "lineNumber": 69
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "router.back",
+          "lineNumber": 76
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "setRoomCode",
+          "lineNumber": 95
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice",
+          "lineNumber": 95
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "value.toUpperCase().replace",
+          "lineNumber": 95
+        },
+        {
+          "caller": "PrivateRoomScreen",
+          "callee": "value.toUpperCase",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/game/result.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 222,
+      "nonEmptyLines": 209,
+      "functions": [
+        {
+          "name": "ResultScreen",
+          "startLine": 25,
+          "endLine": 141,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ResultScreen",
+          "line": 25,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ResultScreen",
+          "callee": "useLocalSearchParams",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 37
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "useState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "useEffect",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "hydrateProfile",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "useEffect",
+          "lineNumber": 44
+        },
+        {
+          "caller": "settle",
+          "callee": "matchId.startsWith",
+          "lineNumber": 46
+        },
+        {
+          "caller": "settle",
+          "callee": "Promise.all",
+          "lineNumber": 47
+        },
+        {
+          "caller": "settle",
+          "callee": "supabase.auth.getSession",
+          "lineNumber": 48
+        },
+        {
+          "caller": "settle",
+          "callee": "getMatch",
+          "lineNumber": 49
+        },
+        {
+          "caller": "settle",
+          "callee": "match.players.find",
+          "lineNumber": 52
+        },
+        {
+          "caller": "settle",
+          "callee": "winnerEntry.user_id.startsWith",
+          "lineNumber": 53
+        },
+        {
+          "caller": "settle",
+          "callee": "match.players.find",
+          "lineNumber": 54
+        },
+        {
+          "caller": "settle",
+          "callee": "p.user_id.startsWith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "settle",
+          "callee": "supabase\r\n        .from('matches')\r\n        .update({\r\n          status: 'finished',\r\n          winner_user_id: winnerEntry.user_id,\r\n          finished_at: new Date().toISOString(),\r\n        })\r\n        .eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "settle",
+          "callee": "supabase\r\n        .from('matches')\r\n        .update",
+          "lineNumber": 55
+        },
+        {
+          "caller": "settle",
+          "callee": "supabase\r\n        .from",
+          "lineNumber": 55
+        },
+        {
+          "caller": "settle",
+          "callee": "new Date().toISOString",
+          "lineNumber": 60
+        },
+        {
+          "caller": "settle",
+          "callee": "awardMatchReward",
+          "lineNumber": 63
+        },
+        {
+          "caller": "settle",
+          "callee": "Number",
+          "lineNumber": 67
+        },
+        {
+          "caller": "settle",
+          "callee": "Promise.all",
+          "lineNumber": 70
+        },
+        {
+          "caller": "settle",
+          "callee": "refreshWallet",
+          "lineNumber": 70
+        },
+        {
+          "caller": "settle",
+          "callee": "refreshProfile",
+          "lineNumber": 70
+        },
+        {
+          "caller": "settle",
+          "callee": "setSettled",
+          "lineNumber": 71
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "settle().catch",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "settle",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "setSettled",
+          "lineNumber": 73
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "matchId.startsWith",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "ZoomIn.delay(200).duration",
+          "lineNumber": 95
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "ZoomIn.delay",
+          "lineNumber": 95
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "FadeInDown.delay(400).duration",
+          "lineNumber": 107
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 107
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "winner.toUpperCase",
+          "lineNumber": 110
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "FadeInDown.delay(600).duration",
+          "lineNumber": 116
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 116
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "router.replace",
+          "lineNumber": 118
+        },
+        {
+          "caller": "ResultScreen",
+          "callee": "router.replace",
+          "lineNumber": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/shop.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 221,
+      "nonEmptyLines": 211,
+      "functions": [
+        {
+          "name": "ShopScreen",
+          "startLine": 18,
+          "endLine": 133,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ShopScreen",
+          "line": 18,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ShopScreen",
+          "callee": "useRouter",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 20
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useWalletStore",
+          "lineNumber": 21
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 22
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useShopStore",
+          "lineNumber": 24
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useShopStore",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useState",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useState",
+          "lineNumber": 27
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "useEffect",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "refreshWallet",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "refreshProfile",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "[\r\n    profile?.selectedTokenSkin,\r\n    profile?.selectedDiceSkin,\r\n    ...(profile?.crownsUnlocked ?? []),\r\n  ].filter",
+          "lineNumber": 34
+        },
+        {
+          "caller": "onRewardAd",
+          "callee": "haptics.tap",
+          "lineNumber": 42
+        },
+        {
+          "caller": "onRewardAd",
+          "callee": "setRewarding",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onRewardAd",
+          "callee": "showRewardedAd",
+          "lineNumber": 44
+        },
+        {
+          "caller": "onRewardAd",
+          "callee": "refreshWallet",
+          "lineNumber": 45
+        },
+        {
+          "caller": "onRewardAd",
+          "callee": "setRewarding",
+          "lineNumber": 46
+        },
+        {
+          "caller": "onRewardAd",
+          "callee": "haptics.success",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onRewardAd",
+          "callee": "Alert.alert",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "haptics.tap",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "setBuyingPack",
+          "lineNumber": 54
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "purchaseCoinPack",
+          "lineNumber": 56
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "refreshWallet",
+          "lineNumber": 57
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "haptics.success",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "Alert.alert",
+          "lineNumber": 59
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "Alert.alert",
+          "lineNumber": 61
+        },
+        {
+          "caller": "onCoinPack",
+          "callee": "setBuyingPack",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "router.back",
+          "lineNumber": 70
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "coins.toLocaleString",
+          "lineNumber": 76
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "SHOP_ITEMS.map",
+          "lineNumber": 97
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "unlocked.has",
+          "lineNumber": 98
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "item.kind.replace",
+          "lineNumber": 111
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 116
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "purchase",
+          "lineNumber": 117
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "haptics.success",
+          "lineNumber": 118
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "Alert.alert",
+          "lineNumber": 119
+        },
+        {
+          "caller": "ShopScreen",
+          "callee": "item.price.toLocaleString",
+          "lineNumber": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/assets/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 54,
+      "exports": [
+        {
+          "name": "Images",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/DailyRewardModal.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 280,
+      "nonEmptyLines": 267,
+      "functions": [
+        {
+          "name": "DailyRewardModal",
+          "startLine": 17,
+          "endLine": 97,
+          "params": [
+            "{ visible, pendingDay, onClaim, onClose }"
+          ]
+        },
+        {
+          "name": "DayCard",
+          "startLine": 99,
+          "endLine": 135,
+          "params": [
+            "{\r\n  day, amount, claimed, today, bonus,\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DailyRewardModal",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DailyRewardModal",
+          "callee": "Math.max",
+          "lineNumber": 18
+        },
+        {
+          "caller": "DailyRewardModal",
+          "callee": "FadeIn.duration",
+          "lineNumber": 22
+        },
+        {
+          "caller": "DailyRewardModal",
+          "callee": "ZoomIn.delay(80).duration",
+          "lineNumber": 25
+        },
+        {
+          "caller": "DailyRewardModal",
+          "callee": "ZoomIn.delay",
+          "lineNumber": 25
+        },
+        {
+          "caller": "DailyRewardModal",
+          "callee": "DAILY_REWARDS.map",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/constants/economy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "exports": [
+        {
+          "name": "CITY_CLUBS",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "SHOP_ITEMS",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "AD_REWARD_COINS",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "IAP_COIN_PACK_AMOUNT",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/constants/profile.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "validateUsername",
+          "startLine": 35,
+          "endLine": 42,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "isUsernameValid",
+          "startLine": 44,
+          "endLine": 47,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "getAvatar",
+          "startLine": 49,
+          "endLine": 52,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "getTokenColor",
+          "startLine": 54,
+          "endLine": 57,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AVATARS",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "TOKEN_COLORS",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "USERNAME_MIN",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "USERNAME_MAX",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "USERNAME_REGEX",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "validateUsername",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "isUsernameValid",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "getAvatar",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "getTokenColor",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validateUsername",
+          "callee": "raw.trim",
+          "lineNumber": 36
+        },
+        {
+          "caller": "validateUsername",
+          "callee": "USERNAME_REGEX.test",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isUsernameValid",
+          "callee": "raw.trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "isUsernameValid",
+          "callee": "USERNAME_REGEX.test",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getAvatar",
+          "callee": "AVATARS.find",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getTokenColor",
+          "callee": "TOKEN_COLORS.find",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 9,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/services/ads.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "initializeAds",
+          "startLine": 38,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "showRewardedAd",
+          "startLine": 44,
+          "endLine": 95,
+          "params": [
+            "placement"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "homeBannerAdUnitId",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "rewardedAdUnitId",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "BannerAd",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "BannerAdSize",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "initializeAds",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "showRewardedAd",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initializeAds",
+          "callee": "mobileAds().initialize",
+          "lineNumber": 41
+        },
+        {
+          "caller": "initializeAds",
+          "callee": "mobileAds",
+          "lineNumber": 41
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "initializeAds",
+          "lineNumber": 49
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "RewardedAd.createForAdRequest",
+          "lineNumber": 50
+        },
+        {
+          "caller": "finish",
+          "callee": "cleanup.forEach",
+          "lineNumber": 56
+        },
+        {
+          "caller": "finish",
+          "callee": "fn",
+          "lineNumber": 56
+        },
+        {
+          "caller": "finish",
+          "callee": "resolve",
+          "lineNumber": 58
+        },
+        {
+          "caller": "finish",
+          "callee": "grantAdReward",
+          "lineNumber": 61
+        },
+        {
+          "caller": "finish",
+          "callee": "resolve",
+          "lineNumber": 66
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "cleanup.push",
+          "lineNumber": 73
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "rewarded.addAdEventListener",
+          "lineNumber": 74
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "cleanup.push",
+          "lineNumber": 78
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "rewarded.addAdEventListener",
+          "lineNumber": 79
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "rewarded.show",
+          "lineNumber": 80
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "cleanup.push",
+          "lineNumber": 83
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "rewarded.addAdEventListener",
+          "lineNumber": 84
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "finish",
+          "lineNumber": 85
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "cleanup.push",
+          "lineNumber": 88
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "rewarded.addAdEventListener",
+          "lineNumber": 89
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "finish",
+          "lineNumber": 90
+        },
+        {
+          "caller": "showRewardedAd",
+          "callee": "rewarded.load",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/services/iap.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "ensureConnection",
+          "startLine": 24,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "loadCoinPack",
+          "startLine": 30,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "purchaseCoinPack",
+          "startLine": 36,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "coinPackProductId",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "loadCoinPack",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "purchaseCoinPack",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureConnection",
+          "callee": "initConnection",
+          "lineNumber": 26
+        },
+        {
+          "caller": "loadCoinPack",
+          "callee": "ensureConnection",
+          "lineNumber": 31
+        },
+        {
+          "caller": "loadCoinPack",
+          "callee": "fetchProducts",
+          "lineNumber": 32
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "ensureConnection",
+          "lineNumber": 37
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "purchaseUpdatedListener",
+          "lineNumber": 40
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "cleanup",
+          "lineNumber": 41
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "resolve",
+          "lineNumber": 42
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "purchaseErrorListener",
+          "lineNumber": 44
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "cleanup",
+          "lineNumber": 45
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "reject",
+          "lineNumber": 46
+        },
+        {
+          "caller": "cleanup",
+          "callee": "okSub.remove",
+          "lineNumber": 49
+        },
+        {
+          "caller": "cleanup",
+          "callee": "errSub.remove",
+          "lineNumber": 50
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "requestPurchase({\r\n      request: {\r\n        apple: { sku: coinPackProductId },\r\n        google: { skus: [coinPackProductId] },\r\n      },\r\n      type: 'in-app',\r\n    }).catch",
+          "lineNumber": 52
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "requestPurchase",
+          "lineNumber": 52
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "cleanup",
+          "lineNumber": 59
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "reject",
+          "lineNumber": 60
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "Date.now",
+          "lineNumber": 64
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "verifyIapPurchase",
+          "lineNumber": 66
+        },
+        {
+          "caller": "purchaseCoinPack",
+          "callee": "finishTransaction",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/stores/profile.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 145,
+      "exports": [
+        {
+          "name": "useProfileStore",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/stores/shop.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "exports": [
+        {
+          "name": "useShopStore",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/stores/wallet.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 88,
+      "exports": [
+        {
+          "name": "DAILY_REWARDS",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "useWalletStore",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/supabase/transactions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 281,
+      "nonEmptyLines": 244,
+      "functions": [
+        {
+          "name": "readFunctionError",
+          "startLine": 26,
+          "endLine": 58,
+          "params": [
+            "error"
+          ]
+        },
+        {
+          "name": "deductEntryFee",
+          "startLine": 94,
+          "endLine": 107,
+          "params": [
+            "entryFee",
+            "metadata"
+          ]
+        },
+        {
+          "name": "collectDailyReward",
+          "startLine": 111,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "isSameUtcDay",
+          "startLine": 135,
+          "endLine": 141,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "nextUtcMidnightIso",
+          "startLine": 143,
+          "endLine": 149,
+          "params": [
+            "from"
+          ]
+        },
+        {
+          "name": "getDailyRewardStatus",
+          "startLine": 151,
+          "endLine": 186,
+          "params": []
+        },
+        {
+          "name": "getTransactions",
+          "startLine": 199,
+          "endLine": 212,
+          "params": [
+            "limit"
+          ]
+        },
+        {
+          "name": "awardMatchReward",
+          "startLine": 216,
+          "endLine": 232,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "grantAdReward",
+          "startLine": 234,
+          "endLine": 248,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "purchaseShopItem",
+          "startLine": 250,
+          "endLine": 265,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "verifyIapPurchase",
+          "startLine": 267,
+          "endLine": 281,
+          "params": [
+            "params"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "deductEntryFee",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "collectDailyReward",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "getDailyRewardStatus",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "getTransactions",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "awardMatchReward",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "grantAdReward",
+          "line": 234,
+          "isDefault": false
+        },
+        {
+          "name": "purchaseShopItem",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "verifyIapPurchase",
+          "line": 267,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readFunctionError",
+          "callee": "response.clone",
+          "lineNumber": 36
+        },
+        {
+          "caller": "readFunctionError",
+          "callee": "jsonResponse.json",
+          "lineNumber": 39
+        },
+        {
+          "caller": "readFunctionError",
+          "callee": "response.text",
+          "lineNumber": 50
+        },
+        {
+          "caller": "deductEntryFee",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 98
+        },
+        {
+          "caller": "deductEntryFee",
+          "callee": "console.warn",
+          "lineNumber": 103
+        },
+        {
+          "caller": "collectDailyReward",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 112
+        },
+        {
+          "caller": "collectDailyReward",
+          "callee": "readFunctionError",
+          "lineNumber": 117
+        },
+        {
+          "caller": "collectDailyReward",
+          "callee": "getSupabaseErrorMessage",
+          "lineNumber": 118
+        },
+        {
+          "caller": "collectDailyReward",
+          "callee": "console.warn",
+          "lineNumber": 119
+        },
+        {
+          "caller": "isSameUtcDay",
+          "callee": "a.getUTCFullYear",
+          "lineNumber": 137
+        },
+        {
+          "caller": "isSameUtcDay",
+          "callee": "b.getUTCFullYear",
+          "lineNumber": 137
+        },
+        {
+          "caller": "isSameUtcDay",
+          "callee": "a.getUTCMonth",
+          "lineNumber": 138
+        },
+        {
+          "caller": "isSameUtcDay",
+          "callee": "b.getUTCMonth",
+          "lineNumber": 138
+        },
+        {
+          "caller": "isSameUtcDay",
+          "callee": "a.getUTCDate",
+          "lineNumber": 139
+        },
+        {
+          "caller": "isSameUtcDay",
+          "callee": "b.getUTCDate",
+          "lineNumber": 139
+        },
+        {
+          "caller": "nextUtcMidnightIso",
+          "callee": "new Date(Date.UTC(\r\n    from.getUTCFullYear(),\r\n    from.getUTCMonth(),\r\n    from.getUTCDate() + 1,\r\n  )).toISOString",
+          "lineNumber": 144
+        },
+        {
+          "caller": "nextUtcMidnightIso",
+          "callee": "Date.UTC",
+          "lineNumber": 144
+        },
+        {
+          "caller": "nextUtcMidnightIso",
+          "callee": "from.getUTCFullYear",
+          "lineNumber": 145
+        },
+        {
+          "caller": "nextUtcMidnightIso",
+          "callee": "from.getUTCMonth",
+          "lineNumber": 146
+        },
+        {
+          "caller": "nextUtcMidnightIso",
+          "callee": "from.getUTCDate",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "supabase.auth.getUser",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "console.warn",
+          "lineNumber": 158
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "supabase\r\n    .from('daily_rewards')\r\n    .select('*')\r\n    .eq('user_id', user.id)\r\n    .maybeSingle",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "supabase\r\n    .from('daily_rewards')\r\n    .select('*')\r\n    .eq",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "supabase\r\n    .from('daily_rewards')\r\n    .select",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "supabase\r\n    .from",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "console.warn",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "isSameUtcDay",
+          "lineNumber": 177
+        },
+        {
+          "caller": "getDailyRewardStatus",
+          "callee": "nextUtcMidnightIso",
+          "lineNumber": 184
+        },
+        {
+          "caller": "getTransactions",
+          "callee": "supabase\r\n    .from('transactions')\r\n    .select('*')\r\n    .order('created_at', { ascending: false })\r\n    .limit",
+          "lineNumber": 200
+        },
+        {
+          "caller": "getTransactions",
+          "callee": "supabase\r\n    .from('transactions')\r\n    .select('*')\r\n    .order",
+          "lineNumber": 200
+        },
+        {
+          "caller": "getTransactions",
+          "callee": "supabase\r\n    .from('transactions')\r\n    .select",
+          "lineNumber": 200
+        },
+        {
+          "caller": "getTransactions",
+          "callee": "supabase\r\n    .from",
+          "lineNumber": 200
+        },
+        {
+          "caller": "getTransactions",
+          "callee": "console.warn",
+          "lineNumber": 207
+        },
+        {
+          "caller": "awardMatchReward",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 223
+        },
+        {
+          "caller": "awardMatchReward",
+          "callee": "console.warn",
+          "lineNumber": 228
+        },
+        {
+          "caller": "grantAdReward",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 239
+        },
+        {
+          "caller": "grantAdReward",
+          "callee": "console.warn",
+          "lineNumber": 244
+        },
+        {
+          "caller": "purchaseShopItem",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 256
+        },
+        {
+          "caller": "purchaseShopItem",
+          "callee": "console.warn",
+          "lineNumber": 261
+        },
+        {
+          "caller": "verifyIapPurchase",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 272
+        },
+        {
+          "caller": "verifyIapPurchase",
+          "callee": "console.warn",
+          "lineNumber": 277
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 8,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,1246 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 14,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".claude/skills/building-native-ui/references/animations.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 220,
+      "nonEmptyLines": 169,
+      "sections": [
+        {
+          "heading": "Animations",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Entering and Exiting Animations",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "On-Scroll Animations",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Common Animation Presets",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "Entering Animations",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "Exiting Animations",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Layout Animations",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "Customizing Animations",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Modifiers",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "Shared Value Animations",
+          "level": 2,
+          "line": 106
+        },
+        {
+          "heading": "Gesture Animations",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "Keyboard Animations",
+          "level": 2,
+          "line": 172
+        },
+        {
+          "heading": "Staggered List Animations",
+          "level": 2,
+          "line": 193
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 211
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/controls.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 270,
+      "nonEmptyLines": 205,
+      "sections": [
+        {
+          "heading": "Native Controls",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Switch",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Customization",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "Segmented Control",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Rules",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "With Icons (iOS 14+)",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Slider",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "Customization",
+          "level": 3,
+          "line": 84
+        },
+        {
+          "heading": "Discrete Steps",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "Date/Time Picker",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "Modes",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "Display Styles",
+          "level": 3,
+          "line": 136
+        },
+        {
+          "heading": "Time Intervals",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "Min/Max Dates",
+          "level": 3,
+          "line": 164
+        },
+        {
+          "heading": "Stepper",
+          "level": 2,
+          "line": 175
+        },
+        {
+          "heading": "TextInput",
+          "level": 2,
+          "line": 193
+        },
+        {
+          "heading": "Keyboard Types",
+          "level": 3,
+          "line": 212
+        },
+        {
+          "heading": "Multiline",
+          "level": 3,
+          "line": 234
+        },
+        {
+          "heading": "Picker (Wheel)",
+          "level": 2,
+          "line": 245
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 263
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/form-sheet.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 253,
+      "nonEmptyLines": 214,
+      "sections": [
+        {
+          "heading": "Form Sheets in Expo Router",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Basic Usage",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Form Sheet with Footer",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Form Sheet Screen Content",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Formsheet with interactive content below",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "Key Options",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Common Detent Values",
+          "level": 2,
+          "line": 126
+        },
+        {
+          "heading": "Complete Example",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 241
+        },
+        {
+          "heading": "Content not filling sheet",
+          "level": 3,
+          "line": 243
+        },
+        {
+          "heading": "Sheet background showing through",
+          "level": 3,
+          "line": 251
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/gradients.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 106,
+      "nonEmptyLines": 83,
+      "sections": [
+        {
+          "heading": "CSS Gradients",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Linear Gradients",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Radial Gradients",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Multiple Gradients",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Common Patterns",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "Overlay on Image",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Frosted Glass Effect",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "Button Gradient",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Important Notes",
+          "level": 2,
+          "line": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/icons.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 213,
+      "nonEmptyLines": 178,
+      "sections": [
+        {
+          "heading": "Icons (SF Symbols)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Basic Usage",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Props",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Common Icons",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Navigation & Actions",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Media",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "Camera",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Communication",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Social",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Content Actions",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Status & Feedback",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "Misc",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "Animated Symbols",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "Animation Effects",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "Symbol Weights",
+          "level": 2,
+          "line": 163
+        },
+        {
+          "heading": "Symbol Scales",
+          "level": 2,
+          "line": 182
+        },
+        {
+          "heading": "Multicolor Symbols",
+          "level": 2,
+          "line": 190
+        },
+        {
+          "heading": "Finding Symbol Names",
+          "level": 2,
+          "line": 201
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 207
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/media.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 198,
+      "nonEmptyLines": 161,
+      "sections": [
+        {
+          "heading": "Media",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Camera",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Audio Playback",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Audio Recording (Microphone)",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "Video Playback",
+          "level": 2,
+          "line": 135
+        },
+        {
+          "heading": "Saving Media",
+          "level": 2,
+          "line": 162
+        },
+        {
+          "heading": "Saving Base64 Images",
+          "level": 3,
+          "line": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/route-structure.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 229,
+      "nonEmptyLines": 176,
+      "sections": [
+        {
+          "heading": "Route Structure",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File Conventions",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Dynamic Routes",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Catch-All Routes",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Query Parameters",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Pathname",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "Group Routes",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "Stacks and Tabs Structure",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Array Routes for Multiple Stacks",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "Complete App Structure Example",
+          "level": 2,
+          "line": 153
+        },
+        {
+          "heading": "Layout Files",
+          "level": 2,
+          "line": 171
+        },
+        {
+          "heading": "Route Settings",
+          "level": 2,
+          "line": 200
+        },
+        {
+          "heading": "Not Found Routes",
+          "level": 2,
+          "line": 212
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/search.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 248,
+      "nonEmptyLines": 197,
+      "sections": [
+        {
+          "heading": "Search",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Header Search Bar",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Options",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "useSearch Hook",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Usage",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "Filtering Patterns",
+          "level": 2,
+          "line": 112
+        },
+        {
+          "heading": "Simple Text Filter",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "Multiple Fields",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "Debounced Search",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "Search with Native Tabs",
+          "level": 2,
+          "line": 168
+        },
+        {
+          "heading": "Empty States",
+          "level": 2,
+          "line": 200
+        },
+        {
+          "heading": "Search Suggestions",
+          "level": 2,
+          "line": 222
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/storage.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 121,
+      "nonEmptyLines": 93,
+      "sections": [
+        {
+          "heading": "Storage",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Key-Value Storage",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "When to Use What",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Storage with React State",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "React Hook for Storage",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "Full SQLite for Complex Data",
+          "level": 2,
+          "line": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/tabs.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 433,
+      "nonEmptyLines": 331,
+      "sections": [
+        {
+          "heading": "Native Tabs",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "SDK Compatibility",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Basic Usage",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Platform Features",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Icon Component",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "Label & Badge",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "iOS 26 Features",
+          "level": 2,
+          "line": 95
+        },
+        {
+          "heading": "Liquid Glass Tab Bar",
+          "level": 3,
+          "line": 97
+        },
+        {
+          "heading": "Minimize on Scroll",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Search Tab",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Role Prop",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Customization",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "Tint Color",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Dynamic Colors (iOS)",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "Conditional Tabs",
+          "level": 2,
+          "line": 152
+        },
+        {
+          "heading": "Behavior Options",
+          "level": 2,
+          "line": 165
+        },
+        {
+          "heading": "Hidden Tab Bar (SDK 55+)",
+          "level": 2,
+          "line": 176
+        },
+        {
+          "heading": "Bottom Accessory (SDK 55+)",
+          "level": 2,
+          "line": 184
+        },
+        {
+          "heading": "Safe Area Handling (SDK 55+)",
+          "level": 2,
+          "line": 232
+        },
+        {
+          "heading": "Using Vector Icons",
+          "level": 2,
+          "line": 260
+        },
+        {
+          "heading": "Structure with Stacks",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "Custom Web Layout",
+          "level": 2,
+          "line": 313
+        },
+        {
+          "heading": "Migration from JS Tabs",
+          "level": 2,
+          "line": 325
+        },
+        {
+          "heading": "Before (JS Tabs)",
+          "level": 3,
+          "line": 327
+        },
+        {
+          "heading": "After (Native Tabs)",
+          "level": 3,
+          "line": 344
+        },
+        {
+          "heading": "Key Differences",
+          "level": 3,
+          "line": 358
+        },
+        {
+          "heading": "Limitations",
+          "level": 2,
+          "line": 369
+        },
+        {
+          "heading": "Keyboard Handling (Android)",
+          "level": 2,
+          "line": 377
+        },
+        {
+          "heading": "Common Issues",
+          "level": 2,
+          "line": 391
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/toolbar-and-headers.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 284,
+      "nonEmptyLines": 240,
+      "sections": [
+        {
+          "heading": "Toolbars and headers",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Notes app example",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Mail inbox example",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Placement",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "Components",
+          "level": 2,
+          "line": 127
+        },
+        {
+          "heading": "Button",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "Menu",
+          "level": 3,
+          "line": 136
+        },
+        {
+          "heading": "Spacer",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "View",
+          "level": 3,
+          "line": 174
+        },
+        {
+          "heading": "Recommendations",
+          "level": 2,
+          "line": 202
+        },
+        {
+          "heading": "Limitations",
+          "level": 2,
+          "line": 275
+        },
+        {
+          "heading": "Reference",
+          "level": 2,
+          "line": 282
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/visual-effects.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 197,
+      "nonEmptyLines": 153,
+      "sections": [
+        {
+          "heading": "Visual Effects",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Backdrop Blur",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Tint Options",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "Intensity",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Rounded Corners",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Overlay Pattern",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Glass Effects (iOS 26+)",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "Interactive Glass",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "Glass Buttons",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "Glass Card",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "Checking Availability",
+          "level": 3,
+          "line": 143
+        },
+        {
+          "heading": "Fallback Pattern",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "Sheet with Glass Background",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 190
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/webgpu-three.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 605,
+      "nonEmptyLines": 491,
+      "sections": [
+        {
+          "heading": "WebGPU & Three.js for Expo",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Locked Versions (Tested & Working)",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Installation",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Metro Configuration",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Required Lib Files",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "1. make-webgpu-renderer.ts",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "2. fiber-canvas.tsx",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Basic 3D Scene",
+          "level": 2,
+          "line": 225
+        },
+        {
+          "heading": "Lazy Loading (Recommended)",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "Common Geometries",
+          "level": 2,
+          "line": 299
+        },
+        {
+          "heading": "Lighting",
+          "level": 2,
+          "line": 327
+        },
+        {
+          "heading": "Animation with useFrame",
+          "level": 2,
+          "line": 343
+        },
+        {
+          "heading": "Particle Systems",
+          "level": 2,
+          "line": 371
+        },
+        {
+          "heading": "Touch Controls (Orbit)",
+          "level": 2,
+          "line": 415
+        },
+        {
+          "heading": "Common Issues & Solutions",
+          "level": 2,
+          "line": 438
+        },
+        {
+          "heading": "1. \"X is not part of the THREE namespace\"",
+          "level": 3,
+          "line": 440
+        },
+        {
+          "heading": "2. TypeScript Errors with Three.js",
+          "level": 3,
+          "line": 453
+        },
+        {
+          "heading": "3. Blank Screen",
+          "level": 3,
+          "line": 464
+        },
+        {
+          "heading": "4. Performance Issues",
+          "level": 3,
+          "line": 474
+        },
+        {
+          "heading": "5. Peer Dependency Errors",
+          "level": 3,
+          "line": 485
+        },
+        {
+          "heading": "Building",
+          "level": 2,
+          "line": 495
+        },
+        {
+          "heading": "File Structure",
+          "level": 2,
+          "line": 506
+        },
+        {
+          "heading": "Decision Tree",
+          "level": 2,
+          "line": 521
+        },
+        {
+          "heading": "Example: Complete Game Scene",
+          "level": 2,
+          "line": 541
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 24
+      }
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/zoom-transitions.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 158,
+      "nonEmptyLines": 122,
+      "sections": [
+        {
+          "heading": "Apple Zoom Transitions",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Basic Zoom",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Targeted Zoom with `Link.AppleZoom`",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Destination Target",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Custom Alignment Rectangle",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Controlling Dismissal",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Disable all dismissal gestures",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "Restrict dismissal to a specific area",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "Combining with Link.Preview",
+          "level": 2,
+          "line": 117
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 135
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    }
+  ]
+}

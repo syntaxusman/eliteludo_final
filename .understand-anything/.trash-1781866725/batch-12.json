@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-hoist-jsx.md",
+      "type": "document",
+      "name": "rendering-hoist-jsx.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-hoist-jsx.md",
+      "summary": "rendering-hoist-jsx.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-hydration-no-flicker.md",
+      "type": "document",
+      "name": "rendering-hydration-no-flicker.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-hydration-no-flicker.md",
+      "summary": "rendering-hydration-no-flicker.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md",
+      "type": "document",
+      "name": "rendering-hydration-suppress-warning.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md",
+      "summary": "rendering-hydration-suppress-warning.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-resource-hints.md",
+      "type": "document",
+      "name": "rendering-resource-hints.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-resource-hints.md",
+      "summary": "rendering-resource-hints.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-script-defer-async.md",
+      "type": "document",
+      "name": "rendering-script-defer-async.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-script-defer-async.md",
+      "summary": "rendering-script-defer-async.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-svg-precision.md",
+      "type": "document",
+      "name": "rendering-svg-precision.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-svg-precision.md",
+      "summary": "rendering-svg-precision.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-usetransition-loading.md",
+      "type": "document",
+      "name": "rendering-usetransition-loading.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-usetransition-loading.md",
+      "summary": "rendering-usetransition-loading.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-defer-reads.md",
+      "type": "document",
+      "name": "rerender-defer-reads.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-defer-reads.md",
+      "summary": "rerender-defer-reads.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-dependencies.md",
+      "type": "document",
+      "name": "rerender-dependencies.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-dependencies.md",
+      "summary": "rerender-dependencies.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-derived-state-no-effect.md",
+      "type": "document",
+      "name": "rerender-derived-state-no-effect.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-derived-state-no-effect.md",
+      "summary": "rerender-derived-state-no-effect.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-derived-state.md",
+      "type": "document",
+      "name": "rerender-derived-state.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-derived-state.md",
+      "summary": "rerender-derived-state.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-functional-setstate.md",
+      "type": "document",
+      "name": "rerender-functional-setstate.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-functional-setstate.md",
+      "summary": "rerender-functional-setstate.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-lazy-state-init.md",
+      "type": "document",
+      "name": "rerender-lazy-state-init.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-lazy-state-init.md",
+      "summary": "rerender-lazy-state-init.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-memo-with-default-value.md",
+      "type": "document",
+      "name": "rerender-memo-with-default-value.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-memo-with-default-value.md",
+      "summary": "rerender-memo-with-default-value.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-memo.md",
+      "type": "document",
+      "name": "rerender-memo.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-memo.md",
+      "summary": "rerender-memo.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-move-effect-to-event.md",
+      "type": "document",
+      "name": "rerender-move-effect-to-event.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-move-effect-to-event.md",
+      "summary": "rerender-move-effect-to-event.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-no-inline-components.md",
+      "type": "document",
+      "name": "rerender-no-inline-components.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-no-inline-components.md",
+      "summary": "rerender-no-inline-components.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md",
+      "type": "document",
+      "name": "rerender-simple-expression-in-memo.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md",
+      "summary": "rerender-simple-expression-in-memo.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-split-combined-hooks.md",
+      "type": "document",
+      "name": "rerender-split-combined-hooks.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-split-combined-hooks.md",
+      "summary": "rerender-split-combined-hooks.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rerender-transitions.md",
+      "type": "document",
+      "name": "rerender-transitions.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rerender-transitions.md",
+      "summary": "rerender-transitions.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

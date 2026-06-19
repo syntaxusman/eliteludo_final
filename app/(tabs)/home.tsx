@@ -1,18 +1,18 @@
-import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useRouter } from 'expo-router';
-import { useCallback, useEffect, useState } from 'react';
+import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
+import { useCallback, useEffect, useState } from "react";
 import {
   Alert,
   Dimensions,
   Image,
-  ImageBackground,
   Pressable,
   StyleSheet,
   Text,
+  useWindowDimensions,
   View,
   type ImageSourcePropType,
-} from 'react-native';
+} from "react-native";
 import Animated, {
   Extrapolation,
   FadeIn,
@@ -21,28 +21,35 @@ import Animated, {
   useAnimatedScrollHandler,
   useAnimatedStyle,
   useSharedValue,
-} from 'react-native-reanimated';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+  withSpring,
+} from "react-native-reanimated";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { DailyRewardModal } from '@/src/components/DailyRewardModal';
-import { Images } from '@/src/assets';
-import { useProfileStore } from '@/src/stores/profile';
-import { useWalletStore } from '@/src/stores/wallet';
-import { colors } from '@/src/theme/colors';
-import { fontFamilies } from '@/src/theme/typography';
-import { haptics } from '@/src/utils/haptics';
-import { BannerAd, BannerAdSize, homeBannerAdUnitId } from '@/src/services/ads';
+import { Images } from "@/src/assets";
+import { DailyRewardModal } from "@/src/components/DailyRewardModal";
+import { BannerAd, BannerAdSize, homeBannerAdUnitId } from "@/src/services/ads";
+import {
+  HomeModeCanvas,
+  RoyalCurrencyIcon,
+  RoyalHomeBackdrop,
+} from "@/src/skia/HomeArtwork";
+import { useProfileStore } from "@/src/stores/profile";
+import { useWalletStore } from "@/src/stores/wallet";
+import { colors } from "@/src/theme/colors";
+import { fontFamilies } from "@/src/theme/typography";
+import { haptics } from "@/src/utils/haptics";
 
-const { width: W, height: H } = Dimensions.get('window');
+const { width: W, height: H } = Dimensions.get("window");
 
 const COMPACT_CLUB = H < 820 || W < 430;
 const CLUB_W = Math.min(W - (COMPACT_CLUB ? 56 : 64), COMPACT_CLUB ? 318 : 326);
 const CLUB_H = COMPACT_CLUB ? 348 : 386;
 const CLUB_GAP = 18;
 const SIDE_INSET = (W - CLUB_W) / 2;
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-type HomeView = 'modes' | 'clubs';
-type ModeId = '2p' | '4p' | 'private' | 'team' | 'friends' | 'ai';
+type HomeView = "modes" | "clubs";
+type ModeId = "2p" | "4p" | "private" | "friends" | "ai";
 
 type Mode = {
   id: ModeId;
@@ -50,8 +57,7 @@ type Mode = {
   sub: string;
   icon: keyof typeof Ionicons.glyphMap;
   colors: [string, string];
-  size: 'large' | 'small';
-  image?: ImageSourcePropType;
+  size: "large" | "small";
 };
 
 type City = {
@@ -67,39 +73,173 @@ type City = {
 };
 
 const MODES: Mode[] = [
-  { id: '2p', label: '2 Player', sub: 'Classic duel', icon: 'dice', colors: ['#F4BA22', '#A75A08'], size: 'large', image: Images.lobbyCardTwoPlayer },
-  { id: '4p', label: '4 Player', sub: 'Royal table', icon: 'people', colors: ['#8260DE', '#432A98'], size: 'large', image: Images.lobbyCardFourPlayer },
-  { id: 'private', label: 'Private Table', sub: 'Invite code', icon: 'heart', colors: ['#7A4FD0', '#392070'], size: 'small', image: Images.lobbyCardPrivateTable },
-  { id: 'team', label: 'Team Up Online', sub: 'Online', icon: 'globe', colors: ['#7A4FD0', '#392070'], size: 'small', image: Images.lobbyCardTeamUpOnline },
-  { id: 'friends', label: 'Team Up Friends', sub: 'Party table', icon: 'chatbubbles', colors: ['#7A4FD0', '#392070'], size: 'small', image: Images.lobbyCardTeamUpFriends },
-  { id: 'ai', label: 'Practice', sub: 'Vs computer', icon: 'desktop', colors: ['#4C8C55', '#1E572A'], size: 'small' },
+  {
+    id: "2p",
+    label: "2 Player",
+    sub: "Classic duel",
+    icon: "dice",
+    colors: ["#F4BA22", "#A75A08"],
+    size: "large",
+  },
+  {
+    id: "4p",
+    label: "4 Player",
+    sub: "Royal table",
+    icon: "people",
+    colors: ["#8260DE", "#432A98"],
+    size: "large",
+  },
+  {
+    id: "private",
+    label: "Private Table",
+    sub: "Invite code",
+    icon: "heart",
+    colors: ["#7A4FD0", "#392070"],
+    size: "small",
+  },
+  {
+    id: "friends",
+    label: "Team Up Friends",
+    sub: "Party table",
+    icon: "chatbubbles",
+    colors: ["#7A4FD0", "#392070"],
+    size: "small",
+  },
+  {
+    id: "ai",
+    label: "Offline",
+    sub: "Vs computer",
+    icon: "game-controller",
+    colors: ["#4C8C55", "#1E572A"],
+    size: "small",
+  },
 ];
 
 const CITIES: City[] = [
-  { id: 'newdelhi', name: 'NEW DELHI', subtitle: 'Starter Club', entry: 250, prize: 600, online: 12_560, accentColor: '#E06030', background: Images.cityNewDelhi, crown: Images.clubCrownEmerald },
-  { id: 'london', name: 'LONDON', subtitle: 'Royal Club', entry: 500, prize: 1_000, online: 8_420, accentColor: '#4CAF50', background: Images.cityLondon, crown: Images.clubCrownRoyal },
-  { id: 'istanbul', name: 'ISTANBUL', subtitle: 'Bosphorus Club', entry: 750, prize: 1_800, online: 7_890, accentColor: '#D4884A', background: Images.cityIstanbul, crown: Images.clubCrownDesert },
-  { id: 'dubai', name: 'DUBAI', subtitle: 'Marina Elite', entry: 1_000, prize: 2_500, online: 6_234, accentColor: '#1A9ED4', background: Images.cityDubai, crown: Images.clubCrownRuby },
-  { id: 'doha', name: 'DOHA', subtitle: 'Gulf Premier', entry: 1_500, prize: 4_000, online: 5_100, accentColor: '#D4AF37', background: Images.cityDoha, crown: Images.clubCrownRed },
-  { id: 'singapore', name: 'SINGAPORE', subtitle: 'Marina Bay', entry: 2_000, prize: 5_000, online: 4_560, accentColor: '#0E9ABF', background: Images.citySingapore, crown: Images.clubCrownEmerald },
-  { id: 'tokyo', name: 'TOKYO', subtitle: 'Sakura Grand', entry: 3_000, prize: 8_000, online: 3_120, accentColor: '#E05080', background: Images.cityTokyo, crown: Images.clubCrownRoyal },
-  { id: 'paris', name: 'PARIS', subtitle: 'Eiffel Elite', entry: 5_000, prize: 12_000, online: 2_870, accentColor: '#9C6FD4', background: Images.cityParis, crown: Images.clubCrownRuby },
-  { id: 'rome', name: 'ROME', subtitle: 'Colosseum VIP', entry: 7_500, prize: 20_000, online: 1_840, accentColor: '#D44A1A', background: Images.cityRome, crown: Images.clubCrownRed },
-  { id: 'berlin', name: 'BERLIN', subtitle: 'Grand Master', entry: 10_000, prize: 30_000, online: 980, accentColor: '#4A9ED4', background: Images.cityBerlin, crown: Images.clubCrownDesert },
+  {
+    id: "newdelhi",
+    name: "NEW DELHI",
+    subtitle: "Starter Club",
+    entry: 250,
+    prize: 600,
+    online: 12_560,
+    accentColor: "#E06030",
+    background: Images.cityNewDelhi,
+    crown: Images.clubCrownEmerald,
+  },
+  {
+    id: "london",
+    name: "LONDON",
+    subtitle: "Royal Club",
+    entry: 500,
+    prize: 1_000,
+    online: 8_420,
+    accentColor: "#4CAF50",
+    background: Images.cityLondon,
+    crown: Images.clubCrownRoyal,
+  },
+  {
+    id: "istanbul",
+    name: "ISTANBUL",
+    subtitle: "Bosphorus Club",
+    entry: 750,
+    prize: 1_800,
+    online: 7_890,
+    accentColor: "#D4884A",
+    background: Images.cityIstanbul,
+    crown: Images.clubCrownDesert,
+  },
+  {
+    id: "dubai",
+    name: "DUBAI",
+    subtitle: "Marina Elite",
+    entry: 1_000,
+    prize: 2_500,
+    online: 6_234,
+    accentColor: "#1A9ED4",
+    background: Images.cityDubai,
+    crown: Images.clubCrownRuby,
+  },
+  {
+    id: "doha",
+    name: "DOHA",
+    subtitle: "Gulf Premier",
+    entry: 1_500,
+    prize: 4_000,
+    online: 5_100,
+    accentColor: "#D4AF37",
+    background: Images.cityDoha,
+    crown: Images.clubCrownRed,
+  },
+  {
+    id: "singapore",
+    name: "SINGAPORE",
+    subtitle: "Marina Bay",
+    entry: 2_000,
+    prize: 5_000,
+    online: 4_560,
+    accentColor: "#0E9ABF",
+    background: Images.citySingapore,
+    crown: Images.clubCrownEmerald,
+  },
+  {
+    id: "tokyo",
+    name: "TOKYO",
+    subtitle: "Sakura Grand",
+    entry: 3_000,
+    prize: 8_000,
+    online: 3_120,
+    accentColor: "#E05080",
+    background: Images.cityTokyo,
+    crown: Images.clubCrownRoyal,
+  },
+  {
+    id: "paris",
+    name: "PARIS",
+    subtitle: "Eiffel Elite",
+    entry: 5_000,
+    prize: 12_000,
+    online: 2_870,
+    accentColor: "#9C6FD4",
+    background: Images.cityParis,
+    crown: Images.clubCrownRuby,
+  },
+  {
+    id: "rome",
+    name: "ROME",
+    subtitle: "Colosseum VIP",
+    entry: 7_500,
+    prize: 20_000,
+    online: 1_840,
+    accentColor: "#D44A1A",
+    background: Images.cityRome,
+    crown: Images.clubCrownRed,
+  },
+  {
+    id: "berlin",
+    name: "BERLIN",
+    subtitle: "Grand Master",
+    entry: 10_000,
+    prize: 30_000,
+    online: 980,
+    accentColor: "#4A9ED4",
+    background: Images.cityBerlin,
+    crown: Images.clubCrownDesert,
+  },
 ];
 
 function rewardErrorMessage(reason: string) {
-  if (reason === 'already_collected') {
-    return 'You already collected today\'s reward. Come back tomorrow for the next one.';
+  if (reason === "already_collected") {
+    return "You already collected today's reward. Come back tomorrow for the next one.";
   }
   if (/collect_daily_reward_for_user|function/i.test(reason)) {
-    return 'Daily rewards are not deployed correctly yet. Apply the latest Supabase migration and redeploy the reward function.';
+    return "Daily rewards are not deployed correctly yet. Apply the latest Supabase migration and redeploy the reward function.";
   }
   if (/unauthorized|jwt|session/i.test(reason)) {
-    return 'Your session expired. Please sign in again and try collecting the reward.';
+    return "Your session expired. Please sign in again and try collecting the reward.";
   }
   if (/network|fetch|reach supabase|internet|dns/i.test(reason)) {
-    return 'Cannot reach Supabase. Check your connection and Supabase project URL.';
+    return "Cannot reach Supabase. Check your connection and Supabase project URL.";
   }
   return reason;
 }
@@ -113,6 +253,7 @@ function fmt(n: number) {
 export default function HomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const viewport = useWindowDimensions();
   const coins = useWalletStore((s) => s.coins);
   const hydrated = useWalletStore((s) => s.hydrated);
   const dailyStatus = useWalletStore((s) => s.dailyStatus);
@@ -123,12 +264,14 @@ export default function HomeScreen() {
   const profile = useProfileStore((s) => s.profile);
   const hydrateProfile = useProfileStore((s) => s.hydrate);
 
-  const [view, setView] = useState<HomeView>('modes');
-  const [selectedMode, setSelectedMode] = useState<ModeId>('2p');
+  const [view, setView] = useState<HomeView>("modes");
+  const [selectedMode, setSelectedMode] = useState<ModeId>("2p");
   const [activeClub, setActiveClub] = useState(0);
   const [rewardOpen, setRewardOpen] = useState(false);
   const [pendingDay, setPendingDay] = useState(1);
-  const [dismissedRewardDay, setDismissedRewardDay] = useState<number | null>(null);
+  const [dismissedRewardDay, setDismissedRewardDay] = useState<number | null>(
+    null,
+  );
   const [claiming, setClaiming] = useState(false);
   const scrollX = useSharedValue(0);
 
@@ -153,45 +296,51 @@ export default function HomeScreen() {
     rewardOpen,
   ]);
 
-  const openMode = useCallback((mode: ModeId) => {
-    haptics.tap();
-    if (mode === 'ai') {
-      router.push('/game/new');
-      return;
-    }
-    if (mode === 'private') {
-      router.push('/game/private' as never);
-      return;
-    }
-    setSelectedMode(mode);
-    setView('clubs');
-    setActiveClub(0);
-  }, [router]);
+  const openMode = useCallback(
+    (mode: ModeId) => {
+      haptics.tap();
+      if (mode === "ai") {
+        router.push("/game/new");
+        return;
+      }
+      if (mode === "private") {
+        router.push("/game/private" as never);
+        return;
+      }
+      setSelectedMode(mode);
+      setView("clubs");
+      setActiveClub(0);
+    },
+    [router],
+  );
 
-  const playClub = useCallback(async (city: City) => {
-    haptics.tap();
-    if (selectedMode === 'ai') {
-      router.push({ pathname: '/game/new', params: { mode: '4p' } } as never);
-      return;
-    }
-    await refreshWallet();
-    const serverCoins = useWalletStore.getState().coins;
-    if (serverCoins < city.entry) {
-      Alert.alert(
-        'Not enough coins',
-        `This table needs ${city.entry.toLocaleString()} coins. Your current balance is ${serverCoins.toLocaleString()}.`,
-      );
-      return;
-    }
-    router.push({
-      pathname: '/game/matchmaking',
-      params: {
-        mode: selectedMode,
-        entryFee: String(city.entry),
-        citySlug: city.id,
-      },
-    } as never);
-  }, [refreshWallet, router, selectedMode]);
+  const playClub = useCallback(
+    async (city: City) => {
+      haptics.tap();
+      if (selectedMode === "ai") {
+        router.push({ pathname: "/game/new", params: { mode: "4p" } } as never);
+        return;
+      }
+      await refreshWallet();
+      const serverCoins = useWalletStore.getState().coins;
+      if (serverCoins < city.entry) {
+        Alert.alert(
+          "Not enough coins",
+          `This table needs ${city.entry.toLocaleString()} coins. Your current balance is ${serverCoins.toLocaleString()}.`,
+        );
+        return;
+      }
+      router.push({
+        pathname: "/game/matchmaking",
+        params: {
+          mode: selectedMode,
+          entryFee: String(city.entry),
+          citySlug: city.id,
+        },
+      } as never);
+    },
+    [refreshWallet, router, selectedMode],
+  );
 
   const scrollHandler = useAnimatedScrollHandler((e) => {
     scrollX.value = e.contentOffset.x;
@@ -204,28 +353,31 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.root}>
-      <ImageBackground source={Images.bgHome} style={StyleSheet.absoluteFill} resizeMode="cover">
-        <View style={styles.bgTint} />
-      </ImageBackground>
+      <View style={StyleSheet.absoluteFill}>
+        <RoyalHomeBackdrop width={viewport.width} height={viewport.height} />
+      </View>
 
       <Header
         top={insets.top}
         coins={coins}
-        username={profile?.username ?? 'Player'}
+        username={profile?.username ?? "Player"}
         onSettings={() => {
           haptics.tap();
-          router.push('/settings');
+          router.push("/settings");
         }}
       />
 
-      {view === 'modes' ? (
+      {view === "modes" ? (
         <ModesHome
           bottom={insets.bottom}
           onMode={openMode}
           onReward={() => {
             const p = pendingClaim();
             if (!p) {
-              Alert.alert('Reward already collected', 'Come back tomorrow for the next daily reward.');
+              Alert.alert(
+                "Reward already collected",
+                "Come back tomorrow for the next daily reward.",
+              );
               return;
             }
             setPendingDay(p.day);
@@ -233,9 +385,8 @@ export default function HomeScreen() {
           }}
           onShop={() => {
             haptics.tap();
-            router.push('/shop' as never);
+            router.push("/shop" as never);
           }}
-          coins={coins}
         />
       ) : (
         <ClubSlides
@@ -245,7 +396,7 @@ export default function HomeScreen() {
           scrollX={scrollX}
           onBack={() => {
             haptics.tap();
-            setView('modes');
+            setView("modes");
           }}
           onPlay={playClub}
           onScroll={scrollHandler}
@@ -265,7 +416,7 @@ export default function HomeScreen() {
             setDismissedRewardDay(r.day);
             setRewardOpen(false);
           } else {
-            Alert.alert('Reward not collected', rewardErrorMessage(r.reason));
+            Alert.alert("Reward not collected", rewardErrorMessage(r.reason));
           }
           setClaiming(false);
         }}
@@ -274,8 +425,11 @@ export default function HomeScreen() {
           setRewardOpen(false);
         }}
       />
-      <View style={styles.bannerAdWrap}>
-        <BannerAd unitId={homeBannerAdUnitId} size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER} />
+      <View style={[styles.bannerAdWrap, { bottom: insets.bottom + 84 }]}>
+        <BannerAd
+          unitId={homeBannerAdUnitId}
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        />
       </View>
     </View>
   );
@@ -293,10 +447,18 @@ function Header({
   onSettings: () => void;
 }) {
   return (
-    <Animated.View entering={FadeIn.duration(300)} style={[styles.header, { paddingTop: top + 4 }]}>
+    <Animated.View
+      entering={FadeIn.duration(300)}
+      style={[styles.header, { marginTop: top + 4 }]}
+    >
       <View style={styles.avatarWrap}>
-        <LinearGradient colors={['#5A351C', '#130602']} style={styles.avatarRing}>
-          <Text style={styles.avatarInitial}>{username.charAt(0).toUpperCase()}</Text>
+        <LinearGradient
+          colors={["#5A351C", "#130602"]}
+          style={styles.avatarRing}
+        >
+          <Text style={styles.avatarInitial}>
+            {username.charAt(0).toUpperCase()}
+          </Text>
         </LinearGradient>
         <View style={styles.levelBadge}>
           <Ionicons name="star" size={11} color="#FFF2A6" />
@@ -310,21 +472,27 @@ function Header({
       </View>
 
       <Pressable onPress={onSettings} style={styles.settingsBtn} hitSlop={8}>
-        <Ionicons name="settings-sharp" size={24} color={colors.white} />
+        <Ionicons name="settings-sharp" size={22} color="#F2D273" />
       </Pressable>
     </Animated.View>
   );
 }
 
-function CurrencyPill({ kind, value }: { kind: 'coin' | 'gem'; value: string }) {
+function CurrencyPill({
+  kind,
+  value,
+}: {
+  kind: "coin" | "gem";
+  value: string;
+}) {
   return (
     <View style={styles.currencyPill}>
-      {kind === 'coin' ? (
-        <CoinIcon size={34} />
+      {kind === "coin" ? (
+        <View style={styles.coinPillEdge}>
+          <RoyalCurrencyIcon kind="coin" size={36} />
+        </View>
       ) : (
-        <LinearGradient colors={['#6CFF65', '#1AA83C']} style={styles.gemIcon}>
-          <Ionicons name="diamond" size={18} color="#E8FFE8" />
-        </LinearGradient>
+        <RoyalCurrencyIcon kind="gem" size={34} />
       )}
       <Text style={styles.currencyText}>{value}</Text>
       <View style={styles.plusBubble}>
@@ -334,82 +502,72 @@ function CurrencyPill({ kind, value }: { kind: 'coin' | 'gem'; value: string }) 
   );
 }
 
-function CoinIcon({ size = 34 }: { size?: number }) {
-  const inner = size * 0.74;
-  return (
-    <View style={[styles.coinIcon, { width: size, height: size, borderRadius: size / 2 }]}>
-      <LinearGradient
-        colors={['#FFF3A4', '#F6C531', '#B86E09']}
-        start={{ x: 0.18, y: 0.08 }}
-        end={{ x: 0.86, y: 0.92 }}
-        style={StyleSheet.absoluteFill}
-      />
-      <View
-        style={[
-          styles.coinIconInner,
-          { width: inner, height: inner, borderRadius: inner / 2, left: (size - inner) / 2, top: (size - inner) / 2 },
-        ]}
-      />
-      <View style={[styles.coinShine, { width: size * 0.28, height: size * 0.12, left: size * 0.2, top: size * 0.18 }]} />
-    </View>
-  );
-}
-
 function ModesHome({
   bottom,
   onMode,
   onReward,
   onShop,
-  coins,
 }: {
   bottom: number;
   onMode: (mode: ModeId) => void;
   onReward: () => void;
   onShop: () => void;
-  coins: number;
 }) {
-  const large = MODES.filter((m) => m.size === 'large');
-  const small = MODES.filter((m) => m.size === 'small' && m.id !== 'ai');
+  const large = MODES.filter((m) => m.size === "large");
+  const small = MODES.filter((m) => m.size === "small");
 
   return (
-    <View style={[styles.modeScreen, { paddingBottom: bottom + 154 }]}>
-      <Animated.View entering={FadeInDown.delay(80).duration(360)} style={styles.brandArea}>
-        <Image source={Images.logo} style={styles.logoWatermark} resizeMode="contain" />
+    <View style={[styles.modeScreen, { paddingBottom: bottom + 130 }]}>
+      <Animated.View
+        entering={FadeInDown.delay(80).duration(360)}
+        style={styles.brandArea}
+      >
         <View style={styles.eventRow}>
           <QuickTile icon="play" label="Free" badge="6" onPress={onReward} />
           <QuickTile icon="shield" label="Mega Win" badge="2h" />
           <QuickTile icon="gift" label="Shop" badge="+" onPress={onShop} />
         </View>
-        <LinearGradient
-          colors={['#4B270C', '#171006']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          style={styles.passBanner}
+      </Animated.View>
+
+      <View style={styles.cardStack}>
+        <Animated.View
+          entering={FadeInDown.delay(120).duration(360)}
+          style={styles.royalBrand}
         >
-          <View style={styles.passTrophy}>
-            <Ionicons name="ribbon" size={42} color="#FFF1A4" />
-          </View>
-          <View style={styles.passCopy}>
-            <Text style={styles.passTitle}>ELITE ROAD</Text>
-            <Text style={styles.passSub}>Win clubs, unlock royal rewards</Text>
-          </View>
-          <View style={styles.passBtn}>
-            <Text style={styles.passBtnText}>{fmt(coins)}</Text>
-          </View>
-        </LinearGradient>
-      </Animated.View>
+          <Image
+            source={require("../../assets/crowns/Crown9.png")}
+            style={styles.brandCrown}
+            resizeMode="cover"
+          />
+          <Text style={styles.brandName}>ELITE LUDO</Text>
+          <Text style={styles.brandTag}>PLAY LIKE ROYALTY</Text>
+        </Animated.View>
+        <Animated.View
+          entering={FadeInDown.delay(160).duration(360)}
+          style={styles.largeGrid}
+        >
+          {large.map((mode) => (
+            <ModeCard
+              key={mode.id}
+              mode={mode}
+              onPress={() => onMode(mode.id)}
+            />
+          ))}
+        </Animated.View>
 
-      <Animated.View entering={FadeInDown.delay(160).duration(360)} style={styles.largeGrid}>
-        {large.map((mode) => (
-          <ModeCard key={mode.id} mode={mode} onPress={() => onMode(mode.id)} />
-        ))}
-      </Animated.View>
-
-      <Animated.View entering={FadeInDown.delay(220).duration(360)} style={styles.smallGrid}>
-        {small.map((mode) => (
-          <ModeCard key={mode.id} mode={mode} onPress={() => onMode(mode.id)} />
-        ))}
-      </Animated.View>
+        <Animated.View
+          entering={FadeInDown.delay(220).duration(360)}
+          style={styles.smallGrid}
+        >
+          {small.map((mode) => (
+            <ModeCard
+              key={mode.id}
+              mode={mode}
+              onPress={() => onMode(mode.id)}
+            />
+          ))}
+        </Animated.View>
+      </View>
     </View>
   );
 }
@@ -437,205 +595,59 @@ function QuickTile({
 }
 
 function ModeCard({ mode, onPress }: { mode: Mode; onPress: () => void }) {
-  const isLarge = mode.size === 'large';
+  const isLarge = mode.size === "large";
+  const artworkMode = mode.id === "ai" ? "offline" : mode.id;
+  const scale = useSharedValue(1);
+  const [layout, setLayout] = useState({
+    width: isLarge ? 170 : 112,
+    height: isLarge ? 172 : 112,
+  });
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }));
   return (
-    <Pressable
+    <AnimatedPressable
       onPress={onPress}
-      style={({ pressed }) => [
-        isLarge ? styles.modeCardLarge : styles.modeCardSmall,
-        pressed && { transform: [{ scale: 0.97 }] },
-      ]}
-    >
-      {!mode.image && <LinearGradient colors={mode.colors} style={StyleSheet.absoluteFill} />}
-      {mode.image ? (
-        <Image
-          source={mode.image}
-          style={styles.modeCardImage}
-          resizeMode="cover"
-        />
-      ) : (
-        <>
-          <View style={styles.modeGlow} />
-          <View style={styles.modeTopSheen} />
-          <ModeScene mode={mode} />
-          {!isLarge && (
-            <View style={styles.smallModeBadge}>
-              <Ionicons name={mode.icon} size={22} color="#fff" />
-            </View>
-          )}
-          <View style={isLarge ? styles.modeLabelPlateLarge : styles.modeLabelPlateSmall}>
-            <Text style={isLarge ? styles.modeLabelLarge : styles.modeLabelSmall}>{mode.label}</Text>
-          </View>
-        </>
-      )}
-    </Pressable>
-  );
-}
-
-function ModeScene({ mode }: { mode: Mode }) {
-  const large = mode.size === 'large';
-  if (mode.id === '2p') {
-    return (
-      <View style={large ? styles.modeSceneLarge : styles.modeSceneSmall}>
-        <Text style={large ? styles.modeNumberBig : styles.modeNumberSmall}>2</Text>
-        <LudoPlate
-          size={large ? (COMPACT_CLUB ? 88 : 104) : 64}
-          x={large ? (COMPACT_CLUB ? 34 : 24) : 8}
-          y={large ? (COMPACT_CLUB ? 18 : 28) : 14}
-          rotate="-8deg"
-          colors={['#2F9BFF', '#3CC857', '#E64758', '#F5D245']}
-        />
-        <TokenDisc
-          color="#2E9EFF"
-          x={large ? (COMPACT_CLUB ? 28 : 18) : 8}
-          y={large ? (COMPACT_CLUB ? 30 : 38) : 19}
-          size={large ? (COMPACT_CLUB ? 40 : 48) : 32}
-        />
-        <TokenDisc
-          color="#E54558"
-          x={large ? (COMPACT_CLUB ? 94 : 96) : 54}
-          y={large ? (COMPACT_CLUB ? 30 : 38) : 20}
-          size={large ? (COMPACT_CLUB ? 40 : 48) : 32}
-        />
-        <DiceBlock
-          x={large ? (COMPACT_CLUB ? 66 : 60) : 34}
-          y={large ? (COMPACT_CLUB ? 62 : 78) : 45}
-          size={large ? (COMPACT_CLUB ? 42 : 54) : 36}
-          value={2}
-        />
-      </View>
-    );
-  }
-  if (mode.id === '4p') {
-    return (
-      <View style={large ? styles.modeSceneLarge : styles.modeSceneSmall}>
-        <Text style={large ? styles.modeNumberBig : styles.modeNumberSmall}>4</Text>
-        <LudoPlate
-          size={large ? 108 : 66}
-          x={large ? 22 : 8}
-          y={large ? 34 : 18}
-          rotate="-4deg"
-          colors={['#2F9BFF', '#35C858', '#F4D33B', '#E9505E']}
-        />
-        <DiceBlock x={large ? 22 : 9} y={large ? 64 : 39} size={large ? 48 : 32} value={5} color="#37B5FF" />
-        <DiceBlock x={large ? 76 : 43} y={large ? 54 : 30} size={large ? 58 : 38} value={4} color="#44C64A" />
-        <DiceBlock x={large ? 126 : 72} y={large ? 80 : 49} size={large ? 46 : 30} value={3} color="#F4CE3A" />
-      </View>
-    );
-  }
-  return (
-    <View style={styles.modeIconOrb}>
-      <TokenDisc color="#F5CE3C" x={10} y={26} size={36} />
-      <TokenDisc color="#4DD268" x={42} y={26} size={36} />
-      <View style={styles.smallModeIconCenter}>
-        <Ionicons name={mode.icon} size={28} color="#fff" />
-      </View>
-    </View>
-  );
-}
-
-function LudoPlate({
-  size,
-  x,
-  y,
-  rotate,
-  colors: plateColors,
-}: {
-  size: number;
-  x: number;
-  y: number;
-  rotate: string;
-  colors: [string, string, string, string];
-}) {
-  const half = size / 2;
-  return (
-    <View
+      accessibilityRole="button"
+      accessibilityLabel={`${mode.label}, ${mode.sub}`}
+      onPressIn={() => {
+        scale.value = withSpring(0.96, { damping: 18, stiffness: 260 });
+      }}
+      onPressOut={() => {
+        scale.value = withSpring(1, { damping: 15, stiffness: 210 });
+      }}
+      onLayout={(event) => setLayout(event.nativeEvent.layout)}
       style={[
-        styles.ludoPlate,
-        {
-          left: x,
-          top: y,
-          width: size,
-          height: size,
-          borderRadius: size * 0.13,
-          transform: [{ rotate }],
-        },
+        isLarge ? styles.modeCardLarge : styles.modeCardSmall,
+        animatedStyle,
       ]}
     >
-      <View style={styles.ludoPlateRow}>
-        <View style={[styles.ludoPlateTile, { width: half, height: half, backgroundColor: plateColors[0] }]} />
-        <View style={[styles.ludoPlateTile, { width: half, height: half, backgroundColor: plateColors[1] }]} />
-      </View>
-      <View style={styles.ludoPlateRow}>
-        <View style={[styles.ludoPlateTile, { width: half, height: half, backgroundColor: plateColors[2] }]} />
-        <View style={[styles.ludoPlateTile, { width: half, height: half, backgroundColor: plateColors[3] }]} />
-      </View>
-      <View style={styles.ludoPlateCenter} />
-    </View>
+      <HomeModeCanvas
+        width={layout.width}
+        height={layout.height}
+        mode={artworkMode}
+      />
+    </AnimatedPressable>
   );
 }
 
-function TokenDisc({ color, x, y, size }: { color: string; x: number; y: number; size: number }) {
-  return (
-    <View style={[styles.tokenDisc, { left: x, top: y, width: size, height: size, borderRadius: size / 2 }]}>
-      <LinearGradient colors={[color, '#371006']} style={StyleSheet.absoluteFill} />
-      <Ionicons name="star" size={size * 0.42} color="#FFF6C8" />
-    </View>
-  );
-}
-
-function DiceBlock({
-  x,
-  y,
-  size,
-  value,
-  color = '#F3F0E7',
+function ClubMedal({
+  accentColor,
+  crown,
 }: {
-  x: number;
-  y: number;
-  size: number;
-  value: number;
-  color?: string;
+  accentColor: string;
+  crown: ImageSourcePropType;
 }) {
-  const dots = diceDots(value);
-  return (
-    <View style={[styles.diceBlock, { left: x, top: y, width: size, height: size, borderRadius: size * 0.22, backgroundColor: color }]}>
-      {dots.map((dot, i) => (
-        <View
-          key={i}
-          style={[
-            styles.diceDot,
-            {
-              left: dot[0] * size,
-              top: dot[1] * size,
-              width: size * 0.13,
-              height: size * 0.13,
-              borderRadius: size * 0.065,
-            },
-          ]}
-        />
-      ))}
-    </View>
-  );
-}
-
-function diceDots(value: number): [number, number][] {
-  const map: Record<number, [number, number][]> = {
-    1: [[0.43, 0.43]],
-    2: [[0.24, 0.24], [0.62, 0.62]],
-    3: [[0.22, 0.22], [0.43, 0.43], [0.64, 0.64]],
-    4: [[0.22, 0.22], [0.64, 0.22], [0.22, 0.64], [0.64, 0.64]],
-    5: [[0.22, 0.22], [0.64, 0.22], [0.43, 0.43], [0.22, 0.64], [0.64, 0.64]],
-    6: [[0.22, 0.2], [0.64, 0.2], [0.22, 0.43], [0.64, 0.43], [0.22, 0.66], [0.64, 0.66]],
-  };
-  return map[value] ?? map[1];
-}
-
-function ClubMedal({ accentColor, crown }: { accentColor: string; crown: ImageSourcePropType }) {
   return (
     <View style={styles.clubMedal}>
-      <View style={[styles.clubMedalGlow, { backgroundColor: `${accentColor}44` }]} />
-      <Image source={crown} style={styles.clubCrownImage} resizeMode="contain" />
+      <View
+        style={[styles.clubMedalGlow, { backgroundColor: `${accentColor}44` }]}
+      />
+      <Image
+        source={crown}
+        style={styles.clubCrownImage}
+        resizeMode="contain"
+      />
     </View>
   );
 }
@@ -663,13 +675,22 @@ function ClubSlides({
   const activeCity = CITIES[activeClub];
 
   return (
-    <View style={[styles.clubsRoot, { paddingBottom: bottom + (COMPACT_CLUB ? 6 : 68) }]}>
+    <View
+      style={[
+        styles.clubsRoot,
+        { paddingBottom: bottom + (COMPACT_CLUB ? 6 : 68) },
+      ]}
+    >
       <View style={styles.clubsTop}>
         <Pressable onPress={onBack} style={styles.roundClose}>
           <Ionicons name="chevron-back" size={24} color={colors.gold} />
         </Pressable>
         <View style={styles.modeTitleWrap}>
-          <Ionicons name={mode.icon} size={COMPACT_CLUB ? 28 : 42} color={colors.gold} />
+          <Ionicons
+            name={mode.icon}
+            size={COMPACT_CLUB ? 28 : 42}
+            color={colors.gold}
+          />
           <Text style={styles.modeTitle}>{mode.label.toUpperCase()}</Text>
         </View>
         <Pressable onPress={onBack} style={styles.roundCloseRed}>
@@ -678,14 +699,21 @@ function ClubSlides({
       </View>
 
       <View style={styles.ruleTabs}>
-        {['CLASSIC', 'ARROW', 'BLITZ'].map((label, i) => (
-          <View key={label} style={[styles.ruleTab, i === 0 && styles.ruleTabActive]}>
+        {["CLASSIC", "ARROW", "BLITZ"].map((label, i) => (
+          <View
+            key={label}
+            style={[styles.ruleTab, i === 0 && styles.ruleTabActive]}
+          >
             <Ionicons
-              name={i === 0 ? 'star' : i === 1 ? 'navigate' : 'flash'}
+              name={i === 0 ? "star" : i === 1 ? "navigate" : "flash"}
               size={COMPACT_CLUB ? 15 : 18}
               color={i === 0 ? colors.bg : colors.gold}
             />
-            <Text style={[styles.ruleTabText, i === 0 && styles.ruleTabTextActive]}>{label}</Text>
+            <Text
+              style={[styles.ruleTabText, i === 0 && styles.ruleTabTextActive]}
+            >
+              {label}
+            </Text>
           </View>
         ))}
       </View>
@@ -702,7 +730,12 @@ function ClubSlides({
         onMomentumScrollEnd={onMomentumEnd}
         contentContainerStyle={{ paddingHorizontal: SIDE_INSET - CLUB_GAP / 2 }}
         renderItem={({ item, index }) => (
-          <ClubCard city={item} index={index} scrollX={scrollX} onPlay={onPlay} />
+          <ClubCard
+            city={item}
+            index={index}
+            scrollX={scrollX}
+            onPlay={onPlay}
+          />
         )}
         style={styles.clubList}
       />
@@ -714,7 +747,10 @@ function ClubSlides({
             style={[
               styles.dot,
               i === activeClub
-                ? [styles.dotActive, { backgroundColor: activeCity.accentColor }]
+                ? [
+                    styles.dotActive,
+                    { backgroundColor: activeCity.accentColor },
+                  ]
                 : styles.dotIdle,
             ]}
           />
@@ -738,18 +774,44 @@ function ClubCard({
   const cardStyle = useAnimatedStyle(() => {
     const offset = index * (CLUB_W + CLUB_GAP);
     const dist = Math.abs(scrollX.value - offset);
-    const scale = interpolate(dist, [0, CLUB_W + CLUB_GAP], [1, 0.88], Extrapolation.CLAMP);
-    const translateY = interpolate(dist, [0, CLUB_W + CLUB_GAP], [0, 26], Extrapolation.CLAMP);
-    const opacity = interpolate(dist, [0, CLUB_W + CLUB_GAP], [1, 0.55], Extrapolation.CLAMP);
+    const scale = interpolate(
+      dist,
+      [0, CLUB_W + CLUB_GAP],
+      [1, 0.88],
+      Extrapolation.CLAMP,
+    );
+    const translateY = interpolate(
+      dist,
+      [0, CLUB_W + CLUB_GAP],
+      [0, 26],
+      Extrapolation.CLAMP,
+    );
+    const opacity = interpolate(
+      dist,
+      [0, CLUB_W + CLUB_GAP],
+      [1, 0.55],
+      Extrapolation.CLAMP,
+    );
     return { transform: [{ scale }, { translateY }], opacity };
   });
 
   return (
-    <Pressable onPress={() => onPlay(city)} style={{ width: CLUB_W, marginHorizontal: CLUB_GAP / 2 }}>
+    <Pressable
+      onPress={() => onPlay(city)}
+      style={{ width: CLUB_W, marginHorizontal: CLUB_GAP / 2 }}
+    >
       <Animated.View style={[styles.clubCard, cardStyle]}>
-        <Image source={city.background} style={styles.clubBgImage} resizeMode="cover" />
+        <Image
+          source={city.background}
+          style={styles.clubBgImage}
+          resizeMode="cover"
+        />
         <LinearGradient
-          colors={[`${city.accentColor}22`, 'rgba(104,39,14,0.7)', 'rgba(17,5,4,0.96)']}
+          colors={[
+            `${city.accentColor}22`,
+            "rgba(104,39,14,0.7)",
+            "rgba(17,5,4,0.96)",
+          ]}
           locations={[0, 0.46, 1]}
           style={StyleSheet.absoluteFill}
         />
@@ -763,7 +825,7 @@ function ClubCard({
           <View style={styles.prizeBlock}>
             <Text style={styles.winLabel}>WIN</Text>
             <View style={styles.prizeRow}>
-              <CoinIcon size={COMPACT_CLUB ? 34 : 44} />
+              <RoyalCurrencyIcon kind="coin" size={COMPACT_CLUB ? 34 : 44} />
               <Text style={styles.prizeValue}>{fmt(city.prize)}</Text>
             </View>
           </View>
@@ -774,11 +836,19 @@ function ClubCard({
 
         <View style={styles.clubPerks}>
           <View style={styles.perkPill}>
-            <Ionicons name="star" size={COMPACT_CLUB ? 16 : 18} color={colors.gold} />
+            <Ionicons
+              name="star"
+              size={COMPACT_CLUB ? 16 : 18}
+              color={colors.gold}
+            />
             <Text style={styles.perkText}>30</Text>
           </View>
           <View style={styles.perkPill}>
-            <Ionicons name="diamond" size={COMPACT_CLUB ? 16 : 18} color="#78D8FF" />
+            <Ionicons
+              name="diamond"
+              size={COMPACT_CLUB ? 16 : 18}
+              color="#78D8FF"
+            />
             <Text style={styles.perkText}>34</Text>
           </View>
           <View style={styles.doubleTicket}>
@@ -788,15 +858,20 @@ function ClubCard({
 
         <View style={styles.cardBottomBlock}>
           <Pressable onPress={() => onPlay(city)} style={styles.entryBtn}>
-            <LinearGradient colors={['#7FEA21', '#32A010']} style={styles.entryGradient}>
+            <LinearGradient
+              colors={["#7FEA21", "#32A010"]}
+              style={styles.entryGradient}
+            >
               <View style={styles.entryGloss} />
-              <CoinIcon size={COMPACT_CLUB ? 26 : 30} />
+              <RoyalCurrencyIcon kind="coin" size={COMPACT_CLUB ? 26 : 30} />
               <Text style={styles.entryText}>{fmt(city.entry)}</Text>
             </LinearGradient>
           </Pressable>
 
           <View style={styles.onlineRow}>
-            <View style={[styles.onlineDot, { backgroundColor: city.accentColor }]} />
+            <View
+              style={[styles.onlineDot, { backgroundColor: city.accentColor }]}
+            />
             <Text style={styles.onlineText}>{fmt(city.online)} online</Text>
           </View>
         </View>
@@ -809,10 +884,16 @@ function PrizeChest() {
   return (
     <View style={styles.prizeChest}>
       <View style={styles.prizeChestLid}>
-        <LinearGradient colors={['#79D7FF', '#2989C7']} style={StyleSheet.absoluteFill} />
+        <LinearGradient
+          colors={["#79D7FF", "#2989C7"]}
+          style={StyleSheet.absoluteFill}
+        />
       </View>
       <View style={styles.prizeChestBody}>
-        <LinearGradient colors={['#48B8F0', '#176CA5']} style={StyleSheet.absoluteFill} />
+        <LinearGradient
+          colors={["#48B8F0", "#176CA5"]}
+          style={StyleSheet.absoluteFill}
+        />
         <View style={styles.prizeChestLock} />
       </View>
       <View style={styles.prizeChestBand} />
@@ -821,240 +902,238 @@ function PrizeChest() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#080104' },
+  root: { flex: 1, backgroundColor: "#080104" },
   bgTint: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(9,5,2,0.86)',
+    backgroundColor: "rgba(9,5,2,0.86)",
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 18,
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 12,
     paddingBottom: 2,
-    gap: 12,
+    gap: 8,
     zIndex: 5,
   },
   avatarWrap: {
-    width: 76,
-    height: 76,
-    justifyContent: 'center',
+    width: 58,
+    height: 58,
+    justifyContent: "center",
   },
   avatarRing: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     borderWidth: 2,
     borderColor: colors.gold,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   avatarInitial: {
-    color: '#fff',
+    color: "#fff",
     fontFamily: fontFamilies.heading,
-    fontSize: 28,
-    fontWeight: '400',
+    fontSize: 23,
+    fontWeight: "400",
   },
   levelBadge: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     bottom: 0,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 4,
-    borderRadius: 12,
-    backgroundColor: '#7D163F',
-    paddingHorizontal: 8,
-    paddingVertical: 3,
+    borderRadius: 10,
+    backgroundColor: "#7D163F",
+    paddingHorizontal: 6,
+    paddingVertical: 2,
     borderWidth: 1,
-    borderColor: 'rgba(212,175,55,0.35)',
+    borderColor: "rgba(212,175,55,0.35)",
   },
-  levelText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 12 },
+  levelText: {
+    color: "#fff",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: 10,
+  },
   walletRow: {
     flex: 1,
-    flexDirection: 'row',
-    gap: 8,
-    justifyContent: 'flex-end',
+    flexDirection: "row",
+    gap: 6,
+    justifyContent: "center",
   },
   currencyPill: {
-    height: 38,
-    minWidth: 92,
-    borderRadius: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(14,8,3,0.72)',
+    height: 34,
+    minWidth: 78,
+    borderRadius: 17,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "rgba(14,8,3,0.72)",
     borderWidth: 1,
-    borderColor: 'rgba(212,175,55,0.26)',
-    paddingLeft: 3,
-    paddingRight: 12,
-    gap: 5,
+    borderColor: "rgba(231,194,91,0.48)",
+    paddingLeft: 2,
+    paddingRight: 7,
+    gap: 4,
   },
-  coinIcon: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    borderWidth: 2,
-    borderColor: '#FFF0A1',
-    shadowColor: '#F8C83B',
-    shadowOpacity: 0.55,
-    shadowRadius: 7,
-    shadowOffset: { width: 0, height: 3 },
+  currencyText: {
+    color: "#FFF4CF",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: 13,
   },
-  coinIconInner: {
-    position: 'absolute',
-    borderWidth: 2,
-    borderColor: 'rgba(255,255,255,0.5)',
-    backgroundColor: 'rgba(174,95,5,0.2)',
+  coinPillEdge: {
+    width: 36,
+    height: 36,
+    marginLeft: -9,
+    marginRight: -1,
+    zIndex: 2,
+    transform: [{ rotate: "-11deg" }, { scale: 1.05 }],
   },
-  coinShine: {
-    position: 'absolute',
-    borderRadius: 999,
-    backgroundColor: 'rgba(255,255,255,0.7)',
-    transform: [{ rotate: '-24deg' }],
-  },
-  gemIcon: {
-    width: 32,
-    height: 32,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1.5,
-    borderColor: '#B8FFBB',
-    transform: [{ rotate: '-10deg' }],
-  },
-  currencyText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 15 },
   plusBubble: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    backgroundColor: '#43C33C',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: 17,
+    height: 17,
+    borderRadius: 8.5,
+    backgroundColor: "#9A6A16",
+    alignItems: "center",
+    justifyContent: "center",
     borderWidth: 1.5,
-    borderColor: '#C9FFD0',
+    borderColor: "#F9DB7A",
   },
   settingsBtn: {
-    width: 42,
-    height: 42,
-    borderRadius: 16,
-    backgroundColor: 'rgba(14,8,3,0.66)',
+    width: 36,
+    height: 36,
+    borderRadius: 14,
+    backgroundColor: "rgba(53,38,14,0.68)",
     borderWidth: 1,
-    borderColor: 'rgba(212,175,55,0.24)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderColor: "rgba(212,175,55,0.24)",
+    alignItems: "center",
+    justifyContent: "center",
   },
   modeScreen: {
     flex: 1,
     paddingHorizontal: 18,
     paddingTop: 0,
-    justifyContent: 'space-between',
+    justifyContent: "flex-start",
   },
   brandArea: {
-    minHeight: COMPACT_CLUB ? 188 : 226,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    minHeight: COMPACT_CLUB ? 58 : 66,
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+  cardStack: {
+    width: "100%",
+    marginTop: "auto",
+  },
+  royalBrand: {
+    width: 280,
+    height: 122,
+    opacity: 0.5,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    alignSelf: "center",
+    marginBottom: COMPACT_CLUB ? 10 : 12,
+    transform: [{ translateY: COMPACT_CLUB ? -16 : -20 }],
+  },
+  brandCrown: {
+    width: 140,
+    height: 86,
+    opacity: 0.76,
+    marginBottom: 2,
+  },
+  brandName: {
+    color: "#F4D77B",
+    fontFamily: fontFamilies.heading,
+    fontSize: COMPACT_CLUB ? 24 : 27,
+    letterSpacing: 3,
+    lineHeight: COMPACT_CLUB ? 28 : 31,
+    opacity: 0.74,
+    textShadowColor: "rgba(217,169,62,0.42)",
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 7,
+  },
+  brandTag: {
+    color: "#D1B66D",
+    fontFamily: fontFamilies.body,
+    fontSize: 8,
+    letterSpacing: 3.2,
+    opacity: 0.52,
   },
   logoWatermark: {
-    position: 'absolute',
+    position: "absolute",
     top: COMPACT_CLUB ? 46 : 58,
     width: COMPACT_CLUB ? 150 : 178,
     height: COMPACT_CLUB ? 150 : 178,
     opacity: 0.1,
   },
   eventRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 18,
-    marginTop: 2,
+    position: "absolute",
+    top: COMPACT_CLUB ? 8 : 12,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
   },
   quickTile: {
-    width: COMPACT_CLUB ? 84 : 92,
-    height: COMPACT_CLUB ? 72 : 82,
-    borderRadius: 18,
-    backgroundColor: 'rgba(20,12,5,0.76)',
-    borderWidth: 1.5,
-    borderColor: 'rgba(212,175,55,0.38)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: COMPACT_CLUB ? 82 : 88,
+    height: COMPACT_CLUB ? 45 : 50,
+    borderRadius: 15,
+    backgroundColor: "rgba(20,12,5,0.76)",
+    borderWidth: 1,
+    borderColor: "rgba(212,175,55,0.38)",
+    alignItems: "center",
+    justifyContent: "center",
     shadowColor: colors.gold,
     shadowOpacity: 0.18,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
   },
-  quickLabel: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', marginTop: 3 },
+  quickLabel: {
+    color: "#FFF0B5",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    marginTop: 1,
+    fontSize: 11,
+  },
   redBadge: {
-    position: 'absolute',
-    top: -8,
-    right: -8,
-    minWidth: 26,
-    height: 26,
-    borderRadius: 9,
-    backgroundColor: '#E91B25',
+    position: "absolute",
+    top: -6,
+    right: -6,
+    minWidth: 22,
+    height: 22,
+    borderRadius: 8,
+    backgroundColor: "#E91B25",
     borderWidth: 2,
-    borderColor: '#FFE2D5',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 5,
+    borderColor: "#FFE2D5",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 4,
   },
-  redBadgeText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 12 },
-  passBanner: {
-    width: '94%',
-    minHeight: COMPACT_CLUB ? 72 : 82,
-    marginTop: COMPACT_CLUB ? 16 : 22,
-    borderRadius: 14,
-    borderWidth: 1.5,
-    borderColor: 'rgba(255,225,135,0.7)',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-    overflow: 'hidden',
-    shadowColor: colors.gold,
-    shadowOpacity: 0.22,
-    shadowRadius: 12,
-    shadowOffset: { width: 0, height: 5 },
+  redBadgeText: {
+    color: "#fff",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: 10,
   },
-  passTrophy: {
-    width: 66,
-    height: 66,
-    borderRadius: 22,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'rgba(212,175,55,0.16)',
-    borderWidth: 1.5,
-    borderColor: 'rgba(255,236,158,0.45)',
-    marginRight: 10,
-  },
-  passCopy: { flex: 1 },
-  passTitle: { color: '#FFE37A', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 22, letterSpacing: 1 },
-  passSub: { color: 'rgba(255,255,255,0.7)', fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 12 },
-  passBtn: {
-    backgroundColor: '#72D01D',
-    borderRadius: 12,
-    paddingHorizontal: 15,
-    paddingVertical: 9,
-  },
-  passBtnText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: 15 },
   largeGrid: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 10,
     marginTop: COMPACT_CLUB ? 8 : 12,
   },
   smallGrid: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 8,
-    marginTop: COMPACT_CLUB ? 10 : 12,
-    width: '100%',
-    alignSelf: 'stretch',
+    marginTop: COMPACT_CLUB ? 20 : 22,
+    width: "100%",
+    alignSelf: "stretch",
   },
   modeCardLarge: {
     flex: 1,
     height: COMPACT_CLUB ? 150 : 172,
     borderRadius: 14,
     borderWidth: 0,
-    backgroundColor: 'transparent',
-    overflow: 'hidden',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    backgroundColor: "transparent",
+    overflow: "hidden",
+    justifyContent: "flex-end",
+    alignItems: "center",
     paddingBottom: 0,
     shadowColor: colors.gold,
     shadowOpacity: 0.38,
@@ -1068,254 +1147,275 @@ const styles = StyleSheet.create({
     height: COMPACT_CLUB ? 96 : 112,
     borderRadius: 12,
     borderWidth: 0,
-    backgroundColor: 'transparent',
-    overflow: 'hidden',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    backgroundColor: "transparent",
+    overflow: "hidden",
+    alignItems: "center",
+    justifyContent: "flex-end",
     paddingBottom: 0,
   },
   modeCardImage: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     transform: [{ scale: 1.08 }],
   },
   modeGlow: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(255,255,255,0.05)',
+    backgroundColor: "rgba(255,255,255,0.05)",
   },
   modeTopSheen: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
-    height: '42%',
-    backgroundColor: 'rgba(255,255,255,0.13)',
+    height: "42%",
+    backgroundColor: "rgba(255,255,255,0.13)",
   },
   smallModeBadge: {
-    position: 'absolute',
+    position: "absolute",
     top: 16,
     right: 12,
     width: 34,
     height: 34,
     borderRadius: 17,
-    backgroundColor: 'rgba(0,0,0,0.22)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "rgba(0,0,0,0.22)",
+    alignItems: "center",
+    justifyContent: "center",
   },
   modeIconOrb: {
-    position: 'absolute',
+    position: "absolute",
     top: 8,
     width: 92,
     height: 76,
   },
   modeSceneLarge: {
-    position: 'absolute',
+    position: "absolute",
     top: 8,
     width: 174,
     height: 134,
   },
   modeSceneSmall: {
-    position: 'absolute',
+    position: "absolute",
     top: 8,
     width: 96,
     height: 84,
   },
   ludoPlate: {
-    position: 'absolute',
-    overflow: 'hidden',
+    position: "absolute",
+    overflow: "hidden",
     borderWidth: 3,
-    borderColor: '#FFF0A0',
-    backgroundColor: '#FBF5CC',
-    shadowColor: '#000',
+    borderColor: "#FFF0A0",
+    backgroundColor: "#FBF5CC",
+    shadowColor: "#000",
     shadowOpacity: 0.35,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 5 },
   },
   ludoPlateRow: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   ludoPlateTile: {
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.45)',
+    borderColor: "rgba(255,255,255,0.45)",
   },
   ludoPlateCenter: {
-    position: 'absolute',
-    left: '37%',
-    top: '37%',
-    width: '26%',
-    height: '26%',
+    position: "absolute",
+    left: "37%",
+    top: "37%",
+    width: "26%",
+    height: "26%",
     borderRadius: 5,
-    backgroundColor: '#FFF4C6',
+    backgroundColor: "#FFF4C6",
     borderWidth: 1.5,
-    borderColor: 'rgba(0,0,0,0.18)',
+    borderColor: "rgba(0,0,0,0.18)",
   },
   tokenDisc: {
-    position: 'absolute',
-    alignItems: 'center',
-    justifyContent: 'center',
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
     borderWidth: 3,
-    borderColor: '#FFE974',
-    overflow: 'hidden',
-    shadowColor: '#000',
+    borderColor: "#FFE974",
+    overflow: "hidden",
+    shadowColor: "#000",
     shadowOpacity: 0.35,
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 4 },
     zIndex: 4,
   },
   diceBlock: {
-    position: 'absolute',
+    position: "absolute",
     borderWidth: 2,
-    borderColor: 'rgba(0,0,0,0.2)',
-    shadowColor: '#000',
+    borderColor: "rgba(0,0,0,0.2)",
+    shadowColor: "#000",
     shadowOpacity: 0.28,
     shadowRadius: 7,
     shadowOffset: { width: 0, height: 4 },
     zIndex: 5,
   },
   diceDot: {
-    position: 'absolute',
-    backgroundColor: '#160604',
+    position: "absolute",
+    backgroundColor: "#160604",
   },
   modeNumberBig: {
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     top: 6,
-    color: '#FFE45C',
+    color: "#FFE45C",
     fontFamily: fontFamilies.heading,
     fontSize: 96,
-    fontWeight: '400',
+    fontWeight: "400",
     opacity: 0.82,
     includeFontPadding: false,
-    textShadowColor: '#7A1500',
+    textShadowColor: "#7A1500",
     textShadowOffset: { width: 3, height: 4 },
     textShadowRadius: 0,
   },
   modeNumberSmall: {
-    position: 'absolute',
+    position: "absolute",
     right: -4,
     top: -4,
-    color: '#FFE45C',
+    color: "#FFE45C",
     fontFamily: fontFamilies.heading,
     fontSize: 56,
-    fontWeight: '400',
+    fontWeight: "400",
     opacity: 0.72,
     includeFontPadding: false,
-    textShadowColor: '#7A1500',
+    textShadowColor: "#7A1500",
     textShadowOffset: { width: 2, height: 3 },
     textShadowRadius: 0,
   },
   smallModeIconCenter: {
-    position: 'absolute',
+    position: "absolute",
     left: 29,
     top: 36,
     width: 38,
     height: 38,
     borderRadius: 19,
-    backgroundColor: 'rgba(0,0,0,0.28)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "rgba(0,0,0,0.28)",
+    alignItems: "center",
+    justifyContent: "center",
   },
   modeLabelPlateLarge: {
-    width: '100%',
-    minHeight: 58,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 12,
-    backgroundColor: 'rgba(34,8,4,0.34)',
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    minHeight: 49,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: 5,
+    backgroundColor: "rgba(5,5,4,0.78)",
     borderTopWidth: 1,
-    borderTopColor: 'rgba(255,255,255,0.18)',
+    borderTopColor: "rgba(255,255,255,0.18)",
   },
   modeLabelPlateSmall: {
-    width: '100%',
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
     minHeight: COMPACT_CLUB ? 38 : 42,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingBottom: 8,
-    backgroundColor: 'rgba(28,7,4,0.28)',
+    backgroundColor: "rgba(5,5,4,0.78)",
     borderTopWidth: 1,
-    borderTopColor: 'rgba(255,255,255,0.14)',
+    borderTopColor: "rgba(255,255,255,0.14)",
   },
   modeLabelLarge: {
-    color: '#fff',
+    color: "#F8E5A1",
     fontFamily: fontFamilies.heading,
     fontSize: 20,
-    fontWeight: '400',
-    textShadowColor: 'rgba(0,0,0,0.75)',
+    fontWeight: "400",
+    textShadowColor: "rgba(0,0,0,0.75)",
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 2,
   },
   modeLabelSmall: {
-    color: '#fff',
+    color: "#F8E5A1",
     fontFamily: fontFamilies.heading,
     fontSize: COMPACT_CLUB ? 11 : 12,
-    fontWeight: '400',
-    textAlign: 'center',
+    fontWeight: "400",
+    textAlign: "center",
     lineHeight: COMPACT_CLUB ? 13 : 15,
-    textShadowColor: 'rgba(0,0,0,0.75)',
+    textShadowColor: "rgba(0,0,0,0.75)",
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
   },
-  modeSub: { color: 'rgba(255,255,255,0.72)', fontFamily: fontFamilies.body, fontWeight: '400', fontSize: 11 },
+  modeSub: {
+    color: "rgba(255,255,255,0.72)",
+    fontFamily: fontFamilies.body,
+    fontWeight: "400",
+    fontSize: 11,
+  },
+  modeSubLabel: {
+    color: "rgba(255,255,255,0.48)",
+    fontFamily: fontFamilies.body,
+    fontSize: 9,
+    letterSpacing: 1.1,
+    textTransform: "uppercase",
+  },
   clubsRoot: {
     flex: 1,
     paddingTop: COMPACT_CLUB ? 0 : 6,
   },
   clubsTop: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingHorizontal: 18,
   },
   roundClose: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: 'rgba(0,0,0,0.36)',
+    backgroundColor: "rgba(0,0,0,0.36)",
     borderWidth: 1.5,
-    borderColor: 'rgba(212,175,55,0.35)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderColor: "rgba(212,175,55,0.35)",
+    alignItems: "center",
+    justifyContent: "center",
   },
   roundCloseRed: {
     width: 42,
     height: 42,
     borderRadius: 21,
-    backgroundColor: '#D9322E',
+    backgroundColor: "#D9322E",
     borderWidth: 2,
-    borderColor: '#FF9E84',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderColor: "#FF9E84",
+    alignItems: "center",
+    justifyContent: "center",
   },
-  modeTitleWrap: { alignItems: 'center', gap: 4 },
+  modeTitleWrap: { alignItems: "center", gap: 4 },
   modeTitle: {
-    color: '#F5B3DC',
+    color: "#F5B3DC",
     fontFamily: fontFamilies.heading,
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: COMPACT_CLUB ? 18 : 22,
     letterSpacing: 1,
-    textShadowColor: 'rgba(255,78,190,0.45)',
+    textShadowColor: "rgba(255,78,190,0.45)",
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 8,
   },
   ruleTabs: {
-    alignSelf: 'center',
+    alignSelf: "center",
     marginTop: COMPACT_CLUB ? 6 : 16,
-    flexDirection: 'row',
+    flexDirection: "row",
     borderRadius: 18,
-    backgroundColor: 'rgba(0,0,0,0.35)',
+    backgroundColor: "rgba(0,0,0,0.35)",
     borderWidth: 1,
-    borderColor: 'rgba(212,175,55,0.2)',
-    overflow: 'hidden',
+    borderColor: "rgba(212,175,55,0.2)",
+    overflow: "hidden",
   },
   ruleTab: {
     width: COMPACT_CLUB ? 88 : 96,
     height: COMPACT_CLUB ? 40 : 58,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     gap: 3,
   },
   ruleTabActive: { backgroundColor: colors.gold },
-  ruleTabText: { color: colors.gold, fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: COMPACT_CLUB ? 10 : 12 },
+  ruleTabText: {
+    color: colors.gold,
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: COMPACT_CLUB ? 10 : 12,
+  },
   ruleTabTextActive: { color: colors.bg },
   clubList: {
     flexGrow: 0,
@@ -1327,44 +1427,44 @@ const styles = StyleSheet.create({
     height: CLUB_H,
     borderRadius: COMPACT_CLUB ? 24 : 26,
     borderWidth: 2.5,
-    borderColor: '#FFB27E',
-    overflow: 'hidden',
-    alignItems: 'center',
-    backgroundColor: '#5B1A16',
-    shadowColor: '#FFB27E',
+    borderColor: "#FFB27E",
+    overflow: "hidden",
+    alignItems: "center",
+    backgroundColor: "#5B1A16",
+    shadowColor: "#FFB27E",
     shadowOpacity: 0.45,
     shadowRadius: 16,
     elevation: 14,
   },
   clubBgImage: {
     ...StyleSheet.absoluteFillObject,
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     opacity: 0.42,
   },
   clubCardHighlight: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     height: COMPACT_CLUB ? 94 : 118,
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: "rgba(255,255,255,0.08)",
   },
   clubCardInset: {
-    position: 'absolute',
+    position: "absolute",
     top: COMPACT_CLUB ? 8 : 10,
     left: COMPACT_CLUB ? 8 : 10,
     right: COMPACT_CLUB ? 8 : 10,
     bottom: COMPACT_CLUB ? 8 : 10,
     borderRadius: COMPACT_CLUB ? 18 : 20,
     borderWidth: 1,
-    borderColor: 'rgba(255,232,172,0.16)',
+    borderColor: "rgba(255,232,172,0.16)",
   },
   clubMedal: {
     width: COMPACT_CLUB ? 124 : 142,
     height: COMPACT_CLUB ? 68 : 80,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: COMPACT_CLUB ? 8 : 9,
     marginBottom: COMPACT_CLUB ? -2 : -1,
     shadowColor: colors.gold,
@@ -1373,7 +1473,7 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   clubMedalGlow: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 2,
     width: COMPACT_CLUB ? 74 : 86,
     height: COMPACT_CLUB ? 32 : 38,
@@ -1384,183 +1484,213 @@ const styles = StyleSheet.create({
     shadowRadius: 16,
   },
   clubCrownImage: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
   },
   clubName: {
-    color: '#FFD1A5',
+    color: "#FFD1A5",
     fontFamily: fontFamilies.heading,
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: COMPACT_CLUB ? 24 : 28,
     letterSpacing: 1,
-    textShadowColor: 'rgba(0,0,0,0.45)',
+    textShadowColor: "rgba(0,0,0,0.45)",
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 3,
   },
   clubSub: {
-    color: 'rgba(255,255,255,0.68)',
+    color: "rgba(255,255,255,0.68)",
     fontFamily: fontFamilies.body,
-    fontWeight: '400',
+    fontWeight: "400",
     letterSpacing: 1,
     fontSize: COMPACT_CLUB ? 10 : 11,
     marginTop: COMPACT_CLUB ? -1 : -2,
   },
   winShelf: {
     marginTop: COMPACT_CLUB ? 8 : 10,
-    width: COMPACT_CLUB ? '80%' : '80%',
+    width: COMPACT_CLUB ? "80%" : "80%",
     height: COMPACT_CLUB ? 72 : 78,
     borderRadius: COMPACT_CLUB ? 16 : 18,
-    backgroundColor: 'rgba(255,196,132,0.16)',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
+    backgroundColor: "rgba(255,196,132,0.16)",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
   },
-  prizeBlock: { alignItems: 'center' },
-  winLabel: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: COMPACT_CLUB ? 11 : 12, marginBottom: COMPACT_CLUB ? 3 : 5 },
-  prizeRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  prizeValue: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: COMPACT_CLUB ? 22 : 24 },
+  prizeBlock: { alignItems: "center" },
+  winLabel: {
+    color: "#fff",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: COMPACT_CLUB ? 11 : 12,
+    marginBottom: COMPACT_CLUB ? 3 : 5,
+  },
+  prizeRow: { flexDirection: "row", alignItems: "center", gap: 8 },
+  prizeValue: {
+    color: "#fff",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: COMPACT_CLUB ? 22 : 24,
+  },
   chestArt: {
     width: COMPACT_CLUB ? 54 : 60,
     height: COMPACT_CLUB ? 54 : 60,
     borderRadius: COMPACT_CLUB ? 15 : 17,
-    backgroundColor: 'rgba(45,147,204,0.22)',
+    backgroundColor: "rgba(45,147,204,0.22)",
     borderWidth: 1.5,
-    borderColor: 'rgba(132,219,255,0.55)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderColor: "rgba(132,219,255,0.55)",
+    alignItems: "center",
+    justifyContent: "center",
   },
   prizeChest: {
     width: 48,
     height: 42,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    alignItems: "center",
+    justifyContent: "flex-end",
   },
   prizeChestLid: {
-    position: 'absolute',
+    position: "absolute",
     top: 2,
     width: 38,
     height: 17,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     borderWidth: 2,
-    borderColor: '#A8ECFF',
-    overflow: 'hidden',
+    borderColor: "#A8ECFF",
+    overflow: "hidden",
   },
   prizeChestBody: {
     width: 48,
     height: 28,
     borderRadius: 9,
     borderWidth: 2,
-    borderColor: '#A8ECFF',
-    overflow: 'hidden',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderColor: "#A8ECFF",
+    overflow: "hidden",
+    alignItems: "center",
+    justifyContent: "center",
   },
   prizeChestBand: {
-    position: 'absolute',
+    position: "absolute",
     top: 12,
     width: 8,
     height: 30,
     borderRadius: 4,
-    backgroundColor: '#F7BE43',
+    backgroundColor: "#F7BE43",
     borderWidth: 1,
-    borderColor: '#FFE699',
+    borderColor: "#FFE699",
   },
   prizeChestLock: {
     width: 12,
     height: 9,
     borderRadius: 3,
-    backgroundColor: '#FFD76A',
+    backgroundColor: "#FFD76A",
     borderWidth: 1,
-    borderColor: '#8A5C08',
+    borderColor: "#8A5C08",
   },
   clubPerks: {
     marginTop: COMPACT_CLUB ? 8 : 12,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 10,
   },
   perkPill: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 7,
     minWidth: COMPACT_CLUB ? 56 : 64,
     borderRadius: COMPACT_CLUB ? 12 : 14,
-    backgroundColor: 'rgba(0,0,0,0.35)',
+    backgroundColor: "rgba(0,0,0,0.35)",
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.25)',
+    borderColor: "rgba(255,255,255,0.25)",
     paddingHorizontal: COMPACT_CLUB ? 8 : 10,
     paddingVertical: COMPACT_CLUB ? 5 : 7,
   },
-  perkText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: COMPACT_CLUB ? 13 : 14 },
+  perkText: {
+    color: "#fff",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: COMPACT_CLUB ? 13 : 14,
+  },
   doubleTicket: {
     width: COMPACT_CLUB ? 50 : 56,
     height: COMPACT_CLUB ? 32 : 38,
     borderRadius: COMPACT_CLUB ? 12 : 12,
-    backgroundColor: '#11B9EF',
-    alignItems: 'center',
-    justifyContent: 'center',
-    transform: [{ rotate: '-8deg' }],
+    backgroundColor: "#11B9EF",
+    alignItems: "center",
+    justifyContent: "center",
+    transform: [{ rotate: "-8deg" }],
     borderWidth: 2,
-    borderColor: '#9EF1FF',
+    borderColor: "#9EF1FF",
   },
-  doubleText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: COMPACT_CLUB ? 17 : 20 },
+  doubleText: {
+    color: "#fff",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: COMPACT_CLUB ? 17 : 20,
+  },
   cardBottomBlock: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     right: 0,
     bottom: COMPACT_CLUB ? 12 : 14,
-    alignItems: 'center',
+    alignItems: "center",
   },
   entryBtn: {
     marginBottom: COMPACT_CLUB ? 6 : 7,
     width: COMPACT_CLUB ? 164 : 188,
     height: COMPACT_CLUB ? 44 : 52,
     borderRadius: COMPACT_CLUB ? 15 : 18,
-    overflow: 'hidden',
+    overflow: "hidden",
     borderWidth: 2,
-    borderColor: 'rgba(255,255,255,0.28)',
+    borderColor: "rgba(255,255,255,0.28)",
   },
   entryGradient: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     gap: 8,
   },
   entryGloss: {
-    position: 'absolute',
+    position: "absolute",
     top: 4,
     left: 12,
     right: 12,
     height: 16,
     borderRadius: 10,
-    backgroundColor: 'rgba(255,255,255,0.22)',
+    backgroundColor: "rgba(255,255,255,0.22)",
   },
-  entryText: { color: '#fff', fontFamily: fontFamilies.heading, fontWeight: '400', fontSize: COMPACT_CLUB ? 20 : 24 },
+  entryText: {
+    color: "#fff",
+    fontFamily: fontFamilies.heading,
+    fontWeight: "400",
+    fontSize: COMPACT_CLUB ? 20 : 24,
+  },
   onlineRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 6,
     minHeight: 16,
   },
   onlineDot: { width: 8, height: 8, borderRadius: 4 },
-  onlineText: { color: 'rgba(255,255,255,0.72)', fontFamily: fontFamilies.body, fontWeight: '400', fontSize: COMPACT_CLUB ? 11 : 12 },
+  onlineText: {
+    color: "rgba(255,255,255,0.72)",
+    fontFamily: fontFamilies.body,
+    fontWeight: "400",
+    fontSize: COMPACT_CLUB ? 11 : 12,
+  },
   dots: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     gap: 7,
     marginTop: COMPACT_CLUB ? 4 : 10,
   },
   dot: { borderRadius: 4 },
   dotActive: { width: 22, height: 7 },
-  dotIdle: { width: 7, height: 7, backgroundColor: 'rgba(255,255,255,0.24)' },
+  dotIdle: { width: 7, height: 7, backgroundColor: "rgba(255,255,255,0.24)" },
   bannerAdWrap: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     right: 0,
-    bottom: 96,
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.25)',
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.25)",
   },
 });

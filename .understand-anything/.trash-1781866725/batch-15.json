@@ -1,0 +1,187 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/query-composite-indexes.md",
+      "type": "document",
+      "name": "query-composite-indexes.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/query-composite-indexes.md",
+      "summary": "query-composite-indexes.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/query-covering-indexes.md",
+      "type": "document",
+      "name": "query-covering-indexes.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/query-covering-indexes.md",
+      "summary": "query-covering-indexes.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/query-index-types.md",
+      "type": "document",
+      "name": "query-index-types.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/query-index-types.md",
+      "summary": "query-index-types.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/query-missing-indexes.md",
+      "type": "document",
+      "name": "query-missing-indexes.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/query-missing-indexes.md",
+      "summary": "query-missing-indexes.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/query-partial-indexes.md",
+      "type": "document",
+      "name": "query-partial-indexes.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/query-partial-indexes.md",
+      "summary": "query-partial-indexes.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/schema-constraints.md",
+      "type": "document",
+      "name": "schema-constraints.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/schema-constraints.md",
+      "summary": "schema-constraints.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/schema-data-types.md",
+      "type": "document",
+      "name": "schema-data-types.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/schema-data-types.md",
+      "summary": "schema-data-types.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md",
+      "type": "document",
+      "name": "schema-foreign-key-indexes.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md",
+      "summary": "schema-foreign-key-indexes.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md",
+      "type": "document",
+      "name": "schema-lowercase-identifiers.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md",
+      "summary": "schema-lowercase-identifiers.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/schema-partitioning.md",
+      "type": "document",
+      "name": "schema-partitioning.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/schema-partitioning.md",
+      "summary": "schema-partitioning.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/schema-primary-keys.md",
+      "type": "document",
+      "name": "schema-primary-keys.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/schema-primary-keys.md",
+      "summary": "schema-primary-keys.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/security-privileges.md",
+      "type": "document",
+      "name": "security-privileges.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/security-privileges.md",
+      "summary": "security-privileges.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/security-rls-basics.md",
+      "type": "document",
+      "name": "security-rls-basics.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/security-rls-basics.md",
+      "summary": "security-rls-basics.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/security-rls-performance.md",
+      "type": "document",
+      "name": "security-rls-performance.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/security-rls-performance.md",
+      "summary": "security-rls-performance.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

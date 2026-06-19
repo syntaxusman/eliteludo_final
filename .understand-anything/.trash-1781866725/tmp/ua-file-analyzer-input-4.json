@@ -1,0 +1,98 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": "supabase/migrations/0001_initial_schema.sql",
+      "language": "sql",
+      "sizeLines": 139,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0002_rls_policies.sql",
+      "language": "sql",
+      "sizeLines": 66,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0003_add_color_id.sql",
+      "language": "sql",
+      "sizeLines": 4,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0004_match_queue.sql",
+      "language": "sql",
+      "sizeLines": 59,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0005_phase4_economy_multiplayer.sql",
+      "language": "sql",
+      "sizeLines": 103,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0006_atomic_daily_reward.sql",
+      "language": "sql",
+      "sizeLines": 113,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0007_lock_down_security_definer_functions.sql",
+      "language": "sql",
+      "sizeLines": 15,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0008_revoke_explicit_security_definer_exec.sql",
+      "language": "sql",
+      "sizeLines": 12,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0009_match_forfeit_move_type.sql",
+      "language": "sql",
+      "sizeLines": 1,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0010_realtime_safe_participant_policies.sql",
+      "language": "sql",
+      "sizeLines": 28,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0011_match_broadcast_realtime.sql",
+      "language": "sql",
+      "sizeLines": 66,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/0012_match_presence_realtime_policy.sql",
+      "language": "sql",
+      "sizeLines": 42,
+      "fileCategory": "data"
+    },
+    {
+      "path": "supabase/migrations/20260617182229_bot_sync_move_type.sql",
+      "language": "sql",
+      "sizeLines": 1,
+      "fileCategory": "data"
+    }
+  ],
+  "batchImportData": {
+    "supabase/migrations/0001_initial_schema.sql": [],
+    "supabase/migrations/0002_rls_policies.sql": [],
+    "supabase/migrations/0003_add_color_id.sql": [],
+    "supabase/migrations/0004_match_queue.sql": [],
+    "supabase/migrations/0005_phase4_economy_multiplayer.sql": [],
+    "supabase/migrations/0006_atomic_daily_reward.sql": [],
+    "supabase/migrations/0007_lock_down_security_definer_functions.sql": [],
+    "supabase/migrations/0008_revoke_explicit_security_definer_exec.sql": [],
+    "supabase/migrations/0009_match_forfeit_move_type.sql": [],
+    "supabase/migrations/0010_realtime_safe_participant_policies.sql": [],
+    "supabase/migrations/0011_match_broadcast_realtime.sql": [],
+    "supabase/migrations/0012_match_presence_realtime_policy.sql": [],
+    "supabase/migrations/20260617182229_bot_sync_move_type.sql": []
+  }
+}

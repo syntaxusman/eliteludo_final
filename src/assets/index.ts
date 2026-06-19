@@ -15,15 +15,6 @@ export const Images = {
   cityBrazil: require('../../assets/images/city-brazil.png'),
   cityDoha: require('../../assets/images/city-doha.png'),
 
-  // Logo
-  logo: require('../../assets/images/logo-elite-ludo.png'),
-
-  // Tokens
-  tokenRed: require('../../assets/images/token-red.png'),
-  tokenBlue: require('../../assets/images/token-blue.png'),
-  tokenGreen: require('../../assets/images/token-green.png'),
-  tokenYellow: require('../../assets/images/token-yellow.png'),
-
   // Dice sprite sheets (6 faces in a row, face index = value - 1)
   diceGold: require('../../assets/images/dice-gold.png'),
   diceBlack: require('../../assets/images/dice-black.png'),
@@ -39,13 +30,6 @@ export const Images = {
   // Buttons
   btnRollDice: require('../../assets/images/btn-roll-dice.png'),
   btnCollect: require('../../assets/images/btn-collect.png'),
-
-  // Lobby mode cards
-  lobbyCardTwoPlayer: require('../../assets/images/two_player_lobby_card_1781003195014.png'),
-  lobbyCardFourPlayer: require('../../assets/images/four_player_lobby_card_1781003212625.png'),
-  lobbyCardPrivateTable: require('../../assets/images/private_table_lobby_card_1781003231457.png'),
-  lobbyCardTeamUpOnline: require('../../assets/images/team-up-online.png'),
-  lobbyCardTeamUpFriends: require('../../assets/images/team-up-friends.png'),
 
   // Game outcome
   trophyGold: require('../../assets/images/trophy-gold.png'),

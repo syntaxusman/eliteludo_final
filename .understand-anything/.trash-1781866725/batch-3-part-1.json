@@ -1,0 +1,1620 @@
+{
+  "nodes": [
+    {
+      "id": "file:app/game/[matchId].tsx",
+      "type": "file",
+      "name": "[matchId].tsx",
+      "filePath": "app/game/[matchId].tsx",
+      "summary": "[matchId].tsx provides 20 functions for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:GameScreen",
+      "type": "function",
+      "name": "GameScreen",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        98,
+        866
+      ],
+      "summary": "GameScreen implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "game-screen",
+        "behavior"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:GameMenuModal",
+      "type": "function",
+      "name": "GameMenuModal",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        868,
+        906
+      ],
+      "summary": "GameMenuModal implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "game-menu-modal",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:TopHud",
+      "type": "function",
+      "name": "TopHud",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        918,
+        941
+      ],
+      "summary": "TopHud implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "top-hud",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:HudButton",
+      "type": "function",
+      "name": "HudButton",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        943,
+        965
+      ],
+      "summary": "HudButton implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "hud-button",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:ResourcePill",
+      "type": "function",
+      "name": "ResourcePill",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        967,
+        993
+      ],
+      "summary": "ResourcePill implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "resource-pill",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:RemoteSeat",
+      "type": "function",
+      "name": "RemoteSeat",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        995,
+        1015
+      ],
+      "summary": "RemoteSeat implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "remote-seat",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:MiniSeat",
+      "type": "function",
+      "name": "MiniSeat",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1017,
+        1038
+      ],
+      "summary": "MiniSeat implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "mini-seat",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:LocalCommandBar",
+      "type": "function",
+      "name": "LocalCommandBar",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1040,
+        1083
+      ],
+      "summary": "LocalCommandBar implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "local-command-bar",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:DiceBubble",
+      "type": "function",
+      "name": "DiceBubble",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1085,
+        1129
+      ],
+      "summary": "DiceBubble implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "dice-bubble",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:DiceProgressRing",
+      "type": "function",
+      "name": "DiceProgressRing",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1131,
+        1164
+      ],
+      "summary": "DiceProgressRing implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "dice-progress-ring",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:PlayerAvatar",
+      "type": "function",
+      "name": "PlayerAvatar",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1166,
+        1199
+      ],
+      "summary": "PlayerAvatar implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "player-avatar",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:PlayerStatsModal",
+      "type": "function",
+      "name": "PlayerStatsModal",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1201,
+        1265
+      ],
+      "summary": "PlayerStatsModal implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "player-stats-modal",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:normalizeMatchBoardState",
+      "type": "function",
+      "name": "normalizeMatchBoardState",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1297,
+        1333
+      ],
+      "summary": "normalizeMatchBoardState implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "normalize-match-board-state",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:recolorPlayer",
+      "type": "function",
+      "name": "recolorPlayer",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1335,
+        1345
+      ],
+      "summary": "recolorPlayer implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "recolor-player",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:remapLastRolls",
+      "type": "function",
+      "name": "remapLastRolls",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1347,
+        1356
+      ],
+      "summary": "remapLastRolls implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "remap-last-rolls",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/[matchId].tsx:makeHint",
+      "type": "function",
+      "name": "makeHint",
+      "filePath": "app/game/[matchId].tsx",
+      "lineRange": [
+        1358,
+        1383
+      ],
+      "summary": "makeHint implements a significant behavior within [matchId].tsx.",
+      "tags": [
+        "function",
+        "make-hint",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/ai.ts",
+      "type": "file",
+      "name": "ai.ts",
+      "filePath": "src/game/ai.ts",
+      "summary": "ai.ts provides 2 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/ai.ts:chooseMove",
+      "type": "function",
+      "name": "chooseMove",
+      "filePath": "src/game/ai.ts",
+      "lineRange": [
+        8,
+        22
+      ],
+      "summary": "chooseMove implements a significant behavior within ai.ts.",
+      "tags": [
+        "function",
+        "choose-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/ai.ts:score",
+      "type": "function",
+      "name": "score",
+      "filePath": "src/game/ai.ts",
+      "lineRange": [
+        24,
+        34
+      ],
+      "summary": "score implements a significant behavior within ai.ts.",
+      "tags": [
+        "function",
+        "score",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/board.ts",
+      "type": "file",
+      "name": "board.ts",
+      "filePath": "src/game/board.ts",
+      "summary": "board.ts provides 4 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/board.ts:trackIndexForHop",
+      "type": "function",
+      "name": "trackIndexForHop",
+      "filePath": "src/game/board.ts",
+      "lineRange": [
+        165,
+        167
+      ],
+      "summary": "trackIndexForHop implements a significant behavior within board.ts.",
+      "tags": [
+        "function",
+        "track-index-for-hop",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/board.ts:progressFor",
+      "type": "function",
+      "name": "progressFor",
+      "filePath": "src/game/board.ts",
+      "lineRange": [
+        179,
+        195
+      ],
+      "summary": "progressFor implements a significant behavior within board.ts.",
+      "tags": [
+        "function",
+        "progress-for",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/board.ts:cellForToken",
+      "type": "function",
+      "name": "cellForToken",
+      "filePath": "src/game/board.ts",
+      "lineRange": [
+        198,
+        210
+      ],
+      "summary": "cellForToken implements a significant behavior within board.ts.",
+      "tags": [
+        "function",
+        "cell-for-token",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/board.ts:isSameTrackCell",
+      "type": "function",
+      "name": "isSameTrackCell",
+      "filePath": "src/game/board.ts",
+      "lineRange": [
+        213,
+        215
+      ],
+      "summary": "isSameTrackCell implements a significant behavior within board.ts.",
+      "tags": [
+        "function",
+        "is-same-track-cell",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/bots.ts",
+      "type": "file",
+      "name": "bots.ts",
+      "filePath": "src/game/bots.ts",
+      "summary": "bots.ts provides 4 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/bots.ts:botDisplayName",
+      "type": "function",
+      "name": "botDisplayName",
+      "filePath": "src/game/bots.ts",
+      "lineRange": [
+        20,
+        23
+      ],
+      "summary": "botDisplayName implements a significant behavior within bots.ts.",
+      "tags": [
+        "function",
+        "bot-display-name",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/bots.ts:botAvatarId",
+      "type": "function",
+      "name": "botAvatarId",
+      "filePath": "src/game/bots.ts",
+      "lineRange": [
+        25,
+        28
+      ],
+      "summary": "botAvatarId implements a significant behavior within bots.ts.",
+      "tags": [
+        "function",
+        "bot-avatar-id",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/bots.ts:botThinkDelay",
+      "type": "function",
+      "name": "botThinkDelay",
+      "filePath": "src/game/bots.ts",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "botThinkDelay implements a significant behavior within bots.ts.",
+      "tags": [
+        "function",
+        "bot-think-delay",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/perspective.ts",
+      "type": "file",
+      "name": "perspective.ts",
+      "filePath": "src/game/perspective.ts",
+      "summary": "perspective.ts provides 3 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/perspective.ts:cellForPerspective",
+      "type": "function",
+      "name": "cellForPerspective",
+      "filePath": "src/game/perspective.ts",
+      "lineRange": [
+        20,
+        32
+      ],
+      "summary": "cellForPerspective implements a significant behavior within perspective.ts.",
+      "tags": [
+        "function",
+        "cell-for-perspective",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/perspective.ts:visualCornerForColor",
+      "type": "function",
+      "name": "visualCornerForColor",
+      "filePath": "src/game/perspective.ts",
+      "lineRange": [
+        34,
+        45
+      ],
+      "summary": "visualCornerForColor implements a significant behavior within perspective.ts.",
+      "tags": [
+        "function",
+        "visual-corner-for-color",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/perspective.ts:homeCornerProbe",
+      "type": "function",
+      "name": "homeCornerProbe",
+      "filePath": "src/game/perspective.ts",
+      "lineRange": [
+        47,
+        58
+      ],
+      "summary": "homeCornerProbe implements a significant behavior within perspective.ts.",
+      "tags": [
+        "function",
+        "home-corner-probe",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/rules.ts",
+      "type": "file",
+      "name": "rules.ts",
+      "filePath": "src/game/rules.ts",
+      "summary": "rules.ts provides 18 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/rules.ts:makeInitialPlayer",
+      "type": "function",
+      "name": "makeInitialPlayer",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        37,
+        49
+      ],
+      "summary": "makeInitialPlayer implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "make-initial-player",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:makeInitialGameState",
+      "type": "function",
+      "name": "makeInitialGameState",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        53,
+        80
+      ],
+      "summary": "makeInitialGameState implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "make-initial-game-state",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:rollDice",
+      "type": "function",
+      "name": "rollDice",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        84,
+        86
+      ],
+      "summary": "rollDice implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "roll-dice",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:addRoll",
+      "type": "function",
+      "name": "addRoll",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        97,
+        119
+      ],
+      "summary": "addRoll implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "add-roll",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:tryMove",
+      "type": "function",
+      "name": "tryMove",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        127,
+        152
+      ],
+      "summary": "tryMove implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "try-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:getValidMoves",
+      "type": "function",
+      "name": "getValidMoves",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        161,
+        193
+      ],
+      "summary": "getValidMoves implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "get-valid-moves",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:samePlace",
+      "type": "function",
+      "name": "samePlace",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        195,
+        207
+      ],
+      "summary": "samePlace implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "same-place",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:applyMove",
+      "type": "function",
+      "name": "applyMove",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        217,
+        243
+      ],
+      "summary": "applyMove implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "apply-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:finishMove",
+      "type": "function",
+      "name": "finishMove",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        252,
+        274
+      ],
+      "summary": "finishMove implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "finish-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:advanceToNextPlayer",
+      "type": "function",
+      "name": "advanceToNextPlayer",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        277,
+        292
+      ],
+      "summary": "advanceToNextPlayer implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "advance-to-next-player",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:freeHomeSlot",
+      "type": "function",
+      "name": "freeHomeSlot",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        301,
+        312
+      ],
+      "summary": "freeHomeSlot implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "free-home-slot",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:pathCellsForMove",
+      "type": "function",
+      "name": "pathCellsForMove",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        328,
+        347
+      ],
+      "summary": "pathCellsForMove implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "path-cells-for-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:cellForLocation",
+      "type": "function",
+      "name": "cellForLocation",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        353,
+        364
+      ],
+      "summary": "cellForLocation implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "cell-for-location",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:checkWin",
+      "type": "function",
+      "name": "checkWin",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        368,
+        372
+      ],
+      "summary": "checkWin implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "check-win",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/rules.ts:tokensFinished",
+      "type": "function",
+      "name": "tokensFinished",
+      "filePath": "src/game/rules.ts",
+      "lineRange": [
+        374,
+        376
+      ],
+      "summary": "tokensFinished implements a significant behavior within rules.ts.",
+      "tags": [
+        "function",
+        "tokens-finished",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/seating.ts",
+      "type": "file",
+      "name": "seating.ts",
+      "filePath": "src/game/seating.ts",
+      "summary": "seating.ts provides 4 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/seating.ts:oppositeColor",
+      "type": "function",
+      "name": "oppositeColor",
+      "filePath": "src/game/seating.ts",
+      "lineRange": [
+        9,
+        20
+      ],
+      "summary": "oppositeColor implements a significant behavior within seating.ts.",
+      "tags": [
+        "function",
+        "opposite-color",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/seating.ts:assignRuntimeColors",
+      "type": "function",
+      "name": "assignRuntimeColors",
+      "filePath": "src/game/seating.ts",
+      "lineRange": [
+        22,
+        32
+      ],
+      "summary": "assignRuntimeColors implements a significant behavior within seating.ts.",
+      "tags": [
+        "function",
+        "assign-runtime-colors",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/seating.ts:isOppositePair",
+      "type": "function",
+      "name": "isOppositePair",
+      "filePath": "src/game/seating.ts",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "isOppositePair implements a significant behavior within seating.ts.",
+      "tags": [
+        "function",
+        "is-opposite-pair",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "src/game/types.ts",
+      "summary": "types.ts provides application code and declarations for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:GameScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:GameScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:GameMenuModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:TopHud",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:HudButton",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:ResourcePill",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:RemoteSeat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:MiniSeat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:LocalCommandBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:DiceBubble",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:DiceProgressRing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:PlayerAvatar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:PlayerStatsModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:normalizeMatchBoardState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:recolorPlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:remapLastRolls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "function:app/game/[matchId].tsx:makeHint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/ai.ts",
+      "target": "function:src/game/ai.ts:chooseMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/ai.ts",
+      "target": "function:src/game/ai.ts:chooseMove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/ai.ts",
+      "target": "function:src/game/ai.ts:score",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:trackIndexForHop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:trackIndexForHop",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:progressFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:progressFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:cellForToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:cellForToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:isSameTrackCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "function:src/game/board.ts:isSameTrackCell",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/bots.ts",
+      "target": "function:src/game/bots.ts:botDisplayName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/bots.ts",
+      "target": "function:src/game/bots.ts:botDisplayName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/bots.ts",
+      "target": "function:src/game/bots.ts:botAvatarId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/bots.ts",
+      "target": "function:src/game/bots.ts:botAvatarId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/bots.ts",
+      "target": "function:src/game/bots.ts:botThinkDelay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/bots.ts",
+      "target": "function:src/game/bots.ts:botThinkDelay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/perspective.ts",
+      "target": "function:src/game/perspective.ts:cellForPerspective",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/perspective.ts",
+      "target": "function:src/game/perspective.ts:cellForPerspective",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/perspective.ts",
+      "target": "function:src/game/perspective.ts:visualCornerForColor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/perspective.ts",
+      "target": "function:src/game/perspective.ts:visualCornerForColor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/perspective.ts",
+      "target": "function:src/game/perspective.ts:homeCornerProbe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:makeInitialPlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:makeInitialPlayer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:makeInitialGameState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:makeInitialGameState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:rollDice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:rollDice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:addRoll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:addRoll",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:tryMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:tryMove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:getValidMoves",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:getValidMoves",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:samePlace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:applyMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:applyMove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:finishMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:finishMove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:advanceToNextPlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:advanceToNextPlayer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:freeHomeSlot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:pathCellsForMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:pathCellsForMove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:cellForLocation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:checkWin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:checkWin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:tokensFinished",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "function:src/game/rules.ts:tokensFinished",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/seating.ts",
+      "target": "function:src/game/seating.ts:oppositeColor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/seating.ts",
+      "target": "function:src/game/seating.ts:oppositeColor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/seating.ts",
+      "target": "function:src/game/seating.ts:assignRuntimeColors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/seating.ts",
+      "target": "function:src/game/seating.ts:assignRuntimeColors",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/seating.ts",
+      "target": "function:src/game/seating.ts:isOppositePair",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/seating.ts",
+      "target": "function:src/game/seating.ts:isOppositePair",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/components/TokenDicePicker.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/constants/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/game/board.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/game/bots.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/game/perspective.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/game/rules.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/game/seating.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/skia/Board.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/skia/Dice.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/skia/Particles.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/skia/Token.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/stores/game.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/supabase/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/supabase/matches.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/supabase/matchRealtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/[matchId].tsx",
+      "target": "file:src/utils/sound.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/ai.ts",
+      "target": "file:src/game/board.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/ai.ts",
+      "target": "file:src/game/rules.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/ai.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/board.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/perspective.ts",
+      "target": "file:src/game/board.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/perspective.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "file:src/game/board.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "file:src/game/bots.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/rules.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/seating.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

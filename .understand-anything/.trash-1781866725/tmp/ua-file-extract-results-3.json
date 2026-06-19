@@ -1,0 +1,4003 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 16,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "app/game/[matchId].tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2004,
+      "nonEmptyLines": 1898,
+      "functions": [
+        {
+          "name": "GameScreen",
+          "startLine": 98,
+          "endLine": 866,
+          "params": []
+        },
+        {
+          "name": "GameMenuModal",
+          "startLine": 868,
+          "endLine": 906,
+          "params": [
+            "{\r\n  visible,\r\n  online,\r\n  onResume,\r\n  onQuit,\r\n}"
+          ]
+        },
+        {
+          "name": "TopHud",
+          "startLine": 918,
+          "endLine": 941,
+          "params": [
+            "{\r\n  gems,\r\n  matchId,\r\n  onExit,\r\n}"
+          ]
+        },
+        {
+          "name": "HudButton",
+          "startLine": 943,
+          "endLine": 965,
+          "params": [
+            "{\r\n  icon,\r\n  label,\r\n  badge,\r\n  onPress,\r\n}"
+          ]
+        },
+        {
+          "name": "ResourcePill",
+          "startLine": 967,
+          "endLine": 993,
+          "params": [
+            "{\r\n  icon,\r\n  image,\r\n  value,\r\n  plus,\r\n}"
+          ]
+        },
+        {
+          "name": "RemoteSeat",
+          "startLine": 995,
+          "endLine": 1015,
+          "params": [
+            "{\r\n  player,\r\n  active,\r\n  lastRoll,\r\n  dice,\r\n  onProfilePress,\r\n}"
+          ]
+        },
+        {
+          "name": "MiniSeat",
+          "startLine": 1017,
+          "endLine": 1038,
+          "params": [
+            "{\r\n  player,\r\n  active,\r\n  lastRoll,\r\n  style,\r\n  onPress,\r\n}"
+          ]
+        },
+        {
+          "name": "LocalCommandBar",
+          "startLine": 1040,
+          "endLine": 1083,
+          "params": [
+            "{\r\n  player,\r\n  active,\r\n  lastRoll,\r\n  dice,\r\n  canUndo,\r\n  onProfilePress,\r\n}"
+          ]
+        },
+        {
+          "name": "DiceBubble",
+          "startLine": 1085,
+          "endLine": 1129,
+          "params": [
+            "{\r\n  dice,\r\n  value,\r\n  active,\r\n  remote = false,\r\n}"
+          ]
+        },
+        {
+          "name": "DiceProgressRing",
+          "startLine": 1131,
+          "endLine": 1164,
+          "params": [
+            "{\r\n  progress,\r\n  remote,\r\n}"
+          ]
+        },
+        {
+          "name": "PlayerAvatar",
+          "startLine": 1166,
+          "endLine": 1199,
+          "params": [
+            "{\r\n  player,\r\n  active,\r\n  size,\r\n  onPress,\r\n}"
+          ]
+        },
+        {
+          "name": "PlayerStatsModal",
+          "startLine": 1201,
+          "endLine": 1265,
+          "params": [
+            "{\r\n  player,\r\n  profile,\r\n  onClose,\r\n}"
+          ]
+        },
+        {
+          "name": "StatBox",
+          "startLine": 1267,
+          "endLine": 1274,
+          "params": [
+            "{ label, value }"
+          ]
+        },
+        {
+          "name": "hopsForMove",
+          "startLine": 1276,
+          "endLine": 1279,
+          "params": [
+            "from",
+            "dieValue"
+          ]
+        },
+        {
+          "name": "getPerspectiveColor",
+          "startLine": 1281,
+          "endLine": 1287,
+          "params": [
+            "state",
+            "myColor"
+          ]
+        },
+        {
+          "name": "seatPlayersByCorner",
+          "startLine": 1289,
+          "endLine": 1295,
+          "params": [
+            "players",
+            "perspectiveColor"
+          ]
+        },
+        {
+          "name": "normalizeMatchBoardState",
+          "startLine": 1297,
+          "endLine": 1333,
+          "params": [
+            "boardState",
+            "matchPlayers",
+            "anchorColor"
+          ]
+        },
+        {
+          "name": "recolorPlayer",
+          "startLine": 1335,
+          "endLine": 1345,
+          "params": [
+            "player",
+            "color"
+          ]
+        },
+        {
+          "name": "remapLastRolls",
+          "startLine": 1347,
+          "endLine": 1356,
+          "params": [
+            "rolls",
+            "players"
+          ]
+        },
+        {
+          "name": "makeHint",
+          "startLine": 1358,
+          "endLine": 1383,
+          "params": [
+            "state",
+            "isMyTurn",
+            "currentPlayer"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GameScreen",
+          "line": 98,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "GameScreen",
+          "callee": "useLocalSearchParams",
+          "lineNumber": 99
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useWindowDimensions",
+          "lineNumber": 105
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "matchId.startsWith",
+          "lineNumber": 109
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 110
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 112
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 113
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 115
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 116
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 117
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 118
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 119
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 120
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 121
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 122
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore",
+          "lineNumber": 123
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 125
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 126
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 127
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 128
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 129
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 130
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 131
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 132
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 134
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 135
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useState",
+          "lineNumber": 138
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 140
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 141
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 142
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 143
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 144
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 145
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 146
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 147
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 148
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 149
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 150
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useRef",
+          "lineNumber": 151
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 153
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 154
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 155
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 157
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "hydrateProfile",
+          "lineNumber": 158
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 161
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "seenEventIdsRef.current.clear",
+          "lineNumber": 163
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 166
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRequiresRoomPresence",
+          "lineNumber": 168
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRoomReady",
+          "lineNumber": 169
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRoomPresence",
+          "lineNumber": 170
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setBotDriverUserId",
+          "lineNumber": 171
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setLocalUserId",
+          "lineNumber": 172
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Math.min",
+          "lineNumber": 175
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useCallback",
+          "lineNumber": 183
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "getMatch",
+          "lineNumber": 185
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 187
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "boardVersion",
+          "lineNumber": 188
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "boardVersion",
+          "lineNumber": 188
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 189
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useCallback",
+          "lineNumber": 193
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "boardVersion",
+          "lineNumber": 195
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "shouldApplyMatchEvent",
+          "lineNumber": 196
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "seenEventIdsRef.current.add",
+          "lineNumber": 197
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "reloadMatchSnapshot",
+          "lineNumber": 200
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 204
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 204
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useCallback",
+          "lineNumber": 207
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 208
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useCallback",
+          "lineNumber": 212
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRoomPresence",
+          "lineNumber": 213
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "matchPlayersRef.current.filter",
+          "lineNumber": 216
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "p.user_id.startsWith",
+          "lineNumber": 217
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRoomReady",
+          "lineNumber": 220
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearOpponentForfeitTimer",
+          "lineNumber": 221
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "humanPlayers.find",
+          "lineNumber": 225
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRoomReady",
+          "lineNumber": 227
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearOpponentForfeitTimer",
+          "lineNumber": 228
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "presence.map",
+          "lineNumber": 232
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "onlineIds.has",
+          "lineNumber": 233
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "onlineIds.has",
+          "lineNumber": 234
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRoomReady",
+          "lineNumber": 238
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearOpponentForfeitTimer",
+          "lineNumber": 241
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 252
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "claimOpponentLeft(matchId, opponent.user_id).then",
+          "lineNumber": 256
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "claimOpponentLeft",
+          "lineNumber": 256
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 259
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 259
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 267
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "assignRuntimeColors",
+          "lineNumber": 271
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "newGame",
+          "lineNumber": 278
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 282
+        },
+        {
+          "caller": "init",
+          "callee": "supabase.auth.getSession().catch",
+          "lineNumber": 288
+        },
+        {
+          "caller": "init",
+          "callee": "supabase.auth.getSession",
+          "lineNumber": 288
+        },
+        {
+          "caller": "init",
+          "callee": "console.warn",
+          "lineNumber": 289
+        },
+        {
+          "caller": "init",
+          "callee": "getSupabaseErrorMessage",
+          "lineNumber": 289
+        },
+        {
+          "caller": "init",
+          "callee": "setLocalUserId",
+          "lineNumber": 294
+        },
+        {
+          "caller": "init",
+          "callee": "supabase.realtime.setAuth",
+          "lineNumber": 295
+        },
+        {
+          "caller": "init",
+          "callee": "getMatch",
+          "lineNumber": 297
+        },
+        {
+          "caller": "init",
+          "callee": "match.players.find",
+          "lineNumber": 300
+        },
+        {
+          "caller": "init",
+          "callee": "setMyColor",
+          "lineNumber": 303
+        },
+        {
+          "caller": "init",
+          "callee": "matchPlayers.some",
+          "lineNumber": 306
+        },
+        {
+          "caller": "init",
+          "callee": "match.board_state.players.some",
+          "lineNumber": 307
+        },
+        {
+          "caller": "init",
+          "callee": "matchPlayers.filter",
+          "lineNumber": 308
+        },
+        {
+          "caller": "init",
+          "callee": "p.user_id.startsWith",
+          "lineNumber": 308
+        },
+        {
+          "caller": "init",
+          "callee": "matchPlayers.find",
+          "lineNumber": 310
+        },
+        {
+          "caller": "init",
+          "callee": "p.user_id.startsWith",
+          "lineNumber": 310
+        },
+        {
+          "caller": "init",
+          "callee": "setBotBackedMatch",
+          "lineNumber": 311
+        },
+        {
+          "caller": "init",
+          "callee": "setBotDriverUserId",
+          "lineNumber": 312
+        },
+        {
+          "caller": "init",
+          "callee": "setRequiresRoomPresence",
+          "lineNumber": 313
+        },
+        {
+          "caller": "init",
+          "callee": "setRoomReady",
+          "lineNumber": 314
+        },
+        {
+          "caller": "init",
+          "callee": "loadGame",
+          "lineNumber": 316
+        },
+        {
+          "caller": "init",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 316
+        },
+        {
+          "caller": "init",
+          "callee": "subscribeMatch",
+          "lineNumber": 318
+        },
+        {
+          "caller": "init",
+          "callee": "reloadMatchSnapshot",
+          "lineNumber": 319
+        },
+        {
+          "caller": "init",
+          "callee": "console.warn",
+          "lineNumber": 321
+        },
+        {
+          "caller": "init",
+          "callee": "setRoomPresence",
+          "lineNumber": 331
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "init",
+          "lineNumber": 334
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearOpponentForfeitTimer",
+          "lineNumber": 336
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "unsubscribeRealtime",
+          "lineNumber": 337
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "getPerspectiveColor",
+          "lineNumber": 352
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 374
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 379
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "finishRoll",
+          "lineNumber": 380
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "haptics.medium",
+          "lineNumber": 381
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "sound.play",
+          "lineNumber": 382
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 384
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore.getState",
+          "lineNumber": 385
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "syncBoardStateServer(matchId, nextState).then",
+          "lineNumber": 388
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "syncBoardStateServer",
+          "lineNumber": 388
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 390
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 390
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 397
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Date.now",
+          "lineNumber": 402
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "rollDiceServer(matchId!).then",
+          "lineNumber": 403
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "rollDiceServer",
+          "lineNumber": 403
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Math.max",
+          "lineNumber": 405
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Date.now",
+          "lineNumber": 405
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 406
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 409
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Alert.alert",
+          "lineNumber": 410
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 415
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 415
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 418
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 422
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 422
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "finishRoll",
+          "lineNumber": 424
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "haptics.medium",
+          "lineNumber": 426
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "sound.play",
+          "lineNumber": 427
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 434
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setRollTimerRemaining",
+          "lineNumber": 436
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Date.now",
+          "lineNumber": 440
+        },
+        {
+          "caller": "tick",
+          "callee": "Math.max",
+          "lineNumber": 443
+        },
+        {
+          "caller": "tick",
+          "callee": "Date.now",
+          "lineNumber": 443
+        },
+        {
+          "caller": "tick",
+          "callee": "setRollTimerRemaining",
+          "lineNumber": 444
+        },
+        {
+          "caller": "tick",
+          "callee": "haptics.warning",
+          "lineNumber": 448
+        },
+        {
+          "caller": "tick",
+          "callee": "skipRollTurn",
+          "lineNumber": 450
+        },
+        {
+          "caller": "tick",
+          "callee": "skipRollTurnServer",
+          "lineNumber": 455
+        },
+        {
+          "caller": "tick",
+          "callee": "loadGame",
+          "lineNumber": 457
+        },
+        {
+          "caller": "tick",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 457
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setInterval",
+          "lineNumber": 461
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "tick",
+          "lineNumber": 462
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearInterval",
+          "lineNumber": 463
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 476
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 480
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "beginRoll",
+          "lineNumber": 481
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "botThinkDelay",
+          "lineNumber": 482
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 483
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 487
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 491
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "chooseMove",
+          "lineNumber": 492
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "selectMove",
+          "lineNumber": 493
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "botThinkDelay",
+          "lineNumber": 494
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 495
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 499
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Math.max",
+          "lineNumber": 502
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "hopsForMove",
+          "lineNumber": 502
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Math.max",
+          "lineNumber": 503
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 505
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "haptics.light",
+          "lineNumber": 505
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 506
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "moveTokenServer(matchId, move.tokenId, move.dieValue).then",
+          "lineNumber": 508
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "moveTokenServer",
+          "lineNumber": 508
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 510
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 510
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "getMatch(matchId).then",
+          "lineNumber": 512
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "getMatch",
+          "lineNumber": 512
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 513
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 513
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "finishMoveAnim",
+          "lineNumber": 520
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 521
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useGameStore.getState",
+          "lineNumber": 522
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "syncBoardStateServer(matchId, nextState).then",
+          "lineNumber": 523
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "syncBoardStateServer",
+          "lineNumber": 523
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "loadGame",
+          "lineNumber": 525
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "normalizeMatchBoardState",
+          "lineNumber": 525
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "finishMoveAnim",
+          "lineNumber": 531
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 534
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 535
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 549
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "state.players.find",
+          "lineNumber": 553
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "state.players.find",
+          "lineNumber": 556
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "haptics.success",
+          "lineNumber": 558
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "haptics.warning",
+          "lineNumber": 559
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "sound.play",
+          "lineNumber": 560
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setBursts",
+          "lineNumber": 561
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Date.now",
+          "lineNumber": 564
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 571
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "router.replace",
+          "lineNumber": 572
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 583
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 587
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "state.players.flatMap",
+          "lineNumber": 590
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "tokens.find",
+          "lineNumber": 591
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cellForPerspective",
+          "lineNumber": 593
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cellForToken",
+          "lineNumber": 593
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Math.max",
+          "lineNumber": 596
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "hopsForMove",
+          "lineNumber": 596
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Date.now",
+          "lineNumber": 597
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "move.captures\r\n      .map((id) => tokens.find((tt) => tt.id === id)?.color)\r\n      .filter",
+          "lineNumber": 598
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "move.captures\r\n      .map",
+          "lineNumber": 598
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "tokens.find",
+          "lineNumber": 599
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 601
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "haptics.heavy",
+          "lineNumber": 602
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "sound.play",
+          "lineNumber": 603
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setBursts",
+          "lineNumber": 604
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "captureColors.map",
+          "lineNumber": 606
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 615
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 619
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setTimeout",
+          "lineNumber": 621
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setBursts",
+          "lineNumber": 621
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "clearTimeout",
+          "lineNumber": 622
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useEffect",
+          "lineNumber": 626
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setPickerForToken",
+          "lineNumber": 627
+        },
+        {
+          "caller": "onHumanRoll",
+          "callee": "haptics.tap",
+          "lineNumber": 634
+        },
+        {
+          "caller": "onHumanRoll",
+          "callee": "beginRoll",
+          "lineNumber": 635
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "setPickerForToken",
+          "lineNumber": 641
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "validMoves.filter",
+          "lineNumber": 644
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "haptics.tap",
+          "lineNumber": 646
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "Array.from",
+          "lineNumber": 647
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "opts.map",
+          "lineNumber": 647
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "setPickerForToken",
+          "lineNumber": 649
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "selectMove",
+          "lineNumber": 650
+        },
+        {
+          "caller": "onTokenTap",
+          "callee": "setPickerForToken",
+          "lineNumber": 653
+        },
+        {
+          "caller": "onPickerSelect",
+          "callee": "validMoves.find",
+          "lineNumber": 658
+        },
+        {
+          "caller": "onPickerSelect",
+          "callee": "setPickerForToken",
+          "lineNumber": 661
+        },
+        {
+          "caller": "onPickerSelect",
+          "callee": "haptics.tap",
+          "lineNumber": 663
+        },
+        {
+          "caller": "onPickerSelect",
+          "callee": "selectMove",
+          "lineNumber": 664
+        },
+        {
+          "caller": "leaveMatch",
+          "callee": "haptics.tap",
+          "lineNumber": 672
+        },
+        {
+          "caller": "leaveMatch",
+          "callee": "setMenuOpen",
+          "lineNumber": 673
+        },
+        {
+          "caller": "leaveMatch",
+          "callee": "forfeitMatch",
+          "lineNumber": 676
+        },
+        {
+          "caller": "leaveMatch",
+          "callee": "router.replace",
+          "lineNumber": 679
+        },
+        {
+          "caller": "onExitPress",
+          "callee": "haptics.tap",
+          "lineNumber": 683
+        },
+        {
+          "caller": "onExitPress",
+          "callee": "setMenuOpen",
+          "lineNumber": 684
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useMemo",
+          "lineNumber": 687
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "state.players.flatMap",
+          "lineNumber": 688
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useMemo",
+          "lineNumber": 692
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "validMoves.map",
+          "lineNumber": 693
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "useMemo",
+          "lineNumber": 697
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "state.players.flatMap((p) => p.tokens).find",
+          "lineNumber": 700
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "state.players.flatMap",
+          "lineNumber": 700
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "pathCellsForMove",
+          "lineNumber": 702
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cells.map",
+          "lineNumber": 703
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cellForPerspective",
+          "lineNumber": 704
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Math.max",
+          "lineNumber": 710
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Array.from(\r\n        new Set(\r\n          validMoves.filter((m) => m.tokenId === pickerForToken).map((m) => m.dieValue),\r\n        ),\r\n      ).sort",
+          "lineNumber": 716
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Array.from",
+          "lineNumber": 716
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "validMoves.filter((m) => m.tokenId === pickerForToken).map",
+          "lineNumber": 718
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "validMoves.filter",
+          "lineNumber": 718
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "(() => {\r\n    if (!pickerForToken) return null;\r\n    const tok = allTokens.find((t) => t.id === pickerForToken);\r\n    if (!tok) return null;\r\n    const cell = cellForPerspective(cellForToken(tok), perspectiveColor);\r\n    return { cx: (cell.col + 0.5) * cellPx, cy: (cell.row + 0.5) * cellPx };\r\n  })",
+          "lineNumber": 723
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "allTokens.find",
+          "lineNumber": 725
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cellForPerspective",
+          "lineNumber": 727
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cellForToken",
+          "lineNumber": 727
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "seatPlayersByCorner",
+          "lineNumber": 731
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "makeHint",
+          "lineNumber": 737
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "Math.ceil",
+          "lineNumber": 739
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "[byCorner.topLeft, byCorner.bottomRight]\r\n    .filter",
+          "lineNumber": 742
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "sidePlayers.map",
+          "lineNumber": 770
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setStatsPlayer",
+          "lineNumber": 777
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setStatsPlayer",
+          "lineNumber": 786
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "allTokens.map",
+          "lineNumber": 803
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cellForPerspective",
+          "lineNumber": 804
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "cellForToken",
+          "lineNumber": 804
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "movableTokenIds.has",
+          "lineNumber": 807
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "moveAnim?.capturedIds.has",
+          "lineNumber": 809
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "onTokenTap",
+          "lineNumber": 822
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setStatsPlayer",
+          "lineNumber": 848
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setStatsPlayer",
+          "lineNumber": 855
+        },
+        {
+          "caller": "GameScreen",
+          "callee": "setMenuOpen",
+          "lineNumber": 861
+        },
+        {
+          "caller": "TopHud",
+          "callee": "gems.toLocaleString",
+          "lineNumber": 936
+        },
+        {
+          "caller": "TopHud",
+          "callee": "matchId.slice",
+          "lineNumber": 938
+        },
+        {
+          "caller": "DiceBubble",
+          "callee": "dice.onRoll",
+          "lineNumber": 1107
+        },
+        {
+          "caller": "DiceBubble",
+          "callee": "pool.slice(0, 3).join",
+          "lineNumber": 1123
+        },
+        {
+          "caller": "DiceBubble",
+          "callee": "pool.slice",
+          "lineNumber": 1123
+        },
+        {
+          "caller": "DiceProgressRing",
+          "callee": "Math.max",
+          "lineNumber": 1139
+        },
+        {
+          "caller": "DiceProgressRing",
+          "callee": "Math.min",
+          "lineNumber": 1139
+        },
+        {
+          "caller": "DiceProgressRing",
+          "callee": "Array.from",
+          "lineNumber": 1144
+        },
+        {
+          "caller": "PlayerAvatar",
+          "callee": "getAvatar",
+          "lineNumber": 1177
+        },
+        {
+          "caller": "PlayerStatsModal",
+          "callee": "Math.round",
+          "lineNumber": 1213
+        },
+        {
+          "caller": "PlayerStatsModal",
+          "callee": "player.tokens.filter",
+          "lineNumber": 1214
+        },
+        {
+          "caller": "PlayerStatsModal",
+          "callee": "profile.coins.toLocaleString",
+          "lineNumber": 1243
+        },
+        {
+          "caller": "PlayerStatsModal",
+          "callee": "profile.gems.toLocaleString",
+          "lineNumber": 1244
+        },
+        {
+          "caller": "PlayerStatsModal",
+          "callee": "games.toLocaleString",
+          "lineNumber": 1245
+        },
+        {
+          "caller": "PlayerStatsModal",
+          "callee": "wins.toLocaleString",
+          "lineNumber": 1246
+        },
+        {
+          "caller": "PlayerStatsModal",
+          "callee": "losses.toLocaleString",
+          "lineNumber": 1248
+        },
+        {
+          "caller": "getPerspectiveColor",
+          "callee": "state.players.find",
+          "lineNumber": 1286
+        },
+        {
+          "caller": "seatPlayersByCorner",
+          "callee": "visualCornerForColor",
+          "lineNumber": 1292
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "withBoardVersion",
+          "lineNumber": 1302
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "matchPlayers.map",
+          "lineNumber": 1304
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "versionedBoardState.players.map",
+          "lineNumber": 1306
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "byColor.get",
+          "lineNumber": 1307
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "isOppositePair",
+          "lineNumber": 1317
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "players.findIndex",
+          "lineNumber": 1319
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "players.findIndex",
+          "lineNumber": 1320
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "oppositeColor",
+          "lineNumber": 1323
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "players.map",
+          "lineNumber": 1324
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "recolorPlayer",
+          "lineNumber": 1325
+        },
+        {
+          "caller": "normalizeMatchBoardState",
+          "callee": "remapLastRolls",
+          "lineNumber": 1331
+        },
+        {
+          "caller": "recolorPlayer",
+          "callee": "player.tokens.map",
+          "lineNumber": 1339
+        }
+      ],
+      "metrics": {
+        "importCount": 23,
+        "exportCount": 1,
+        "functionCount": 20,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/ai.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "chooseMove",
+          "startLine": 8,
+          "endLine": 22,
+          "params": [
+            "state",
+            "color",
+            "rng"
+          ]
+        },
+        {
+          "name": "score",
+          "startLine": 24,
+          "endLine": 34,
+          "params": [
+            "move",
+            "color"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "chooseMove",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "chooseMove",
+          "callee": "getValidMoves",
+          "lineNumber": 13
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "moves.slice().sort",
+          "lineNumber": 15
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "moves.slice",
+          "lineNumber": 15
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "score",
+          "lineNumber": 15
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "score",
+          "lineNumber": 15
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "score",
+          "lineNumber": 16
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "ranked.filter((move) => best - score(move, color) <= 60).slice",
+          "lineNumber": 17
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "ranked.filter",
+          "lineNumber": 17
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "score",
+          "lineNumber": 17
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "rng",
+          "lineNumber": 18
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "Math.floor",
+          "lineNumber": 19
+        },
+        {
+          "caller": "chooseMove",
+          "callee": "rng",
+          "lineNumber": 19
+        },
+        {
+          "caller": "score",
+          "callee": "progressFor",
+          "lineNumber": 28
+        },
+        {
+          "caller": "score",
+          "callee": "SAFE_TRACK_INDICES.has",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/board.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 215,
+      "nonEmptyLines": 201,
+      "functions": [
+        {
+          "name": "trackIndexForHop",
+          "startLine": 165,
+          "endLine": 167,
+          "params": [
+            "color",
+            "hop"
+          ]
+        },
+        {
+          "name": "progressFor",
+          "startLine": 179,
+          "endLine": 195,
+          "params": [
+            "color",
+            "loc"
+          ]
+        },
+        {
+          "name": "cellForToken",
+          "startLine": 198,
+          "endLine": 210,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "isSameTrackCell",
+          "startLine": 213,
+          "endLine": 215,
+          "params": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BOARD_SIZE",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "HOME_COL_LENGTH",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "TOTAL_TRACK_HOPS",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "TOKENS_PER_PLAYER",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "OUTER_TRACK",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "COLOR_START_INDEX",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "SAFE_TRACK_INDICES",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "HOME_COL_CELLS",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "HOME_BASE_SLOTS",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "FINISH_CELL",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "trackIndexForHop",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "progressFor",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "cellForToken",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "isSameTrackCell",
+          "line": 213,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 14,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/bots.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "botDisplayName",
+          "startLine": 20,
+          "endLine": 23,
+          "params": [
+            "seed"
+          ]
+        },
+        {
+          "name": "botAvatarId",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "seed"
+          ]
+        },
+        {
+          "name": "botThinkDelay",
+          "startLine": 30,
+          "endLine": 32,
+          "params": [
+            "rng"
+          ]
+        },
+        {
+          "name": "hashSeed",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "seed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "botDisplayName",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "botAvatarId",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "botThinkDelay",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "botDisplayName",
+          "callee": "hashSeed",
+          "lineNumber": 21
+        },
+        {
+          "caller": "botDisplayName",
+          "callee": "Math.abs",
+          "lineNumber": 22
+        },
+        {
+          "caller": "botAvatarId",
+          "callee": "hashSeed",
+          "lineNumber": 26
+        },
+        {
+          "caller": "botAvatarId",
+          "callee": "Math.abs",
+          "lineNumber": 27
+        },
+        {
+          "caller": "botThinkDelay",
+          "callee": "Math.floor",
+          "lineNumber": 31
+        },
+        {
+          "caller": "botThinkDelay",
+          "callee": "rng",
+          "lineNumber": 31
+        },
+        {
+          "caller": "hashSeed",
+          "callee": "seed.charCodeAt",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/perspective.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "cellForPerspective",
+          "startLine": 20,
+          "endLine": 32,
+          "params": [
+            "cell",
+            "perspectiveColor"
+          ]
+        },
+        {
+          "name": "visualCornerForColor",
+          "startLine": 34,
+          "endLine": 45,
+          "params": [
+            "color",
+            "perspectiveColor"
+          ]
+        },
+        {
+          "name": "homeCornerProbe",
+          "startLine": 47,
+          "endLine": 58,
+          "params": [
+            "color"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "COLOR_HOME_CORNER",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "cellForPerspective",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "visualCornerForColor",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "visualCornerForColor",
+          "callee": "homeCornerProbe",
+          "lineNumber": 38
+        },
+        {
+          "caller": "visualCornerForColor",
+          "callee": "cellForPerspective",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/rules.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 376,
+      "nonEmptyLines": 341,
+      "functions": [
+        {
+          "name": "makeInitialPlayer",
+          "startLine": 37,
+          "endLine": 49,
+          "params": [
+            "color",
+            "name",
+            "isAI",
+            "avatarId"
+          ]
+        },
+        {
+          "name": "makeInitialGameState",
+          "startLine": 53,
+          "endLine": 80,
+          "params": [
+            "humanColor",
+            "botCount",
+            "human",
+            "seatColors"
+          ]
+        },
+        {
+          "name": "rollDice",
+          "startLine": 84,
+          "endLine": 86,
+          "params": [
+            "rng"
+          ]
+        },
+        {
+          "name": "addRoll",
+          "startLine": 97,
+          "endLine": 119,
+          "params": [
+            "state",
+            "value"
+          ]
+        },
+        {
+          "name": "tryMove",
+          "startLine": 127,
+          "endLine": 152,
+          "params": [
+            "token",
+            "dice"
+          ]
+        },
+        {
+          "name": "getValidMoves",
+          "startLine": 161,
+          "endLine": 193,
+          "params": [
+            "state",
+            "color"
+          ]
+        },
+        {
+          "name": "samePlace",
+          "startLine": 195,
+          "endLine": 207,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "applyMove",
+          "startLine": 217,
+          "endLine": 243,
+          "params": [
+            "state",
+            "move"
+          ]
+        },
+        {
+          "name": "finishMove",
+          "startLine": 252,
+          "endLine": 274,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "advanceToNextPlayer",
+          "startLine": 277,
+          "endLine": 292,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "findToken",
+          "startLine": 294,
+          "endLine": 299,
+          "params": [
+            "players",
+            "id"
+          ]
+        },
+        {
+          "name": "freeHomeSlot",
+          "startLine": 301,
+          "endLine": 312,
+          "params": [
+            "players",
+            "color"
+          ]
+        },
+        {
+          "name": "removeOne",
+          "startLine": 314,
+          "endLine": 318,
+          "params": [
+            "arr",
+            "v"
+          ]
+        },
+        {
+          "name": "pathCellsForMove",
+          "startLine": 328,
+          "endLine": 347,
+          "params": [
+            "color",
+            "from",
+            "dieValue"
+          ]
+        },
+        {
+          "name": "stepOne",
+          "startLine": 349,
+          "endLine": 351,
+          "params": [
+            "color",
+            "loc"
+          ]
+        },
+        {
+          "name": "cellForLocation",
+          "startLine": 353,
+          "endLine": 364,
+          "params": [
+            "color",
+            "loc"
+          ]
+        },
+        {
+          "name": "checkWin",
+          "startLine": 368,
+          "endLine": 372,
+          "params": [
+            "state",
+            "color"
+          ]
+        },
+        {
+          "name": "tokensFinished",
+          "startLine": 374,
+          "endLine": 376,
+          "params": [
+            "player"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "makeInitialPlayer",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "makeInitialGameState",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "rollDice",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "addRoll",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "tryMove",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "getValidMoves",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "applyMove",
+          "line": 217,
+          "isDefault": false
+        },
+        {
+          "name": "finishMove",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "advanceToNextPlayer",
+          "line": 277,
+          "isDefault": false
+        },
+        {
+          "name": "pathCellsForMove",
+          "line": 328,
+          "isDefault": false
+        },
+        {
+          "name": "checkWin",
+          "line": 368,
+          "isDefault": false
+        },
+        {
+          "name": "tokensFinished",
+          "line": 374,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeInitialPlayer",
+          "callee": "[0, 1, 2, 3].map",
+          "lineNumber": 43
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "COLORS.filter((color) => color !== humanColor).slice",
+          "lineNumber": 61
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "COLORS.filter",
+          "lineNumber": 61
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "seats.map",
+          "lineNumber": 63
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "makeInitialPlayer",
+          "lineNumber": 65
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "makeInitialPlayer",
+          "lineNumber": 66
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "botDisplayName",
+          "lineNumber": 66
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "botAvatarId",
+          "lineNumber": 66
+        },
+        {
+          "caller": "makeInitialGameState",
+          "callee": "players.findIndex",
+          "lineNumber": 68
+        },
+        {
+          "caller": "rollDice",
+          "callee": "Math.floor",
+          "lineNumber": 85
+        },
+        {
+          "caller": "rollDice",
+          "callee": "rng",
+          "lineNumber": 85
+        },
+        {
+          "caller": "addRoll",
+          "callee": "advanceToNextPlayer",
+          "lineNumber": 104
+        },
+        {
+          "caller": "tryMove",
+          "callee": "trackIndexForHop",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "state.players.find",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "state.players.flatMap",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "Array.from",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "tryMove",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "SAFE_TRACK_INDICES.has",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "ownTokens.some",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "samePlace",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "SAFE_TRACK_INDICES.has",
+          "lineNumber": 183
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "isSameTrackCell",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "captures.push",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "moves.push",
+          "lineNumber": 189
+        },
+        {
+          "caller": "applyMove",
+          "callee": "state.players.map",
+          "lineNumber": 218
+        },
+        {
+          "caller": "applyMove",
+          "callee": "p.tokens.map",
+          "lineNumber": 220
+        },
+        {
+          "caller": "applyMove",
+          "callee": "findToken",
+          "lineNumber": 223
+        },
+        {
+          "caller": "applyMove",
+          "callee": "findToken",
+          "lineNumber": 227
+        },
+        {
+          "caller": "applyMove",
+          "callee": "freeHomeSlot",
+          "lineNumber": 228
+        },
+        {
+          "caller": "applyMove",
+          "callee": "players.find",
+          "lineNumber": 231
+        },
+        {
+          "caller": "applyMove",
+          "callee": "movedPlayer.tokens.every",
+          "lineNumber": 232
+        },
+        {
+          "caller": "applyMove",
+          "callee": "removeOne",
+          "lineNumber": 237
+        },
+        {
+          "caller": "finishMove",
+          "callee": "getValidMoves",
+          "lineNumber": 263
+        },
+        {
+          "caller": "finishMove",
+          "callee": "advanceToNextPlayer",
+          "lineNumber": 270
+        },
+        {
+          "caller": "finishMove",
+          "callee": "advanceToNextPlayer",
+          "lineNumber": 273
+        },
+        {
+          "caller": "advanceToNextPlayer",
+          "callee": "p.tokens.every",
+          "lineNumber": 281
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "players.find",
+          "lineNumber": 302
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "player.tokens\r\n      .filter((t) => t.location.kind === 'home')\r\n      .map",
+          "lineNumber": 304
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "player.tokens\r\n      .filter",
+          "lineNumber": 304
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "used.has",
+          "lineNumber": 309
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.indexOf",
+          "lineNumber": 315
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.slice",
+          "lineNumber": 316
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.slice",
+          "lineNumber": 317
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.slice",
+          "lineNumber": 317
+        },
+        {
+          "caller": "pathCellsForMove",
+          "callee": "cellForLocation",
+          "lineNumber": 333
+        },
+        {
+          "caller": "pathCellsForMove",
+          "callee": "cells.push",
+          "lineNumber": 336
+        },
+        {
+          "caller": "pathCellsForMove",
+          "callee": "stepOne",
+          "lineNumber": 341
+        },
+        {
+          "caller": "pathCellsForMove",
+          "callee": "cells.push",
+          "lineNumber": 343
+        },
+        {
+          "caller": "pathCellsForMove",
+          "callee": "cellForLocation",
+          "lineNumber": 343
+        },
+        {
+          "caller": "stepOne",
+          "callee": "tryMove",
+          "lineNumber": 350
+        },
+        {
+          "caller": "checkWin",
+          "callee": "state.players.find",
+          "lineNumber": 369
+        },
+        {
+          "caller": "checkWin",
+          "callee": "p.tokens.every",
+          "lineNumber": 371
+        },
+        {
+          "caller": "tokensFinished",
+          "callee": "player.tokens.filter",
+          "lineNumber": 375
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 12,
+        "functionCount": 18,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/seating.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "oppositeColor",
+          "startLine": 9,
+          "endLine": 20,
+          "params": [
+            "color"
+          ]
+        },
+        {
+          "name": "assignRuntimeColors",
+          "startLine": 22,
+          "endLine": 32,
+          "params": [
+            "playerCount",
+            "rng"
+          ]
+        },
+        {
+          "name": "isOppositePair",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "shuffle",
+          "startLine": 38,
+          "endLine": 44,
+          "params": [
+            "items",
+            "rng"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "oppositeColor",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "assignRuntimeColors",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "isOppositePair",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "Math.floor",
+          "lineNumber": 27
+        },
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "rng",
+          "lineNumber": 27
+        },
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "shuffle",
+          "lineNumber": 28
+        },
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "shuffle",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isOppositePair",
+          "callee": "oppositeColor",
+          "lineNumber": 35
+        },
+        {
+          "caller": "shuffle",
+          "callee": "Math.floor",
+          "lineNumber": 40
+        },
+        {
+          "caller": "shuffle",
+          "callee": "rng",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 68,
+      "exports": [
+        {
+          "name": "COLORS",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/skia/Board.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 212,
+      "nonEmptyLines": 193,
+      "functions": [
+        {
+          "name": "BoardCanvas",
+          "startLine": 37,
+          "endLine": 138,
+          "params": [
+            "{ size, perspectiveColor = 'blue' }"
+          ]
+        },
+        {
+          "name": "rectTopLeftForPerspective",
+          "startLine": 140,
+          "endLine": 157,
+          "params": [
+            "topLeft",
+            "sideCells",
+            "perspectiveColor"
+          ]
+        },
+        {
+          "name": "TrackCell",
+          "startLine": 159,
+          "endLine": 178,
+          "params": [
+            "{\r\n  cell,\r\n  cellSize,\r\n  color,\r\n}"
+          ]
+        },
+        {
+          "name": "startIndexFor",
+          "startLine": 180,
+          "endLine": 191,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "diamondPath",
+          "startLine": 193,
+          "endLine": 203,
+          "params": [
+            "x",
+            "y",
+            "side"
+          ]
+        },
+        {
+          "name": "withAlpha",
+          "startLine": 206,
+          "endLine": 212,
+          "params": [
+            "hex",
+            "alpha"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BoardCanvas",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BoardCanvas",
+          "callee": "ALL_COLORS.map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "rectTopLeftForPerspective",
+          "lineNumber": 47
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "withAlpha",
+          "lineNumber": 56
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "ALL_COLORS.map",
+          "lineNumber": 62
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "rectTopLeftForPerspective",
+          "lineNumber": 64
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "OUTER_TRACK.map",
+          "lineNumber": 79
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "cellForPerspective",
+          "lineNumber": 82
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "SAFE_TRACK_INDICES.has",
+          "lineNumber": 84
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "withAlpha",
+          "lineNumber": 84
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "ALL_COLORS.map",
+          "lineNumber": 89
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "startIndexFor",
+          "lineNumber": 90
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "cellForPerspective",
+          "lineNumber": 91
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "withAlpha",
+          "lineNumber": 100
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "ALL_COLORS.map",
+          "lineNumber": 106
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "HOME_COL_CELLS[c].map",
+          "lineNumber": 107
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "cellForPerspective",
+          "lineNumber": 108
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "withAlpha",
+          "lineNumber": 117
+        },
+        {
+          "caller": "BoardCanvas",
+          "callee": "diamondPath",
+          "lineNumber": 132
+        },
+        {
+          "caller": "rectTopLeftForPerspective",
+          "callee": "[\r\n    topLeft,\r\n    { col: topLeft.col + maxOffset, row: topLeft.row },\r\n    { col: topLeft.col, row: topLeft.row + maxOffset },\r\n    { col: topLeft.col + maxOffset, row: topLeft.row + maxOffset },\r\n  ].map",
+          "lineNumber": 146
+        },
+        {
+          "caller": "rectTopLeftForPerspective",
+          "callee": "cellForPerspective",
+          "lineNumber": 151
+        },
+        {
+          "caller": "rectTopLeftForPerspective",
+          "callee": "Math.min",
+          "lineNumber": 154
+        },
+        {
+          "caller": "rectTopLeftForPerspective",
+          "callee": "corners.map",
+          "lineNumber": 154
+        },
+        {
+          "caller": "rectTopLeftForPerspective",
+          "callee": "Math.min",
+          "lineNumber": 155
+        },
+        {
+          "caller": "rectTopLeftForPerspective",
+          "callee": "corners.map",
+          "lineNumber": 155
+        },
+        {
+          "caller": "diamondPath",
+          "callee": "Skia.Path.Make",
+          "lineNumber": 194
+        },
+        {
+          "caller": "diamondPath",
+          "callee": "p.moveTo",
+          "lineNumber": 197
+        },
+        {
+          "caller": "diamondPath",
+          "callee": "p.lineTo",
+          "lineNumber": 198
+        },
+        {
+          "caller": "diamondPath",
+          "callee": "p.lineTo",
+          "lineNumber": 199
+        },
+        {
+          "caller": "diamondPath",
+          "callee": "p.lineTo",
+          "lineNumber": 200
+        },
+        {
+          "caller": "diamondPath",
+          "callee": "p.close",
+          "lineNumber": 201
+        },
+        {
+          "caller": "withAlpha",
+          "callee": "hex.replace",
+          "lineNumber": 207
+        },
+        {
+          "caller": "withAlpha",
+          "callee": "parseInt",
+          "lineNumber": 208
+        },
+        {
+          "caller": "withAlpha",
+          "callee": "h.substring",
+          "lineNumber": 208
+        },
+        {
+          "caller": "withAlpha",
+          "callee": "parseInt",
+          "lineNumber": 209
+        },
+        {
+          "caller": "withAlpha",
+          "callee": "h.substring",
+          "lineNumber": 209
+        },
+        {
+          "caller": "withAlpha",
+          "callee": "parseInt",
+          "lineNumber": 210
+        },
+        {
+          "caller": "withAlpha",
+          "callee": "h.substring",
+          "lineNumber": 210
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/skia/Token.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 168,
+      "nonEmptyLines": 153,
+      "functions": [
+        {
+          "name": "Token",
+          "startLine": 53,
+          "endLine": 147,
+          "params": [
+            "{\r\n  color,\r\n  cx,\r\n  cy,\r\n  size,\r\n  selectable,\r\n  highlighted,\r\n  hopPath,\r\n  hopMs = 130,\r\n  delayMs = 0,\r\n  onPress,\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Token",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Token",
+          "callee": "useSharedValue",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Token",
+          "callee": "useSharedValue",
+          "lineNumber": 66
+        },
+        {
+          "caller": "Token",
+          "callee": "useSharedValue",
+          "lineNumber": 67
+        },
+        {
+          "caller": "Token",
+          "callee": "useSharedValue",
+          "lineNumber": 68
+        },
+        {
+          "caller": "Token",
+          "callee": "hopPath?.map((p) => `${p.cx.toFixed(1)},${p.cy.toFixed(1)}`).join",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Token",
+          "callee": "hopPath?.map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Token",
+          "callee": "p.cx.toFixed",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Token",
+          "callee": "p.cy.toFixed",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Token",
+          "callee": "useEffect",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Token",
+          "callee": "hopPath.slice",
+          "lineNumber": 78
+        },
+        {
+          "caller": "Token",
+          "callee": "Math.min",
+          "lineNumber": 79
+        },
+        {
+          "caller": "Token",
+          "callee": "stops.map",
+          "lineNumber": 81
+        },
+        {
+          "caller": "Token",
+          "callee": "withTiming",
+          "lineNumber": 82
+        },
+        {
+          "caller": "Token",
+          "callee": "stops.map",
+          "lineNumber": 84
+        },
+        {
+          "caller": "Token",
+          "callee": "withTiming",
+          "lineNumber": 85
+        },
+        {
+          "caller": "Token",
+          "callee": "stops.flatMap",
+          "lineNumber": 87
+        },
+        {
+          "caller": "Token",
+          "callee": "withTiming",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Token",
+          "callee": "Easing.out",
+          "lineNumber": 88
+        },
+        {
+          "caller": "Token",
+          "callee": "withTiming",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Token",
+          "callee": "Easing.in",
+          "lineNumber": 89
+        },
+        {
+          "caller": "Token",
+          "callee": "withDelay",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Token",
+          "callee": "withSequence",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Token",
+          "callee": "withDelay",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Token",
+          "callee": "withSequence",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Token",
+          "callee": "withDelay",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Token",
+          "callee": "withSequence",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Token",
+          "callee": "withDelay",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Token",
+          "callee": "withTiming",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Token",
+          "callee": "withDelay",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Token",
+          "callee": "withTiming",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Token",
+          "callee": "useEffect",
+          "lineNumber": 103
+        },
+        {
+          "caller": "Token",
+          "callee": "withTiming",
+          "lineNumber": 104
+        },
+        {
+          "caller": "Token",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 107
+        },
+        {
+          "caller": "Token",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/stores/game.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 97,
+      "exports": [
+        {
+          "name": "useGameStore",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "chooseMove",
+          "line": 110,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/supabase/matchRealtime.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "isColor",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "flattenPresenceState",
+          "startLine": 36,
+          "endLine": 43,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "subscribeMatchBroadcast",
+          "startLine": 45,
+          "endLine": 100,
+          "params": [
+            "params"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MATCH_BROADCAST_EVENT",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "boardVersion",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "matchChannelTopic",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "shouldApplyMatchEvent",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "withBoardVersion",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "MatchRealtimeEvent",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "MatchRealtimeEventType",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "subscribeMatchBroadcast",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "flattenPresenceState",
+          "callee": "Object.values(state)\r\n    .flat()\r\n    .filter",
+          "lineNumber": 37
+        },
+        {
+          "caller": "flattenPresenceState",
+          "callee": "Object.values(state)\r\n    .flat",
+          "lineNumber": 37
+        },
+        {
+          "caller": "flattenPresenceState",
+          "callee": "Object.values",
+          "lineNumber": 37
+        },
+        {
+          "caller": "flattenPresenceState",
+          "callee": "isColor",
+          "lineNumber": 41
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "supabase\r\n    .channel(matchChannelTopic(params.matchId), {\r\n      config: {\r\n        private: true,\r\n        broadcast: { self: false, ack: false },\r\n        presence: params.presence ? { key: params.presence.userId } : undefined,\r\n      },\r\n    })\r\n    .on",
+          "lineNumber": 52
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "supabase\r\n    .channel",
+          "lineNumber": 52
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "matchChannelTopic",
+          "lineNumber": 53
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onEvent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel\r\n      .on('presence', { event: 'sync' }, () => {\r\n        params.onPresence?.(flattenPresenceState(channel.presenceState()));\r\n      })\r\n      .on('presence', { event: 'join' }, () => {\r\n        params.onPresence?.(flattenPresenceState(channel.presenceState()));\r\n      })\r\n      .on",
+          "lineNumber": 65
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel\r\n      .on('presence', { event: 'sync' }, () => {\r\n        params.onPresence?.(flattenPresenceState(channel.presenceState()));\r\n      })\r\n      .on",
+          "lineNumber": 65
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel\r\n      .on",
+          "lineNumber": 65
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onPresence",
+          "lineNumber": 67
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "flattenPresenceState",
+          "lineNumber": 67
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel.presenceState",
+          "lineNumber": 67
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onPresence",
+          "lineNumber": 70
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "flattenPresenceState",
+          "lineNumber": 70
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel.presenceState",
+          "lineNumber": 70
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onPresence",
+          "lineNumber": 73
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "flattenPresenceState",
+          "lineNumber": 73
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel.presenceState",
+          "lineNumber": 73
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel.subscribe",
+          "lineNumber": 77
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onStatus",
+          "lineNumber": 79
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel.track",
+          "lineNumber": 81
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "new Date().toISOString",
+          "lineNumber": 83
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "new Date().toISOString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onStatus",
+          "lineNumber": 88
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onStatus",
+          "lineNumber": 89
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "params.onStatus",
+          "lineNumber": 90
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "channel.untrack",
+          "lineNumber": 96
+        },
+        {
+          "caller": "subscribeMatchBroadcast",
+          "callee": "supabase.removeChannel",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 8,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/supabase/matchRealtimeEvents.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "matchChannelTopic",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "matchId"
+          ]
+        },
+        {
+          "name": "boardVersion",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "boardState"
+          ]
+        },
+        {
+          "name": "withBoardVersion",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "boardState"
+          ]
+        },
+        {
+          "name": "shouldApplyMatchEvent",
+          "startLine": 41,
+          "endLine": 49,
+          "params": [
+            "event",
+            "currentVersion",
+            "seenEventIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MATCH_BROADCAST_EVENT",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "matchChannelTopic",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "boardVersion",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "withBoardVersion",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "shouldApplyMatchEvent",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldApplyMatchEvent",
+          "callee": "seenEventIds.has",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/supabase/matches.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 299,
+      "nonEmptyLines": 272,
+      "functions": [
+        {
+          "name": "findMatch",
+          "startLine": 91,
+          "endLine": 106,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "cancelMatchmaking",
+          "startLine": 108,
+          "endLine": 121,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "createPrivateRoom",
+          "startLine": 123,
+          "endLine": 136,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "joinPrivateRoom",
+          "startLine": 138,
+          "endLine": 151,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "getMatch",
+          "startLine": 155,
+          "endLine": 163,
+          "params": [
+            "matchId"
+          ]
+        },
+        {
+          "name": "rollDiceServer",
+          "startLine": 167,
+          "endLine": 179,
+          "params": [
+            "matchId"
+          ]
+        },
+        {
+          "name": "forfeitMatch",
+          "startLine": 181,
+          "endLine": 193,
+          "params": [
+            "matchId"
+          ]
+        },
+        {
+          "name": "claimOpponentLeft",
+          "startLine": 195,
+          "endLine": 208,
+          "params": [
+            "matchId",
+            "missingUserId"
+          ]
+        },
+        {
+          "name": "skipRollTurnServer",
+          "startLine": 210,
+          "endLine": 223,
+          "params": [
+            "matchId",
+            "expectedPlayerIdx"
+          ]
+        },
+        {
+          "name": "moveTokenServer",
+          "startLine": 225,
+          "endLine": 239,
+          "params": [
+            "matchId",
+            "tokenId",
+            "dieValue"
+          ]
+        },
+        {
+          "name": "syncBoardStateServer",
+          "startLine": 241,
+          "endLine": 254,
+          "params": [
+            "matchId",
+            "boardState"
+          ]
+        },
+        {
+          "name": "subscribeMatch",
+          "startLine": 258,
+          "endLine": 275,
+          "params": [
+            "matchId",
+            "onEvent",
+            "onStatus",
+            "presence"
+          ]
+        },
+        {
+          "name": "subscribeQueue",
+          "startLine": 277,
+          "endLine": 299,
+          "params": [
+            "userId",
+            "onMatchFound"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "findMatch",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "cancelMatchmaking",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "createPrivateRoom",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "joinPrivateRoom",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "getMatch",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "rollDiceServer",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "forfeitMatch",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "claimOpponentLeft",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "skipRollTurnServer",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "moveTokenServer",
+          "line": 225,
+          "isDefault": false
+        },
+        {
+          "name": "syncBoardStateServer",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "subscribeMatch",
+          "line": 258,
+          "isDefault": false
+        },
+        {
+          "name": "subscribeQueue",
+          "line": 277,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "findMatch",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 97
+        },
+        {
+          "caller": "findMatch",
+          "callee": "console.warn",
+          "lineNumber": 102
+        },
+        {
+          "caller": "cancelMatchmaking",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 112
+        },
+        {
+          "caller": "cancelMatchmaking",
+          "callee": "console.warn",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createPrivateRoom",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createPrivateRoom",
+          "callee": "console.warn",
+          "lineNumber": 132
+        },
+        {
+          "caller": "joinPrivateRoom",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 142
+        },
+        {
+          "caller": "joinPrivateRoom",
+          "callee": "console.warn",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getMatch",
+          "callee": "supabase\r\n    .from('matches')\r\n    .select('id, board_state, current_turn_user_id, status, players, entry_fee, city_slug, winner_user_id, finished_at')\r\n    .eq('id', matchId)\r\n    .single",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getMatch",
+          "callee": "supabase\r\n    .from('matches')\r\n    .select('id, board_state, current_turn_user_id, status, players, entry_fee, city_slug, winner_user_id, finished_at')\r\n    .eq",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getMatch",
+          "callee": "supabase\r\n    .from('matches')\r\n    .select",
+          "lineNumber": 156
+        },
+        {
+          "caller": "getMatch",
+          "callee": "supabase\r\n    .from",
+          "lineNumber": 156
+        },
+        {
+          "caller": "rollDiceServer",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 170
+        },
+        {
+          "caller": "rollDiceServer",
+          "callee": "console.warn",
+          "lineNumber": 175
+        },
+        {
+          "caller": "forfeitMatch",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 184
+        },
+        {
+          "caller": "forfeitMatch",
+          "callee": "console.warn",
+          "lineNumber": 189
+        },
+        {
+          "caller": "claimOpponentLeft",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 199
+        },
+        {
+          "caller": "claimOpponentLeft",
+          "callee": "console.warn",
+          "lineNumber": 204
+        },
+        {
+          "caller": "skipRollTurnServer",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 214
+        },
+        {
+          "caller": "skipRollTurnServer",
+          "callee": "console.warn",
+          "lineNumber": 219
+        },
+        {
+          "caller": "moveTokenServer",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 230
+        },
+        {
+          "caller": "moveTokenServer",
+          "callee": "console.warn",
+          "lineNumber": 235
+        },
+        {
+          "caller": "syncBoardStateServer",
+          "callee": "await supabase.functions.invoke",
+          "lineNumber": 245
+        },
+        {
+          "caller": "syncBoardStateServer",
+          "callee": "console.warn",
+          "lineNumber": 250
+        },
+        {
+          "caller": "subscribeMatch",
+          "callee": "subscribeMatchBroadcast",
+          "lineNumber": 267
+        },
+        {
+          "caller": "subscribeQueue",
+          "callee": "supabase\r\n    .channel(`queue-${userId}`)\r\n    .on(\r\n      'postgres_changes',\r\n      {\r\n        event: 'UPDATE',\r\n        schema: 'public',\r\n        table: 'match_queue',\r\n        filter: `user_id=eq.${userId}`,\r\n      },\r\n      (payload) => {\r\n        const matchId = (payload.new as { match_id?: string })?.match_id;\r\n        if (matchId) onMatchFound(matchId);\r\n      },\r\n    )\r\n    .subscribe",
+          "lineNumber": 281
+        },
+        {
+          "caller": "subscribeQueue",
+          "callee": "supabase\r\n    .channel(`queue-${userId}`)\r\n    .on",
+          "lineNumber": 281
+        },
+        {
+          "caller": "subscribeQueue",
+          "callee": "supabase\r\n    .channel",
+          "lineNumber": 281
+        },
+        {
+          "caller": "subscribeQueue",
+          "callee": "onMatchFound",
+          "lineNumber": 293
+        },
+        {
+          "caller": "subscribeQueue",
+          "callee": "supabase.removeChannel",
+          "lineNumber": 298
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 13,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/game-rules.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 197,
+      "nonEmptyLines": 161,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/match-realtime.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "event",
+          "startLine": 13,
+          "endLine": 21,
+          "params": [
+            "overrides"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

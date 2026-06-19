@@ -1,0 +1,2528 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".agents/skills/accessibility/references/A11Y-PATTERNS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 233,
+      "nonEmptyLines": 184,
+      "sections": [
+        {
+          "heading": "Accessibility Code Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Modal focus trap",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Skip link",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Error handling",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Form labels",
+          "level": 2,
+          "line": 109
+        },
+        {
+          "heading": "Dragging movements",
+          "level": 2,
+          "line": 139
+        },
+        {
+          "heading": "ARIA tabs",
+          "level": 2,
+          "line": 169
+        },
+        {
+          "heading": "Live regions and notifications",
+          "level": 2,
+          "line": 192
+        },
+        {
+          "heading": "Screen reader commands",
+          "level": 2,
+          "line": 222
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": ".agents/skills/accessibility/references/WCAG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 191,
+      "nonEmptyLines": 168,
+      "sections": [
+        {
+          "heading": "WCAG 2.2 Quick Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Success criteria by level",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Level A (minimum)",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "Level AA (standard)",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Level AAA (enhanced)",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Common ARIA patterns",
+          "level": 2,
+          "line": 98
+        },
+        {
+          "heading": "Buttons",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "Links",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Form fields",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Error states",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "Navigation",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Modals",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "Live regions",
+          "level": 3,
+          "line": 149
+        },
+        {
+          "heading": "What changed from 2.1 to 2.2",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "Testing tools",
+          "level": 2,
+          "line": 176
+        },
+        {
+          "heading": "Sources",
+          "level": 2,
+          "line": 187
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": ".agents/skills/accessibility/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 440,
+      "nonEmptyLines": 341,
+      "sections": [
+        {
+          "heading": "Accessibility (a11y)",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "WCAG Principles: POUR",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Conformance levels",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Perceivable",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Text alternatives (1.1)",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Color contrast (1.4.3, 1.4.6)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Media alternatives (1.2)",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "Operable",
+          "level": 2,
+          "line": 156
+        },
+        {
+          "heading": "Keyboard accessible (2.1)",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "Focus visible (2.4.7)",
+          "level": 3,
+          "line": 177
+        },
+        {
+          "heading": "Focus not obscured (2.4.11) — new in 2.2",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "Skip links (2.4.1)",
+          "level": 3,
+          "line": 216
+        },
+        {
+          "heading": "Target size (2.5.8) — new in 2.2",
+          "level": 3,
+          "line": 220
+        },
+        {
+          "heading": "Dragging movements (2.5.7) — new in 2.2",
+          "level": 3,
+          "line": 244
+        },
+        {
+          "heading": "Timing (2.2)",
+          "level": 3,
+          "line": 248
+        },
+        {
+          "heading": "Motion (2.3)",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "Understandable",
+          "level": 2,
+          "line": 283
+        },
+        {
+          "heading": "Page language (3.1.1)",
+          "level": 3,
+          "line": 285
+        },
+        {
+          "heading": "Consistent navigation (3.2.3)",
+          "level": 3,
+          "line": 298
+        },
+        {
+          "heading": "Consistent help (3.2.6) — new in 2.2",
+          "level": 3,
+          "line": 311
+        },
+        {
+          "heading": "Form labels (3.3.2)",
+          "level": 3,
+          "line": 315
+        },
+        {
+          "heading": "Error handling (3.3.1, 3.3.3)",
+          "level": 3,
+          "line": 319
+        },
+        {
+          "heading": "Redundant entry (3.3.7) — new in 2.2",
+          "level": 3,
+          "line": 323
+        },
+        {
+          "heading": "Accessible authentication (3.3.8) — new in 2.2",
+          "level": 3,
+          "line": 339
+        },
+        {
+          "heading": "Robust",
+          "level": 2,
+          "line": 357
+        },
+        {
+          "heading": "ARIA usage (4.1.2)",
+          "level": 3,
+          "line": 359
+        },
+        {
+          "heading": "Live regions (4.1.3)",
+          "level": 3,
+          "line": 378
+        },
+        {
+          "heading": "Testing checklist",
+          "level": 2,
+          "line": 384
+        },
+        {
+          "heading": "Automated testing",
+          "level": 3,
+          "line": 386
+        },
+        {
+          "heading": "Manual testing",
+          "level": 3,
+          "line": 396
+        },
+        {
+          "heading": "Common issues by impact",
+          "level": 2,
+          "line": 410
+        },
+        {
+          "heading": "Critical (fix immediately)",
+          "level": 3,
+          "line": 412
+        },
+        {
+          "heading": "Serious (fix before launch)",
+          "level": 3,
+          "line": 419
+        },
+        {
+          "heading": "Moderate (fix soon)",
+          "level": 3,
+          "line": 426
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 433
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 35
+      }
+    },
+    {
+      "path": ".agents/skills/building-native-ui/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 321,
+      "nonEmptyLines": 248,
+      "sections": [
+        {
+          "heading": "Expo UI Guidelines",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Running the App",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "When Custom Builds Are Required",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "When Expo Go Works",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Code Style",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "Routes",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Library Preferences",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Responsiveness",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "Behavior",
+          "level": 2,
+          "line": 100
+        },
+        {
+          "heading": "Styling",
+          "level": 1,
+          "line": 111
+        },
+        {
+          "heading": "General Styling Rules",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Text Styling",
+          "level": 2,
+          "line": 128
+        },
+        {
+          "heading": "Shadows",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "Navigation",
+          "level": 1,
+          "line": 143
+        },
+        {
+          "heading": "Link",
+          "level": 2,
+          "line": 145
+        },
+        {
+          "heading": "Stack",
+          "level": 2,
+          "line": 163
+        },
+        {
+          "heading": "Page Title",
+          "level": 3,
+          "line": 168
+        },
+        {
+          "heading": "Context Menus",
+          "level": 2,
+          "line": 176
+        },
+        {
+          "heading": "Link Previews",
+          "level": 2,
+          "line": 214
+        },
+        {
+          "heading": "Modal",
+          "level": 2,
+          "line": 231
+        },
+        {
+          "heading": "Sheet",
+          "level": 2,
+          "line": 241
+        },
+        {
+          "heading": "Common route structure",
+          "level": 2,
+          "line": 259
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 23
+      }
+    },
+    {
+      "path": ".agents/skills/design-mobile-apps/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 477,
+      "nonEmptyLines": 344,
+      "sections": [
+        {
+          "heading": "Designing with Sleek",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Prerequisites: API Key",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Key scopes",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Security & Privacy",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Quick Reference — All Endpoints",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "Endpoints",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Projects",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "List projects",
+          "level": 4,
+          "line": 77
+        },
+        {
+          "heading": "Create project",
+          "level": 4,
+          "line": 101
+        },
+        {
+          "heading": "Get / Delete project",
+          "level": 4,
+          "line": 113
+        },
+        {
+          "heading": "Components",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "List components",
+          "level": 4,
+          "line": 124
+        },
+        {
+          "heading": "Get component",
+          "level": 4,
+          "line": 149
+        },
+        {
+          "heading": "Chat — Send Message",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "Response — async (default, `wait=false`)",
+          "level": 4,
+          "line": 200
+        },
+        {
+          "heading": "Response — sync (`wait=true`)",
+          "level": 4,
+          "line": 214
+        },
+        {
+          "heading": "Chat — Poll Run Status",
+          "level": 3,
+          "line": 238
+        },
+        {
+          "heading": "Screenshots",
+          "level": 3,
+          "line": 292
+        },
+        {
+          "heading": "Error Shapes",
+          "level": 2,
+          "line": 338
+        },
+        {
+          "heading": "Prompting Sleek",
+          "level": 2,
+          "line": 362
+        },
+        {
+          "heading": "Designing",
+          "level": 2,
+          "line": 368
+        },
+        {
+          "heading": "1. Create a project",
+          "level": 3,
+          "line": 370
+        },
+        {
+          "heading": "2. Send a chat message",
+          "level": 3,
+          "line": 376
+        },
+        {
+          "heading": "3. Show the results",
+          "level": 3,
+          "line": 390
+        },
+        {
+          "heading": "Implementing Designs",
+          "level": 2,
+          "line": 403
+        },
+        {
+          "heading": "HTML prototypes",
+          "level": 3,
+          "line": 409
+        },
+        {
+          "heading": "Native frameworks (React Native, SwiftUI, etc.)",
+          "level": 3,
+          "line": 413
+        },
+        {
+          "heading": "Icons",
+          "level": 4,
+          "line": 422
+        },
+        {
+          "heading": "Fonts",
+          "level": 4,
+          "line": 439
+        },
+        {
+          "heading": "Navigation",
+          "level": 4,
+          "line": 443
+        },
+        {
+          "heading": "Pagination",
+          "level": 2,
+          "line": 449
+        },
+        {
+          "heading": "Tips",
+          "level": 2,
+          "line": 459
+        },
+        {
+          "heading": "Saving component HTML to files",
+          "level": 3,
+          "line": 461
+        },
+        {
+          "heading": "Common Mistakes",
+          "level": 2,
+          "line": 467
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 35
+      }
+    },
+    {
+      "path": ".agents/skills/expo-api-routes/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 368,
+      "nonEmptyLines": 275,
+      "sections": [
+        {
+          "heading": "When to Use API Routes",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "When NOT to Use API Routes",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "File Structure",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Basic API Route",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "HTTP Methods",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "Dynamic Routes",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Request Handling",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Query Parameters",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Headers",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "JSON Body",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "Environment Variables",
+          "level": 2,
+          "line": 130
+        },
+        {
+          "heading": "CORS Headers",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "Error Handling",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "Testing Locally",
+          "level": 2,
+          "line": 196
+        },
+        {
+          "heading": "Deployment to EAS Hosting",
+          "level": 2,
+          "line": 213
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 3,
+          "line": 215
+        },
+        {
+          "heading": "Deploy",
+          "level": 3,
+          "line": 222
+        },
+        {
+          "heading": "Environment Variables for Production",
+          "level": 3,
+          "line": 230
+        },
+        {
+          "heading": "Custom Domain",
+          "level": 3,
+          "line": 239
+        },
+        {
+          "heading": "EAS Hosting Runtime (Cloudflare Workers)",
+          "level": 2,
+          "line": 243
+        },
+        {
+          "heading": "Missing/Limited APIs",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "Use Web APIs Instead",
+          "level": 3,
+          "line": 255
+        },
+        {
+          "heading": "Database Options",
+          "level": 3,
+          "line": 273
+        },
+        {
+          "heading": "Calling API Routes from Client",
+          "level": 2,
+          "line": 300
+        },
+        {
+          "heading": "Common Patterns",
+          "level": 2,
+          "line": 315
+        },
+        {
+          "heading": "Authentication Middleware",
+          "level": 3,
+          "line": 317
+        },
+        {
+          "heading": "Proxy External API",
+          "level": 3,
+          "line": 344
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 360
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 28
+      }
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "fetchCached",
+          "startLine": 11,
+          "endLine": 47,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "hashUrl",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "loadCacheEntry",
+          "startLine": 53,
+          "endLine": 59,
+          "params": [
+            "cacheFile"
+          ]
+        },
+        {
+          "name": "saveCacheEntry",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "cacheFile",
+            "entry"
+          ]
+        },
+        {
+          "name": "getExpires",
+          "startLine": 65,
+          "endLine": 85,
+          "params": [
+            "headers"
+          ]
+        },
+        {
+          "name": "parseMaxAge",
+          "startLine": 87,
+          "endLine": 93,
+          "params": [
+            "cacheControl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fetchCached",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetchCached",
+          "callee": "mkdir",
+          "lineNumber": 12
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "resolve",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "hashUrl",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "loadCacheEntry",
+          "lineNumber": 15
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "Math.floor",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "Date.now",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "fetch",
+          "lineNumber": 22
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "getExpires",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "saveCacheEntry",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "response.headers.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "response.text",
+          "lineNumber": 41
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "getExpires",
+          "lineNumber": 42
+        },
+        {
+          "caller": "fetchCached",
+          "callee": "saveCacheEntry",
+          "lineNumber": 44
+        },
+        {
+          "caller": "hashUrl",
+          "callee": "createHash('sha256').update(url).digest('hex').slice",
+          "lineNumber": 50
+        },
+        {
+          "caller": "hashUrl",
+          "callee": "createHash('sha256').update(url).digest",
+          "lineNumber": 50
+        },
+        {
+          "caller": "hashUrl",
+          "callee": "createHash('sha256').update",
+          "lineNumber": 50
+        },
+        {
+          "caller": "hashUrl",
+          "callee": "createHash",
+          "lineNumber": 50
+        },
+        {
+          "caller": "loadCacheEntry",
+          "callee": "JSON.parse",
+          "lineNumber": 55
+        },
+        {
+          "caller": "loadCacheEntry",
+          "callee": "readFile",
+          "lineNumber": 55
+        },
+        {
+          "caller": "saveCacheEntry",
+          "callee": "writeFile",
+          "lineNumber": 62
+        },
+        {
+          "caller": "saveCacheEntry",
+          "callee": "JSON.stringify",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getExpires",
+          "callee": "Math.floor",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getExpires",
+          "callee": "Date.now",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getExpires",
+          "callee": "parseMaxAge",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getExpires",
+          "callee": "headers.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "getExpires",
+          "callee": "headers.get",
+          "lineNumber": 75
+        },
+        {
+          "caller": "getExpires",
+          "callee": "Date.parse",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getExpires",
+          "callee": "Number.isNaN",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getExpires",
+          "callee": "Math.floor",
+          "lineNumber": 79
+        },
+        {
+          "caller": "parseMaxAge",
+          "callee": "cacheControl.match",
+          "lineNumber": 91
+        },
+        {
+          "caller": "parseMaxAge",
+          "callee": "parseInt",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/scripts/package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/scripts/validate.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "fetchSchema",
+          "startLine": 15,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "createValidator",
+          "startLine": 21,
+          "endLine": 25,
+          "params": [
+            "schema"
+          ]
+        },
+        {
+          "name": "validateFile",
+          "startLine": 27,
+          "endLine": 43,
+          "params": [
+            "validator",
+            "filePath"
+          ]
+        },
+        {
+          "name": "formatErrors",
+          "startLine": 45,
+          "endLine": 53,
+          "params": [
+            "errors"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetchSchema",
+          "callee": "fetchCached",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fetchSchema",
+          "callee": "JSON.parse",
+          "lineNumber": 17
+        },
+        {
+          "caller": "createValidator",
+          "callee": "addFormats",
+          "lineNumber": 23
+        },
+        {
+          "caller": "createValidator",
+          "callee": "ajv.compile",
+          "lineNumber": 24
+        },
+        {
+          "caller": "validateFile",
+          "callee": "readFile",
+          "lineNumber": 28
+        },
+        {
+          "caller": "validateFile",
+          "callee": "yaml.load",
+          "lineNumber": 32
+        },
+        {
+          "caller": "validateFile",
+          "callee": "validator",
+          "lineNumber": 37
+        },
+        {
+          "caller": "validateFile",
+          "callee": "formatErrors",
+          "lineNumber": 39
+        },
+        {
+          "caller": "formatErrors",
+          "callee": "errors\r\n    .map((error) => {\r\n      const path = error.instancePath || '(root)';\r\n      const allowed = error.params?.allowedValues?.join(', ');\r\n      return `  ${path}: ${error.message}${allowed ? ` (allowed: ${allowed})` : ''}`;\r\n    })\r\n    .join",
+          "lineNumber": 46
+        },
+        {
+          "caller": "formatErrors",
+          "callee": "errors\r\n    .map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "formatErrors",
+          "callee": "error.params?.allowedValues?.join",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 92,
+      "nonEmptyLines": 64,
+      "sections": [
+        {
+          "heading": "EAS Workflows Skill",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "Reference Documentation",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Workflow File Location",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Top-Level Structure",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Expressions",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Generating Workflows",
+          "level": 2,
+          "line": 67
+        },
+        {
+          "heading": "Validation",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Answering Questions",
+          "level": 2,
+          "line": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": ".agents/skills/expo-deployment/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 190,
+      "nonEmptyLines": 141,
+      "sections": [
+        {
+          "heading": "Deployment",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Quick Start",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Install EAS CLI",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "Initialize EAS",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Build Commands",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Production Builds",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Submit to Stores",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "Web Deployment",
+          "level": 2,
+          "line": 67
+        },
+        {
+          "heading": "EAS Configuration",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Platform-Specific Guides",
+          "level": 2,
+          "line": 117
+        },
+        {
+          "heading": "iOS",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "Android",
+          "level": 3,
+          "line": 126
+        },
+        {
+          "heading": "Web",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "Automated Deployments",
+          "level": 2,
+          "line": 138
+        },
+        {
+          "heading": "Version Management",
+          "level": 2,
+          "line": 167
+        },
+        {
+          "heading": "Monitoring",
+          "level": 2,
+          "line": 179
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": ".agents/skills/expo-dev-client/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 164,
+      "nonEmptyLines": 122,
+      "sections": [
+        {
+          "heading": "Important: When Development Clients Are Needed",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "EAS Configuration",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Building for TestFlight",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Building Locally",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Installing Local Builds",
+          "level": 2,
+          "line": 86
+        },
+        {
+          "heading": "Building for Specific Platform",
+          "level": 2,
+          "line": 109
+        },
+        {
+          "heading": "Checking Build Status",
+          "level": 2,
+          "line": 122
+        },
+        {
+          "heading": "Using the Dev Client",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 148
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": ".agents/skills/expo-tailwind-setup/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 480,
+      "nonEmptyLines": 386,
+      "sections": [
+        {
+          "heading": "Tailwind CSS Setup for Expo with react-native-css",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Installation",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Configuration Files",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Metro Config",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "PostCSS Config",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Global CSS",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "IMPORTANT: No Babel Config Needed",
+          "level": 2,
+          "line": 106
+        },
+        {
+          "heading": "CSS Component Wrappers",
+          "level": 2,
+          "line": 124
+        },
+        {
+          "heading": "Main Components (`src/tw/index.tsx`)",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "Image Component (`src/tw/image.tsx`)",
+          "level": 3,
+          "line": 252
+        },
+        {
+          "heading": "Animated Components (`src/tw/animated.tsx`)",
+          "level": 3,
+          "line": 293
+        },
+        {
+          "heading": "Usage",
+          "level": 2,
+          "line": 305
+        },
+        {
+          "heading": "Custom Theme Variables",
+          "level": 2,
+          "line": 327
+        },
+        {
+          "heading": "Platform-Specific Styles",
+          "level": 2,
+          "line": 350
+        },
+        {
+          "heading": "Apple System Colors with CSS Variables",
+          "level": 2,
+          "line": 370
+        },
+        {
+          "heading": "Using CSS Variables in JavaScript",
+          "level": 2,
+          "line": 438
+        },
+        {
+          "heading": "Key Differences from NativeWind v4 / Tailwind v3",
+          "level": 2,
+          "line": 452
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 461
+        },
+        {
+          "heading": "Styles not applying",
+          "level": 3,
+          "line": 463
+        },
+        {
+          "heading": "Platform colors not working",
+          "level": 3,
+          "line": 469
+        },
+        {
+          "heading": "TypeScript errors",
+          "level": 3,
+          "line": 474
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": ".agents/skills/frontend-design/LICENSE.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 177,
+      "nonEmptyLines": 150,
+      "metrics": {}
+    },
+    {
+      "path": ".agents/skills/frontend-design/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 42,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "Design Thinking",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Frontend Aesthetics Guidelines",
+          "level": 2,
+          "line": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": ".agents/skills/native-data-fetching/references/expo-router-loaders.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 341,
+      "nonEmptyLines": 266,
+      "sections": [
+        {
+          "heading": "Expo Router Data Loaders",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Imports",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Basic Loader",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "Dynamic Routes",
+          "level": 2,
+          "line": 105
+        },
+        {
+          "heading": "Server-Side Secrets & Request Access",
+          "level": 2,
+          "line": 190
+        },
+        {
+          "heading": "Response Utilities",
+          "level": 2,
+          "line": 217
+        },
+        {
+          "heading": "Setting Response Headers",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "Throwing HTTP Errors",
+          "level": 3,
+          "line": 235
+        },
+        {
+          "heading": "Suspense & Error Boundaries",
+          "level": 2,
+          "line": 253
+        },
+        {
+          "heading": "Loading States with Suspense",
+          "level": 3,
+          "line": 255
+        },
+        {
+          "heading": "Error Boundaries",
+          "level": 3,
+          "line": 299
+        },
+        {
+          "heading": "Static vs Server Rendering",
+          "level": 2,
+          "line": 314
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 328
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": ".agents/skills/native-data-fetching/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 507,
+      "nonEmptyLines": 388,
+      "sections": [
+        {
+          "heading": "Expo Networking",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Preferences",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "Common Issues & Solutions",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "1. Basic Fetch Usage",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "2. React Query (TanStack Query)",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "3. Error Handling",
+          "level": 3,
+          "line": 150
+        },
+        {
+          "heading": "4. Authentication",
+          "level": 3,
+          "line": 208
+        },
+        {
+          "heading": "5. Offline Support",
+          "level": 3,
+          "line": 263
+        },
+        {
+          "heading": "6. Environment Variables",
+          "level": 3,
+          "line": 302
+        },
+        {
+          "heading": "7. Request Cancellation",
+          "level": 3,
+          "line": 387
+        },
+        {
+          "heading": "Decision Tree",
+          "level": 2,
+          "line": 417
+        },
+        {
+          "heading": "Common Mistakes",
+          "level": 2,
+          "line": 455
+        },
+        {
+          "heading": "Example Invocations",
+          "level": 2,
+          "line": 483
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": ".agents/skills/nodejs-backend-patterns/references/advanced-patterns.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 430,
+      "nonEmptyLines": 351,
+      "sections": [
+        {
+          "heading": "Node.js Advanced Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Dependency Injection",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "DI Container",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Database Patterns",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "PostgreSQL with Connection Pool",
+          "level": 3,
+          "line": 84
+        },
+        {
+          "heading": "MongoDB with Mongoose",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "Transaction Pattern",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "Authentication & Authorization",
+          "level": 2,
+          "line": 227
+        },
+        {
+          "heading": "JWT Authentication",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "Caching Strategies",
+          "level": 2,
+          "line": 312
+        },
+        {
+          "heading": "API Response Format",
+          "level": 2,
+          "line": 383
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": ".agents/skills/nodejs-backend-patterns/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 639,
+      "nonEmptyLines": 526,
+      "sections": [
+        {
+          "heading": "Node.js Backend Patterns",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "When to Use This Skill",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Core Frameworks",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Express.js - Minimalist Framework",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Fastify - High Performance Framework",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "Architectural Patterns",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "Pattern 1: Layered Architecture",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "Pattern 2: Dependency Injection",
+          "level": 3,
+          "line": 306
+        },
+        {
+          "heading": "Middleware Patterns",
+          "level": 2,
+          "line": 310
+        },
+        {
+          "heading": "Authentication Middleware",
+          "level": 3,
+          "line": 312
+        },
+        {
+          "heading": "Validation Middleware",
+          "level": 3,
+          "line": 372
+        },
+        {
+          "heading": "Rate Limiting Middleware",
+          "level": 3,
+          "line": 417
+        },
+        {
+          "heading": "Request Logging Middleware",
+          "level": 3,
+          "line": 453
+        },
+        {
+          "heading": "Error Handling",
+          "level": 2,
+          "line": 494
+        },
+        {
+          "heading": "Custom Error Classes",
+          "level": 3,
+          "line": 496
+        },
+        {
+          "heading": "Global Error Handler",
+          "level": 3,
+          "line": 546
+        },
+        {
+          "heading": "Database Patterns",
+          "level": 2,
+          "line": 598
+        },
+        {
+          "heading": "Authentication & Authorization",
+          "level": 2,
+          "line": 607
+        },
+        {
+          "heading": "Caching Strategies",
+          "level": 2,
+          "line": 611
+        },
+        {
+          "heading": "API Response Format",
+          "level": 2,
+          "line": 615
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 619
+        },
+        {
+          "heading": "Testing Patterns",
+          "level": 2,
+          "line": 637
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": ".agents/skills/nodejs-best-practices/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 343,
+      "nonEmptyLines": 263,
+      "sections": [
+        {
+          "heading": "Node.js Best Practices",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "⚠️ How to Use This Skill",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "1. Framework Selection (2025)",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Decision Tree",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Comparison Principles",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "Selection Questions to Ask:",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "2. Runtime Considerations (2025)",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Native TypeScript",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "Module System Decision",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Runtime Selection",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "3. Architecture Principles",
+          "level": 2,
+          "line": 106
+        },
+        {
+          "heading": "Layered Structure Concept",
+          "level": 3,
+          "line": 108
+        },
+        {
+          "heading": "Why This Matters:",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "When to Simplify:",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "4. Error Handling Principles",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Centralized Error Handling",
+          "level": 3,
+          "line": 143
+        },
+        {
+          "heading": "Error Response Philosophy",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "Status Code Selection",
+          "level": 3,
+          "line": 169
+        },
+        {
+          "heading": "5. Async Patterns Principles",
+          "level": 2,
+          "line": 183
+        },
+        {
+          "heading": "When to Use Each",
+          "level": 3,
+          "line": 185
+        },
+        {
+          "heading": "Event Loop Awareness",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "Avoiding Event Loop Blocking",
+          "level": 3,
+          "line": 210
+        },
+        {
+          "heading": "6. Validation Principles",
+          "level": 2,
+          "line": 218
+        },
+        {
+          "heading": "Validate at Boundaries",
+          "level": 3,
+          "line": 220
+        },
+        {
+          "heading": "Validation Library Selection",
+          "level": 3,
+          "line": 230
+        },
+        {
+          "heading": "Validation Philosophy",
+          "level": 3,
+          "line": 239
+        },
+        {
+          "heading": "7. Security Principles",
+          "level": 2,
+          "line": 247
+        },
+        {
+          "heading": "Security Checklist (Not Code)",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "Security Mindset",
+          "level": 3,
+          "line": 262
+        },
+        {
+          "heading": "8. Testing Principles",
+          "level": 2,
+          "line": 276
+        },
+        {
+          "heading": "Test Strategy Selection",
+          "level": 3,
+          "line": 278
+        },
+        {
+          "heading": "What to Test (Priorities)",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "Built-in Test Runner (Node.js 22+)",
+          "level": 3,
+          "line": 293
+        },
+        {
+          "heading": "9. Anti-Patterns to Avoid",
+          "level": 2,
+          "line": 304
+        },
+        {
+          "heading": "❌ DON'T:",
+          "level": 3,
+          "line": 306
+        },
+        {
+          "heading": "✅ DO:",
+          "level": 3,
+          "line": 315
+        },
+        {
+          "heading": "10. Decision Checklist",
+          "level": 2,
+          "line": 325
+        },
+        {
+          "heading": "Limitations",
+          "level": 2,
+          "line": 340
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 39
+      }
+    },
+    {
+      "path": ".agents/skills/seo/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 513,
+      "nonEmptyLines": 419,
+      "sections": [
+        {
+          "heading": "SEO optimization",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "SEO fundamentals",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Technical SEO",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Crawlability",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "XML sitemap",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "URL structure",
+          "level": 3,
+          "line": 104
+        },
+        {
+          "heading": "HTTPS & security",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "On-page SEO",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "Title tags",
+          "level": 3,
+          "line": 145
+        },
+        {
+          "heading": "Meta descriptions",
+          "level": 3,
+          "line": 163
+        },
+        {
+          "heading": "Heading structure",
+          "level": 3,
+          "line": 180
+        },
+        {
+          "heading": "Image SEO",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "Internal linking",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "Structured data (JSON-LD)",
+          "level": 2,
+          "line": 245
+        },
+        {
+          "heading": "Organization",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "Article",
+          "level": 3,
+          "line": 270
+        },
+        {
+          "heading": "Product",
+          "level": 3,
+          "line": 299
+        },
+        {
+          "heading": "FAQ",
+          "level": 3,
+          "line": 329
+        },
+        {
+          "heading": "Breadcrumbs",
+          "level": 3,
+          "line": 358
+        },
+        {
+          "heading": "Validation",
+          "level": 3,
+          "line": 389
+        },
+        {
+          "heading": "Mobile SEO",
+          "level": 2,
+          "line": 397
+        },
+        {
+          "heading": "Responsive design",
+          "level": 3,
+          "line": 399
+        },
+        {
+          "heading": "Tap targets",
+          "level": 3,
+          "line": 409
+        },
+        {
+          "heading": "Font sizes",
+          "level": 3,
+          "line": 427
+        },
+        {
+          "heading": "International SEO",
+          "level": 2,
+          "line": 444
+        },
+        {
+          "heading": "Hreflang tags",
+          "level": 3,
+          "line": 446
+        },
+        {
+          "heading": "Language declaration",
+          "level": 3,
+          "line": 456
+        },
+        {
+          "heading": "SEO audit checklist",
+          "level": 2,
+          "line": 466
+        },
+        {
+          "heading": "Critical",
+          "level": 3,
+          "line": 468
+        },
+        {
+          "heading": "High priority",
+          "level": 3,
+          "line": 475
+        },
+        {
+          "heading": "Medium priority",
+          "level": 3,
+          "line": 482
+        },
+        {
+          "heading": "Ongoing",
+          "level": 3,
+          "line": 489
+        },
+        {
+          "heading": "Tools",
+          "level": 2,
+          "line": 498
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 508
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 34
+      }
+    },
+    {
+      "path": ".agents/skills/supabase-postgres-best-practices/CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "Changelog",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "[1.3.0](https://github.com/supabase/agent-skills/compare/v1.2.0...v1.3.0) (2026-06-05)",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 6
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "[1.2.0](https://github.com/supabase/agent-skills/compare/v1.1.1...v1.2.0) (2026-06-02)",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": ".agents/skills/supabase-postgres-best-practices/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 64,
+      "nonEmptyLines": 52,
+      "sections": [
+        {
+          "heading": "Supabase Postgres Best Practices",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "When to Apply",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Rule Categories by Priority",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "How to Use",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": ".agents/skills/supabase/assets/feedback-issue-template.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 17,
+      "nonEmptyLines": 9,
+      "sections": [
+        {
+          "heading": "What happened",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Source",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Fix suggestion",
+          "level": 2,
+          "line": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": ".agents/skills/supabase/CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 35,
+      "nonEmptyLines": 21,
+      "sections": [
+        {
+          "heading": "Changelog",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "[0.1.4](https://github.com/supabase/agent-skills/compare/v0.1.3...v0.1.4) (2026-06-05)",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 6
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 14
+        },
+        {
+          "heading": "[0.1.3](https://github.com/supabase/agent-skills/compare/v0.1.2...v0.1.3) (2026-06-02)",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Features",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Bug Fixes",
+          "level": 3,
+          "line": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    }
+  ]
+}

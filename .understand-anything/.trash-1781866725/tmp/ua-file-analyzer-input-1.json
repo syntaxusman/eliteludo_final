@@ -1,0 +1,230 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": "app/(tabs)/_layout.tsx",
+      "language": "typescript",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/_layout.tsx",
+      "language": "typescript",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/auth/_layout.tsx",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/auth/login.tsx",
+      "language": "typescript",
+      "sizeLines": 329,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/auth/phone-login.tsx",
+      "language": "typescript",
+      "sizeLines": 230,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/auth/signup.tsx",
+      "language": "typescript",
+      "sizeLines": 288,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/index.tsx",
+      "language": "typescript",
+      "sizeLines": 243,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/settings.tsx",
+      "language": "typescript",
+      "sizeLines": 394,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PlayerProfile.tsx",
+      "language": "typescript",
+      "sizeLines": 410,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/SocialButton.tsx",
+      "language": "typescript",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/TokenDicePicker.tsx",
+      "language": "typescript",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/skia/Dice.tsx",
+      "language": "typescript",
+      "sizeLines": 221,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/skia/Particles.tsx",
+      "language": "typescript",
+      "sizeLines": 164,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/stores/auth.ts",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/stores/settings.ts",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/supabase/client.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/supabase/errors.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/supabase/oauth.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/theme/colors.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/theme/typography.ts",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/utils/haptics.ts",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/utils/sound.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "app/(tabs)/_layout.tsx": [
+      "src/theme/colors.ts",
+      "src/theme/typography.ts"
+    ],
+    "app/_layout.tsx": [
+      "src/stores/auth.ts",
+      "src/theme/colors.ts",
+      "src/theme/typography.ts"
+    ],
+    "app/auth/_layout.tsx": [
+      "src/theme/colors.ts"
+    ],
+    "app/auth/login.tsx": [
+      "src/assets/index.ts",
+      "src/components/SocialButton.tsx",
+      "src/supabase/client.ts",
+      "src/supabase/errors.ts",
+      "src/supabase/oauth.ts",
+      "src/theme/colors.ts",
+      "src/theme/typography.ts",
+      "src/utils/haptics.ts"
+    ],
+    "app/auth/phone-login.tsx": [
+      "src/supabase/client.ts",
+      "src/supabase/errors.ts",
+      "src/theme/colors.ts",
+      "src/theme/typography.ts",
+      "src/utils/haptics.ts"
+    ],
+    "app/auth/signup.tsx": [
+      "src/assets/index.ts",
+      "src/supabase/client.ts",
+      "src/supabase/errors.ts",
+      "src/theme/colors.ts",
+      "src/theme/typography.ts",
+      "src/utils/haptics.ts"
+    ],
+    "app/index.tsx": [
+      "src/stores/auth.ts",
+      "src/stores/settings.ts",
+      "src/theme/colors.ts",
+      "src/theme/typography.ts"
+    ],
+    "app/settings.tsx": [
+      "src/assets/index.ts",
+      "src/stores/profile.ts",
+      "src/stores/settings.ts",
+      "src/supabase/client.ts",
+      "src/theme/colors.ts",
+      "src/theme/typography.ts",
+      "src/utils/haptics.ts"
+    ],
+    "src/components/PlayerProfile.tsx": [
+      "src/assets/index.ts",
+      "src/game/rules.ts",
+      "src/game/types.ts",
+      "src/skia/Dice.tsx",
+      "src/theme/colors.ts"
+    ],
+    "src/components/SocialButton.tsx": [
+      "src/theme/colors.ts",
+      "src/theme/typography.ts"
+    ],
+    "src/components/TokenDicePicker.tsx": [
+      "src/theme/colors.ts",
+      "src/theme/typography.ts"
+    ],
+    "src/skia/Dice.tsx": [
+      "src/theme/colors.ts"
+    ],
+    "src/skia/Particles.tsx": [
+      "src/theme/colors.ts"
+    ],
+    "src/stores/auth.ts": [
+      "src/supabase/client.ts",
+      "src/supabase/errors.ts"
+    ],
+    "src/stores/settings.ts": [],
+    "src/supabase/client.ts": [],
+    "src/supabase/errors.ts": [],
+    "src/supabase/oauth.ts": [
+      "src/supabase/client.ts"
+    ],
+    "src/theme/colors.ts": [],
+    "src/theme/typography.ts": [],
+    "src/utils/haptics.ts": [
+      "src/stores/settings.ts"
+    ],
+    "src/utils/sound.ts": [
+      "src/stores/settings.ts"
+    ]
+  }
+}

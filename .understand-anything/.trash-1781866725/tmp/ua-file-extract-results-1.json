@@ -1,0 +1,2136 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 22,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "app/(tabs)/_layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 177,
+      "functions": [
+        {
+          "name": "EliteTabBar",
+          "startLine": 16,
+          "endLine": 55,
+          "params": [
+            "{ state }"
+          ]
+        },
+        {
+          "name": "TabsLayout",
+          "startLine": 57,
+          "endLine": 89,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TabsLayout",
+          "line": 57,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "EliteTabBar",
+          "callee": "useRouter",
+          "lineNumber": 17
+        },
+        {
+          "caller": "EliteTabBar",
+          "callee": "TAB_ITEMS.map",
+          "lineNumber": 22
+        },
+        {
+          "caller": "EliteTabBar",
+          "callee": "router.push",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/_layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "hasFontFamily",
+          "startLine": 13,
+          "endLine": 15,
+          "params": [
+            "style"
+          ]
+        },
+        {
+          "name": "RootLayout",
+          "startLine": 61,
+          "endLine": 89,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RootLayout",
+          "line": 61,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hasFontFamily",
+          "callee": "Boolean",
+          "lineNumber": 14
+        },
+        {
+          "caller": "hasFontFamily",
+          "callee": "StyleSheet.flatten",
+          "lineNumber": 14
+        },
+        {
+          "caller": "RootLayout",
+          "callee": "useAuthStore",
+          "lineNumber": 62
+        },
+        {
+          "caller": "RootLayout",
+          "callee": "useFonts",
+          "lineNumber": 63
+        },
+        {
+          "caller": "RootLayout",
+          "callee": "require",
+          "lineNumber": 64
+        },
+        {
+          "caller": "RootLayout",
+          "callee": "require",
+          "lineNumber": 65
+        },
+        {
+          "caller": "RootLayout",
+          "callee": "useEffect",
+          "lineNumber": 68
+        },
+        {
+          "caller": "RootLayout",
+          "callee": "initialize",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/auth/_layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "AuthLayout",
+          "startLine": 5,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AuthLayout",
+          "line": 5,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/auth/login.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 329,
+      "nonEmptyLines": 302,
+      "functions": [
+        {
+          "name": "LoginScreen",
+          "startLine": 28,
+          "endLine": 197,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LoginScreen",
+          "line": 28,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "LoginScreen",
+          "callee": "useRouter",
+          "lineNumber": 29
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "useState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "useState",
+          "lineNumber": 31
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "useState",
+          "lineNumber": 32
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "useState",
+          "lineNumber": 33
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "useState",
+          "lineNumber": 34
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "email.trim",
+          "lineNumber": 37
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "haptics.tap",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "setLoading",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "setError",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "supabase.auth\r\n      .signInWithPassword({\r\n        email: email.trim(),\r\n        password,\r\n      })\r\n      .catch",
+          "lineNumber": 41
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "supabase.auth\r\n      .signInWithPassword",
+          "lineNumber": 41
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "email.trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "setLoading",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "setError",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "getSupabaseErrorMessage",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "haptics.warning",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "haptics.success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onEmailLogin",
+          "callee": "router.replace",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onPhoneOtp",
+          "callee": "haptics.tap",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onPhoneOtp",
+          "callee": "router.push",
+          "lineNumber": 54
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "haptics.tap",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "setLoading",
+          "lineNumber": 59
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "setError",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "signInWithGoogle",
+          "lineNumber": 62
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "haptics.success",
+          "lineNumber": 63
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "router.replace",
+          "lineNumber": 64
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "setError",
+          "lineNumber": 66
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "getSupabaseErrorMessage",
+          "lineNumber": 66
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "haptics.warning",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onGoogleLogin",
+          "callee": "setLoading",
+          "lineNumber": 69
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "email.trim",
+          "lineNumber": 73
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 86
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "FadeInDown.delay(200).duration",
+          "lineNumber": 94
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 94
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "setEmail",
+          "lineNumber": 127
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "setError",
+          "lineNumber": 127
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "setPassword",
+          "lineNumber": 142
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "setError",
+          "lineNumber": 142
+        },
+        {
+          "caller": "LoginScreen",
+          "callee": "setShowPassword",
+          "lineNumber": 146
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/auth/phone-login.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 230,
+      "nonEmptyLines": 222,
+      "functions": [
+        {
+          "name": "PhoneLoginScreen",
+          "startLine": 24,
+          "endLine": 173,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PhoneLoginScreen",
+          "line": 24,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "useRouter",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "useState",
+          "lineNumber": 26
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "useState",
+          "lineNumber": 27
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "useState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "useState",
+          "lineNumber": 29
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "useState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "useRef",
+          "lineNumber": 31
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "phone.trim",
+          "lineNumber": 34
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "haptics.tap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "setLoading",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "setError",
+          "lineNumber": 37
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "phone.trim().startsWith",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "phone.trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "phone.trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "phone.trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "supabase.auth\r\n      .signInWithOtp({ phone: normalized })\r\n      .catch",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "supabase.auth\r\n      .signInWithOtp",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "setLoading",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "setError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "getSupabaseErrorMessage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "haptics.warning",
+          "lineNumber": 46
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "haptics.success",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "setPhone",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "setStep",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "setTimeout",
+          "lineNumber": 51
+        },
+        {
+          "caller": "onSendOtp",
+          "callee": "otpRef.current?.focus",
+          "lineNumber": 51
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "haptics.tap",
+          "lineNumber": 57
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "setLoading",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "setError",
+          "lineNumber": 59
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "supabase.auth\r\n      .verifyOtp({\r\n        phone,\r\n        token: otp,\r\n        type: 'sms',\r\n      })\r\n      .catch",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "supabase.auth\r\n      .verifyOtp",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "setLoading",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "setError",
+          "lineNumber": 69
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "getSupabaseErrorMessage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "haptics.warning",
+          "lineNumber": 70
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "haptics.success",
+          "lineNumber": 72
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "Date.now",
+          "lineNumber": 76
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "createdAt.getTime",
+          "lineNumber": 76
+        },
+        {
+          "caller": "onVerifyOtp",
+          "callee": "router.replace",
+          "lineNumber": 77
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "router.back",
+          "lineNumber": 88
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "FadeInDown.duration",
+          "lineNumber": 99
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "setPhone",
+          "lineNumber": 109
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "setError",
+          "lineNumber": 109
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "phone.trim",
+          "lineNumber": 117
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "phone.trim",
+          "lineNumber": 120
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "FadeInDown.duration",
+          "lineNumber": 129
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "setOtp",
+          "lineNumber": 142
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "v.replace(/\\D/g, '').slice",
+          "lineNumber": 142
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "v.replace",
+          "lineNumber": 142
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "setError",
+          "lineNumber": 142
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "setStep",
+          "lineNumber": 161
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "setOtp",
+          "lineNumber": 161
+        },
+        {
+          "caller": "PhoneLoginScreen",
+          "callee": "setError",
+          "lineNumber": 161
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/auth/signup.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 288,
+      "nonEmptyLines": 273,
+      "functions": [
+        {
+          "name": "SignupScreen",
+          "startLine": 26,
+          "endLine": 197,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SignupScreen",
+          "line": 26,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SignupScreen",
+          "callee": "useRouter",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "useState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "useState",
+          "lineNumber": 29
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "useState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "useState",
+          "lineNumber": 31
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "useState",
+          "lineNumber": 32
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "useState",
+          "lineNumber": 33
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "useState",
+          "lineNumber": 34
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "email.trim",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "haptics.tap",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "setLoading",
+          "lineNumber": 41
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "setError",
+          "lineNumber": 42
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "supabase.auth\r\n      .signUp({ email: email.trim(), password })\r\n      .catch",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "supabase.auth\r\n      .signUp",
+          "lineNumber": 43
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "email.trim",
+          "lineNumber": 44
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "setLoading",
+          "lineNumber": 46
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "setError",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "getSupabaseErrorMessage",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "haptics.warning",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "setPendingConfirm",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "haptics.success",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onEmailSignup",
+          "callee": "router.replace",
+          "lineNumber": 50
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "email.trim",
+          "lineNumber": 63
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "router.replace",
+          "lineNumber": 67
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 95
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "FadeInDown.delay(200).duration",
+          "lineNumber": 103
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 103
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "setEmail",
+          "lineNumber": 122
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "setError",
+          "lineNumber": 122
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "setPassword",
+          "lineNumber": 137
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "setError",
+          "lineNumber": 137
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "setShowPassword",
+          "lineNumber": 141
+        },
+        {
+          "caller": "SignupScreen",
+          "callee": "setAgree",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/index.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 243,
+      "nonEmptyLines": 219,
+      "functions": [
+        {
+          "name": "SplashScreen",
+          "startLine": 37,
+          "endLine": 140,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SplashScreen",
+          "line": 37,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SplashScreen",
+          "callee": "useSafeAreaInsets",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useSettingsStore",
+          "lineNumber": 39
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useAuthStore",
+          "lineNumber": 40
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useAuthStore",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useState",
+          "lineNumber": 43
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useState",
+          "lineNumber": 44
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useRef",
+          "lineNumber": 45
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useSharedValue",
+          "lineNumber": 47
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useSharedValue",
+          "lineNumber": 48
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useEffect",
+          "lineNumber": 50
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "hydrateSettings",
+          "lineNumber": 51
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "withTiming",
+          "lineNumber": 53
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "Easing.out",
+          "lineNumber": 55
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "runOnJS(setSplashDone)",
+          "lineNumber": 56
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "runOnJS",
+          "lineNumber": 56
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "withRepeat",
+          "lineNumber": 58
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "withSequence",
+          "lineNumber": 59
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "withTiming",
+          "lineNumber": 60
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "Easing.inOut",
+          "lineNumber": 60
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "withTiming",
+          "lineNumber": 61
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "Easing.inOut",
+          "lineNumber": 61
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "setInterval",
+          "lineNumber": 67
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "Math.min",
+          "lineNumber": 68
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "setTipIdx",
+          "lineNumber": 69
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "clearInterval",
+          "lineNumber": 72
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useEffect",
+          "lineNumber": 75
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "clearInterval",
+          "lineNumber": 77
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "router.replace",
+          "lineNumber": 78
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 81
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "interpolate",
+          "lineNumber": 82
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 85
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "FadeIn.delay(200).duration",
+          "lineNumber": 100
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "FadeIn.delay",
+          "lineNumber": 100
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "FadeIn.delay(500).duration",
+          "lineNumber": 114
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "FadeIn.delay",
+          "lineNumber": 114
+        },
+        {
+          "caller": "SplashScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/settings.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 394,
+      "nonEmptyLines": 368,
+      "functions": [
+        {
+          "name": "SettingsScreen",
+          "startLine": 26,
+          "endLine": 175,
+          "params": []
+        },
+        {
+          "name": "SectionLabel",
+          "startLine": 177,
+          "endLine": 181,
+          "params": [
+            "{ label }"
+          ]
+        },
+        {
+          "name": "SwitchRow",
+          "startLine": 183,
+          "endLine": 210,
+          "params": [
+            "{\r\n  icon, label, value, onValueChange, last,\r\n}"
+          ]
+        },
+        {
+          "name": "LinkRow",
+          "startLine": 212,
+          "endLine": 235,
+          "params": [
+            "{\r\n  icon, label, onPress, last,\r\n}"
+          ]
+        },
+        {
+          "name": "LanguageRow",
+          "startLine": 237,
+          "endLine": 265,
+          "params": [
+            "{ value, onChange }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SettingsScreen",
+          "line": 26,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SettingsScreen",
+          "callee": "useRouter",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useSafeAreaInsets",
+          "lineNumber": 28
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useSettingsStore",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useSettingsStore",
+          "lineNumber": 31
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useSettingsStore",
+          "lineNumber": 32
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useSettingsStore",
+          "lineNumber": 33
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useSettingsStore",
+          "lineNumber": 34
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useSettingsStore",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useProfileStore",
+          "lineNumber": 36
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useState",
+          "lineNumber": 37
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "useEffect",
+          "lineNumber": 39
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "hydrate",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onLogout",
+          "callee": "Alert.alert",
+          "lineNumber": 42
+        },
+        {
+          "caller": "onLogout",
+          "callee": "setSigningOut",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onLogout",
+          "callee": "haptics.warning",
+          "lineNumber": 48
+        },
+        {
+          "caller": "onLogout",
+          "callee": "clearProfile",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onLogout",
+          "callee": "supabase.auth.signOut",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onLogout",
+          "callee": "router.replace",
+          "lineNumber": 51
+        },
+        {
+          "caller": "onDelete",
+          "callee": "Alert.alert",
+          "lineNumber": 58
+        },
+        {
+          "caller": "onDelete",
+          "callee": "Alert.alert",
+          "lineNumber": 65
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeIn.duration",
+          "lineNumber": 79
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "router.back",
+          "lineNumber": 82
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay(100).duration",
+          "lineNumber": 93
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 93
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 100
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "set",
+          "lineNumber": 100
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 107
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "set",
+          "lineNumber": 107
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "haptics.tap",
+          "lineNumber": 114
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "set",
+          "lineNumber": 114
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay(180).duration",
+          "lineNumber": 120
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 120
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "set",
+          "lineNumber": 123
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay(260).duration",
+          "lineNumber": 127
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 127
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay(340).duration",
+          "lineNumber": 135
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 135
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay(420).duration",
+          "lineNumber": 143
+        },
+        {
+          "caller": "SettingsScreen",
+          "callee": "FadeInDown.delay",
+          "lineNumber": 143
+        },
+        {
+          "caller": "SectionLabel",
+          "callee": "label.toUpperCase",
+          "lineNumber": 179
+        },
+        {
+          "caller": "LanguageRow",
+          "callee": "options.map",
+          "lineNumber": 244
+        },
+        {
+          "caller": "LanguageRow",
+          "callee": "haptics.tap",
+          "lineNumber": 249
+        },
+        {
+          "caller": "LanguageRow",
+          "callee": "onChange",
+          "lineNumber": 249
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PlayerProfile.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 410,
+      "nonEmptyLines": 397,
+      "functions": [
+        {
+          "name": "PlayerProfile",
+          "startLine": 44,
+          "endLine": 130,
+          "params": [
+            "{\r\n  player,\r\n  isActive,\r\n  lastRoll,\r\n  align,\r\n  dicePool = [],\r\n  displayRoll = null,\r\n  isRolling = false,\r\n  canRoll = false,\r\n  onRoll,\r\n  timerProgress = null,\r\n  timerSeconds = null,\r\n}"
+          ]
+        },
+        {
+          "name": "ActiveDice",
+          "startLine": 132,
+          "endLine": 192,
+          "params": [
+            "{\r\n  value,\r\n  smallDice,\r\n  rolling,\r\n  canRoll,\r\n  align,\r\n  onRoll,\r\n  timerProgress,\r\n  timerSeconds,\r\n}"
+          ]
+        },
+        {
+          "name": "MiniDie",
+          "startLine": 194,
+          "endLine": 213,
+          "params": [
+            "{\r\n  value,\r\n  faded,\r\n  tint,\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PlayerProfile",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PlayerProfile",
+          "callee": "tokensFinished",
+          "lineNumber": 58
+        },
+        {
+          "caller": "PlayerProfile",
+          "callee": "player.name.charAt",
+          "lineNumber": 79
+        },
+        {
+          "caller": "PlayerProfile",
+          "callee": "player.tokens.map",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ActiveDice",
+          "callee": "smallDice.slice(0, 3).map",
+          "lineNumber": 160
+        },
+        {
+          "caller": "ActiveDice",
+          "callee": "smallDice.slice",
+          "lineNumber": 160
+        },
+        {
+          "caller": "ActiveDice",
+          "callee": "Math.max",
+          "lineNumber": 184
+        },
+        {
+          "caller": "ActiveDice",
+          "callee": "Math.min",
+          "lineNumber": 184
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/SocialButton.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "SocialButton",
+          "startLine": 41,
+          "endLine": 69,
+          "params": [
+            "{ provider, onPress, loading, disabled }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SocialButton",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/TokenDicePicker.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "TokenDicePicker",
+          "startLine": 23,
+          "endLine": 50,
+          "params": [
+            "{ cx, cy, offset, values, onPick }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TokenDicePicker",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TokenDicePicker",
+          "callee": "values.map",
+          "lineNumber": 33
+        },
+        {
+          "caller": "TokenDicePicker",
+          "callee": "onPick",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/skia/Dice.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 221,
+      "nonEmptyLines": 204,
+      "functions": [
+        {
+          "name": "Dice",
+          "startLine": 45,
+          "endLine": 109,
+          "params": [
+            "{ size, value, rolling }"
+          ]
+        },
+        {
+          "name": "DiceSparkle",
+          "startLine": 111,
+          "endLine": 178,
+          "params": [
+            "{\r\n  active,\r\n  index,\r\n  rolling,\r\n  size,\r\n  x,\r\n  y,\r\n  sparkleSize,\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Dice",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Dice",
+          "callee": "useSharedValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "Dice",
+          "callee": "useSharedValue",
+          "lineNumber": 47
+        },
+        {
+          "caller": "Dice",
+          "callee": "useEffect",
+          "lineNumber": 49
+        },
+        {
+          "caller": "Dice",
+          "callee": "withTiming",
+          "lineNumber": 52
+        },
+        {
+          "caller": "Dice",
+          "callee": "withTiming",
+          "lineNumber": 53
+        },
+        {
+          "caller": "Dice",
+          "callee": "withTiming",
+          "lineNumber": 54
+        },
+        {
+          "caller": "Dice",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 59
+        },
+        {
+          "caller": "Dice",
+          "callee": "SPARKLES.map",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Dice",
+          "callee": "dots.map",
+          "lineNumber": 87
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "useSharedValue",
+          "lineNumber": 128
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "useEffect",
+          "lineNumber": 130
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "withTiming",
+          "lineNumber": 132
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "withDelay",
+          "lineNumber": 139
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "withRepeat",
+          "lineNumber": 141
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "withSequence",
+          "lineNumber": 142
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "withTiming",
+          "lineNumber": 143
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "withTiming",
+          "lineNumber": 144
+        },
+        {
+          "caller": "DiceSparkle",
+          "callee": "useAnimatedStyle",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/skia/Particles.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "Particles",
+          "startLine": 62,
+          "endLine": 70,
+          "params": [
+            "{ width, height, bursts }"
+          ]
+        },
+        {
+          "name": "BurstView",
+          "startLine": 72,
+          "endLine": 116,
+          "params": [
+            "{ burst }"
+          ]
+        },
+        {
+          "name": "Particle",
+          "startLine": 118,
+          "endLine": 148,
+          "params": [
+            "{\r\n  cx,\r\n  cy,\r\n  angle,\r\n  speed,\r\n  baseRadius,\r\n  color,\r\n  gravity,\r\n  progress,\r\n}"
+          ]
+        },
+        {
+          "name": "particleColor",
+          "startLine": 150,
+          "endLine": 155,
+          "params": [
+            "burst",
+            "i"
+          ]
+        },
+        {
+          "name": "rand",
+          "startLine": 158,
+          "endLine": 164,
+          "params": [
+            "id",
+            "salt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Particles",
+          "line": 62,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Particles",
+          "callee": "bursts.map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "BurstView",
+          "callee": "useSharedValue",
+          "lineNumber": 74
+        },
+        {
+          "caller": "BurstView",
+          "callee": "useMemo",
+          "lineNumber": 78
+        },
+        {
+          "caller": "BurstView",
+          "callee": "Array.from",
+          "lineNumber": 80
+        },
+        {
+          "caller": "BurstView",
+          "callee": "rand",
+          "lineNumber": 82
+        },
+        {
+          "caller": "BurstView",
+          "callee": "rand",
+          "lineNumber": 84
+        },
+        {
+          "caller": "BurstView",
+          "callee": "rand",
+          "lineNumber": 85
+        },
+        {
+          "caller": "BurstView",
+          "callee": "useEffect",
+          "lineNumber": 91
+        },
+        {
+          "caller": "BurstView",
+          "callee": "withTiming",
+          "lineNumber": 93
+        },
+        {
+          "caller": "BurstView",
+          "callee": "Easing.out",
+          "lineNumber": 95
+        },
+        {
+          "caller": "BurstView",
+          "callee": "seeds.map",
+          "lineNumber": 101
+        },
+        {
+          "caller": "BurstView",
+          "callee": "particleColor",
+          "lineNumber": 109
+        },
+        {
+          "caller": "Particle",
+          "callee": "Math.cos",
+          "lineNumber": 137
+        },
+        {
+          "caller": "Particle",
+          "callee": "Math.sin",
+          "lineNumber": 138
+        },
+        {
+          "caller": "Particle",
+          "callee": "useDerivedValue",
+          "lineNumber": 140
+        },
+        {
+          "caller": "Particle",
+          "callee": "useDerivedValue",
+          "lineNumber": 141
+        },
+        {
+          "caller": "Particle",
+          "callee": "useDerivedValue",
+          "lineNumber": 144
+        },
+        {
+          "caller": "Particle",
+          "callee": "Math.max",
+          "lineNumber": 144
+        },
+        {
+          "caller": "Particle",
+          "callee": "useDerivedValue",
+          "lineNumber": 145
+        },
+        {
+          "caller": "Particle",
+          "callee": "Math.max",
+          "lineNumber": 145
+        },
+        {
+          "caller": "rand",
+          "callee": "Math.imul",
+          "lineNumber": 161
+        },
+        {
+          "caller": "rand",
+          "callee": "id.charCodeAt",
+          "lineNumber": 161
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/stores/auth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "exports": [
+        {
+          "name": "useAuthStore",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/stores/settings.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "getCachedSettings",
+          "startLine": 37,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getCachedSettings",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "useSettingsStore",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/supabase/client.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "exports": [
+        {
+          "name": "supabase",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "supabaseConfigured",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/supabase/errors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "functions": [
+        {
+          "name": "getSupabaseErrorMessage",
+          "startLine": 1,
+          "endLine": 9,
+          "params": [
+            "error"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getSupabaseErrorMessage",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSupabaseErrorMessage",
+          "callee": "String",
+          "lineNumber": 2
+        },
+        {
+          "caller": "getSupabaseErrorMessage",
+          "callee": "/network request failed/i.test",
+          "lineNumber": 4
+        },
+        {
+          "caller": "getSupabaseErrorMessage",
+          "callee": "/fetch/i.test",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/supabase/oauth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "signInWithGoogle",
+          "startLine": 8,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "signInWithGoogle",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "signInWithGoogle",
+          "callee": "Linking.createURL",
+          "lineNumber": 9
+        },
+        {
+          "caller": "signInWithGoogle",
+          "callee": "supabase.auth.signInWithOAuth",
+          "lineNumber": 10
+        },
+        {
+          "caller": "signInWithGoogle",
+          "callee": "WebBrowser.openAuthSessionAsync",
+          "lineNumber": 20
+        },
+        {
+          "caller": "signInWithGoogle",
+          "callee": "Linking.parse",
+          "lineNumber": 23
+        },
+        {
+          "caller": "signInWithGoogle",
+          "callee": "supabase.auth.setSession",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/theme/colors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "exports": [
+        {
+          "name": "colors",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/theme/typography.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "exports": [
+        {
+          "name": "fontFamilies",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "typography",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "spacing",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "radius",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/utils/haptics.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "enabled",
+          "startLine": 18,
+          "endLine": 20,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "haptics",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "enabled",
+          "callee": "getCachedSettings",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/utils/sound.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "exports": [
+        {
+          "name": "sound",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "play",
+          "callee": "getCachedSettings",
+          "lineNumber": 7
+        },
+        {
+          "caller": "music",
+          "callee": "getCachedSettings",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

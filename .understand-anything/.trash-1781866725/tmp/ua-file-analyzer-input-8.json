@@ -1,0 +1,42 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".agents/skills/expo-deployment/references/app-store-metadata.md",
+      "language": "markdown",
+      "sizeLines": 479,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-deployment/references/ios-app-store.md",
+      "language": "markdown",
+      "sizeLines": 355,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-deployment/references/play-store.md",
+      "language": "markdown",
+      "sizeLines": 246,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-deployment/references/testflight.md",
+      "language": "markdown",
+      "sizeLines": 58,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-deployment/references/workflows.md",
+      "language": "markdown",
+      "sizeLines": 200,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".agents/skills/expo-deployment/references/app-store-metadata.md": [],
+    ".agents/skills/expo-deployment/references/ios-app-store.md": [],
+    ".agents/skills/expo-deployment/references/play-store.md": [],
+    ".agents/skills/expo-deployment/references/testflight.md": [],
+    ".agents/skills/expo-deployment/references/workflows.md": []
+  }
+}

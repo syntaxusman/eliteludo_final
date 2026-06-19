@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "document:.claude/skills/react-best-practices/AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": ".claude/skills/react-best-practices/AGENTS.md",
+      "summary": "AGENTS.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.claude/skills/react-best-practices/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": ".claude/skills/react-best-practices/README.md",
+      "summary": "README.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.claude/skills/react-best-practices/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/react-best-practices/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.claude/skills/react-best-practices/metadata.json",
+      "type": "config",
+      "name": "metadata.json",
+      "filePath": ".claude/skills/react-best-practices/metadata.json",
+      "summary": "metadata.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

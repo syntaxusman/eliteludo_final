@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/client-passive-event-listeners.md",
+      "type": "document",
+      "name": "client-passive-event-listeners.md",
+      "filePath": ".agents/skills/react-best-practices/rules/client-passive-event-listeners.md",
+      "summary": "client-passive-event-listeners.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/client-swr-dedup.md",
+      "type": "document",
+      "name": "client-swr-dedup.md",
+      "filePath": ".agents/skills/react-best-practices/rules/client-swr-dedup.md",
+      "summary": "client-swr-dedup.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-batch-dom-css.md",
+      "type": "document",
+      "name": "js-batch-dom-css.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-batch-dom-css.md",
+      "summary": "js-batch-dom-css.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-cache-function-results.md",
+      "type": "document",
+      "name": "js-cache-function-results.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-cache-function-results.md",
+      "summary": "js-cache-function-results.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-cache-property-access.md",
+      "type": "document",
+      "name": "js-cache-property-access.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-cache-property-access.md",
+      "summary": "js-cache-property-access.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-cache-storage.md",
+      "type": "document",
+      "name": "js-cache-storage.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-cache-storage.md",
+      "summary": "js-cache-storage.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-combine-iterations.md",
+      "type": "document",
+      "name": "js-combine-iterations.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-combine-iterations.md",
+      "summary": "js-combine-iterations.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-early-exit.md",
+      "type": "document",
+      "name": "js-early-exit.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-early-exit.md",
+      "summary": "js-early-exit.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-flatmap-filter.md",
+      "type": "document",
+      "name": "js-flatmap-filter.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-flatmap-filter.md",
+      "summary": "js-flatmap-filter.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-hoist-regexp.md",
+      "type": "document",
+      "name": "js-hoist-regexp.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-hoist-regexp.md",
+      "summary": "js-hoist-regexp.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-index-maps.md",
+      "type": "document",
+      "name": "js-index-maps.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-index-maps.md",
+      "summary": "js-index-maps.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-length-check-first.md",
+      "type": "document",
+      "name": "js-length-check-first.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-length-check-first.md",
+      "summary": "js-length-check-first.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-min-max-loop.md",
+      "type": "document",
+      "name": "js-min-max-loop.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-min-max-loop.md",
+      "summary": "js-min-max-loop.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-request-idle-callback.md",
+      "type": "document",
+      "name": "js-request-idle-callback.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-request-idle-callback.md",
+      "summary": "js-request-idle-callback.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-set-map-lookups.md",
+      "type": "document",
+      "name": "js-set-map-lookups.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-set-map-lookups.md",
+      "summary": "js-set-map-lookups.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/js-tosorted-immutable.md",
+      "type": "document",
+      "name": "js-tosorted-immutable.md",
+      "filePath": ".agents/skills/react-best-practices/rules/js-tosorted-immutable.md",
+      "summary": "js-tosorted-immutable.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-activity.md",
+      "type": "document",
+      "name": "rendering-activity.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-activity.md",
+      "summary": "rendering-activity.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md",
+      "type": "document",
+      "name": "rendering-animate-svg-wrapper.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md",
+      "summary": "rendering-animate-svg-wrapper.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-conditional-render.md",
+      "type": "document",
+      "name": "rendering-conditional-render.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-conditional-render.md",
+      "summary": "rendering-conditional-render.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/rendering-content-visibility.md",
+      "type": "document",
+      "name": "rendering-content-visibility.md",
+      "filePath": ".agents/skills/react-best-practices/rules/rendering-content-visibility.md",
+      "summary": "rendering-content-visibility.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

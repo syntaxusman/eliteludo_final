@@ -1,0 +1,1035 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "supabase/functions/find-match/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 361,
+      "nonEmptyLines": 329,
+      "functions": [
+        {
+          "name": "makePlayer",
+          "startLine": 40,
+          "endLine": 52,
+          "params": [
+            "color",
+            "name",
+            "avatarId",
+            "isAI"
+          ]
+        },
+        {
+          "name": "makeBoardState",
+          "startLine": 54,
+          "endLine": 66,
+          "params": [
+            "players"
+          ]
+        },
+        {
+          "name": "oppositeColor",
+          "startLine": 68,
+          "endLine": 73,
+          "params": [
+            "color"
+          ]
+        },
+        {
+          "name": "assignRuntimeColors",
+          "startLine": 75,
+          "endLine": 80,
+          "params": [
+            "playerCount"
+          ]
+        },
+        {
+          "name": "shuffle",
+          "startLine": 82,
+          "endLine": 88,
+          "params": [
+            "items"
+          ]
+        },
+        {
+          "name": "hashSeed",
+          "startLine": 90,
+          "endLine": 96,
+          "params": [
+            "seed"
+          ]
+        },
+        {
+          "name": "botName",
+          "startLine": 98,
+          "endLine": 100,
+          "params": [
+            "seed"
+          ]
+        },
+        {
+          "name": "botAvatarId",
+          "startLine": 102,
+          "endLine": 104,
+          "params": [
+            "seed"
+          ]
+        },
+        {
+          "name": "roomCode",
+          "startLine": 106,
+          "endLine": 108,
+          "params": []
+        },
+        {
+          "name": "refundEntryFee",
+          "startLine": 110,
+          "endLine": 123,
+          "params": [
+            "svc",
+            "userId",
+            "amount",
+            "reason"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makePlayer",
+          "callee": "[0, 1, 2, 3].map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "shuffle",
+          "lineNumber": 77
+        },
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "Math.floor",
+          "lineNumber": 77
+        },
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "Math.random",
+          "lineNumber": 77
+        },
+        {
+          "caller": "assignRuntimeColors",
+          "callee": "shuffle",
+          "lineNumber": 79
+        },
+        {
+          "caller": "shuffle",
+          "callee": "Math.floor",
+          "lineNumber": 84
+        },
+        {
+          "caller": "shuffle",
+          "callee": "Math.random",
+          "lineNumber": 84
+        },
+        {
+          "caller": "hashSeed",
+          "callee": "seed.charCodeAt",
+          "lineNumber": 93
+        },
+        {
+          "caller": "hashSeed",
+          "callee": "Math.abs",
+          "lineNumber": 95
+        },
+        {
+          "caller": "botName",
+          "callee": "hashSeed",
+          "lineNumber": 99
+        },
+        {
+          "caller": "botAvatarId",
+          "callee": "hashSeed",
+          "lineNumber": 103
+        },
+        {
+          "caller": "roomCode",
+          "callee": "Math.random().toString(36).slice(2, 8).toUpperCase",
+          "lineNumber": 107
+        },
+        {
+          "caller": "roomCode",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 107
+        },
+        {
+          "caller": "roomCode",
+          "callee": "Math.random().toString",
+          "lineNumber": 107
+        },
+        {
+          "caller": "roomCode",
+          "callee": "Math.random",
+          "lineNumber": 107
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from(\"profiles\").select(\"coins\").eq(\"id\", userId).single",
+          "lineNumber": 112
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from(\"profiles\").select(\"coins\").eq",
+          "lineNumber": 112
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from(\"profiles\").select",
+          "lineNumber": 112
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from",
+          "lineNumber": 112
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from(\"profiles\").update({ coins: Number(profile.coins ?? 0) + amount }).eq",
+          "lineNumber": 114
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from(\"profiles\").update",
+          "lineNumber": 114
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from",
+          "lineNumber": 114
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "Number",
+          "lineNumber": 114
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from(\"transactions\").insert",
+          "lineNumber": 115
+        },
+        {
+          "caller": "refundEntryFee",
+          "callee": "svc.from",
+          "lineNumber": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/forfeit-match/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 146,
+      "functions": [
+        {
+          "name": "json",
+          "startLine": 26,
+          "endLine": 31,
+          "params": [
+            "body",
+            "status"
+          ]
+        },
+        {
+          "name": "nextVersion",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "broadcastMatchEvent",
+          "startLine": 37,
+          "endLine": 47,
+          "params": [
+            "svc",
+            "matchId",
+            "payload"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "json",
+          "callee": "JSON.stringify",
+          "lineNumber": 27
+        },
+        {
+          "caller": "broadcastMatchEvent",
+          "callee": "svc.rpc",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/grant-ad-reward/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/move-token/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 368,
+      "nonEmptyLines": 327,
+      "functions": [
+        {
+          "name": "json",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "body",
+            "status"
+          ]
+        },
+        {
+          "name": "nextVersion",
+          "startLine": 64,
+          "endLine": 66,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "turnOwnerUserId",
+          "startLine": 68,
+          "endLine": 76,
+          "params": [
+            "matchPlayers",
+            "color",
+            "fallbackUserId"
+          ]
+        },
+        {
+          "name": "broadcastMatchEvent",
+          "startLine": 78,
+          "endLine": 88,
+          "params": [
+            "svc",
+            "matchId",
+            "payload"
+          ]
+        },
+        {
+          "name": "tryMove",
+          "startLine": 90,
+          "endLine": 114,
+          "params": [
+            "token",
+            "dice"
+          ]
+        },
+        {
+          "name": "samePlace",
+          "startLine": 116,
+          "endLine": 122,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "getValidMoves",
+          "startLine": 124,
+          "endLine": 155,
+          "params": [
+            "state",
+            "color"
+          ]
+        },
+        {
+          "name": "advanceToNextPlayer",
+          "startLine": 157,
+          "endLine": 172,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "applyMove",
+          "startLine": 174,
+          "endLine": 200,
+          "params": [
+            "state",
+            "move"
+          ]
+        },
+        {
+          "name": "finishMove",
+          "startLine": 202,
+          "endLine": 223,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "findToken",
+          "startLine": 225,
+          "endLine": 230,
+          "params": [
+            "players",
+            "id"
+          ]
+        },
+        {
+          "name": "freeHomeSlot",
+          "startLine": 232,
+          "endLine": 243,
+          "params": [
+            "players",
+            "color"
+          ]
+        },
+        {
+          "name": "removeOne",
+          "startLine": 245,
+          "endLine": 249,
+          "params": [
+            "arr",
+            "value"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "json",
+          "callee": "JSON.stringify",
+          "lineNumber": 58
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 73
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "player.user_id.startsWith",
+          "lineNumber": 74
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 75
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "p.user_id.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "broadcastMatchEvent",
+          "callee": "svc.rpc",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "state.players.find",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "state.players.flatMap",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "Array.from",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "tryMove",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "SAFE_TRACK_INDICES.has",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "player.tokens.some",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "samePlace",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "SAFE_TRACK_INDICES.has",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "samePlace",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "captures.push",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getValidMoves",
+          "callee": "moves.push",
+          "lineNumber": 150
+        },
+        {
+          "caller": "advanceToNextPlayer",
+          "callee": "p.tokens.every",
+          "lineNumber": 161
+        },
+        {
+          "caller": "applyMove",
+          "callee": "state.players.map",
+          "lineNumber": 175
+        },
+        {
+          "caller": "applyMove",
+          "callee": "p.tokens.map",
+          "lineNumber": 177
+        },
+        {
+          "caller": "applyMove",
+          "callee": "findToken",
+          "lineNumber": 180
+        },
+        {
+          "caller": "applyMove",
+          "callee": "findToken",
+          "lineNumber": 184
+        },
+        {
+          "caller": "applyMove",
+          "callee": "freeHomeSlot",
+          "lineNumber": 185
+        },
+        {
+          "caller": "applyMove",
+          "callee": "players.find",
+          "lineNumber": 188
+        },
+        {
+          "caller": "applyMove",
+          "callee": "movedPlayer.tokens.every",
+          "lineNumber": 189
+        },
+        {
+          "caller": "applyMove",
+          "callee": "removeOne",
+          "lineNumber": 194
+        },
+        {
+          "caller": "finishMove",
+          "callee": "getValidMoves",
+          "lineNumber": 213
+        },
+        {
+          "caller": "finishMove",
+          "callee": "advanceToNextPlayer",
+          "lineNumber": 219
+        },
+        {
+          "caller": "finishMove",
+          "callee": "advanceToNextPlayer",
+          "lineNumber": 222
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "players.find",
+          "lineNumber": 233
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "player.tokens\r\n      .filter((t) => t.location.kind === \"home\")\r\n      .map",
+          "lineNumber": 235
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "player.tokens\r\n      .filter",
+          "lineNumber": 235
+        },
+        {
+          "caller": "freeHomeSlot",
+          "callee": "used.has",
+          "lineNumber": 240
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.indexOf",
+          "lineNumber": 246
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.slice",
+          "lineNumber": 247
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.slice",
+          "lineNumber": 248
+        },
+        {
+          "caller": "removeOne",
+          "callee": "arr.slice",
+          "lineNumber": 248
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/purchase-shop-item/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 71,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/roll-dice/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 304,
+      "nonEmptyLines": 268,
+      "functions": [
+        {
+          "name": "rollDice",
+          "startLine": 53,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "advanceToNextPlayer",
+          "startLine": 57,
+          "endLine": 72,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "addRoll",
+          "startLine": 74,
+          "endLine": 96,
+          "params": [
+            "state",
+            "value"
+          ]
+        },
+        {
+          "name": "nextVersion",
+          "startLine": 98,
+          "endLine": 100,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "turnOwnerUserId",
+          "startLine": 102,
+          "endLine": 110,
+          "params": [
+            "matchPlayers",
+            "color",
+            "fallbackUserId"
+          ]
+        },
+        {
+          "name": "broadcastMatchEvent",
+          "startLine": 112,
+          "endLine": 122,
+          "params": [
+            "svc",
+            "matchId",
+            "payload"
+          ]
+        },
+        {
+          "name": "tryMove",
+          "startLine": 124,
+          "endLine": 148,
+          "params": [
+            "token",
+            "dice"
+          ]
+        },
+        {
+          "name": "samePlace",
+          "startLine": 150,
+          "endLine": 156,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "hasValidMove",
+          "startLine": 158,
+          "endLine": 177,
+          "params": [
+            "state",
+            "color"
+          ]
+        },
+        {
+          "name": "json",
+          "startLine": 187,
+          "endLine": 192,
+          "params": [
+            "body",
+            "status"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rollDice",
+          "callee": "Math.floor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "rollDice",
+          "callee": "Math.random",
+          "lineNumber": 54
+        },
+        {
+          "caller": "advanceToNextPlayer",
+          "callee": "p.tokens.every",
+          "lineNumber": 61
+        },
+        {
+          "caller": "addRoll",
+          "callee": "advanceToNextPlayer",
+          "lineNumber": 81
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 107
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "player.user_id.startsWith",
+          "lineNumber": 108
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 109
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "p.user_id.startsWith",
+          "lineNumber": 109
+        },
+        {
+          "caller": "broadcastMatchEvent",
+          "callee": "svc.rpc",
+          "lineNumber": 117
+        },
+        {
+          "caller": "hasValidMove",
+          "callee": "state.players.find",
+          "lineNumber": 159
+        },
+        {
+          "caller": "hasValidMove",
+          "callee": "Array.from",
+          "lineNumber": 161
+        },
+        {
+          "caller": "hasValidMove",
+          "callee": "tryMove",
+          "lineNumber": 164
+        },
+        {
+          "caller": "hasValidMove",
+          "callee": "SAFE_TRACK_INDICES.has",
+          "lineNumber": 167
+        },
+        {
+          "caller": "hasValidMove",
+          "callee": "player.tokens.some",
+          "lineNumber": 172
+        },
+        {
+          "caller": "hasValidMove",
+          "callee": "samePlace",
+          "lineNumber": 172
+        },
+        {
+          "caller": "json",
+          "callee": "JSON.stringify",
+          "lineNumber": 188
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/skip-roll-turn/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 160,
+      "functions": [
+        {
+          "name": "json",
+          "startLine": 28,
+          "endLine": 33,
+          "params": [
+            "body",
+            "status"
+          ]
+        },
+        {
+          "name": "advanceToNextPlayer",
+          "startLine": 35,
+          "endLine": 50,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "nextVersion",
+          "startLine": 52,
+          "endLine": 54,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "turnOwnerUserId",
+          "startLine": 56,
+          "endLine": 64,
+          "params": [
+            "matchPlayers",
+            "color",
+            "fallbackUserId"
+          ]
+        },
+        {
+          "name": "broadcastMatchEvent",
+          "startLine": 66,
+          "endLine": 76,
+          "params": [
+            "svc",
+            "matchId",
+            "payload"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "json",
+          "callee": "JSON.stringify",
+          "lineNumber": 29
+        },
+        {
+          "caller": "advanceToNextPlayer",
+          "callee": "p.tokens.every",
+          "lineNumber": 39
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 61
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "player.user_id.startsWith",
+          "lineNumber": 62
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 63
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "p.user_id.startsWith",
+          "lineNumber": 63
+        },
+        {
+          "caller": "broadcastMatchEvent",
+          "callee": "svc.rpc",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/sync-board-state/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 172,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "json",
+          "startLine": 22,
+          "endLine": 27,
+          "params": [
+            "body",
+            "status"
+          ]
+        },
+        {
+          "name": "nextVersion",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "isBotPlayer",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "player"
+          ]
+        },
+        {
+          "name": "firstHumanUserId",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "matchPlayers"
+          ]
+        },
+        {
+          "name": "turnOwnerUserId",
+          "startLine": 41,
+          "endLine": 49,
+          "params": [
+            "matchPlayers",
+            "color",
+            "fallbackUserId"
+          ]
+        },
+        {
+          "name": "broadcastMatchEvent",
+          "startLine": 51,
+          "endLine": 61,
+          "params": [
+            "svc",
+            "matchId",
+            "payload"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "json",
+          "callee": "JSON.stringify",
+          "lineNumber": 23
+        },
+        {
+          "caller": "isBotPlayer",
+          "callee": "player.user_id.startsWith",
+          "lineNumber": 34
+        },
+        {
+          "caller": "firstHumanUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 38
+        },
+        {
+          "caller": "firstHumanUserId",
+          "callee": "isBotPlayer",
+          "lineNumber": 38
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "matchPlayers.find",
+          "lineNumber": 46
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "isBotPlayer",
+          "lineNumber": 47
+        },
+        {
+          "caller": "turnOwnerUserId",
+          "callee": "firstHumanUserId",
+          "lineNumber": 48
+        },
+        {
+          "caller": "broadcastMatchEvent",
+          "callee": "svc.rpc",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "supabase/functions/verify-iap-purchase/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 64,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

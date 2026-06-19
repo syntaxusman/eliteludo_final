@@ -1,0 +1,12 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Large repository graph includes extensive agent-skill reference documentation.",
+    "Merge normalization reported no unfixable nodes or edges."
+  ]
+}

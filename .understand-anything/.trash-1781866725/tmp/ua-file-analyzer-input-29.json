@@ -1,0 +1,184 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".agents/skills/accessibility/references/A11Y-PATTERNS.md",
+      "language": "markdown",
+      "sizeLines": 233,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/accessibility/references/WCAG.md",
+      "language": "markdown",
+      "sizeLines": 191,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/accessibility/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 440,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/building-native-ui/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 321,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/design-mobile-apps/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 477,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-api-routes/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 368,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "language": "javascript",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/scripts/package.json",
+      "language": "json",
+      "sizeLines": 11,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/scripts/validate.js",
+      "language": "javascript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".agents/skills/expo-cicd-workflows/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 92,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-deployment/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 190,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-dev-client/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 164,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/expo-tailwind-setup/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 480,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/frontend-design/LICENSE.txt",
+      "language": "txt",
+      "sizeLines": 177,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/frontend-design/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 42,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/native-data-fetching/references/expo-router-loaders.md",
+      "language": "markdown",
+      "sizeLines": 341,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/native-data-fetching/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 507,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/nodejs-backend-patterns/references/advanced-patterns.md",
+      "language": "markdown",
+      "sizeLines": 430,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/nodejs-backend-patterns/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 639,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/nodejs-best-practices/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 343,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/seo/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 513,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/supabase-postgres-best-practices/CHANGELOG.md",
+      "language": "markdown",
+      "sizeLines": 29,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/supabase-postgres-best-practices/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 64,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/supabase/assets/feedback-issue-template.md",
+      "language": "markdown",
+      "sizeLines": 17,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/supabase/CHANGELOG.md",
+      "language": "markdown",
+      "sizeLines": 35,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".agents/skills/accessibility/references/A11Y-PATTERNS.md": [],
+    ".agents/skills/accessibility/references/WCAG.md": [],
+    ".agents/skills/accessibility/SKILL.md": [],
+    ".agents/skills/building-native-ui/SKILL.md": [],
+    ".agents/skills/design-mobile-apps/SKILL.md": [],
+    ".agents/skills/expo-api-routes/SKILL.md": [],
+    ".agents/skills/expo-cicd-workflows/scripts/fetch.js": [],
+    ".agents/skills/expo-cicd-workflows/scripts/package.json": [],
+    ".agents/skills/expo-cicd-workflows/scripts/validate.js": [
+      ".agents/skills/expo-cicd-workflows/scripts/fetch.js"
+    ],
+    ".agents/skills/expo-cicd-workflows/SKILL.md": [],
+    ".agents/skills/expo-deployment/SKILL.md": [],
+    ".agents/skills/expo-dev-client/SKILL.md": [],
+    ".agents/skills/expo-tailwind-setup/SKILL.md": [],
+    ".agents/skills/frontend-design/LICENSE.txt": [],
+    ".agents/skills/frontend-design/SKILL.md": [],
+    ".agents/skills/native-data-fetching/references/expo-router-loaders.md": [],
+    ".agents/skills/native-data-fetching/SKILL.md": [],
+    ".agents/skills/nodejs-backend-patterns/references/advanced-patterns.md": [],
+    ".agents/skills/nodejs-backend-patterns/SKILL.md": [],
+    ".agents/skills/nodejs-best-practices/SKILL.md": [],
+    ".agents/skills/seo/SKILL.md": [],
+    ".agents/skills/supabase-postgres-best-practices/CHANGELOG.md": [],
+    ".agents/skills/supabase-postgres-best-practices/SKILL.md": [],
+    ".agents/skills/supabase/assets/feedback-issue-template.md": [],
+    ".agents/skills/supabase/CHANGELOG.md": []
+  }
+}

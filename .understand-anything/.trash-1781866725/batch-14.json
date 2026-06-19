@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/_contributing.md",
+      "type": "document",
+      "name": "_contributing.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/_contributing.md",
+      "summary": "_contributing.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/_sections.md",
+      "type": "document",
+      "name": "_sections.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/_sections.md",
+      "summary": "_sections.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/_template.md",
+      "type": "document",
+      "name": "_template.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/_template.md",
+      "summary": "_template.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/advanced-full-text-search.md",
+      "type": "document",
+      "name": "advanced-full-text-search.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/advanced-full-text-search.md",
+      "summary": "advanced-full-text-search.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md",
+      "type": "document",
+      "name": "advanced-jsonb-indexing.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md",
+      "summary": "advanced-jsonb-indexing.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/conn-idle-timeout.md",
+      "type": "document",
+      "name": "conn-idle-timeout.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/conn-idle-timeout.md",
+      "summary": "conn-idle-timeout.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/conn-limits.md",
+      "type": "document",
+      "name": "conn-limits.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/conn-limits.md",
+      "summary": "conn-limits.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/conn-pooling.md",
+      "type": "document",
+      "name": "conn-pooling.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/conn-pooling.md",
+      "summary": "conn-pooling.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/conn-prepared-statements.md",
+      "type": "document",
+      "name": "conn-prepared-statements.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/conn-prepared-statements.md",
+      "summary": "conn-prepared-statements.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/data-batch-inserts.md",
+      "type": "document",
+      "name": "data-batch-inserts.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/data-batch-inserts.md",
+      "summary": "data-batch-inserts.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/data-n-plus-one.md",
+      "type": "document",
+      "name": "data-n-plus-one.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/data-n-plus-one.md",
+      "summary": "data-n-plus-one.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/data-pagination.md",
+      "type": "document",
+      "name": "data-pagination.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/data-pagination.md",
+      "summary": "data-pagination.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/data-upsert.md",
+      "type": "document",
+      "name": "data-upsert.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/data-upsert.md",
+      "summary": "data-upsert.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/lock-advisory.md",
+      "type": "document",
+      "name": "lock-advisory.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/lock-advisory.md",
+      "summary": "lock-advisory.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md",
+      "type": "document",
+      "name": "lock-deadlock-prevention.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md",
+      "summary": "lock-deadlock-prevention.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/lock-short-transactions.md",
+      "type": "document",
+      "name": "lock-short-transactions.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/lock-short-transactions.md",
+      "summary": "lock-short-transactions.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/lock-skip-locked.md",
+      "type": "document",
+      "name": "lock-skip-locked.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/lock-skip-locked.md",
+      "summary": "lock-skip-locked.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md",
+      "type": "document",
+      "name": "monitor-explain-analyze.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md",
+      "summary": "monitor-explain-analyze.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md",
+      "type": "document",
+      "name": "monitor-pg-stat-statements.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md",
+      "summary": "monitor-pg-stat-statements.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md",
+      "type": "document",
+      "name": "monitor-vacuum-analyze.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md",
+      "summary": "monitor-vacuum-analyze.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

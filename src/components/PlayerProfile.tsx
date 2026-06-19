@@ -4,12 +4,12 @@
 
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Image, Pressable, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { Images } from '@/src/assets';
 import { tokensFinished } from '@/src/game/rules';
 import type { Player } from '@/src/game/types';
 import { Dice } from '@/src/skia/Dice';
+import { OrnateTokenCanvas } from '@/src/skia/OrnateToken';
 import { colors } from '@/src/theme/colors';
 
 const PLAYER_HEX: Record<string, string> = {
@@ -17,13 +17,6 @@ const PLAYER_HEX: Record<string, string> = {
   green: colors.green,
   yellow: colors.yellow,
   blue: colors.blue,
-};
-
-const TOKEN_IMAGE: Record<string, ImageSourcePropType> = {
-  red: Images.tokenRed,
-  green: Images.tokenGreen,
-  yellow: Images.tokenYellow,
-  blue: Images.tokenBlue,
 };
 
 type Props = {
@@ -93,11 +86,9 @@ export function PlayerProfile({
                 token.location.kind === 'finished' && styles.stackSlotFinished,
               ]}
             >
-              <Image
-                source={TOKEN_IMAGE[player.color]}
-                style={styles.stackTokenGhost}
-                resizeMode="contain"
-              />
+              <View style={styles.stackTokenGhost}>
+                <OrnateTokenCanvas color={player.color} size={10} />
+              </View>
             </View>
           ))}
         </View>

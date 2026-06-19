@@ -1,0 +1,662 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".claude/skills/expo-deployment/references/app-store-metadata.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 479,
+      "nonEmptyLines": 370,
+      "sections": [
+        {
+          "heading": "App Store Metadata",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What is EAS Metadata?",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Getting Started",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Pull Existing Metadata",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "Push Metadata Updates",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Configuration File",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "App Store Optimization (ASO)",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Title Optimization (30 characters max)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Subtitle Optimization (30 characters max)",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Keywords Field (100 characters max)",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "Description Optimization",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "Release Notes",
+          "level": 3,
+          "line": 166
+        },
+        {
+          "heading": "Promo Text (170 characters max)",
+          "level": 3,
+          "line": 176
+        },
+        {
+          "heading": "Categories",
+          "level": 2,
+          "line": 186
+        },
+        {
+          "heading": "Localization",
+          "level": 2,
+          "line": 209
+        },
+        {
+          "heading": "Dynamic Configuration",
+          "level": 2,
+          "line": 243
+        },
+        {
+          "heading": "Basic Dynamic Config",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "Async Configuration (External Localization)",
+          "level": 3,
+          "line": 264
+        },
+        {
+          "heading": "Environment-Based Config",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "Age Rating (Advisory)",
+          "level": 2,
+          "line": 320
+        },
+        {
+          "heading": "Release Strategy",
+          "level": 2,
+          "line": 355
+        },
+        {
+          "heading": "Review Information",
+          "level": 2,
+          "line": 375
+        },
+        {
+          "heading": "ASO Checklist",
+          "level": 2,
+          "line": 393
+        },
+        {
+          "heading": "Before Each Release",
+          "level": 3,
+          "line": 395
+        },
+        {
+          "heading": "Monthly ASO Tasks",
+          "level": 3,
+          "line": 403
+        },
+        {
+          "heading": "Keyword Research Tips",
+          "level": 3,
+          "line": 411
+        },
+        {
+          "heading": "Metrics to Monitor",
+          "level": 3,
+          "line": 420
+        },
+        {
+          "heading": "VS Code Integration",
+          "level": 2,
+          "line": 428
+        },
+        {
+          "heading": "Common Issues",
+          "level": 2,
+          "line": 436
+        },
+        {
+          "heading": "\"Binary not found\"",
+          "level": 3,
+          "line": 438
+        },
+        {
+          "heading": "\"Invalid keywords\"",
+          "level": 3,
+          "line": 442
+        },
+        {
+          "heading": "\"Description too long\"",
+          "level": 3,
+          "line": 448
+        },
+        {
+          "heading": "Pull doesn't update JS config",
+          "level": 3,
+          "line": 452
+        },
+        {
+          "heading": "CI/CD Integration",
+          "level": 2,
+          "line": 456
+        },
+        {
+          "heading": "Tips",
+          "level": 2,
+          "line": 472
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 35
+      }
+    },
+    {
+      "path": ".claude/skills/expo-deployment/references/ios-app-store.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 355,
+      "nonEmptyLines": 261,
+      "sections": [
+        {
+          "heading": "Submitting to iOS App Store",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Credential Setup",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Using EAS Credentials",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "App Store Connect API Key (Recommended)",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "Apple ID Authentication (Alternative)",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Submission Commands",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "App Store Connect Configuration",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "First-Time Setup",
+          "level": 3,
+          "line": 84
+        },
+        {
+          "heading": "EAS Configuration",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "TestFlight vs App Store",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "TestFlight (Beta Testing)",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "App Store (Production)",
+          "level": 3,
+          "line": 145
+        },
+        {
+          "heading": "App Review Process",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "What Reviewers Check",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "Common Rejection Reasons",
+          "level": 3,
+          "line": 161
+        },
+        {
+          "heading": "Expedited Review",
+          "level": 3,
+          "line": 172
+        },
+        {
+          "heading": "Version and Build Numbers",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "Release Options",
+          "level": 2,
+          "line": 203
+        },
+        {
+          "heading": "Automatic Release",
+          "level": 3,
+          "line": 205
+        },
+        {
+          "heading": "Scheduled Release",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "Phased Release",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Certificates and Provisioning",
+          "level": 2,
+          "line": 247
+        },
+        {
+          "heading": "Distribution Certificate",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "Provisioning Profile",
+          "level": 3,
+          "line": 256
+        },
+        {
+          "heading": "Check Current Credentials",
+          "level": 3,
+          "line": 262
+        },
+        {
+          "heading": "App Store Metadata",
+          "level": 2,
+          "line": 271
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 285
+        },
+        {
+          "heading": "\"No suitable application records found\"",
+          "level": 3,
+          "line": 287
+        },
+        {
+          "heading": "\"The bundle version must be higher\"",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "\"Missing compliance information\"",
+          "level": 3,
+          "line": 295
+        },
+        {
+          "heading": "\"Invalid provisioning profile\"",
+          "level": 3,
+          "line": 311
+        },
+        {
+          "heading": "Build stuck in \"Processing\"",
+          "level": 3,
+          "line": 317
+        },
+        {
+          "heading": "CI/CD Integration",
+          "level": 2,
+          "line": 321
+        },
+        {
+          "heading": "Tips",
+          "level": 2,
+          "line": 348
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 35
+      }
+    },
+    {
+      "path": ".claude/skills/expo-deployment/references/play-store.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 246,
+      "nonEmptyLines": 181,
+      "sections": [
+        {
+          "heading": "Submitting to Google Play Store",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Service Account Setup",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "1. Create Service Account",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "2. Link to Play Console",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "3. Configure EAS",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "Environment Variables",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Release Tracks",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Track Configuration",
+          "level": 3,
+          "line": 84
+        },
+        {
+          "heading": "Release Status Options",
+          "level": 3,
+          "line": 105
+        },
+        {
+          "heading": "Staged Rollout",
+          "level": 2,
+          "line": 112
+        },
+        {
+          "heading": "Submission Commands",
+          "level": 2,
+          "line": 130
+        },
+        {
+          "heading": "App Signing",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "Google Play App Signing (Recommended)",
+          "level": 3,
+          "line": 145
+        },
+        {
+          "heading": "Checking Signing Status",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "Version Codes",
+          "level": 2,
+          "line": 159
+        },
+        {
+          "heading": "First Submission Checklist",
+          "level": 2,
+          "line": 175
+        },
+        {
+          "heading": "Common Issues",
+          "level": 2,
+          "line": 187
+        },
+        {
+          "heading": "\"App not found\"",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "\"Version code already used\"",
+          "level": 3,
+          "line": 193
+        },
+        {
+          "heading": "\"Service account lacks permission\"",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "\"APK not acceptable\"",
+          "level": 3,
+          "line": 201
+        },
+        {
+          "heading": "Internal Testing Distribution",
+          "level": 2,
+          "line": 217
+        },
+        {
+          "heading": "Monitoring Submissions",
+          "level": 2,
+          "line": 230
+        },
+        {
+          "heading": "Tips",
+          "level": 2,
+          "line": 240
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    },
+    {
+      "path": ".claude/skills/expo-deployment/references/testflight.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 58,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "TestFlight",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Submit",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Skip the Prompts",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Why TestFlight First",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Tester Strategy",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Tips",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": ".claude/skills/expo-deployment/references/workflows.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 200,
+      "nonEmptyLines": 154,
+      "sections": [
+        {
+          "heading": "EAS Workflows",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Web Deployment",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "PR Previews",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Web PR Previews",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "Native PR Previews with EAS Updates",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Production Release",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "Build on Push",
+          "level": 2,
+          "line": 103
+        },
+        {
+          "heading": "Conditional Jobs",
+          "level": 2,
+          "line": 124
+        },
+        {
+          "heading": "Workflow Syntax Reference",
+          "level": 2,
+          "line": 153
+        },
+        {
+          "heading": "Triggers",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "Job Types",
+          "level": 3,
+          "line": 169
+        },
+        {
+          "heading": "Job Dependencies",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "Tips",
+          "level": 2,
+          "line": 195
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    }
+  ]
+}

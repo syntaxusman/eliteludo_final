@@ -1,55 +1,127 @@
-import { Tabs, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { colors } from '@/src/theme/colors';
+import { Tabs, useRouter } from 'expo-router';
+import { useEffect } from 'react';
+import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { LiquidGlassDock } from '@/src/skia/LiquidGlassDock';
 import { fontFamilies } from '@/src/theme/typography';
+import { haptics } from '@/src/utils/haptics';
 
 const TAB_ITEMS = [
-  { key: 'shop', label: 'Shop', icon: 'cart' as const, route: '/shop' as const },
+  { key: 'shop', label: 'Shop', icon: 'bag-handle' as const, route: '/shop' as const },
   { key: 'friends', label: 'Friends', icon: 'people' as const, route: '/profile' as const },
-  { key: 'home', label: 'Home', icon: 'home' as const, route: '/home' as const, primary: true },
-  { key: 'clubs', label: 'Clubs', icon: 'shield' as const, route: '/home' as const },
-  { key: 'chest', label: 'Chest', icon: 'briefcase' as const, route: '/shop' as const },
+  { key: 'home', label: 'Home', icon: 'home' as const, route: '/home' as const },
+  { key: 'clubs', label: 'Clubs', icon: 'shield-checkmark' as const, route: '/home' as const },
+  { key: 'chest', label: 'Chest', icon: 'gift' as const, route: '/shop' as const },
 ] as const;
+
+function GlassTabItem({
+  item,
+  focused,
+  onPress,
+}: {
+  item: (typeof TAB_ITEMS)[number];
+  focused: boolean;
+  onPress: () => void;
+}) {
+  const focus = useSharedValue(focused ? 1 : 0);
+  const pressed = useSharedValue(0);
+  const isHome = item.key === 'home';
+
+  useEffect(() => {
+    focus.value = withSpring(focused ? 1 : 0, { damping: 17, stiffness: 190 });
+  }, [focus, focused]);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [
+      { translateY: (isHome ? -3 : 0) - focus.value * 2 },
+      { scale: (isHome ? 1.12 : 1) + focus.value * 0.06 - pressed.value * 0.07 },
+    ],
+  }));
+
+  return (
+    <Pressable
+      accessibilityRole="tab"
+      accessibilityState={{ selected: focused }}
+      accessibilityLabel={item.label}
+      onPress={onPress}
+      onPressIn={() => {
+        pressed.value = withSpring(1, { damping: 18, stiffness: 260 });
+      }}
+      onPressOut={() => {
+        pressed.value = withSpring(0, { damping: 16, stiffness: 220 });
+      }}
+      style={styles.tabHitArea}
+    >
+      <Animated.View style={[styles.tabContent, animatedStyle]}>
+        <View style={styles.iconWrap}>
+          <Ionicons
+            name={focused ? item.icon : `${item.icon}-outline` as typeof item.icon}
+            size={isHome ? (focused ? 29 : 27) : focused ? 24 : 22}
+            color={focused ? '#FFF2AE' : 'rgba(255,247,221,0.6)'}
+          />
+        </View>
+        <Text style={[styles.tabLabel, isHome && styles.homeLabel, focused && styles.tabLabelActive]}>
+          {item.label}
+        </Text>
+      </Animated.View>
+    </Pressable>
+  );
+}
 
 function EliteTabBar({ state }: BottomTabBarProps) {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
+  const viewport = useWindowDimensions();
   const currentRoute = state.routes[state.index]?.name;
+  const activeIndex = currentRoute === 'profile' ? 1 : 2;
+  const width = Math.min(viewport.width - 20, 520);
+  const height = 76;
 
   return (
-    <View style={styles.tabShell}>
-      {TAB_ITEMS.map((item) => {
-        const isPrimary = item.key === 'home';
-        const focused =
-          (item.key === 'home' && currentRoute === 'home') ||
-          (item.key === 'friends' && currentRoute === 'profile');
-
-        return (
-          <Pressable
-            key={item.key}
-            onPress={() => router.push(item.route as never)}
-            style={({ pressed }) => [
-              styles.tabItem,
-              isPrimary && styles.homeItem,
-              focused && !isPrimary && styles.tabItemFocused,
-              pressed && styles.tabItemPressed,
-            ]}
-          >
-            <View style={[styles.iconPlate, isPrimary && styles.homePlate]}>
-              <View style={[styles.sparkle, styles.sparkleTop, focused && styles.sparkleActive]} />
-              <View style={[styles.sparkle, styles.sparkleLeft, focused && styles.sparkleActive]} />
-              <View style={[styles.sparkle, styles.sparkleRight, focused && styles.sparkleActive]} />
-              <Ionicons
-                name={item.icon}
-                size={isPrimary ? 44 : 30}
-                color={focused || isPrimary ? '#FFF1A4' : 'rgba(255,245,212,0.72)'}
-              />
-            </View>
-            <Text style={[styles.tabLabel, (focused || isPrimary) && styles.tabLabelActive]}>{item.label}</Text>
-          </Pressable>
-        );
-      })}
+    <View
+      pointerEvents="box-none"
+      style={[
+        styles.tabShell,
+        {
+          width,
+          height,
+          bottom: Math.max(8, insets.bottom + 6),
+          left: (viewport.width - width) / 2,
+        },
+      ]}
+    >
+      <View style={StyleSheet.absoluteFill}>
+        <LiquidGlassDock
+          width={width}
+          height={height}
+          activeIndex={activeIndex}
+          itemCount={TAB_ITEMS.length}
+        />
+      </View>
+      <View style={styles.tabRow}>
+        {TAB_ITEMS.map((item, index) => {
+          const focused = index === activeIndex;
+          return (
+            <GlassTabItem
+              key={item.key}
+              item={item}
+              focused={focused}
+              onPress={() => {
+                haptics.tap();
+                router.push(item.route as never);
+              }}
+            />
+          );
+        })}
+      </View>
     </View>
   );
 }
@@ -58,32 +130,10 @@ export default function TabsLayout() {
   return (
     <Tabs
       tabBar={(props) => <EliteTabBar {...props} />}
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: colors.gold,
-        tabBarInactiveTintColor: 'rgba(255,255,255,0.3)',
-      }}
+      screenOptions={{ headerShown: false }}
     >
-      <Tabs.Screen
-        name="home"
-        options={{
-          href: '/home',
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          href: '/profile',
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" size={size} color={color} />
-          ),
-        }}
-      />
+      <Tabs.Screen name="home" options={{ href: '/home' }} />
+      <Tabs.Screen name="profile" options={{ href: '/profile' }} />
     </Tabs>
   );
 }
@@ -91,93 +141,46 @@ export default function TabsLayout() {
 const styles = StyleSheet.create({
   tabShell: {
     position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 96,
-    paddingHorizontal: 10,
-    paddingTop: 12,
-    paddingBottom: 8,
+    zIndex: 30,
+    borderRadius: 32,
+    overflow: 'visible',
+    boxShadow: '0 -8px 30px rgba(0,0,0,0.32)',
+  },
+  tabRow: {
+    ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-    backgroundColor: 'rgba(9,5,2,0.98)',
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(255,225,135,0.42)',
-    shadowColor: colors.gold,
-    shadowOpacity: 0.22,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: -4 },
+    paddingTop: 10,
+    paddingBottom: 5,
+    paddingHorizontal: 2,
   },
-  tabItem: {
+  tabHitArea: {
     flex: 1,
-    height: 74,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  tabItemFocused: {
-    transform: [{ scale: 1.06 }],
-  },
-  tabItemPressed: {
-    transform: [{ scale: 1.12 }],
-  },
-  homeItem: {
-    height: 104,
-    transform: [{ scale: 1.04 }],
-  },
-  iconPlate: {
-    width: 58,
-    height: 42,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  homePlate: {
-    width: 86,
-    height: 78,
-    marginBottom: 1,
+  tabContent: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 2,
+  },
+  iconWrap: {
+    width: 38,
+    height: 31,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   tabLabel: {
-    color: 'rgba(255,245,212,0.5)',
+    color: 'rgba(255,247,221,0.5)',
     fontFamily: fontFamilies.body,
-    fontSize: 11,
-    fontWeight: '400',
-    marginTop: 2,
+    fontSize: 9,
+    letterSpacing: 0.3,
   },
   tabLabelActive: {
-    color: '#FFF1A4',
+    color: '#FFF0AA',
     fontFamily: fontFamilies.heading,
-    fontSize: 15,
-    fontWeight: '400',
-    textShadowColor: 'rgba(0,0,0,0.85)',
-    textShadowOffset: { width: 0, height: 2 },
-    textShadowRadius: 2,
+    fontSize: 10,
   },
-  sparkle: {
-    position: 'absolute',
-    width: 4,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: 'rgba(255,225,135,0.55)',
-    shadowColor: colors.gold,
-    shadowOpacity: 0.7,
-    shadowRadius: 5,
-  },
-  sparkleActive: {
-    width: 5,
-    height: 5,
-    borderRadius: 2.5,
-    backgroundColor: '#FFF1A4',
-  },
-  sparkleTop: {
-    top: 1,
-    right: 14,
-  },
-  sparkleLeft: {
-    left: 10,
-    bottom: 9,
-  },
-  sparkleRight: {
-    right: 8,
-    bottom: 16,
+  homeLabel: {
+    fontSize: 10,
   },
 });

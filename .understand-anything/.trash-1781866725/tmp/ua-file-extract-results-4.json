@@ -1,0 +1,403 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 13,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "supabase/migrations/0001_initial_schema.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 139,
+      "nonEmptyLines": 117,
+      "definitions": [
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "id",
+            "username",
+            "avatar_id",
+            "coins",
+            "gems",
+            "xp",
+            "level",
+            "wins",
+            "losses",
+            "crowns_unlocked",
+            "created_at",
+            "updated_at"
+          ],
+          "startLine": 32,
+          "endLine": 45
+        },
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "id",
+            "mode",
+            "status",
+            "players",
+            "current_turn_user_id",
+            "current_turn_started_at",
+            "board_state",
+            "winner_user_id",
+            "entry_fee",
+            "prize_pool",
+            "created_at",
+            "finished_at"
+          ],
+          "startLine": 50,
+          "endLine": 63
+        },
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "id",
+            "match_id",
+            "user_id",
+            "move_type",
+            "payload",
+            "created_at"
+          ],
+          "startLine": 69,
+          "endLine": 76
+        },
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "user_id",
+            "day_number",
+            "last_collected_at",
+            "streak_active"
+          ],
+          "startLine": 82,
+          "endLine": 87
+        },
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "id",
+            "user_id",
+            "type",
+            "amount",
+            "currency",
+            "metadata",
+            "created_at"
+          ],
+          "startLine": 90,
+          "endLine": 98
+        },
+        {
+          "name": "profiles_username_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 47,
+          "endLine": 47
+        },
+        {
+          "name": "matches_status_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 65,
+          "endLine": 65
+        },
+        {
+          "name": "matches_current_turn_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 66,
+          "endLine": 66
+        },
+        {
+          "name": "match_moves_match_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 78,
+          "endLine": 78
+        },
+        {
+          "name": "match_moves_user_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 79,
+          "endLine": 79
+        },
+        {
+          "name": "transactions_user_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 100,
+          "endLine": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 11
+      }
+    },
+    {
+      "path": "supabase/migrations/0002_rls_policies.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 66,
+      "nonEmptyLines": 54,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0003_add_color_id.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0004_match_queue.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 59,
+      "nonEmptyLines": 48,
+      "definitions": [
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "id",
+            "user_id",
+            "mode",
+            "entry_fee",
+            "joined_at",
+            "match_id"
+          ],
+          "startLine": 6,
+          "endLine": 13
+        },
+        {
+          "name": "match_queue_active_user_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 16,
+          "endLine": 16
+        },
+        {
+          "name": "match_queue_open_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 20,
+          "endLine": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 3
+      }
+    },
+    {
+      "path": "supabase/migrations/0005_phase4_economy_multiplayer.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 103,
+      "nonEmptyLines": 83,
+      "definitions": [
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "user_id",
+            "unlocked_token_skins",
+            "unlocked_dice_skins",
+            "unlocked_crowns",
+            "selected_token_skin",
+            "selected_dice_skin",
+            "selected_crown",
+            "updated_at"
+          ],
+          "startLine": 28,
+          "endLine": 37
+        },
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "user_id",
+            "city_slug",
+            "wins",
+            "unlocked_at",
+            "updated_at"
+          ],
+          "startLine": 51,
+          "endLine": 58
+        },
+        {
+          "name": "public",
+          "kind": "table",
+          "fields": [
+            "purchase_token",
+            "user_id",
+            "product_id",
+            "amount",
+            "currency",
+            "granted_at"
+          ],
+          "startLine": 67,
+          "endLine": 74
+        },
+        {
+          "name": "matches_room_code_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 16,
+          "endLine": 16
+        },
+        {
+          "name": "match_queue_room_code_idx",
+          "kind": "index",
+          "fields": [],
+          "startLine": 24,
+          "endLine": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 5
+      }
+    },
+    {
+      "path": "supabase/migrations/0006_atomic_daily_reward.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 113,
+      "nonEmptyLines": 97,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0007_lock_down_security_definer_functions.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0008_revoke_explicit_security_definer_exec.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 12,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0009_match_forfeit_move_type.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0010_realtime_safe_participant_policies.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 28,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0011_match_broadcast_realtime.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 66,
+      "nonEmptyLines": 61,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/0012_match_presence_realtime_policy.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 42,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    },
+    {
+      "path": "supabase/migrations/20260617182229_bot_sync_move_type.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 0
+      }
+    }
+  ]
+}

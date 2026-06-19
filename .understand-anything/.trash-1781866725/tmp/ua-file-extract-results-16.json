@@ -1,0 +1,443 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".agents/skills/upgrading-expo/references/expo-av-to-audio.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 132,
+      "nonEmptyLines": 101,
+      "sections": [
+        {
+          "heading": "Migrating from expo-av to expo-audio",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Imports",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Audio Playback",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Before (expo-av)",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "After (expo-audio)",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Audio Recording",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Before (expo-av)",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "After (expo-audio)",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Audio Mode",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Before (expo-av)",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "After (expo-audio)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "API Mapping",
+          "level": 2,
+          "line": 100
+        },
+        {
+          "heading": "Key Differences",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "API Reference",
+          "level": 2,
+          "line": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": ".agents/skills/upgrading-expo/references/expo-av-to-video.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 160,
+      "nonEmptyLines": 123,
+      "sections": [
+        {
+          "heading": "Migrating from expo-av to expo-video",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Imports",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Video Playback",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Before (expo-av)",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "After (expo-video)",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Status Updates",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Before (expo-av)",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "After (expo-video)",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "Local Files",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "Before (expo-av)",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "After (expo-video)",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Fullscreen and PiP",
+          "level": 2,
+          "line": 98
+        },
+        {
+          "heading": "API Mapping",
+          "level": 2,
+          "line": 122
+        },
+        {
+          "heading": "Key Differences",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "Known Issues",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "API Reference",
+          "level": 2,
+          "line": 158
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": ".agents/skills/upgrading-expo/references/native-tabs.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 124,
+      "nonEmptyLines": 100,
+      "sections": [
+        {
+          "heading": "Native Tabs Migration (SDK 55)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Import Changes",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Component Changes",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "New in SDK 55",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "BottomAccessory",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Icon `md` Prop",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Full Migration Example",
+          "level": 2,
+          "line": 58
+        },
+        {
+          "heading": "Before (SDK 53/54)",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "After (SDK 55+)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Migration Checklist",
+          "level": 2,
+          "line": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": ".agents/skills/upgrading-expo/references/new-architecture.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 79,
+      "nonEmptyLines": 51,
+      "sections": [
+        {
+          "heading": "New Architecture",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Documentation",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "What Changed",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "SDK Compatibility",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Expo Go",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Common Migration Issues",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Native Module Compatibility",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Reanimated",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Layout Animations",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "Verifying New Architecture",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": ".agents/skills/upgrading-expo/references/react-19.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 79,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "React 19",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Context Changes",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "useContext → use",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Context.Provider → Context",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "ref as a Prop",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Removing forwardRef",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Migration Steps",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Other React 19 Features",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "Cleanup Checklist",
+          "level": 2,
+          "line": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": ".agents/skills/upgrading-expo/references/react-compiler.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 59,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "React Compiler",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Enabling React Compiler",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "What React Compiler Does",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Cleanup After Enabling",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Requirements",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Verifying It's Working",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    }
+  ]
+}

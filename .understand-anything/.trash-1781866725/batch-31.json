@@ -1,0 +1,404 @@
+{
+  "nodes": [
+    {
+      "id": "document:.claude/skills/seo/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/seo/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.claude/skills/typescript-advanced-types/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/typescript-advanced-types/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.claude/skills/upgrading-expo/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/upgrading-expo/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.claude/skills/use-dom/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".claude/skills/use-dom/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:.opencode/opencode.json",
+      "type": "config",
+      "name": "opencode.json",
+      "filePath": ".opencode/opencode.json",
+      "summary": "opencode.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.opencode/plugins/graphify.js",
+      "type": "file",
+      "name": "graphify.js",
+      "filePath": ".opencode/plugins/graphify.js",
+      "summary": "graphify.js provides 1 function for the .opencode area.",
+      "tags": [
+        "source-code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.opencode/plugins/graphify.js:GraphifyPlugin",
+      "type": "function",
+      "name": "GraphifyPlugin",
+      "filePath": ".opencode/plugins/graphify.js",
+      "lineRange": [
+        6,
+        22
+      ],
+      "summary": "GraphifyPlugin implements a significant behavior within graphify.js.",
+      "tags": [
+        "function",
+        "graphify-plugin",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": ".understandignore provides application code and declarations for the .understand-anything area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "config.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.understand-anything/intermediate/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep",
+      "filePath": ".understand-anything/intermediate/.gitkeep",
+      "summary": ".gitkeep provides application code and declarations for the .understand-anything area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.understand-anything/tmp/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep",
+      "filePath": ".understand-anything/tmp/.gitkeep",
+      "summary": ".gitkeep provides application code and declarations for the .understand-anything area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/game/new.tsx",
+      "type": "file",
+      "name": "new.tsx",
+      "filePath": "app/game/new.tsx",
+      "summary": "new.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/new.tsx:NewGame",
+      "type": "function",
+      "name": "NewGame",
+      "filePath": "app/game/new.tsx",
+      "lineRange": [
+        4,
+        17
+      ],
+      "summary": "NewGame implements a significant behavior within new.tsx.",
+      "tags": [
+        "function",
+        "new-game",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:eslint.config.js",
+      "type": "file",
+      "name": "eslint.config.js",
+      "filePath": "eslint.config.js",
+      "summary": "eslint.config.js provides application code and declarations for the eslint.config.js area.",
+      "tags": [
+        "source-code",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/cli-latest",
+      "type": "file",
+      "name": "cli-latest",
+      "filePath": "supabase/.temp/cli-latest",
+      "summary": "cli-latest provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/gotrue-version",
+      "type": "file",
+      "name": "gotrue-version",
+      "filePath": "supabase/.temp/gotrue-version",
+      "summary": "gotrue-version provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:supabase/.temp/linked-project.json",
+      "type": "config",
+      "name": "linked-project.json",
+      "filePath": "supabase/.temp/linked-project.json",
+      "summary": "linked-project.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/pooler-url",
+      "type": "file",
+      "name": "pooler-url",
+      "filePath": "supabase/.temp/pooler-url",
+      "summary": "pooler-url provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/postgres-version",
+      "type": "file",
+      "name": "postgres-version",
+      "filePath": "supabase/.temp/postgres-version",
+      "summary": "postgres-version provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/project-ref",
+      "type": "file",
+      "name": "project-ref",
+      "filePath": "supabase/.temp/project-ref",
+      "summary": "project-ref provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/rest-version",
+      "type": "file",
+      "name": "rest-version",
+      "filePath": "supabase/.temp/rest-version",
+      "summary": "rest-version provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/storage-migration",
+      "type": "file",
+      "name": "storage-migration",
+      "filePath": "supabase/.temp/storage-migration",
+      "summary": "storage-migration provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/.temp/storage-version",
+      "type": "file",
+      "name": "storage-version",
+      "filePath": "supabase/.temp/storage-version",
+      "summary": "storage-version provides application code and declarations for the supabase area.",
+      "tags": [
+        "source-code",
+        "unknown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/award-match-reward/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/award-match-reward/index.ts",
+      "summary": "index.ts provides application code and declarations for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:supabase/functions/claim-opponent-left/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/claim-opponent-left/index.ts",
+      "summary": "index.ts provides 3 functions for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:supabase/functions/claim-opponent-left/index.ts:broadcastMatchEvent",
+      "type": "function",
+      "name": "broadcastMatchEvent",
+      "filePath": "supabase/functions/claim-opponent-left/index.ts",
+      "lineRange": [
+        38,
+        48
+      ],
+      "summary": "broadcastMatchEvent implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "broadcast-match-event",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/collect-daily-reward/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/collect-daily-reward/index.ts",
+      "summary": "index.ts provides application code and declarations for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/deduct-entry-fee/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/deduct-entry-fee/index.ts",
+      "summary": "index.ts provides application code and declarations for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:.opencode/plugins/graphify.js",
+      "target": "function:.opencode/plugins/graphify.js:GraphifyPlugin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.opencode/plugins/graphify.js",
+      "target": "function:.opencode/plugins/graphify.js:GraphifyPlugin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/game/new.tsx",
+      "target": "function:app/game/new.tsx:NewGame",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/new.tsx",
+      "target": "function:app/game/new.tsx:NewGame",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:supabase/functions/claim-opponent-left/index.ts",
+      "target": "function:supabase/functions/claim-opponent-left/index.ts:broadcastMatchEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": ".env.example configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "README.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:app.json",
+      "type": "config",
+      "name": "app.json",
+      "filePath": "app.json",
+      "summary": "app.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "package.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:skills-lock.json",
+      "type": "config",
+      "name": "skills-lock.json",
+      "filePath": "skills-lock.json",
+      "summary": "skills-lock.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "tsconfig.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

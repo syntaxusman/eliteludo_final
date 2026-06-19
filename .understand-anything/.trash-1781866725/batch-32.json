@@ -1,0 +1,579 @@
+{
+  "nodes": [
+    {
+      "id": "file:supabase/functions/find-match/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/find-match/index.ts",
+      "summary": "index.ts provides 10 functions for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:supabase/functions/find-match/index.ts:makePlayer",
+      "type": "function",
+      "name": "makePlayer",
+      "filePath": "supabase/functions/find-match/index.ts",
+      "lineRange": [
+        40,
+        52
+      ],
+      "summary": "makePlayer implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "make-player",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/find-match/index.ts:makeBoardState",
+      "type": "function",
+      "name": "makeBoardState",
+      "filePath": "supabase/functions/find-match/index.ts",
+      "lineRange": [
+        54,
+        66
+      ],
+      "summary": "makeBoardState implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "make-board-state",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/find-match/index.ts:refundEntryFee",
+      "type": "function",
+      "name": "refundEntryFee",
+      "filePath": "supabase/functions/find-match/index.ts",
+      "lineRange": [
+        110,
+        123
+      ],
+      "summary": "refundEntryFee implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "refund-entry-fee",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/forfeit-match/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/forfeit-match/index.ts",
+      "summary": "index.ts provides 3 functions for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:supabase/functions/forfeit-match/index.ts:broadcastMatchEvent",
+      "type": "function",
+      "name": "broadcastMatchEvent",
+      "filePath": "supabase/functions/forfeit-match/index.ts",
+      "lineRange": [
+        37,
+        47
+      ],
+      "summary": "broadcastMatchEvent implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "broadcast-match-event",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/grant-ad-reward/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/grant-ad-reward/index.ts",
+      "summary": "index.ts provides application code and declarations for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/move-token/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "summary": "index.ts provides 13 functions for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:supabase/functions/move-token/index.ts:broadcastMatchEvent",
+      "type": "function",
+      "name": "broadcastMatchEvent",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "lineRange": [
+        78,
+        88
+      ],
+      "summary": "broadcastMatchEvent implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "broadcast-match-event",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/move-token/index.ts:tryMove",
+      "type": "function",
+      "name": "tryMove",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "lineRange": [
+        90,
+        114
+      ],
+      "summary": "tryMove implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "try-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/move-token/index.ts:getValidMoves",
+      "type": "function",
+      "name": "getValidMoves",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "lineRange": [
+        124,
+        155
+      ],
+      "summary": "getValidMoves implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "get-valid-moves",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/move-token/index.ts:advanceToNextPlayer",
+      "type": "function",
+      "name": "advanceToNextPlayer",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "lineRange": [
+        157,
+        172
+      ],
+      "summary": "advanceToNextPlayer implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "advance-to-next-player",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/move-token/index.ts:applyMove",
+      "type": "function",
+      "name": "applyMove",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "lineRange": [
+        174,
+        200
+      ],
+      "summary": "applyMove implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "apply-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/move-token/index.ts:finishMove",
+      "type": "function",
+      "name": "finishMove",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "lineRange": [
+        202,
+        223
+      ],
+      "summary": "finishMove implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "finish-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/move-token/index.ts:freeHomeSlot",
+      "type": "function",
+      "name": "freeHomeSlot",
+      "filePath": "supabase/functions/move-token/index.ts",
+      "lineRange": [
+        232,
+        243
+      ],
+      "summary": "freeHomeSlot implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "free-home-slot",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/purchase-shop-item/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/purchase-shop-item/index.ts",
+      "summary": "index.ts provides application code and declarations for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:supabase/functions/roll-dice/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/roll-dice/index.ts",
+      "summary": "index.ts provides 10 functions for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:supabase/functions/roll-dice/index.ts:advanceToNextPlayer",
+      "type": "function",
+      "name": "advanceToNextPlayer",
+      "filePath": "supabase/functions/roll-dice/index.ts",
+      "lineRange": [
+        57,
+        72
+      ],
+      "summary": "advanceToNextPlayer implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "advance-to-next-player",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/roll-dice/index.ts:addRoll",
+      "type": "function",
+      "name": "addRoll",
+      "filePath": "supabase/functions/roll-dice/index.ts",
+      "lineRange": [
+        74,
+        96
+      ],
+      "summary": "addRoll implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "add-roll",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/roll-dice/index.ts:broadcastMatchEvent",
+      "type": "function",
+      "name": "broadcastMatchEvent",
+      "filePath": "supabase/functions/roll-dice/index.ts",
+      "lineRange": [
+        112,
+        122
+      ],
+      "summary": "broadcastMatchEvent implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "broadcast-match-event",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/roll-dice/index.ts:tryMove",
+      "type": "function",
+      "name": "tryMove",
+      "filePath": "supabase/functions/roll-dice/index.ts",
+      "lineRange": [
+        124,
+        148
+      ],
+      "summary": "tryMove implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "try-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/roll-dice/index.ts:hasValidMove",
+      "type": "function",
+      "name": "hasValidMove",
+      "filePath": "supabase/functions/roll-dice/index.ts",
+      "lineRange": [
+        158,
+        177
+      ],
+      "summary": "hasValidMove implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "has-valid-move",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/skip-roll-turn/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/skip-roll-turn/index.ts",
+      "summary": "index.ts provides 5 functions for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:supabase/functions/skip-roll-turn/index.ts:advanceToNextPlayer",
+      "type": "function",
+      "name": "advanceToNextPlayer",
+      "filePath": "supabase/functions/skip-roll-turn/index.ts",
+      "lineRange": [
+        35,
+        50
+      ],
+      "summary": "advanceToNextPlayer implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "advance-to-next-player",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:supabase/functions/skip-roll-turn/index.ts:broadcastMatchEvent",
+      "type": "function",
+      "name": "broadcastMatchEvent",
+      "filePath": "supabase/functions/skip-roll-turn/index.ts",
+      "lineRange": [
+        66,
+        76
+      ],
+      "summary": "broadcastMatchEvent implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "broadcast-match-event",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/sync-board-state/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/sync-board-state/index.ts",
+      "summary": "index.ts provides 6 functions for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:supabase/functions/sync-board-state/index.ts:broadcastMatchEvent",
+      "type": "function",
+      "name": "broadcastMatchEvent",
+      "filePath": "supabase/functions/sync-board-state/index.ts",
+      "lineRange": [
+        51,
+        61
+      ],
+      "summary": "broadcastMatchEvent implements a significant behavior within index.ts.",
+      "tags": [
+        "function",
+        "broadcast-match-event",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:supabase/functions/verify-iap-purchase/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "supabase/functions/verify-iap-purchase/index.ts",
+      "summary": "index.ts provides application code and declarations for the supabase area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:supabase/functions/find-match/index.ts",
+      "target": "function:supabase/functions/find-match/index.ts:makePlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/find-match/index.ts",
+      "target": "function:supabase/functions/find-match/index.ts:makeBoardState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/find-match/index.ts",
+      "target": "function:supabase/functions/find-match/index.ts:refundEntryFee",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/forfeit-match/index.ts",
+      "target": "function:supabase/functions/forfeit-match/index.ts:broadcastMatchEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/move-token/index.ts",
+      "target": "function:supabase/functions/move-token/index.ts:broadcastMatchEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/move-token/index.ts",
+      "target": "function:supabase/functions/move-token/index.ts:tryMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/move-token/index.ts",
+      "target": "function:supabase/functions/move-token/index.ts:getValidMoves",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/move-token/index.ts",
+      "target": "function:supabase/functions/move-token/index.ts:advanceToNextPlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/move-token/index.ts",
+      "target": "function:supabase/functions/move-token/index.ts:applyMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/move-token/index.ts",
+      "target": "function:supabase/functions/move-token/index.ts:finishMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/move-token/index.ts",
+      "target": "function:supabase/functions/move-token/index.ts:freeHomeSlot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/roll-dice/index.ts",
+      "target": "function:supabase/functions/roll-dice/index.ts:advanceToNextPlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/roll-dice/index.ts",
+      "target": "function:supabase/functions/roll-dice/index.ts:addRoll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/roll-dice/index.ts",
+      "target": "function:supabase/functions/roll-dice/index.ts:broadcastMatchEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/roll-dice/index.ts",
+      "target": "function:supabase/functions/roll-dice/index.ts:tryMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/roll-dice/index.ts",
+      "target": "function:supabase/functions/roll-dice/index.ts:hasValidMove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/skip-roll-turn/index.ts",
+      "target": "function:supabase/functions/skip-roll-turn/index.ts:advanceToNextPlayer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/skip-roll-turn/index.ts",
+      "target": "function:supabase/functions/skip-roll-turn/index.ts:broadcastMatchEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:supabase/functions/sync-board-state/index.ts",
+      "target": "function:supabase/functions/sync-board-state/index.ts:broadcastMatchEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

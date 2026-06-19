@@ -1,0 +1,190 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": "app/game/[matchId].tsx",
+      "language": "typescript",
+      "sizeLines": 2004,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/ai.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/board.ts",
+      "language": "typescript",
+      "sizeLines": 215,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/bots.ts",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/perspective.ts",
+      "language": "typescript",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/rules.ts",
+      "language": "typescript",
+      "sizeLines": 376,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/seating.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/types.ts",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/skia/Board.tsx",
+      "language": "typescript",
+      "sizeLines": 212,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/skia/Token.tsx",
+      "language": "typescript",
+      "sizeLines": 168,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/stores/game.ts",
+      "language": "typescript",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/supabase/matchRealtime.ts",
+      "language": "typescript",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/supabase/matchRealtimeEvents.ts",
+      "language": "typescript",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/supabase/matches.ts",
+      "language": "typescript",
+      "sizeLines": 299,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/game-rules.test.ts",
+      "language": "typescript",
+      "sizeLines": 197,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/match-realtime.test.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "app/game/[matchId].tsx": [
+      "src/assets/index.ts",
+      "src/components/TokenDicePicker.tsx",
+      "src/constants/profile.ts",
+      "src/game/board.ts",
+      "src/game/bots.ts",
+      "src/game/perspective.ts",
+      "src/game/rules.ts",
+      "src/game/seating.ts",
+      "src/game/types.ts",
+      "src/skia/Board.tsx",
+      "src/skia/Dice.tsx",
+      "src/skia/Particles.tsx",
+      "src/skia/Token.tsx",
+      "src/stores/game.ts",
+      "src/stores/profile.ts",
+      "src/supabase/client.ts",
+      "src/supabase/errors.ts",
+      "src/supabase/matches.ts",
+      "src/supabase/matchRealtime.ts",
+      "src/theme/colors.ts",
+      "src/theme/typography.ts",
+      "src/utils/haptics.ts",
+      "src/utils/sound.ts"
+    ],
+    "src/game/ai.ts": [
+      "src/game/board.ts",
+      "src/game/rules.ts",
+      "src/game/types.ts"
+    ],
+    "src/game/board.ts": [
+      "src/game/types.ts"
+    ],
+    "src/game/bots.ts": [],
+    "src/game/perspective.ts": [
+      "src/game/board.ts",
+      "src/game/types.ts"
+    ],
+    "src/game/rules.ts": [
+      "src/game/board.ts",
+      "src/game/bots.ts",
+      "src/game/types.ts"
+    ],
+    "src/game/seating.ts": [
+      "src/game/types.ts"
+    ],
+    "src/game/types.ts": [],
+    "src/skia/Board.tsx": [
+      "src/game/board.ts",
+      "src/game/perspective.ts",
+      "src/game/types.ts",
+      "src/theme/colors.ts"
+    ],
+    "src/skia/Token.tsx": [
+      "src/assets/index.ts",
+      "src/game/types.ts",
+      "src/theme/colors.ts"
+    ],
+    "src/stores/game.ts": [
+      "src/game/ai.ts",
+      "src/game/rules.ts",
+      "src/game/types.ts"
+    ],
+    "src/supabase/matchRealtime.ts": [
+      "src/game/types.ts",
+      "src/supabase/client.ts",
+      "src/supabase/matchRealtimeEvents.ts"
+    ],
+    "src/supabase/matchRealtimeEvents.ts": [
+      "src/game/types.ts"
+    ],
+    "src/supabase/matches.ts": [
+      "src/game/types.ts",
+      "src/supabase/client.ts",
+      "src/supabase/matchRealtime.ts"
+    ],
+    "tests/game-rules.test.ts": [
+      "src/game/board.ts",
+      "src/game/perspective.ts",
+      "src/game/rules.ts",
+      "src/game/seating.ts",
+      "src/game/types.ts"
+    ],
+    "tests/match-realtime.test.ts": [
+      "src/game/rules.ts",
+      "src/supabase/matchRealtimeEvents.ts"
+    ]
+  }
+}

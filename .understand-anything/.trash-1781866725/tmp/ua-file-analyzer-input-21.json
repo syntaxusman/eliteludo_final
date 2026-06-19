@@ -1,0 +1,35 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".claude/skills/react-best-practices/AGENTS.md",
+      "language": "markdown",
+      "sizeLines": 3810,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/README.md",
+      "language": "markdown",
+      "sizeLines": 123,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 149,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/metadata.json",
+      "language": "json",
+      "sizeLines": 15,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    ".claude/skills/react-best-practices/AGENTS.md": [],
+    ".claude/skills/react-best-practices/README.md": [],
+    ".claude/skills/react-best-practices/SKILL.md": [],
+    ".claude/skills/react-best-practices/metadata.json": []
+  }
+}

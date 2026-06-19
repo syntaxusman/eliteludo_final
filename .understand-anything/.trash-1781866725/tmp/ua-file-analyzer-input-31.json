@@ -1,0 +1,182 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".claude/skills/seo/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 513,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/typescript-advanced-types/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 717,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/upgrading-expo/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 133,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/use-dom/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 417,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".opencode/opencode.json",
+      "language": "json",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".opencode/plugins/graphify.js",
+      "language": "javascript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".understand-anything/intermediate/.gitkeep",
+      "language": "unknown",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/tmp/.gitkeep",
+      "language": "unknown",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "app/game/new.tsx",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "eslint.config.js",
+      "language": "javascript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/cli-latest",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/gotrue-version",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/linked-project.json",
+      "language": "json",
+      "sizeLines": 0,
+      "fileCategory": "config"
+    },
+    {
+      "path": "supabase/.temp/pooler-url",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/postgres-version",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/project-ref",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/rest-version",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/storage-migration",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/.temp/storage-version",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/functions/award-match-reward/index.ts",
+      "language": "typescript",
+      "sizeLines": 191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/functions/claim-opponent-left/index.ts",
+      "language": "typescript",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/functions/collect-daily-reward/index.ts",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "supabase/functions/deduct-entry-fee/index.ts",
+      "language": "typescript",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".claude/skills/seo/SKILL.md": [],
+    ".claude/skills/typescript-advanced-types/SKILL.md": [],
+    ".claude/skills/upgrading-expo/SKILL.md": [],
+    ".claude/skills/use-dom/SKILL.md": [],
+    ".opencode/opencode.json": [],
+    ".opencode/plugins/graphify.js": [],
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    ".understand-anything/intermediate/.gitkeep": [],
+    ".understand-anything/tmp/.gitkeep": [],
+    "app/game/new.tsx": [],
+    "eslint.config.js": [],
+    "supabase/.temp/cli-latest": [],
+    "supabase/.temp/gotrue-version": [],
+    "supabase/.temp/linked-project.json": [],
+    "supabase/.temp/pooler-url": [],
+    "supabase/.temp/postgres-version": [],
+    "supabase/.temp/project-ref": [],
+    "supabase/.temp/rest-version": [],
+    "supabase/.temp/storage-migration": [],
+    "supabase/.temp/storage-version": [],
+    "supabase/functions/award-match-reward/index.ts": [],
+    "supabase/functions/claim-opponent-left/index.ts": [],
+    "supabase/functions/collect-daily-reward/index.ts": [],
+    "supabase/functions/deduct-entry-fee/index.ts": []
+  }
+}

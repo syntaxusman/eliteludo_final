@@ -1,0 +1,49 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "sizeLines": 17,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/CLAUDE_MEMORY.md",
+      "language": "markdown",
+      "sizeLines": 33,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/MANUAL_TEST_PLAN.md",
+      "language": "markdown",
+      "sizeLines": 97,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/MasterPromot.md",
+      "language": "markdown",
+      "sizeLines": 197,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/PLAN.md",
+      "language": "markdown",
+      "sizeLines": 80,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/PRD.md",
+      "language": "markdown",
+      "sizeLines": 298,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "docs/ARCHITECTURE.md": [],
+    "docs/CLAUDE_MEMORY.md": [],
+    "docs/MANUAL_TEST_PLAN.md": [],
+    "docs/MasterPromot.md": [],
+    "docs/PLAN.md": [],
+    "docs/PRD.md": []
+  }
+}

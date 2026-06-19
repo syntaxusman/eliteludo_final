@@ -1,0 +1,493 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 17,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "Elite Ludo Architecture Notes",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Fast Multiplayer Sync",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Why Not Socket.io For V1",
+          "level": 2,
+          "line": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "docs/CLAUDE_MEMORY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "Elite Ludo - Claude Memory",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Last Session (April 27, 2026)",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "What was built:",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "Current State:",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Known Issues:",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "What's Next (Phase 2 continued):",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Then:",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Tech Stack:",
+          "level": 3,
+          "line": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/MANUAL_TEST_PLAN.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 97,
+      "nonEmptyLines": 78,
+      "sections": [
+        {
+          "heading": "Elite Ludo Manual Integration Test Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Setup",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Automated Baseline",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Auth And Profile",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Multiplayer Matchmaking",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Game Sync And Rules",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Wallet And Rewards",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Ads",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "IAP",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Release Readiness",
+          "level": 2,
+          "line": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/MasterPromot.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 197,
+      "nonEmptyLines": 172,
+      "sections": [
+        {
+          "heading": "Master Prompt for Claude Code — Elite Ludo",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "PROMPT START",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Your role",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "Tech stack (locked — do not propose alternatives unless something is genuinely broken)",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "Project structure (set this up first)",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Working agreement",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "Phase plan (follow strictly)",
+          "level": 3,
+          "line": 97
+        },
+        {
+          "heading": "Communication style I want from you",
+          "level": 3,
+          "line": 156
+        },
+        {
+          "heading": "What I'll provide",
+          "level": 3,
+          "line": 163
+        },
+        {
+          "heading": "First task",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "PROMPT END",
+          "level": 2,
+          "line": 176
+        },
+        {
+          "heading": "How to use this prompt",
+          "level": 2,
+          "line": 180
+        },
+        {
+          "heading": "Tips for working with Claude Code on this project",
+          "level": 2,
+          "line": 189
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "docs/PLAN.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 80,
+      "nonEmptyLines": 69,
+      "sections": [
+        {
+          "heading": "Implement Fast Supabase Hybrid Multiplayer",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Key Changes",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Implementation Steps",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Test Plan",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Assumptions",
+          "level": 2,
+          "line": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/PRD.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 298,
+      "nonEmptyLines": 236,
+      "sections": [
+        {
+          "heading": "Elite Ludo — Product Requirements Document (PRD)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Product Vision",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "2. Goals & Non-Goals",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Goals (v1, ship in 30 days)",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Non-Goals (deferred to v2)",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "3. Target Audience",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "4. Tech Stack",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "5. Feature List",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "5.1 Onboarding & Auth",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "5.2 Home Screen",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "5.3 Game Modes (v1)",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "5.4 Core Gameplay (Classic Ludo Rules)",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "5.5 Multiplayer (Supabase Realtime)",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "5.6 Economy",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "5.7 Crowns Collection (Metagame)",
+          "level": 3,
+          "line": 115
+        },
+        {
+          "heading": "5.8 Shop",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "5.9 Monetization",
+          "level": 3,
+          "line": 126
+        },
+        {
+          "heading": "5.10 Settings",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "6. User Flows",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "6.1 First-time user",
+          "level": 3,
+          "line": 145
+        },
+        {
+          "heading": "6.2 Returning user",
+          "level": 3,
+          "line": 148
+        },
+        {
+          "heading": "6.3 Multiplayer match",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "7. Data Model (Supabase)",
+          "level": 2,
+          "line": 156
+        },
+        {
+          "heading": "`profiles`",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "`matches`",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "`match_moves`",
+          "level": 3,
+          "line": 184
+        },
+        {
+          "heading": "`daily_rewards`",
+          "level": 3,
+          "line": 192
+        },
+        {
+          "heading": "`transactions`",
+          "level": 3,
+          "line": 198
+        },
+        {
+          "heading": "8. Security & Anti-Cheat",
+          "level": 2,
+          "line": 209
+        },
+        {
+          "heading": "9. Performance Targets",
+          "level": 2,
+          "line": 219
+        },
+        {
+          "heading": "10. Analytics Events to Track",
+          "level": 2,
+          "line": 229
+        },
+        {
+          "heading": "11. 30-Day Milestone Plan",
+          "level": 2,
+          "line": 244
+        },
+        {
+          "heading": "Week 1: Foundation & Core Game",
+          "level": 3,
+          "line": 246
+        },
+        {
+          "heading": "Week 2: Polish & Animation",
+          "level": 3,
+          "line": 251
+        },
+        {
+          "heading": "Week 3: Multiplayer & Economy",
+          "level": 3,
+          "line": 256
+        },
+        {
+          "heading": "Week 4: Ship It",
+          "level": 3,
+          "line": 261
+        },
+        {
+          "heading": "12. Risks & Mitigations",
+          "level": 2,
+          "line": 270
+        },
+        {
+          "heading": "13. Definition of Done (v1)",
+          "level": 2,
+          "line": 283
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 38
+      }
+    }
+  ]
+}

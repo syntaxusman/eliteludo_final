@@ -1,0 +1,184 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".agents/skills/supabase/references/skill-feedback.md",
+      "language": "markdown",
+      "sizeLines": 17,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/supabase/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 135,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/typescript-advanced-types/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 717,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/upgrading-expo/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 133,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/use-dom/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 417,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/accessibility/references/A11Y-PATTERNS.md",
+      "language": "markdown",
+      "sizeLines": 233,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/accessibility/references/WCAG.md",
+      "language": "markdown",
+      "sizeLines": 191,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/accessibility/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 440,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 321,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/design-mobile-apps/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 477,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/expo-api-routes/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 368,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/expo-cicd-workflows/scripts/fetch.js",
+      "language": "javascript",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".claude/skills/expo-cicd-workflows/scripts/package.json",
+      "language": "json",
+      "sizeLines": 11,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".claude/skills/expo-cicd-workflows/scripts/validate.js",
+      "language": "javascript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".claude/skills/expo-cicd-workflows/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 92,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/expo-deployment/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 190,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/expo-dev-client/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 164,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/expo-tailwind-setup/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 480,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/frontend-design/LICENSE.txt",
+      "language": "txt",
+      "sizeLines": 177,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/frontend-design/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 42,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/native-data-fetching/references/expo-router-loaders.md",
+      "language": "markdown",
+      "sizeLines": 341,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/native-data-fetching/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 507,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/nodejs-backend-patterns/references/advanced-patterns.md",
+      "language": "markdown",
+      "sizeLines": 430,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/nodejs-backend-patterns/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 639,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/nodejs-best-practices/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 343,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".agents/skills/supabase/references/skill-feedback.md": [],
+    ".agents/skills/supabase/SKILL.md": [],
+    ".agents/skills/typescript-advanced-types/SKILL.md": [],
+    ".agents/skills/upgrading-expo/SKILL.md": [],
+    ".agents/skills/use-dom/SKILL.md": [],
+    ".claude/skills/accessibility/references/A11Y-PATTERNS.md": [],
+    ".claude/skills/accessibility/references/WCAG.md": [],
+    ".claude/skills/accessibility/SKILL.md": [],
+    ".claude/skills/building-native-ui/SKILL.md": [],
+    ".claude/skills/design-mobile-apps/SKILL.md": [],
+    ".claude/skills/expo-api-routes/SKILL.md": [],
+    ".claude/skills/expo-cicd-workflows/scripts/fetch.js": [],
+    ".claude/skills/expo-cicd-workflows/scripts/package.json": [],
+    ".claude/skills/expo-cicd-workflows/scripts/validate.js": [
+      ".claude/skills/expo-cicd-workflows/scripts/fetch.js"
+    ],
+    ".claude/skills/expo-cicd-workflows/SKILL.md": [],
+    ".claude/skills/expo-deployment/SKILL.md": [],
+    ".claude/skills/expo-dev-client/SKILL.md": [],
+    ".claude/skills/expo-tailwind-setup/SKILL.md": [],
+    ".claude/skills/frontend-design/LICENSE.txt": [],
+    ".claude/skills/frontend-design/SKILL.md": [],
+    ".claude/skills/native-data-fetching/references/expo-router-loaders.md": [],
+    ".claude/skills/native-data-fetching/SKILL.md": [],
+    ".claude/skills/nodejs-backend-patterns/references/advanced-patterns.md": [],
+    ".claude/skills/nodejs-backend-patterns/SKILL.md": [],
+    ".claude/skills/nodejs-best-practices/SKILL.md": []
+  }
+}

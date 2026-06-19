@@ -1,0 +1,477 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".claude/skills/react-best-practices/rules/_sections.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 46,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "Sections",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Eliminating Waterfalls (async)",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "2. Bundle Size Optimization (bundle)",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "3. Server-Side Performance (server)",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "4. Client-Side Data Fetching (client)",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "5. Re-render Optimization (rerender)",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "6. Rendering Performance (rendering)",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "7. JavaScript Performance (js)",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "8. Advanced Patterns (advanced)",
+          "level": 2,
+          "line": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/_template.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "Rule Title Here",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/advanced-effect-event-deps.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 56,
+      "nonEmptyLines": 42,
+      "sections": [
+        {
+          "heading": "Do Not Put Effect Events in Dependency Arrays",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/advanced-event-handler-refs.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 55,
+      "nonEmptyLines": 43,
+      "sections": [
+        {
+          "heading": "Store Event Handlers in Refs",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/advanced-init-once.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 42,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "Initialize App Once, Not Per Mount",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/advanced-use-latest.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 39,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "useEffectEvent for Stable Callback Refs",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/async-api-routes.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 31,
+      "sections": [
+        {
+          "heading": "Prevent Waterfall Chains in API Routes",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 37,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "Check Cheap Conditions Before Async Flags",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/async-defer-await.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 82,
+      "nonEmptyLines": 61,
+      "sections": [
+        {
+          "heading": "Defer Await Until Needed",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/async-dependencies.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 51,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "Dependency-Based Parallelization",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/async-parallel.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "Promise.all() for Independent Operations",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/async-suspense-boundaries.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 99,
+      "nonEmptyLines": 80,
+      "sections": [
+        {
+          "heading": "Strategic Suspense Boundaries",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/bundle-analyzable-paths.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 63,
+      "nonEmptyLines": 45,
+      "sections": [
+        {
+          "heading": "Prefer Statically Analyzable Paths",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Import Paths",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "File-System Paths",
+          "level": 3,
+          "line": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/bundle-barrel-imports.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 60,
+      "nonEmptyLines": 43,
+      "sections": [
+        {
+          "heading": "Avoid Barrel File Imports",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/bundle-conditional.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 31,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "Conditional Module Loading",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/bundle-defer-third-party.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 49,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "Defer Non-Critical Third-Party Libraries",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/bundle-dynamic-imports.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 35,
+      "nonEmptyLines": 26,
+      "sections": [
+        {
+          "heading": "Dynamic Imports for Heavy Components",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/bundle-preload.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 50,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "Preload Based on User Intent",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/client-event-listeners.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 74,
+      "nonEmptyLines": 62,
+      "sections": [
+        {
+          "heading": "Deduplicate Global Event Listeners",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/client-localstorage-schema.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 71,
+      "nonEmptyLines": 58,
+      "sections": [
+        {
+          "heading": "Version and Minimize localStorage Data",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    }
+  ]
+}

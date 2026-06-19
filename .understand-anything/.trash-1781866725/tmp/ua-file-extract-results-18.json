@@ -1,0 +1,271 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".claude/skills/composition-patterns/AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 946,
+      "nonEmptyLines": 752,
+      "sections": [
+        {
+          "heading": "React Composition Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Abstract",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "1. Component Architecture",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "1.1 Avoid Boolean Prop Proliferation",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "1.2 Use Compound Components",
+          "level": 3,
+          "line": 144
+        },
+        {
+          "heading": "2. State Management",
+          "level": 2,
+          "line": 256
+        },
+        {
+          "heading": "2.1 Decouple State Management from UI",
+          "level": 3,
+          "line": 263
+        },
+        {
+          "heading": "2.2 Define Generic Context Interfaces for Dependency Injection",
+          "level": 3,
+          "line": 375
+        },
+        {
+          "heading": "2.3 Lift State into Provider Components",
+          "level": 3,
+          "line": 571
+        },
+        {
+          "heading": "3. Implementation Patterns",
+          "level": 2,
+          "line": 700
+        },
+        {
+          "heading": "3.1 Create Explicit Component Variants",
+          "level": 3,
+          "line": 707
+        },
+        {
+          "heading": "3.2 Prefer Composing Children Over Render Props",
+          "level": 3,
+          "line": 808
+        },
+        {
+          "heading": "4. React 19 APIs",
+          "level": 2,
+          "line": 896
+        },
+        {
+          "heading": "4.1 React 19 API Changes",
+          "level": 3,
+          "line": 902
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 942
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": ".claude/skills/composition-patterns/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 60,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "React Composition Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Structure",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Component Architecture (CRITICAL)",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "State Management (HIGH)",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "Implementation Patterns (MEDIUM)",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "Core Principles",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "Creating a New Rule",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Impact Levels",
+          "level": 2,
+          "line": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": ".claude/skills/composition-patterns/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 89,
+      "nonEmptyLines": 65,
+      "sections": [
+        {
+          "heading": "React Composition Patterns",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "When to Apply",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Rule Categories by Priority",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Quick Reference",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "1. Component Architecture (HIGH)",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "2. State Management (MEDIUM)",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "3. Implementation Patterns (MEDIUM)",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "4. React 19 APIs (MEDIUM)",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "How to Use",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Full Compiled Document",
+          "level": 2,
+          "line": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": ".claude/skills/composition-patterns/metadata.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "sections": [
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "organization",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "date",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "abstract",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "references",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    }
+  ]
+}

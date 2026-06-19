@@ -1,0 +1,1144 @@
+{
+  "nodes": [
+    {
+      "id": "file:app/(tabs)/home.tsx",
+      "type": "file",
+      "name": "home.tsx",
+      "filePath": "app/(tabs)/home.tsx",
+      "summary": "home.tsx provides 18 functions for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:rewardErrorMessage",
+      "type": "function",
+      "name": "rewardErrorMessage",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        91,
+        105
+      ],
+      "summary": "rewardErrorMessage implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "reward-error-message",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:HomeScreen",
+      "type": "function",
+      "name": "HomeScreen",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        113,
+        282
+      ],
+      "summary": "HomeScreen implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "home-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:Header",
+      "type": "function",
+      "name": "Header",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        284,
+        317
+      ],
+      "summary": "Header implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "header",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:CurrencyPill",
+      "type": "function",
+      "name": "CurrencyPill",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        319,
+        335
+      ],
+      "summary": "CurrencyPill implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "currency-pill",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:CoinIcon",
+      "type": "function",
+      "name": "CoinIcon",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        337,
+        356
+      ],
+      "summary": "CoinIcon implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "coin-icon",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:ModesHome",
+      "type": "function",
+      "name": "ModesHome",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        358,
+        415
+      ],
+      "summary": "ModesHome implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "modes-home",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:QuickTile",
+      "type": "function",
+      "name": "QuickTile",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        417,
+        437
+      ],
+      "summary": "QuickTile implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "quick-tile",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:ModeCard",
+      "type": "function",
+      "name": "ModeCard",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        439,
+        473
+      ],
+      "summary": "ModeCard implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "mode-card",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:ModeScene",
+      "type": "function",
+      "name": "ModeScene",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        475,
+        535
+      ],
+      "summary": "ModeScene implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "mode-scene",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:LudoPlate",
+      "type": "function",
+      "name": "LudoPlate",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        537,
+        576
+      ],
+      "summary": "LudoPlate implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "ludo-plate",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:DiceBlock",
+      "type": "function",
+      "name": "DiceBlock",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        587,
+        620
+      ],
+      "summary": "DiceBlock implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "dice-block",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:diceDots",
+      "type": "function",
+      "name": "diceDots",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        622,
+        632
+      ],
+      "summary": "diceDots implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "dice-dots",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:ClubSlides",
+      "type": "function",
+      "name": "ClubSlides",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        643,
+        725
+      ],
+      "summary": "ClubSlides implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "club-slides",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:ClubCard",
+      "type": "function",
+      "name": "ClubCard",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        727,
+        806
+      ],
+      "summary": "ClubCard implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "club-card",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/(tabs)/home.tsx:PrizeChest",
+      "type": "function",
+      "name": "PrizeChest",
+      "filePath": "app/(tabs)/home.tsx",
+      "lineRange": [
+        808,
+        821
+      ],
+      "summary": "PrizeChest implements a significant behavior within home.tsx.",
+      "tags": [
+        "function",
+        "prize-chest",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/(tabs)/profile.tsx",
+      "type": "file",
+      "name": "profile.tsx",
+      "filePath": "app/(tabs)/profile.tsx",
+      "summary": "profile.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/(tabs)/profile.tsx:ProfileScreen",
+      "type": "function",
+      "name": "ProfileScreen",
+      "filePath": "app/(tabs)/profile.tsx",
+      "lineRange": [
+        24,
+        152
+      ],
+      "summary": "ProfileScreen implements a significant behavior within profile.tsx.",
+      "tags": [
+        "function",
+        "profile-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/auth/onboarding.tsx",
+      "type": "file",
+      "name": "onboarding.tsx",
+      "filePath": "app/auth/onboarding.tsx",
+      "summary": "onboarding.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/auth/onboarding.tsx:OnboardingScreen",
+      "type": "function",
+      "name": "OnboardingScreen",
+      "filePath": "app/auth/onboarding.tsx",
+      "lineRange": [
+        31,
+        170
+      ],
+      "summary": "OnboardingScreen implements a significant behavior within onboarding.tsx.",
+      "tags": [
+        "function",
+        "onboarding-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/edit-profile.tsx",
+      "type": "file",
+      "name": "edit-profile.tsx",
+      "filePath": "app/edit-profile.tsx",
+      "summary": "edit-profile.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/edit-profile.tsx:EditProfileScreen",
+      "type": "function",
+      "name": "EditProfileScreen",
+      "filePath": "app/edit-profile.tsx",
+      "lineRange": [
+        31,
+        175
+      ],
+      "summary": "EditProfileScreen implements a significant behavior within edit-profile.tsx.",
+      "tags": [
+        "function",
+        "edit-profile-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/game/matchmaking.tsx",
+      "type": "file",
+      "name": "matchmaking.tsx",
+      "filePath": "app/game/matchmaking.tsx",
+      "summary": "matchmaking.tsx provides 2 functions for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/game/matchmaking.tsx:RadarRing",
+      "type": "function",
+      "name": "RadarRing",
+      "filePath": "app/game/matchmaking.tsx",
+      "lineRange": [
+        30,
+        62
+      ],
+      "summary": "RadarRing implements a significant behavior within matchmaking.tsx.",
+      "tags": [
+        "function",
+        "radar-ring",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/game/matchmaking.tsx:MatchmakingScreen",
+      "type": "function",
+      "name": "MatchmakingScreen",
+      "filePath": "app/game/matchmaking.tsx",
+      "lineRange": [
+        64,
+        323
+      ],
+      "summary": "MatchmakingScreen implements a significant behavior within matchmaking.tsx.",
+      "tags": [
+        "function",
+        "matchmaking-screen",
+        "behavior"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:app/game/private.tsx",
+      "type": "file",
+      "name": "private.tsx",
+      "filePath": "app/game/private.tsx",
+      "summary": "private.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/game/private.tsx:PrivateRoomScreen",
+      "type": "function",
+      "name": "PrivateRoomScreen",
+      "filePath": "app/game/private.tsx",
+      "lineRange": [
+        17,
+        110
+      ],
+      "summary": "PrivateRoomScreen implements a significant behavior within private.tsx.",
+      "tags": [
+        "function",
+        "private-room-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/game/result.tsx",
+      "type": "file",
+      "name": "result.tsx",
+      "filePath": "app/game/result.tsx",
+      "summary": "result.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/game/result.tsx:ResultScreen",
+      "type": "function",
+      "name": "ResultScreen",
+      "filePath": "app/game/result.tsx",
+      "lineRange": [
+        25,
+        141
+      ],
+      "summary": "ResultScreen implements a significant behavior within result.tsx.",
+      "tags": [
+        "function",
+        "result-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/shop.tsx",
+      "type": "file",
+      "name": "shop.tsx",
+      "filePath": "app/shop.tsx",
+      "summary": "shop.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/shop.tsx:ShopScreen",
+      "type": "function",
+      "name": "ShopScreen",
+      "filePath": "app/shop.tsx",
+      "lineRange": [
+        18,
+        133
+      ],
+      "summary": "ShopScreen implements a significant behavior within shop.tsx.",
+      "tags": [
+        "function",
+        "shop-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/assets/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "src/assets/index.ts",
+      "summary": "index.ts provides application code and declarations for the src area.",
+      "tags": [
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:rewardErrorMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:HomeScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:HomeScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:Header",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:CurrencyPill",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:CoinIcon",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:ModesHome",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:QuickTile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:ModeCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:ModeScene",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:LudoPlate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:DiceBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:diceDots",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:ClubSlides",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:ClubCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "function:app/(tabs)/home.tsx:PrizeChest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "function:app/(tabs)/profile.tsx:ProfileScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "function:app/(tabs)/profile.tsx:ProfileScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "function:app/auth/onboarding.tsx:OnboardingScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "function:app/auth/onboarding.tsx:OnboardingScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "function:app/edit-profile.tsx:EditProfileScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "function:app/edit-profile.tsx:EditProfileScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "function:app/game/matchmaking.tsx:RadarRing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "function:app/game/matchmaking.tsx:MatchmakingScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "function:app/game/matchmaking.tsx:MatchmakingScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "function:app/game/private.tsx:PrivateRoomScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "function:app/game/private.tsx:PrivateRoomScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "function:app/game/result.tsx:ResultScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "function:app/game/result.tsx:ResultScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "function:app/shop.tsx:ShopScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "function:app/shop.tsx:ShopScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/components/DailyRewardModal.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/services/ads.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/home.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "file:src/constants/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/profile.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "file:src/constants/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/onboarding.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "file:src/constants/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/edit-profile.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/supabase/matches.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/supabase/transactions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/matchmaking.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "file:src/supabase/matches.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "file:src/supabase/transactions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/private.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/supabase/matches.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/supabase/transactions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/game/result.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/constants/economy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/services/ads.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/services/iap.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/stores/shop.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/shop.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

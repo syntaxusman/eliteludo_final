@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert, Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, {
   FadeIn,
   FadeInDown,
@@ -21,6 +21,7 @@ import { useWalletStore } from '@/src/stores/wallet';
 import { supabase } from '@/src/supabase/client';
 import { cancelMatchmaking, findMatch, subscribeQueue } from '@/src/supabase/matches';
 import { deductEntryFee } from '@/src/supabase/transactions';
+import { OrnateTokenCanvas } from '@/src/skia/OrnateToken';
 import { colors } from '@/src/theme/colors';
 import { fontFamilies } from '@/src/theme/typography';
 
@@ -293,8 +294,10 @@ export default function MatchmakingScreen() {
 
         {/* Token decoration */}
         <View style={styles.tokensRow}>
-          {[Images.tokenRed, Images.tokenBlue, Images.tokenGreen, Images.tokenYellow].map((src, i) => (
-            <Image key={i} source={src} style={styles.tokenImg} resizeMode="contain" />
+          {(['red', 'blue', 'green', 'yellow'] as const).map((color) => (
+            <View key={color} style={styles.tokenImg}>
+              <OrnateTokenCanvas color={color} size={44} />
+            </View>
           ))}
         </View>
 

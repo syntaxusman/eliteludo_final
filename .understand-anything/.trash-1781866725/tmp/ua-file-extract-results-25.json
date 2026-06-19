@@ -1,0 +1,259 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 12,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-use-deferred-value.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 59,
+      "nonEmptyLines": 47,
+      "sections": [
+        {
+          "heading": "Use useDeferredValue for Expensive Derived Renders",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-use-ref-transient-values.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 73,
+      "nonEmptyLines": 63,
+      "sections": [
+        {
+          "heading": "Use useRef for Transient Values",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-after-nonblocking.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 73,
+      "nonEmptyLines": 54,
+      "sections": [
+        {
+          "heading": "Use after() for Non-Blocking Operations",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-auth-actions.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 96,
+      "nonEmptyLines": 72,
+      "sections": [
+        {
+          "heading": "Authenticate Server Actions Like API Routes",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-cache-lru.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 41,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "Cross-Request LRU Caching",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-cache-react.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 76,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "Per-Request Deduplication with React.cache()",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-dedup-props.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 65,
+      "nonEmptyLines": 46,
+      "sections": [
+        {
+          "heading": "Avoid Duplicate Serialization in RSC Props",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-hoist-static-io.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 149,
+      "nonEmptyLines": 115,
+      "sections": [
+        {
+          "heading": "Hoist Static I/O to Module Level",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-no-shared-module-state.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 50,
+      "nonEmptyLines": 36,
+      "sections": [
+        {
+          "heading": "Avoid Shared Module State for Request Data",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-parallel-fetching.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 83,
+      "nonEmptyLines": 69,
+      "sections": [
+        {
+          "heading": "Parallel Data Fetching with Component Composition",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-parallel-nested-fetching.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 34,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "Parallel Nested Data Fetching",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/server-serialization.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "Minimize Serialization at RSC Boundaries",
+          "level": 2,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    }
+  ]
+}

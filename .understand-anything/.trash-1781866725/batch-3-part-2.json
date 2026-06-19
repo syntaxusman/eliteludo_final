@@ -1,0 +1,991 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/skia/Board.tsx",
+      "type": "file",
+      "name": "Board.tsx",
+      "filePath": "src/skia/Board.tsx",
+      "summary": "Board.tsx provides 6 functions for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/skia/Board.tsx:BoardCanvas",
+      "type": "function",
+      "name": "BoardCanvas",
+      "filePath": "src/skia/Board.tsx",
+      "lineRange": [
+        37,
+        138
+      ],
+      "summary": "BoardCanvas implements a significant behavior within Board.tsx.",
+      "tags": [
+        "function",
+        "board-canvas",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/skia/Board.tsx:rectTopLeftForPerspective",
+      "type": "function",
+      "name": "rectTopLeftForPerspective",
+      "filePath": "src/skia/Board.tsx",
+      "lineRange": [
+        140,
+        157
+      ],
+      "summary": "rectTopLeftForPerspective implements a significant behavior within Board.tsx.",
+      "tags": [
+        "function",
+        "rect-top-left-for-perspective",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/skia/Board.tsx:TrackCell",
+      "type": "function",
+      "name": "TrackCell",
+      "filePath": "src/skia/Board.tsx",
+      "lineRange": [
+        159,
+        178
+      ],
+      "summary": "TrackCell implements a significant behavior within Board.tsx.",
+      "tags": [
+        "function",
+        "track-cell",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/skia/Board.tsx:startIndexFor",
+      "type": "function",
+      "name": "startIndexFor",
+      "filePath": "src/skia/Board.tsx",
+      "lineRange": [
+        180,
+        191
+      ],
+      "summary": "startIndexFor implements a significant behavior within Board.tsx.",
+      "tags": [
+        "function",
+        "start-index-for",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/skia/Board.tsx:diamondPath",
+      "type": "function",
+      "name": "diamondPath",
+      "filePath": "src/skia/Board.tsx",
+      "lineRange": [
+        193,
+        203
+      ],
+      "summary": "diamondPath implements a significant behavior within Board.tsx.",
+      "tags": [
+        "function",
+        "diamond-path",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/skia/Token.tsx",
+      "type": "file",
+      "name": "Token.tsx",
+      "filePath": "src/skia/Token.tsx",
+      "summary": "Token.tsx provides 1 function for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/skia/Token.tsx:Token",
+      "type": "function",
+      "name": "Token",
+      "filePath": "src/skia/Token.tsx",
+      "lineRange": [
+        53,
+        147
+      ],
+      "summary": "Token implements a significant behavior within Token.tsx.",
+      "tags": [
+        "function",
+        "token",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/stores/game.ts",
+      "type": "file",
+      "name": "game.ts",
+      "filePath": "src/stores/game.ts",
+      "summary": "game.ts provides application code and declarations for the src area.",
+      "tags": [
+        "state-management",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/supabase/matchRealtime.ts",
+      "type": "file",
+      "name": "matchRealtime.ts",
+      "filePath": "src/supabase/matchRealtime.ts",
+      "summary": "matchRealtime.ts provides 3 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/supabase/matchRealtime.ts:subscribeMatchBroadcast",
+      "type": "function",
+      "name": "subscribeMatchBroadcast",
+      "filePath": "src/supabase/matchRealtime.ts",
+      "lineRange": [
+        45,
+        100
+      ],
+      "summary": "subscribeMatchBroadcast implements a significant behavior within matchRealtime.ts.",
+      "tags": [
+        "function",
+        "subscribe-match-broadcast",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/supabase/matchRealtimeEvents.ts",
+      "type": "file",
+      "name": "matchRealtimeEvents.ts",
+      "filePath": "src/supabase/matchRealtimeEvents.ts",
+      "summary": "matchRealtimeEvents.ts provides 4 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matchRealtimeEvents.ts:matchChannelTopic",
+      "type": "function",
+      "name": "matchChannelTopic",
+      "filePath": "src/supabase/matchRealtimeEvents.ts",
+      "lineRange": [
+        28,
+        30
+      ],
+      "summary": "matchChannelTopic implements a significant behavior within matchRealtimeEvents.ts.",
+      "tags": [
+        "function",
+        "match-channel-topic",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matchRealtimeEvents.ts:boardVersion",
+      "type": "function",
+      "name": "boardVersion",
+      "filePath": "src/supabase/matchRealtimeEvents.ts",
+      "lineRange": [
+        32,
+        34
+      ],
+      "summary": "boardVersion implements a significant behavior within matchRealtimeEvents.ts.",
+      "tags": [
+        "function",
+        "board-version",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matchRealtimeEvents.ts:withBoardVersion",
+      "type": "function",
+      "name": "withBoardVersion",
+      "filePath": "src/supabase/matchRealtimeEvents.ts",
+      "lineRange": [
+        36,
+        39
+      ],
+      "summary": "withBoardVersion implements a significant behavior within matchRealtimeEvents.ts.",
+      "tags": [
+        "function",
+        "with-board-version",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matchRealtimeEvents.ts:shouldApplyMatchEvent",
+      "type": "function",
+      "name": "shouldApplyMatchEvent",
+      "filePath": "src/supabase/matchRealtimeEvents.ts",
+      "lineRange": [
+        41,
+        49
+      ],
+      "summary": "shouldApplyMatchEvent implements a significant behavior within matchRealtimeEvents.ts.",
+      "tags": [
+        "function",
+        "should-apply-match-event",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/supabase/matches.ts",
+      "type": "file",
+      "name": "matches.ts",
+      "filePath": "src/supabase/matches.ts",
+      "summary": "matches.ts provides 13 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:findMatch",
+      "type": "function",
+      "name": "findMatch",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        91,
+        106
+      ],
+      "summary": "findMatch implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "find-match",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:cancelMatchmaking",
+      "type": "function",
+      "name": "cancelMatchmaking",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        108,
+        121
+      ],
+      "summary": "cancelMatchmaking implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "cancel-matchmaking",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:createPrivateRoom",
+      "type": "function",
+      "name": "createPrivateRoom",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        123,
+        136
+      ],
+      "summary": "createPrivateRoom implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "create-private-room",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:joinPrivateRoom",
+      "type": "function",
+      "name": "joinPrivateRoom",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        138,
+        151
+      ],
+      "summary": "joinPrivateRoom implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "join-private-room",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:getMatch",
+      "type": "function",
+      "name": "getMatch",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        155,
+        163
+      ],
+      "summary": "getMatch implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "get-match",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:rollDiceServer",
+      "type": "function",
+      "name": "rollDiceServer",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        167,
+        179
+      ],
+      "summary": "rollDiceServer implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "roll-dice-server",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:forfeitMatch",
+      "type": "function",
+      "name": "forfeitMatch",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        181,
+        193
+      ],
+      "summary": "forfeitMatch implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "forfeit-match",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:claimOpponentLeft",
+      "type": "function",
+      "name": "claimOpponentLeft",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        195,
+        208
+      ],
+      "summary": "claimOpponentLeft implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "claim-opponent-left",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:skipRollTurnServer",
+      "type": "function",
+      "name": "skipRollTurnServer",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        210,
+        223
+      ],
+      "summary": "skipRollTurnServer implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "skip-roll-turn-server",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:moveTokenServer",
+      "type": "function",
+      "name": "moveTokenServer",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        225,
+        239
+      ],
+      "summary": "moveTokenServer implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "move-token-server",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:syncBoardStateServer",
+      "type": "function",
+      "name": "syncBoardStateServer",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        241,
+        254
+      ],
+      "summary": "syncBoardStateServer implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "sync-board-state-server",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:subscribeMatch",
+      "type": "function",
+      "name": "subscribeMatch",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        258,
+        275
+      ],
+      "summary": "subscribeMatch implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "subscribe-match",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/matches.ts:subscribeQueue",
+      "type": "function",
+      "name": "subscribeQueue",
+      "filePath": "src/supabase/matches.ts",
+      "lineRange": [
+        277,
+        299
+      ],
+      "summary": "subscribeQueue implements a significant behavior within matches.ts.",
+      "tags": [
+        "function",
+        "subscribe-queue",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/game-rules.test.ts",
+      "type": "file",
+      "name": "game-rules.test.ts",
+      "filePath": "tests/game-rules.test.ts",
+      "summary": "game-rules.test.ts provides application code and declarations for the tests area.",
+      "tags": [
+        "test",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/match-realtime.test.ts",
+      "type": "file",
+      "name": "match-realtime.test.ts",
+      "filePath": "tests/match-realtime.test.ts",
+      "summary": "match-realtime.test.ts provides 1 function for the tests area.",
+      "tags": [
+        "test",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "function:src/skia/Board.tsx:BoardCanvas",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "function:src/skia/Board.tsx:BoardCanvas",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "function:src/skia/Board.tsx:rectTopLeftForPerspective",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "function:src/skia/Board.tsx:TrackCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "function:src/skia/Board.tsx:startIndexFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "function:src/skia/Board.tsx:diamondPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Token.tsx",
+      "target": "function:src/skia/Token.tsx:Token",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Token.tsx",
+      "target": "function:src/skia/Token.tsx:Token",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matchRealtime.ts",
+      "target": "function:src/supabase/matchRealtime.ts:subscribeMatchBroadcast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matchRealtime.ts",
+      "target": "function:src/supabase/matchRealtime.ts:subscribeMatchBroadcast",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:matchChannelTopic",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:matchChannelTopic",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:boardVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:boardVersion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:withBoardVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:withBoardVersion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:shouldApplyMatchEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "function:src/supabase/matchRealtimeEvents.ts:shouldApplyMatchEvent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:findMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:findMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:cancelMatchmaking",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:cancelMatchmaking",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:createPrivateRoom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:createPrivateRoom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:joinPrivateRoom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:joinPrivateRoom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:getMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:getMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:rollDiceServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:rollDiceServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:forfeitMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:forfeitMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:claimOpponentLeft",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:claimOpponentLeft",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:skipRollTurnServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:skipRollTurnServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:moveTokenServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:moveTokenServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:syncBoardStateServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:syncBoardStateServer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:subscribeMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:subscribeMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:subscribeQueue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "function:src/supabase/matches.ts:subscribeQueue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "file:src/game/board.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "file:src/game/perspective.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Board.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Token.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Token.tsx",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Token.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/game.ts",
+      "target": "file:src/game/ai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/game.ts",
+      "target": "file:src/game/rules.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/game.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/matchRealtime.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/matchRealtime.ts",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/matchRealtime.ts",
+      "target": "file:src/supabase/matchRealtimeEvents.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/matchRealtimeEvents.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/matches.ts",
+      "target": "file:src/supabase/matchRealtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/game-rules.test.ts",
+      "target": "file:src/game/board.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/game-rules.test.ts",
+      "target": "file:src/game/perspective.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/game-rules.test.ts",
+      "target": "file:src/game/rules.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/game-rules.test.ts",
+      "target": "file:src/game/seating.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/game-rules.test.ts",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/match-realtime.test.ts",
+      "target": "file:src/game/rules.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/match-realtime.test.ts",
+      "target": "file:src/supabase/matchRealtimeEvents.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

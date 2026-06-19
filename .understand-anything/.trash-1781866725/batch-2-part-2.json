@@ -1,0 +1,833 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/components/DailyRewardModal.tsx",
+      "type": "file",
+      "name": "DailyRewardModal.tsx",
+      "filePath": "src/components/DailyRewardModal.tsx",
+      "summary": "DailyRewardModal.tsx provides 2 functions for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/DailyRewardModal.tsx:DailyRewardModal",
+      "type": "function",
+      "name": "DailyRewardModal",
+      "filePath": "src/components/DailyRewardModal.tsx",
+      "lineRange": [
+        17,
+        97
+      ],
+      "summary": "DailyRewardModal implements a significant behavior within DailyRewardModal.tsx.",
+      "tags": [
+        "function",
+        "daily-reward-modal",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/DailyRewardModal.tsx:DayCard",
+      "type": "function",
+      "name": "DayCard",
+      "filePath": "src/components/DailyRewardModal.tsx",
+      "lineRange": [
+        99,
+        135
+      ],
+      "summary": "DayCard implements a significant behavior within DailyRewardModal.tsx.",
+      "tags": [
+        "function",
+        "day-card",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/constants/economy.ts",
+      "type": "file",
+      "name": "economy.ts",
+      "filePath": "src/constants/economy.ts",
+      "summary": "economy.ts provides application code and declarations for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/constants/profile.ts",
+      "type": "file",
+      "name": "profile.ts",
+      "filePath": "src/constants/profile.ts",
+      "summary": "profile.ts provides 4 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/constants/profile.ts:validateUsername",
+      "type": "function",
+      "name": "validateUsername",
+      "filePath": "src/constants/profile.ts",
+      "lineRange": [
+        35,
+        42
+      ],
+      "summary": "validateUsername implements a significant behavior within profile.ts.",
+      "tags": [
+        "function",
+        "validate-username",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/constants/profile.ts:isUsernameValid",
+      "type": "function",
+      "name": "isUsernameValid",
+      "filePath": "src/constants/profile.ts",
+      "lineRange": [
+        44,
+        47
+      ],
+      "summary": "isUsernameValid implements a significant behavior within profile.ts.",
+      "tags": [
+        "function",
+        "is-username-valid",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/constants/profile.ts:getAvatar",
+      "type": "function",
+      "name": "getAvatar",
+      "filePath": "src/constants/profile.ts",
+      "lineRange": [
+        49,
+        52
+      ],
+      "summary": "getAvatar implements a significant behavior within profile.ts.",
+      "tags": [
+        "function",
+        "get-avatar",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/constants/profile.ts:getTokenColor",
+      "type": "function",
+      "name": "getTokenColor",
+      "filePath": "src/constants/profile.ts",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "getTokenColor implements a significant behavior within profile.ts.",
+      "tags": [
+        "function",
+        "get-token-color",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/services/ads.ts",
+      "type": "file",
+      "name": "ads.ts",
+      "filePath": "src/services/ads.ts",
+      "summary": "ads.ts provides 2 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/services/ads.ts:initializeAds",
+      "type": "function",
+      "name": "initializeAds",
+      "filePath": "src/services/ads.ts",
+      "lineRange": [
+        38,
+        42
+      ],
+      "summary": "initializeAds implements a significant behavior within ads.ts.",
+      "tags": [
+        "function",
+        "initialize-ads",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/services/ads.ts:showRewardedAd",
+      "type": "function",
+      "name": "showRewardedAd",
+      "filePath": "src/services/ads.ts",
+      "lineRange": [
+        44,
+        95
+      ],
+      "summary": "showRewardedAd implements a significant behavior within ads.ts.",
+      "tags": [
+        "function",
+        "show-rewarded-ad",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/services/iap.ts",
+      "type": "file",
+      "name": "iap.ts",
+      "filePath": "src/services/iap.ts",
+      "summary": "iap.ts provides 3 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/services/iap.ts:loadCoinPack",
+      "type": "function",
+      "name": "loadCoinPack",
+      "filePath": "src/services/iap.ts",
+      "lineRange": [
+        30,
+        34
+      ],
+      "summary": "loadCoinPack implements a significant behavior within iap.ts.",
+      "tags": [
+        "function",
+        "load-coin-pack",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/services/iap.ts:purchaseCoinPack",
+      "type": "function",
+      "name": "purchaseCoinPack",
+      "filePath": "src/services/iap.ts",
+      "lineRange": [
+        36,
+        78
+      ],
+      "summary": "purchaseCoinPack implements a significant behavior within iap.ts.",
+      "tags": [
+        "function",
+        "purchase-coin-pack",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/stores/profile.ts",
+      "type": "file",
+      "name": "profile.ts",
+      "filePath": "src/stores/profile.ts",
+      "summary": "profile.ts provides application code and declarations for the src area.",
+      "tags": [
+        "state-management",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/stores/shop.ts",
+      "type": "file",
+      "name": "shop.ts",
+      "filePath": "src/stores/shop.ts",
+      "summary": "shop.ts provides application code and declarations for the src area.",
+      "tags": [
+        "state-management",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/stores/wallet.ts",
+      "type": "file",
+      "name": "wallet.ts",
+      "filePath": "src/stores/wallet.ts",
+      "summary": "wallet.ts provides application code and declarations for the src area.",
+      "tags": [
+        "state-management",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/supabase/transactions.ts",
+      "type": "file",
+      "name": "transactions.ts",
+      "filePath": "src/supabase/transactions.ts",
+      "summary": "transactions.ts provides 11 functions for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:readFunctionError",
+      "type": "function",
+      "name": "readFunctionError",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        26,
+        58
+      ],
+      "summary": "readFunctionError implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "read-function-error",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:deductEntryFee",
+      "type": "function",
+      "name": "deductEntryFee",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        94,
+        107
+      ],
+      "summary": "deductEntryFee implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "deduct-entry-fee",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:collectDailyReward",
+      "type": "function",
+      "name": "collectDailyReward",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        111,
+        123
+      ],
+      "summary": "collectDailyReward implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "collect-daily-reward",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:getDailyRewardStatus",
+      "type": "function",
+      "name": "getDailyRewardStatus",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        151,
+        186
+      ],
+      "summary": "getDailyRewardStatus implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "get-daily-reward-status",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:getTransactions",
+      "type": "function",
+      "name": "getTransactions",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        199,
+        212
+      ],
+      "summary": "getTransactions implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "get-transactions",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:awardMatchReward",
+      "type": "function",
+      "name": "awardMatchReward",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        216,
+        232
+      ],
+      "summary": "awardMatchReward implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "award-match-reward",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:grantAdReward",
+      "type": "function",
+      "name": "grantAdReward",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        234,
+        248
+      ],
+      "summary": "grantAdReward implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "grant-ad-reward",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:purchaseShopItem",
+      "type": "function",
+      "name": "purchaseShopItem",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        250,
+        265
+      ],
+      "summary": "purchaseShopItem implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "purchase-shop-item",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/transactions.ts:verifyIapPurchase",
+      "type": "function",
+      "name": "verifyIapPurchase",
+      "filePath": "src/supabase/transactions.ts",
+      "lineRange": [
+        267,
+        281
+      ],
+      "summary": "verifyIapPurchase implements a significant behavior within transactions.ts.",
+      "tags": [
+        "function",
+        "verify-iap-purchase",
+        "behavior"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/components/DailyRewardModal.tsx",
+      "target": "function:src/components/DailyRewardModal.tsx:DailyRewardModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/DailyRewardModal.tsx",
+      "target": "function:src/components/DailyRewardModal.tsx:DailyRewardModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/DailyRewardModal.tsx",
+      "target": "function:src/components/DailyRewardModal.tsx:DayCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:validateUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:validateUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:isUsernameValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:isUsernameValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:getAvatar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:getAvatar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:getTokenColor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "function:src/constants/profile.ts:getTokenColor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/services/ads.ts",
+      "target": "function:src/services/ads.ts:initializeAds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/services/ads.ts",
+      "target": "function:src/services/ads.ts:initializeAds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/services/ads.ts",
+      "target": "function:src/services/ads.ts:showRewardedAd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/services/ads.ts",
+      "target": "function:src/services/ads.ts:showRewardedAd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/services/iap.ts",
+      "target": "function:src/services/iap.ts:loadCoinPack",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/services/iap.ts",
+      "target": "function:src/services/iap.ts:loadCoinPack",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/services/iap.ts",
+      "target": "function:src/services/iap.ts:purchaseCoinPack",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/services/iap.ts",
+      "target": "function:src/services/iap.ts:purchaseCoinPack",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:readFunctionError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:deductEntryFee",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:deductEntryFee",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:collectDailyReward",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:collectDailyReward",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:getDailyRewardStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:getDailyRewardStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:getTransactions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:getTransactions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:awardMatchReward",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:awardMatchReward",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:grantAdReward",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:grantAdReward",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:purchaseShopItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:purchaseShopItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:verifyIapPurchase",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "function:src/supabase/transactions.ts:verifyIapPurchase",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/DailyRewardModal.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/DailyRewardModal.tsx",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/DailyRewardModal.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/constants/economy.ts",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/constants/profile.ts",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/ads.ts",
+      "target": "file:src/constants/economy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/ads.ts",
+      "target": "file:src/supabase/transactions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/iap.ts",
+      "target": "file:src/constants/economy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/services/iap.ts",
+      "target": "file:src/supabase/transactions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/profile.ts",
+      "target": "file:src/constants/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/profile.ts",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/profile.ts",
+      "target": "file:src/supabase/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/shop.ts",
+      "target": "file:src/constants/economy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/shop.ts",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/shop.ts",
+      "target": "file:src/stores/wallet.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/shop.ts",
+      "target": "file:src/supabase/transactions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/wallet.ts",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/wallet.ts",
+      "target": "file:src/supabase/transactions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/transactions.ts",
+      "target": "file:src/supabase/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

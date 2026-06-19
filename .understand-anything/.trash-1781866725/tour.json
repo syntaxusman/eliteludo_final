@@ -1,0 +1,127 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the README and product requirements to understand Elite Ludo’s premium mobile-game goals, technology choices, and expected player experience. These documents provide the vocabulary for the implementation that follows.",
+    "nodeIds": [
+      "document:README.md",
+      "document:docs/PRD.md"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "Application Bootstrap",
+    "description": "The root Expo Router layout initializes global providers, navigation, authentication state, and application-wide behavior. The index screen then decides where the player enters the experience.",
+    "nodeIds": [
+      "file:app/_layout.tsx",
+      "file:app/index.tsx",
+      "file:app/(tabs)/_layout.tsx"
+    ],
+    "languageLesson": "Expo Router turns files into routes while layout files compose navigation and providers around descendant screens."
+  },
+  {
+    "order": 3,
+    "title": "Identity and Onboarding",
+    "description": "Authentication and onboarding screens connect the first-run experience to Supabase identity services. Read these together to see validation, OAuth or phone flows, and the transition into the main application.",
+    "nodeIds": [
+      "file:app/auth/login.tsx",
+      "file:app/auth/signup.tsx",
+      "file:app/auth/onboarding.tsx",
+      "file:src/stores/auth.ts",
+      "file:src/supabase/oauth.ts"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Ludo Domain Model",
+    "description": "The game types, board geometry, and rules form the deterministic core of Elite Ludo. They define legal state and moves before UI, networking, or persistence concerns are layered on top.",
+    "nodeIds": [
+      "file:src/game/types.ts",
+      "file:src/game/board.ts",
+      "file:src/game/rules.ts",
+      "file:src/game/seating.ts"
+    ],
+    "languageLesson": "TypeScript discriminated unions and shared interfaces make game-state transitions explicit and safer to evolve."
+  },
+  {
+    "order": 5,
+    "title": "Match Runtime",
+    "description": "The match screen composes the game store with rule evaluation and player perspective. This is the central orchestration point where user input becomes game-state transitions and rendered feedback.",
+    "nodeIds": [
+      "file:app/game/[matchId].tsx",
+      "file:src/stores/game.ts",
+      "file:src/game/perspective.ts",
+      "file:src/game/ai.ts"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Board Rendering",
+    "description": "Skia components translate domain state into the board, tokens, dice, and particle effects players see. The split keeps rendering concerns separate from the game rules introduced earlier.",
+    "nodeIds": [
+      "file:src/skia/Board.tsx",
+      "file:src/skia/Token.tsx",
+      "file:src/skia/Dice.tsx",
+      "file:src/skia/Particles.tsx"
+    ],
+    "languageLesson": "React composition keeps visual primitives reusable, while Skia performs high-performance canvas rendering outside ordinary native views."
+  },
+  {
+    "order": 7,
+    "title": "Realtime Multiplayer",
+    "description": "Matchmaking and realtime modules connect local game state to Supabase sessions and broadcast events. Follow this path to understand room discovery, synchronization, and remote-player updates.",
+    "nodeIds": [
+      "file:app/game/matchmaking.tsx",
+      "file:src/supabase/matches.ts",
+      "file:src/supabase/matchRealtime.ts",
+      "file:src/supabase/matchRealtimeEvents.ts",
+      "file:supabase/functions/find-match/index.ts"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "Authoritative Moves",
+    "description": "Supabase Edge Functions validate and apply dice rolls, token moves, turn skips, and board synchronization on the server side. This boundary protects multiplayer integrity instead of trusting the client.",
+    "nodeIds": [
+      "file:supabase/functions/roll-dice/index.ts",
+      "file:supabase/functions/move-token/index.ts",
+      "file:supabase/functions/skip-roll-turn/index.ts",
+      "file:supabase/functions/sync-board-state/index.ts"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "Economy and Purchases",
+    "description": "Wallet, shop, advertising, and in-app purchase modules implement the game economy. Their server functions enforce rewards and purchases so balances remain authoritative.",
+    "nodeIds": [
+      "file:src/stores/wallet.ts",
+      "file:src/stores/shop.ts",
+      "file:src/services/ads.ts",
+      "file:src/services/iap.ts",
+      "file:supabase/functions/purchase-shop-item/index.ts"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "Database Evolution",
+    "description": "The ordered SQL migrations define profiles, matches, queues, economy records, row-level security, and realtime policies. They reveal the persistent contracts used by both the mobile client and Edge Functions.",
+    "nodeIds": [
+      "table:supabase/migrations/0001_initial_schema.sql:0001-initial-schema",
+      "table:supabase/migrations/0002_rls_policies.sql:0002-rls-policies",
+      "table:supabase/migrations/0005_phase4_economy_multiplayer.sql:0005-phase4-economy-multiplayer",
+      "table:supabase/migrations/0011_match_broadcast_realtime.sql:0011-match-broadcast-realtime"
+    ],
+    "languageLesson": "Ordered SQL migrations evolve schema and security policies incrementally; row-level security keeps authorization close to the data."
+  },
+  {
+    "order": 11,
+    "title": "Architecture and Verification",
+    "description": "Finish with the architecture guide and manual test plan to connect implementation details back to intended system boundaries and release checks. These documents are the practical map for extending the project safely.",
+    "nodeIds": [
+      "document:docs/ARCHITECTURE.md",
+      "document:docs/MANUAL_TEST_PLAN.md",
+      "config:package.json",
+      "config:app.json"
+    ]
+  }
+]

@@ -1,0 +1,147 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".agents/skills/react-best-practices/rules/_sections.md",
+      "language": "markdown",
+      "sizeLines": 46,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/_template.md",
+      "language": "markdown",
+      "sizeLines": 28,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/advanced-effect-event-deps.md",
+      "language": "markdown",
+      "sizeLines": 56,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/advanced-event-handler-refs.md",
+      "language": "markdown",
+      "sizeLines": 55,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/advanced-init-once.md",
+      "language": "markdown",
+      "sizeLines": 42,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/advanced-use-latest.md",
+      "language": "markdown",
+      "sizeLines": 39,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/async-api-routes.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+      "language": "markdown",
+      "sizeLines": 37,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/async-defer-await.md",
+      "language": "markdown",
+      "sizeLines": 82,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/async-dependencies.md",
+      "language": "markdown",
+      "sizeLines": 51,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/async-parallel.md",
+      "language": "markdown",
+      "sizeLines": 28,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/async-suspense-boundaries.md",
+      "language": "markdown",
+      "sizeLines": 99,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/bundle-analyzable-paths.md",
+      "language": "markdown",
+      "sizeLines": 63,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/bundle-barrel-imports.md",
+      "language": "markdown",
+      "sizeLines": 60,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/bundle-conditional.md",
+      "language": "markdown",
+      "sizeLines": 31,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/bundle-defer-third-party.md",
+      "language": "markdown",
+      "sizeLines": 49,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/bundle-dynamic-imports.md",
+      "language": "markdown",
+      "sizeLines": 35,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/bundle-preload.md",
+      "language": "markdown",
+      "sizeLines": 50,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/client-event-listeners.md",
+      "language": "markdown",
+      "sizeLines": 74,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/client-localstorage-schema.md",
+      "language": "markdown",
+      "sizeLines": 71,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".agents/skills/react-best-practices/rules/_sections.md": [],
+    ".agents/skills/react-best-practices/rules/_template.md": [],
+    ".agents/skills/react-best-practices/rules/advanced-effect-event-deps.md": [],
+    ".agents/skills/react-best-practices/rules/advanced-event-handler-refs.md": [],
+    ".agents/skills/react-best-practices/rules/advanced-init-once.md": [],
+    ".agents/skills/react-best-practices/rules/advanced-use-latest.md": [],
+    ".agents/skills/react-best-practices/rules/async-api-routes.md": [],
+    ".agents/skills/react-best-practices/rules/async-cheap-condition-before-await.md": [],
+    ".agents/skills/react-best-practices/rules/async-defer-await.md": [],
+    ".agents/skills/react-best-practices/rules/async-dependencies.md": [],
+    ".agents/skills/react-best-practices/rules/async-parallel.md": [],
+    ".agents/skills/react-best-practices/rules/async-suspense-boundaries.md": [],
+    ".agents/skills/react-best-practices/rules/bundle-analyzable-paths.md": [],
+    ".agents/skills/react-best-practices/rules/bundle-barrel-imports.md": [],
+    ".agents/skills/react-best-practices/rules/bundle-conditional.md": [],
+    ".agents/skills/react-best-practices/rules/bundle-defer-third-party.md": [],
+    ".agents/skills/react-best-practices/rules/bundle-dynamic-imports.md": [],
+    ".agents/skills/react-best-practices/rules/bundle-preload.md": [],
+    ".agents/skills/react-best-practices/rules/client-event-listeners.md": [],
+    ".agents/skills/react-best-practices/rules/client-localstorage-schema.md": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".claude/skills/upgrading-expo/references/expo-av-to-audio.md",
+      "language": "markdown",
+      "sizeLines": 132,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/upgrading-expo/references/expo-av-to-video.md",
+      "language": "markdown",
+      "sizeLines": 160,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/upgrading-expo/references/native-tabs.md",
+      "language": "markdown",
+      "sizeLines": 124,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/upgrading-expo/references/new-architecture.md",
+      "language": "markdown",
+      "sizeLines": 79,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/upgrading-expo/references/react-19.md",
+      "language": "markdown",
+      "sizeLines": 79,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/upgrading-expo/references/react-compiler.md",
+      "language": "markdown",
+      "sizeLines": 59,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".claude/skills/upgrading-expo/references/expo-av-to-audio.md": [],
+    ".claude/skills/upgrading-expo/references/expo-av-to-video.md": [],
+    ".claude/skills/upgrading-expo/references/native-tabs.md": [],
+    ".claude/skills/upgrading-expo/references/new-architecture.md": [],
+    ".claude/skills/upgrading-expo/references/react-19.md": [],
+    ".claude/skills/upgrading-expo/references/react-compiler.md": []
+  }
+}

@@ -1,0 +1,4808 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 429,
+  "totalBatches": 32,
+  "exportsByPath": {
+    ".agents/skills/expo-cicd-workflows/scripts/fetch.js": [
+      "fetchCached"
+    ],
+    ".agents/skills/expo-cicd-workflows/scripts/validate.js": [],
+    ".claude/skills/expo-cicd-workflows/scripts/fetch.js": [
+      "fetchCached"
+    ],
+    ".claude/skills/expo-cicd-workflows/scripts/validate.js": [],
+    ".opencode/plugins/graphify.js": [
+      "GraphifyPlugin"
+    ],
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/intermediate/.gitkeep": [],
+    ".understand-anything/tmp/.gitkeep": [],
+    "app/_layout.tsx": [
+      "RootLayout"
+    ],
+    "app/(tabs)/_layout.tsx": [
+      "TabsLayout"
+    ],
+    "app/(tabs)/home.tsx": [
+      "HomeScreen"
+    ],
+    "app/(tabs)/profile.tsx": [
+      "ProfileScreen"
+    ],
+    "app/auth/_layout.tsx": [
+      "AuthLayout"
+    ],
+    "app/auth/login.tsx": [
+      "LoginScreen"
+    ],
+    "app/auth/onboarding.tsx": [
+      "OnboardingScreen"
+    ],
+    "app/auth/phone-login.tsx": [
+      "PhoneLoginScreen"
+    ],
+    "app/auth/signup.tsx": [
+      "SignupScreen"
+    ],
+    "app/edit-profile.tsx": [
+      "EditProfileScreen"
+    ],
+    "app/game/[matchId].tsx": [
+      "GameScreen"
+    ],
+    "app/game/matchmaking.tsx": [
+      "MatchmakingScreen"
+    ],
+    "app/game/new.tsx": [
+      "NewGame"
+    ],
+    "app/game/private.tsx": [
+      "PrivateRoomScreen"
+    ],
+    "app/game/result.tsx": [
+      "ResultScreen"
+    ],
+    "app/index.tsx": [
+      "SplashScreen"
+    ],
+    "app/settings.tsx": [
+      "SettingsScreen"
+    ],
+    "app/shop.tsx": [
+      "ShopScreen"
+    ],
+    "eslint.config.js": [],
+    "src/assets/index.ts": [
+      "Images"
+    ],
+    "src/components/DailyRewardModal.tsx": [
+      "DailyRewardModal"
+    ],
+    "src/components/PlayerProfile.tsx": [
+      "PlayerProfile"
+    ],
+    "src/components/SocialButton.tsx": [
+      "SocialButton"
+    ],
+    "src/components/TokenDicePicker.tsx": [
+      "TokenDicePicker"
+    ],
+    "src/constants/economy.ts": [
+      "CITY_CLUBS",
+      "SHOP_ITEMS",
+      "AD_REWARD_COINS",
+      "IAP_COIN_PACK_AMOUNT"
+    ],
+    "src/constants/profile.ts": [
+      "AVATARS",
+      "TOKEN_COLORS",
+      "USERNAME_MIN",
+      "USERNAME_MAX",
+      "USERNAME_REGEX",
+      "validateUsername",
+      "isUsernameValid",
+      "getAvatar",
+      "getTokenColor"
+    ],
+    "src/game/ai.ts": [
+      "chooseMove"
+    ],
+    "src/game/board.ts": [
+      "BOARD_SIZE",
+      "HOME_COL_LENGTH",
+      "TOTAL_TRACK_HOPS",
+      "TOKENS_PER_PLAYER",
+      "OUTER_TRACK",
+      "COLOR_START_INDEX",
+      "SAFE_TRACK_INDICES",
+      "HOME_COL_CELLS",
+      "HOME_BASE_SLOTS",
+      "FINISH_CELL",
+      "trackIndexForHop",
+      "progressFor",
+      "cellForToken",
+      "isSameTrackCell"
+    ],
+    "src/game/bots.ts": [
+      "botDisplayName",
+      "botAvatarId",
+      "botThinkDelay"
+    ],
+    "src/game/perspective.ts": [
+      "COLOR_HOME_CORNER",
+      "cellForPerspective",
+      "visualCornerForColor"
+    ],
+    "src/game/rules.ts": [
+      "makeInitialPlayer",
+      "makeInitialGameState",
+      "rollDice",
+      "addRoll",
+      "tryMove",
+      "getValidMoves",
+      "applyMove",
+      "finishMove",
+      "advanceToNextPlayer",
+      "pathCellsForMove",
+      "checkWin",
+      "tokensFinished"
+    ],
+    "src/game/seating.ts": [
+      "oppositeColor",
+      "assignRuntimeColors",
+      "isOppositePair"
+    ],
+    "src/game/types.ts": [
+      "COLORS"
+    ],
+    "src/services/ads.ts": [
+      "homeBannerAdUnitId",
+      "rewardedAdUnitId",
+      "BannerAd",
+      "BannerAdSize",
+      "initializeAds",
+      "showRewardedAd"
+    ],
+    "src/services/iap.ts": [
+      "coinPackProductId",
+      "loadCoinPack",
+      "purchaseCoinPack"
+    ],
+    "src/skia/Board.tsx": [
+      "BoardCanvas"
+    ],
+    "src/skia/Dice.tsx": [
+      "Dice"
+    ],
+    "src/skia/Particles.tsx": [
+      "Particles"
+    ],
+    "src/skia/Token.tsx": [
+      "Token"
+    ],
+    "src/stores/auth.ts": [
+      "useAuthStore"
+    ],
+    "src/stores/game.ts": [
+      "useGameStore",
+      "chooseMove"
+    ],
+    "src/stores/profile.ts": [
+      "useProfileStore"
+    ],
+    "src/stores/settings.ts": [
+      "getCachedSettings",
+      "useSettingsStore"
+    ],
+    "src/stores/shop.ts": [
+      "useShopStore"
+    ],
+    "src/stores/wallet.ts": [
+      "DAILY_REWARDS",
+      "useWalletStore"
+    ],
+    "src/supabase/client.ts": [
+      "supabase",
+      "supabaseConfigured"
+    ],
+    "src/supabase/errors.ts": [
+      "getSupabaseErrorMessage"
+    ],
+    "src/supabase/matches.ts": [
+      "findMatch",
+      "cancelMatchmaking",
+      "createPrivateRoom",
+      "joinPrivateRoom",
+      "getMatch",
+      "rollDiceServer",
+      "forfeitMatch",
+      "claimOpponentLeft",
+      "skipRollTurnServer",
+      "moveTokenServer",
+      "syncBoardStateServer",
+      "subscribeMatch",
+      "subscribeQueue"
+    ],
+    "src/supabase/matchRealtime.ts": [
+      "MATCH_BROADCAST_EVENT",
+      "boardVersion",
+      "matchChannelTopic",
+      "shouldApplyMatchEvent",
+      "withBoardVersion",
+      "MatchRealtimeEvent",
+      "MatchRealtimeEventType",
+      "subscribeMatchBroadcast"
+    ],
+    "src/supabase/matchRealtimeEvents.ts": [
+      "MATCH_BROADCAST_EVENT",
+      "matchChannelTopic",
+      "boardVersion",
+      "withBoardVersion",
+      "shouldApplyMatchEvent"
+    ],
+    "src/supabase/oauth.ts": [
+      "signInWithGoogle"
+    ],
+    "src/supabase/transactions.ts": [
+      "deductEntryFee",
+      "collectDailyReward",
+      "getDailyRewardStatus",
+      "getTransactions",
+      "awardMatchReward",
+      "grantAdReward",
+      "purchaseShopItem",
+      "verifyIapPurchase"
+    ],
+    "src/theme/colors.ts": [
+      "colors"
+    ],
+    "src/theme/typography.ts": [
+      "fontFamilies",
+      "typography",
+      "spacing",
+      "radius"
+    ],
+    "src/utils/haptics.ts": [
+      "haptics"
+    ],
+    "src/utils/sound.ts": [
+      "sound"
+    ],
+    "supabase/.temp/cli-latest": [],
+    "supabase/.temp/gotrue-version": [],
+    "supabase/.temp/pooler-url": [],
+    "supabase/.temp/postgres-version": [],
+    "supabase/.temp/project-ref": [],
+    "supabase/.temp/rest-version": [],
+    "supabase/.temp/storage-migration": [],
+    "supabase/.temp/storage-version": [],
+    "supabase/functions/award-match-reward/index.ts": [],
+    "supabase/functions/claim-opponent-left/index.ts": [],
+    "supabase/functions/collect-daily-reward/index.ts": [],
+    "supabase/functions/deduct-entry-fee/index.ts": [],
+    "supabase/functions/find-match/index.ts": [],
+    "supabase/functions/forfeit-match/index.ts": [],
+    "supabase/functions/grant-ad-reward/index.ts": [],
+    "supabase/functions/move-token/index.ts": [],
+    "supabase/functions/purchase-shop-item/index.ts": [],
+    "supabase/functions/roll-dice/index.ts": [],
+    "supabase/functions/skip-roll-turn/index.ts": [],
+    "supabase/functions/sync-board-state/index.ts": [],
+    "supabase/functions/verify-iap-purchase/index.ts": [],
+    "tests/game-rules.test.ts": [],
+    "tests/match-realtime.test.ts": []
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "app/(tabs)/_layout.tsx",
+          "language": "typescript",
+          "sizeLines": 183,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/_layout.tsx",
+          "language": "typescript",
+          "sizeLines": 89,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/auth/_layout.tsx",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/auth/login.tsx",
+          "language": "typescript",
+          "sizeLines": 329,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/auth/phone-login.tsx",
+          "language": "typescript",
+          "sizeLines": 230,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/auth/signup.tsx",
+          "language": "typescript",
+          "sizeLines": 288,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/index.tsx",
+          "language": "typescript",
+          "sizeLines": 243,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/settings.tsx",
+          "language": "typescript",
+          "sizeLines": 394,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/PlayerProfile.tsx",
+          "language": "typescript",
+          "sizeLines": 410,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/SocialButton.tsx",
+          "language": "typescript",
+          "sizeLines": 91,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/TokenDicePicker.tsx",
+          "language": "typescript",
+          "sizeLines": 83,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/skia/Dice.tsx",
+          "language": "typescript",
+          "sizeLines": 221,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/skia/Particles.tsx",
+          "language": "typescript",
+          "sizeLines": 164,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/stores/auth.ts",
+          "language": "typescript",
+          "sizeLines": 40,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/stores/settings.ts",
+          "language": "typescript",
+          "sizeLines": 78,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/supabase/client.ts",
+          "language": "typescript",
+          "sizeLines": 39,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/supabase/errors.ts",
+          "language": "typescript",
+          "sizeLines": 9,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/supabase/oauth.ts",
+          "language": "typescript",
+          "sizeLines": 32,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/theme/colors.ts",
+          "language": "typescript",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/theme/typography.ts",
+          "language": "typescript",
+          "sizeLines": 30,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/utils/haptics.ts",
+          "language": "typescript",
+          "sizeLines": 53,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/utils/sound.ts",
+          "language": "typescript",
+          "sizeLines": 17,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "app/(tabs)/_layout.tsx": [
+          "src/theme/colors.ts",
+          "src/theme/typography.ts"
+        ],
+        "app/_layout.tsx": [
+          "src/stores/auth.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts"
+        ],
+        "app/auth/_layout.tsx": [
+          "src/theme/colors.ts"
+        ],
+        "app/auth/login.tsx": [
+          "src/assets/index.ts",
+          "src/components/SocialButton.tsx",
+          "src/supabase/client.ts",
+          "src/supabase/errors.ts",
+          "src/supabase/oauth.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/auth/phone-login.tsx": [
+          "src/supabase/client.ts",
+          "src/supabase/errors.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/auth/signup.tsx": [
+          "src/assets/index.ts",
+          "src/supabase/client.ts",
+          "src/supabase/errors.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/index.tsx": [
+          "src/stores/auth.ts",
+          "src/stores/settings.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts"
+        ],
+        "app/settings.tsx": [
+          "src/assets/index.ts",
+          "src/stores/profile.ts",
+          "src/stores/settings.ts",
+          "src/supabase/client.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "src/components/PlayerProfile.tsx": [
+          "src/assets/index.ts",
+          "src/game/rules.ts",
+          "src/game/types.ts",
+          "src/skia/Dice.tsx",
+          "src/theme/colors.ts"
+        ],
+        "src/components/SocialButton.tsx": [
+          "src/theme/colors.ts",
+          "src/theme/typography.ts"
+        ],
+        "src/components/TokenDicePicker.tsx": [
+          "src/theme/colors.ts",
+          "src/theme/typography.ts"
+        ],
+        "src/skia/Dice.tsx": [
+          "src/theme/colors.ts"
+        ],
+        "src/skia/Particles.tsx": [
+          "src/theme/colors.ts"
+        ],
+        "src/stores/auth.ts": [
+          "src/supabase/client.ts",
+          "src/supabase/errors.ts"
+        ],
+        "src/stores/settings.ts": [],
+        "src/supabase/client.ts": [],
+        "src/supabase/errors.ts": [],
+        "src/supabase/oauth.ts": [
+          "src/supabase/client.ts"
+        ],
+        "src/theme/colors.ts": [],
+        "src/theme/typography.ts": [],
+        "src/utils/haptics.ts": [
+          "src/stores/settings.ts"
+        ],
+        "src/utils/sound.ts": [
+          "src/stores/settings.ts"
+        ]
+      },
+      "neighborMap": {
+        "app/auth/login.tsx": [
+          {
+            "path": "src/assets/index.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "Images"
+            ]
+          }
+        ],
+        "app/auth/signup.tsx": [
+          {
+            "path": "src/assets/index.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "Images"
+            ]
+          }
+        ],
+        "app/settings.tsx": [
+          {
+            "path": "src/assets/index.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "Images"
+            ]
+          },
+          {
+            "path": "src/stores/profile.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useProfileStore"
+            ]
+          }
+        ],
+        "src/components/PlayerProfile.tsx": [
+          {
+            "path": "src/assets/index.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "Images"
+            ]
+          },
+          {
+            "path": "src/game/rules.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "makeInitialPlayer",
+              "makeInitialGameState",
+              "rollDice",
+              "addRoll",
+              "tryMove",
+              "getValidMoves",
+              "applyMove",
+              "finishMove",
+              "advanceToNextPlayer",
+              "pathCellsForMove",
+              "checkWin",
+              "tokensFinished"
+            ]
+          },
+          {
+            "path": "src/game/types.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "COLORS"
+            ]
+          }
+        ],
+        "src/components/TokenDicePicker.tsx": [
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          }
+        ],
+        "src/skia/Dice.tsx": [
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          }
+        ],
+        "src/skia/Particles.tsx": [
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          }
+        ],
+        "src/supabase/client.ts": [
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          },
+          {
+            "path": "app/game/matchmaking.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MatchmakingScreen"
+            ]
+          },
+          {
+            "path": "app/game/result.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ResultScreen"
+            ]
+          },
+          {
+            "path": "src/stores/profile.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useProfileStore"
+            ]
+          },
+          {
+            "path": "src/supabase/matches.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "findMatch",
+              "cancelMatchmaking",
+              "createPrivateRoom",
+              "joinPrivateRoom",
+              "getMatch",
+              "rollDiceServer",
+              "forfeitMatch",
+              "claimOpponentLeft",
+              "skipRollTurnServer",
+              "moveTokenServer",
+              "syncBoardStateServer",
+              "subscribeMatch",
+              "subscribeQueue"
+            ]
+          },
+          {
+            "path": "src/supabase/matchRealtime.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "MATCH_BROADCAST_EVENT",
+              "boardVersion",
+              "matchChannelTopic",
+              "shouldApplyMatchEvent",
+              "withBoardVersion",
+              "MatchRealtimeEvent",
+              "MatchRealtimeEventType",
+              "subscribeMatchBroadcast"
+            ]
+          },
+          {
+            "path": "src/supabase/transactions.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "deductEntryFee",
+              "collectDailyReward",
+              "getDailyRewardStatus",
+              "getTransactions",
+              "awardMatchReward",
+              "grantAdReward",
+              "purchaseShopItem",
+              "verifyIapPurchase"
+            ]
+          }
+        ],
+        "src/supabase/errors.ts": [
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          },
+          {
+            "path": "src/stores/profile.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useProfileStore"
+            ]
+          },
+          {
+            "path": "src/supabase/transactions.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "deductEntryFee",
+              "collectDailyReward",
+              "getDailyRewardStatus",
+              "getTransactions",
+              "awardMatchReward",
+              "grantAdReward",
+              "purchaseShopItem",
+              "verifyIapPurchase"
+            ]
+          }
+        ],
+        "src/theme/colors.ts": [
+          {
+            "path": "app/(tabs)/home.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "HomeScreen"
+            ]
+          },
+          {
+            "path": "app/(tabs)/profile.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ProfileScreen"
+            ]
+          },
+          {
+            "path": "app/auth/onboarding.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "OnboardingScreen"
+            ]
+          },
+          {
+            "path": "app/edit-profile.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "EditProfileScreen"
+            ]
+          },
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          },
+          {
+            "path": "app/game/matchmaking.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MatchmakingScreen"
+            ]
+          },
+          {
+            "path": "app/game/private.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PrivateRoomScreen"
+            ]
+          },
+          {
+            "path": "app/game/result.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ResultScreen"
+            ]
+          },
+          {
+            "path": "app/shop.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ShopScreen"
+            ]
+          },
+          {
+            "path": "src/components/DailyRewardModal.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "DailyRewardModal"
+            ]
+          },
+          {
+            "path": "src/constants/profile.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "AVATARS",
+              "TOKEN_COLORS",
+              "USERNAME_MIN",
+              "USERNAME_MAX",
+              "USERNAME_REGEX",
+              "validateUsername",
+              "isUsernameValid",
+              "getAvatar",
+              "getTokenColor"
+            ]
+          },
+          {
+            "path": "src/skia/Board.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "BoardCanvas"
+            ]
+          },
+          {
+            "path": "src/skia/Token.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Token"
+            ]
+          }
+        ],
+        "src/theme/typography.ts": [
+          {
+            "path": "app/(tabs)/home.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "HomeScreen"
+            ]
+          },
+          {
+            "path": "app/(tabs)/profile.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ProfileScreen"
+            ]
+          },
+          {
+            "path": "app/auth/onboarding.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "OnboardingScreen"
+            ]
+          },
+          {
+            "path": "app/edit-profile.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "EditProfileScreen"
+            ]
+          },
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          },
+          {
+            "path": "app/game/matchmaking.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MatchmakingScreen"
+            ]
+          },
+          {
+            "path": "app/game/private.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PrivateRoomScreen"
+            ]
+          },
+          {
+            "path": "app/game/result.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ResultScreen"
+            ]
+          },
+          {
+            "path": "app/shop.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ShopScreen"
+            ]
+          }
+        ],
+        "src/utils/haptics.ts": [
+          {
+            "path": "app/(tabs)/home.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "HomeScreen"
+            ]
+          },
+          {
+            "path": "app/(tabs)/profile.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ProfileScreen"
+            ]
+          },
+          {
+            "path": "app/auth/onboarding.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "OnboardingScreen"
+            ]
+          },
+          {
+            "path": "app/edit-profile.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "EditProfileScreen"
+            ]
+          },
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          },
+          {
+            "path": "app/game/private.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PrivateRoomScreen"
+            ]
+          },
+          {
+            "path": "app/shop.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ShopScreen"
+            ]
+          }
+        ],
+        "src/utils/sound.ts": [
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "app/(tabs)/home.tsx",
+          "language": "typescript",
+          "sizeLines": 1566,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/(tabs)/profile.tsx",
+          "language": "typescript",
+          "sizeLines": 306,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/auth/onboarding.tsx",
+          "language": "typescript",
+          "sizeLines": 383,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/edit-profile.tsx",
+          "language": "typescript",
+          "sizeLines": 362,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/game/matchmaking.tsx",
+          "language": "typescript",
+          "sizeLines": 562,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/game/private.tsx",
+          "language": "typescript",
+          "sizeLines": 160,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/game/result.tsx",
+          "language": "typescript",
+          "sizeLines": 222,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/shop.tsx",
+          "language": "typescript",
+          "sizeLines": 221,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/assets/index.ts",
+          "language": "typescript",
+          "sizeLines": 64,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/DailyRewardModal.tsx",
+          "language": "typescript",
+          "sizeLines": 280,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/constants/economy.ts",
+          "language": "typescript",
+          "sizeLines": 40,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/constants/profile.ts",
+          "language": "typescript",
+          "sizeLines": 57,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/services/ads.ts",
+          "language": "typescript",
+          "sizeLines": 95,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/services/iap.ts",
+          "language": "typescript",
+          "sizeLines": 78,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/stores/profile.ts",
+          "language": "typescript",
+          "sizeLines": 159,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/stores/shop.ts",
+          "language": "typescript",
+          "sizeLines": 35,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/stores/wallet.ts",
+          "language": "typescript",
+          "sizeLines": 102,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/supabase/transactions.ts",
+          "language": "typescript",
+          "sizeLines": 281,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "app/(tabs)/home.tsx": [
+          "src/assets/index.ts",
+          "src/components/DailyRewardModal.tsx",
+          "src/services/ads.ts",
+          "src/stores/profile.ts",
+          "src/stores/wallet.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/(tabs)/profile.tsx": [
+          "src/assets/index.ts",
+          "src/constants/profile.ts",
+          "src/stores/profile.ts",
+          "src/stores/wallet.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/auth/onboarding.tsx": [
+          "src/assets/index.ts",
+          "src/constants/profile.ts",
+          "src/stores/profile.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/edit-profile.tsx": [
+          "src/assets/index.ts",
+          "src/constants/profile.ts",
+          "src/stores/profile.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/game/matchmaking.tsx": [
+          "src/assets/index.ts",
+          "src/stores/profile.ts",
+          "src/stores/wallet.ts",
+          "src/supabase/client.ts",
+          "src/supabase/matches.ts",
+          "src/supabase/transactions.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts"
+        ],
+        "app/game/private.tsx": [
+          "src/stores/wallet.ts",
+          "src/supabase/matches.ts",
+          "src/supabase/transactions.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "app/game/result.tsx": [
+          "src/assets/index.ts",
+          "src/game/types.ts",
+          "src/stores/profile.ts",
+          "src/stores/wallet.ts",
+          "src/supabase/client.ts",
+          "src/supabase/matches.ts",
+          "src/supabase/transactions.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts"
+        ],
+        "app/shop.tsx": [
+          "src/constants/economy.ts",
+          "src/services/ads.ts",
+          "src/services/iap.ts",
+          "src/stores/profile.ts",
+          "src/stores/shop.ts",
+          "src/stores/wallet.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts"
+        ],
+        "src/assets/index.ts": [],
+        "src/components/DailyRewardModal.tsx": [
+          "src/assets/index.ts",
+          "src/stores/wallet.ts",
+          "src/theme/colors.ts"
+        ],
+        "src/constants/economy.ts": [
+          "src/assets/index.ts"
+        ],
+        "src/constants/profile.ts": [
+          "src/theme/colors.ts"
+        ],
+        "src/services/ads.ts": [
+          "src/constants/economy.ts",
+          "src/supabase/transactions.ts"
+        ],
+        "src/services/iap.ts": [
+          "src/constants/economy.ts",
+          "src/supabase/transactions.ts"
+        ],
+        "src/stores/profile.ts": [
+          "src/constants/profile.ts",
+          "src/supabase/client.ts",
+          "src/supabase/errors.ts"
+        ],
+        "src/stores/shop.ts": [
+          "src/constants/economy.ts",
+          "src/stores/profile.ts",
+          "src/stores/wallet.ts",
+          "src/supabase/transactions.ts"
+        ],
+        "src/stores/wallet.ts": [
+          "src/stores/profile.ts",
+          "src/supabase/transactions.ts"
+        ],
+        "src/supabase/transactions.ts": [
+          "src/supabase/client.ts",
+          "src/supabase/errors.ts"
+        ]
+      },
+      "neighborMap": {
+        "app/(tabs)/home.tsx": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          },
+          {
+            "path": "src/utils/haptics.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "haptics"
+            ]
+          }
+        ],
+        "app/(tabs)/profile.tsx": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          },
+          {
+            "path": "src/utils/haptics.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "haptics"
+            ]
+          }
+        ],
+        "app/auth/onboarding.tsx": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          },
+          {
+            "path": "src/utils/haptics.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "haptics"
+            ]
+          }
+        ],
+        "app/edit-profile.tsx": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          },
+          {
+            "path": "src/utils/haptics.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "haptics"
+            ]
+          }
+        ],
+        "app/game/matchmaking.tsx": [
+          {
+            "path": "src/supabase/client.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "supabase",
+              "supabaseConfigured"
+            ]
+          },
+          {
+            "path": "src/supabase/matches.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "findMatch",
+              "cancelMatchmaking",
+              "createPrivateRoom",
+              "joinPrivateRoom",
+              "getMatch",
+              "rollDiceServer",
+              "forfeitMatch",
+              "claimOpponentLeft",
+              "skipRollTurnServer",
+              "moveTokenServer",
+              "syncBoardStateServer",
+              "subscribeMatch",
+              "subscribeQueue"
+            ]
+          },
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          }
+        ],
+        "app/game/private.tsx": [
+          {
+            "path": "src/supabase/matches.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "findMatch",
+              "cancelMatchmaking",
+              "createPrivateRoom",
+              "joinPrivateRoom",
+              "getMatch",
+              "rollDiceServer",
+              "forfeitMatch",
+              "claimOpponentLeft",
+              "skipRollTurnServer",
+              "moveTokenServer",
+              "syncBoardStateServer",
+              "subscribeMatch",
+              "subscribeQueue"
+            ]
+          },
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          },
+          {
+            "path": "src/utils/haptics.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "haptics"
+            ]
+          }
+        ],
+        "app/game/result.tsx": [
+          {
+            "path": "src/game/types.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "COLORS"
+            ]
+          },
+          {
+            "path": "src/supabase/client.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "supabase",
+              "supabaseConfigured"
+            ]
+          },
+          {
+            "path": "src/supabase/matches.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "findMatch",
+              "cancelMatchmaking",
+              "createPrivateRoom",
+              "joinPrivateRoom",
+              "getMatch",
+              "rollDiceServer",
+              "forfeitMatch",
+              "claimOpponentLeft",
+              "skipRollTurnServer",
+              "moveTokenServer",
+              "syncBoardStateServer",
+              "subscribeMatch",
+              "subscribeQueue"
+            ]
+          },
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          }
+        ],
+        "app/shop.tsx": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          },
+          {
+            "path": "src/utils/haptics.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "haptics"
+            ]
+          }
+        ],
+        "src/assets/index.ts": [
+          {
+            "path": "app/auth/login.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "LoginScreen"
+            ]
+          },
+          {
+            "path": "app/auth/signup.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "SignupScreen"
+            ]
+          },
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          },
+          {
+            "path": "app/settings.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "SettingsScreen"
+            ]
+          },
+          {
+            "path": "src/components/PlayerProfile.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "PlayerProfile"
+            ]
+          },
+          {
+            "path": "src/skia/Token.tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Token"
+            ]
+          }
+        ],
+        "src/components/DailyRewardModal.tsx": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          }
+        ],
+        "src/constants/profile.ts": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          }
+        ],
+        "src/stores/profile.ts": [
+          {
+            "path": "src/supabase/client.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "supabase",
+              "supabaseConfigured"
+            ]
+          },
+          {
+            "path": "src/supabase/errors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "getSupabaseErrorMessage"
+            ]
+          },
+          {
+            "path": "app/game/[matchId].tsx",
+            "batchIndex": 3,
+            "symbols": [
+              "GameScreen"
+            ]
+          },
+          {
+            "path": "app/settings.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "SettingsScreen"
+            ]
+          }
+        ],
+        "src/supabase/transactions.ts": [
+          {
+            "path": "src/supabase/client.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "supabase",
+              "supabaseConfigured"
+            ]
+          },
+          {
+            "path": "src/supabase/errors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "getSupabaseErrorMessage"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "app/game/[matchId].tsx",
+          "language": "typescript",
+          "sizeLines": 2004,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/ai.ts",
+          "language": "typescript",
+          "sizeLines": 34,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/board.ts",
+          "language": "typescript",
+          "sizeLines": 215,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/bots.ts",
+          "language": "typescript",
+          "sizeLines": 40,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/perspective.ts",
+          "language": "typescript",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/rules.ts",
+          "language": "typescript",
+          "sizeLines": 376,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/seating.ts",
+          "language": "typescript",
+          "sizeLines": 44,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/types.ts",
+          "language": "typescript",
+          "sizeLines": 78,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/skia/Board.tsx",
+          "language": "typescript",
+          "sizeLines": 212,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/skia/Token.tsx",
+          "language": "typescript",
+          "sizeLines": 168,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/stores/game.ts",
+          "language": "typescript",
+          "sizeLines": 110,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/supabase/matchRealtime.ts",
+          "language": "typescript",
+          "sizeLines": 100,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/supabase/matchRealtimeEvents.ts",
+          "language": "typescript",
+          "sizeLines": 49,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/supabase/matches.ts",
+          "language": "typescript",
+          "sizeLines": 299,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/game-rules.test.ts",
+          "language": "typescript",
+          "sizeLines": 197,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/match-realtime.test.ts",
+          "language": "typescript",
+          "sizeLines": 55,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "app/game/[matchId].tsx": [
+          "src/assets/index.ts",
+          "src/components/TokenDicePicker.tsx",
+          "src/constants/profile.ts",
+          "src/game/board.ts",
+          "src/game/bots.ts",
+          "src/game/perspective.ts",
+          "src/game/rules.ts",
+          "src/game/seating.ts",
+          "src/game/types.ts",
+          "src/skia/Board.tsx",
+          "src/skia/Dice.tsx",
+          "src/skia/Particles.tsx",
+          "src/skia/Token.tsx",
+          "src/stores/game.ts",
+          "src/stores/profile.ts",
+          "src/supabase/client.ts",
+          "src/supabase/errors.ts",
+          "src/supabase/matches.ts",
+          "src/supabase/matchRealtime.ts",
+          "src/theme/colors.ts",
+          "src/theme/typography.ts",
+          "src/utils/haptics.ts",
+          "src/utils/sound.ts"
+        ],
+        "src/game/ai.ts": [
+          "src/game/board.ts",
+          "src/game/rules.ts",
+          "src/game/types.ts"
+        ],
+        "src/game/board.ts": [
+          "src/game/types.ts"
+        ],
+        "src/game/bots.ts": [],
+        "src/game/perspective.ts": [
+          "src/game/board.ts",
+          "src/game/types.ts"
+        ],
+        "src/game/rules.ts": [
+          "src/game/board.ts",
+          "src/game/bots.ts",
+          "src/game/types.ts"
+        ],
+        "src/game/seating.ts": [
+          "src/game/types.ts"
+        ],
+        "src/game/types.ts": [],
+        "src/skia/Board.tsx": [
+          "src/game/board.ts",
+          "src/game/perspective.ts",
+          "src/game/types.ts",
+          "src/theme/colors.ts"
+        ],
+        "src/skia/Token.tsx": [
+          "src/assets/index.ts",
+          "src/game/types.ts",
+          "src/theme/colors.ts"
+        ],
+        "src/stores/game.ts": [
+          "src/game/ai.ts",
+          "src/game/rules.ts",
+          "src/game/types.ts"
+        ],
+        "src/supabase/matchRealtime.ts": [
+          "src/game/types.ts",
+          "src/supabase/client.ts",
+          "src/supabase/matchRealtimeEvents.ts"
+        ],
+        "src/supabase/matchRealtimeEvents.ts": [
+          "src/game/types.ts"
+        ],
+        "src/supabase/matches.ts": [
+          "src/game/types.ts",
+          "src/supabase/client.ts",
+          "src/supabase/matchRealtime.ts"
+        ],
+        "tests/game-rules.test.ts": [
+          "src/game/board.ts",
+          "src/game/perspective.ts",
+          "src/game/rules.ts",
+          "src/game/seating.ts",
+          "src/game/types.ts"
+        ],
+        "tests/match-realtime.test.ts": [
+          "src/game/rules.ts",
+          "src/supabase/matchRealtimeEvents.ts"
+        ]
+      },
+      "neighborMap": {
+        "app/game/[matchId].tsx": [
+          {
+            "path": "src/assets/index.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "Images"
+            ]
+          },
+          {
+            "path": "src/components/TokenDicePicker.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "TokenDicePicker"
+            ]
+          },
+          {
+            "path": "src/constants/profile.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "AVATARS",
+              "TOKEN_COLORS",
+              "USERNAME_MIN",
+              "USERNAME_MAX",
+              "USERNAME_REGEX",
+              "validateUsername",
+              "isUsernameValid",
+              "getAvatar",
+              "getTokenColor"
+            ]
+          },
+          {
+            "path": "src/skia/Dice.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Dice"
+            ]
+          },
+          {
+            "path": "src/skia/Particles.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Particles"
+            ]
+          },
+          {
+            "path": "src/stores/profile.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "useProfileStore"
+            ]
+          },
+          {
+            "path": "src/supabase/client.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "supabase",
+              "supabaseConfigured"
+            ]
+          },
+          {
+            "path": "src/supabase/errors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "getSupabaseErrorMessage"
+            ]
+          },
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          },
+          {
+            "path": "src/theme/typography.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "fontFamilies",
+              "typography",
+              "spacing",
+              "radius"
+            ]
+          },
+          {
+            "path": "src/utils/haptics.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "haptics"
+            ]
+          },
+          {
+            "path": "src/utils/sound.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "sound"
+            ]
+          }
+        ],
+        "src/game/rules.ts": [
+          {
+            "path": "src/components/PlayerProfile.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "PlayerProfile"
+            ]
+          }
+        ],
+        "src/game/types.ts": [
+          {
+            "path": "app/game/result.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ResultScreen"
+            ]
+          },
+          {
+            "path": "src/components/PlayerProfile.tsx",
+            "batchIndex": 1,
+            "symbols": [
+              "PlayerProfile"
+            ]
+          }
+        ],
+        "src/skia/Board.tsx": [
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          }
+        ],
+        "src/skia/Token.tsx": [
+          {
+            "path": "src/assets/index.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "Images"
+            ]
+          },
+          {
+            "path": "src/theme/colors.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "colors"
+            ]
+          }
+        ],
+        "src/supabase/matchRealtime.ts": [
+          {
+            "path": "src/supabase/client.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "supabase",
+              "supabaseConfigured"
+            ]
+          }
+        ],
+        "src/supabase/matches.ts": [
+          {
+            "path": "src/supabase/client.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "supabase",
+              "supabaseConfigured"
+            ]
+          },
+          {
+            "path": "app/game/matchmaking.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "MatchmakingScreen"
+            ]
+          },
+          {
+            "path": "app/game/private.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "PrivateRoomScreen"
+            ]
+          },
+          {
+            "path": "app/game/result.tsx",
+            "batchIndex": 2,
+            "symbols": [
+              "ResultScreen"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "supabase/migrations/0001_initial_schema.sql",
+          "language": "sql",
+          "sizeLines": 139,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0002_rls_policies.sql",
+          "language": "sql",
+          "sizeLines": 66,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0003_add_color_id.sql",
+          "language": "sql",
+          "sizeLines": 4,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0004_match_queue.sql",
+          "language": "sql",
+          "sizeLines": 59,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0005_phase4_economy_multiplayer.sql",
+          "language": "sql",
+          "sizeLines": 103,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0006_atomic_daily_reward.sql",
+          "language": "sql",
+          "sizeLines": 113,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0007_lock_down_security_definer_functions.sql",
+          "language": "sql",
+          "sizeLines": 15,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0008_revoke_explicit_security_definer_exec.sql",
+          "language": "sql",
+          "sizeLines": 12,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0009_match_forfeit_move_type.sql",
+          "language": "sql",
+          "sizeLines": 1,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0010_realtime_safe_participant_policies.sql",
+          "language": "sql",
+          "sizeLines": 28,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0011_match_broadcast_realtime.sql",
+          "language": "sql",
+          "sizeLines": 66,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/0012_match_presence_realtime_policy.sql",
+          "language": "sql",
+          "sizeLines": 42,
+          "fileCategory": "data"
+        },
+        {
+          "path": "supabase/migrations/20260617182229_bot_sync_move_type.sql",
+          "language": "sql",
+          "sizeLines": 1,
+          "fileCategory": "data"
+        }
+      ],
+      "batchImportData": {
+        "supabase/migrations/0001_initial_schema.sql": [],
+        "supabase/migrations/0002_rls_policies.sql": [],
+        "supabase/migrations/0003_add_color_id.sql": [],
+        "supabase/migrations/0004_match_queue.sql": [],
+        "supabase/migrations/0005_phase4_economy_multiplayer.sql": [],
+        "supabase/migrations/0006_atomic_daily_reward.sql": [],
+        "supabase/migrations/0007_lock_down_security_definer_functions.sql": [],
+        "supabase/migrations/0008_revoke_explicit_security_definer_exec.sql": [],
+        "supabase/migrations/0009_match_forfeit_move_type.sql": [],
+        "supabase/migrations/0010_realtime_safe_participant_policies.sql": [],
+        "supabase/migrations/0011_match_broadcast_realtime.sql": [],
+        "supabase/migrations/0012_match_presence_realtime_policy.sql": [],
+        "supabase/migrations/20260617182229_bot_sync_move_type.sql": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": ".agents/skills/building-native-ui/references/animations.md",
+          "language": "markdown",
+          "sizeLines": 220,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/controls.md",
+          "language": "markdown",
+          "sizeLines": 270,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/form-sheet.md",
+          "language": "markdown",
+          "sizeLines": 253,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/gradients.md",
+          "language": "markdown",
+          "sizeLines": 106,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/icons.md",
+          "language": "markdown",
+          "sizeLines": 213,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/media.md",
+          "language": "markdown",
+          "sizeLines": 198,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/route-structure.md",
+          "language": "markdown",
+          "sizeLines": 229,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/search.md",
+          "language": "markdown",
+          "sizeLines": 248,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/storage.md",
+          "language": "markdown",
+          "sizeLines": 121,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/tabs.md",
+          "language": "markdown",
+          "sizeLines": 433,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/toolbar-and-headers.md",
+          "language": "markdown",
+          "sizeLines": 284,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/visual-effects.md",
+          "language": "markdown",
+          "sizeLines": 197,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/webgpu-three.md",
+          "language": "markdown",
+          "sizeLines": 605,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/references/zoom-transitions.md",
+          "language": "markdown",
+          "sizeLines": 158,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/building-native-ui/references/animations.md": [],
+        ".agents/skills/building-native-ui/references/controls.md": [],
+        ".agents/skills/building-native-ui/references/form-sheet.md": [],
+        ".agents/skills/building-native-ui/references/gradients.md": [],
+        ".agents/skills/building-native-ui/references/icons.md": [],
+        ".agents/skills/building-native-ui/references/media.md": [],
+        ".agents/skills/building-native-ui/references/route-structure.md": [],
+        ".agents/skills/building-native-ui/references/search.md": [],
+        ".agents/skills/building-native-ui/references/storage.md": [],
+        ".agents/skills/building-native-ui/references/tabs.md": [],
+        ".agents/skills/building-native-ui/references/toolbar-and-headers.md": [],
+        ".agents/skills/building-native-ui/references/visual-effects.md": [],
+        ".agents/skills/building-native-ui/references/webgpu-three.md": [],
+        ".agents/skills/building-native-ui/references/zoom-transitions.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": ".agents/skills/composition-patterns/AGENTS.md",
+          "language": "markdown",
+          "sizeLines": 946,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/README.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 89,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/metadata.json",
+          "language": "json",
+          "sizeLines": 11,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/composition-patterns/AGENTS.md": [],
+        ".agents/skills/composition-patterns/README.md": [],
+        ".agents/skills/composition-patterns/SKILL.md": [],
+        ".agents/skills/composition-patterns/metadata.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": ".agents/skills/composition-patterns/rules/_sections.md",
+          "language": "markdown",
+          "sizeLines": 29,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/_template.md",
+          "language": "markdown",
+          "sizeLines": 24,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/architecture-avoid-boolean-props.md",
+          "language": "markdown",
+          "sizeLines": 100,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/architecture-compound-components.md",
+          "language": "markdown",
+          "sizeLines": 112,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/patterns-children-over-render-props.md",
+          "language": "markdown",
+          "sizeLines": 87,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/patterns-explicit-variants.md",
+          "language": "markdown",
+          "sizeLines": 100,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/react19-no-forwardref.md",
+          "language": "markdown",
+          "sizeLines": 42,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/state-context-interface.md",
+          "language": "markdown",
+          "sizeLines": 191,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/state-decouple-implementation.md",
+          "language": "markdown",
+          "sizeLines": 113,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/composition-patterns/rules/state-lift-state.md",
+          "language": "markdown",
+          "sizeLines": 125,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/composition-patterns/rules/_sections.md": [],
+        ".agents/skills/composition-patterns/rules/_template.md": [],
+        ".agents/skills/composition-patterns/rules/architecture-avoid-boolean-props.md": [],
+        ".agents/skills/composition-patterns/rules/architecture-compound-components.md": [],
+        ".agents/skills/composition-patterns/rules/patterns-children-over-render-props.md": [],
+        ".agents/skills/composition-patterns/rules/patterns-explicit-variants.md": [],
+        ".agents/skills/composition-patterns/rules/react19-no-forwardref.md": [],
+        ".agents/skills/composition-patterns/rules/state-context-interface.md": [],
+        ".agents/skills/composition-patterns/rules/state-decouple-implementation.md": [],
+        ".agents/skills/composition-patterns/rules/state-lift-state.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": ".agents/skills/expo-deployment/references/app-store-metadata.md",
+          "language": "markdown",
+          "sizeLines": 479,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-deployment/references/ios-app-store.md",
+          "language": "markdown",
+          "sizeLines": 355,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-deployment/references/play-store.md",
+          "language": "markdown",
+          "sizeLines": 246,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-deployment/references/testflight.md",
+          "language": "markdown",
+          "sizeLines": 58,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-deployment/references/workflows.md",
+          "language": "markdown",
+          "sizeLines": 200,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/expo-deployment/references/app-store-metadata.md": [],
+        ".agents/skills/expo-deployment/references/ios-app-store.md": [],
+        ".agents/skills/expo-deployment/references/play-store.md": [],
+        ".agents/skills/expo-deployment/references/testflight.md": [],
+        ".agents/skills/expo-deployment/references/workflows.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 9,
+      "files": [
+        {
+          "path": ".agents/skills/react-best-practices/AGENTS.md",
+          "language": "markdown",
+          "sizeLines": 3810,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/README.md",
+          "language": "markdown",
+          "sizeLines": 123,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 149,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/metadata.json",
+          "language": "json",
+          "sizeLines": 15,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/react-best-practices/AGENTS.md": [],
+        ".agents/skills/react-best-practices/README.md": [],
+        ".agents/skills/react-best-practices/SKILL.md": [],
+        ".agents/skills/react-best-practices/metadata.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 10,
+      "files": [
+        {
+          "path": ".agents/skills/react-best-practices/rules/_sections.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/_template.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/advanced-effect-event-deps.md",
+          "language": "markdown",
+          "sizeLines": 56,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/advanced-event-handler-refs.md",
+          "language": "markdown",
+          "sizeLines": 55,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/advanced-init-once.md",
+          "language": "markdown",
+          "sizeLines": 42,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/advanced-use-latest.md",
+          "language": "markdown",
+          "sizeLines": 39,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/async-api-routes.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+          "language": "markdown",
+          "sizeLines": 37,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/async-defer-await.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/async-dependencies.md",
+          "language": "markdown",
+          "sizeLines": 51,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/async-parallel.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/async-suspense-boundaries.md",
+          "language": "markdown",
+          "sizeLines": 99,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/bundle-analyzable-paths.md",
+          "language": "markdown",
+          "sizeLines": 63,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/bundle-barrel-imports.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/bundle-conditional.md",
+          "language": "markdown",
+          "sizeLines": 31,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/bundle-defer-third-party.md",
+          "language": "markdown",
+          "sizeLines": 49,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/bundle-dynamic-imports.md",
+          "language": "markdown",
+          "sizeLines": 35,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/bundle-preload.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/client-event-listeners.md",
+          "language": "markdown",
+          "sizeLines": 74,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/client-localstorage-schema.md",
+          "language": "markdown",
+          "sizeLines": 71,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/react-best-practices/rules/_sections.md": [],
+        ".agents/skills/react-best-practices/rules/_template.md": [],
+        ".agents/skills/react-best-practices/rules/advanced-effect-event-deps.md": [],
+        ".agents/skills/react-best-practices/rules/advanced-event-handler-refs.md": [],
+        ".agents/skills/react-best-practices/rules/advanced-init-once.md": [],
+        ".agents/skills/react-best-practices/rules/advanced-use-latest.md": [],
+        ".agents/skills/react-best-practices/rules/async-api-routes.md": [],
+        ".agents/skills/react-best-practices/rules/async-cheap-condition-before-await.md": [],
+        ".agents/skills/react-best-practices/rules/async-defer-await.md": [],
+        ".agents/skills/react-best-practices/rules/async-dependencies.md": [],
+        ".agents/skills/react-best-practices/rules/async-parallel.md": [],
+        ".agents/skills/react-best-practices/rules/async-suspense-boundaries.md": [],
+        ".agents/skills/react-best-practices/rules/bundle-analyzable-paths.md": [],
+        ".agents/skills/react-best-practices/rules/bundle-barrel-imports.md": [],
+        ".agents/skills/react-best-practices/rules/bundle-conditional.md": [],
+        ".agents/skills/react-best-practices/rules/bundle-defer-third-party.md": [],
+        ".agents/skills/react-best-practices/rules/bundle-dynamic-imports.md": [],
+        ".agents/skills/react-best-practices/rules/bundle-preload.md": [],
+        ".agents/skills/react-best-practices/rules/client-event-listeners.md": [],
+        ".agents/skills/react-best-practices/rules/client-localstorage-schema.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 11,
+      "files": [
+        {
+          "path": ".agents/skills/react-best-practices/rules/client-passive-event-listeners.md",
+          "language": "markdown",
+          "sizeLines": 48,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/client-swr-dedup.md",
+          "language": "markdown",
+          "sizeLines": 56,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-batch-dom-css.md",
+          "language": "markdown",
+          "sizeLines": 107,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-cache-function-results.md",
+          "language": "markdown",
+          "sizeLines": 80,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-cache-property-access.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-cache-storage.md",
+          "language": "markdown",
+          "sizeLines": 70,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-combine-iterations.md",
+          "language": "markdown",
+          "sizeLines": 32,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-early-exit.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-flatmap-filter.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-hoist-regexp.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-index-maps.md",
+          "language": "markdown",
+          "sizeLines": 37,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-length-check-first.md",
+          "language": "markdown",
+          "sizeLines": 49,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-min-max-loop.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-request-idle-callback.md",
+          "language": "markdown",
+          "sizeLines": 105,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-set-map-lookups.md",
+          "language": "markdown",
+          "sizeLines": 24,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/js-tosorted-immutable.md",
+          "language": "markdown",
+          "sizeLines": 57,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-activity.md",
+          "language": "markdown",
+          "sizeLines": 26,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md",
+          "language": "markdown",
+          "sizeLines": 47,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-conditional-render.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-content-visibility.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/react-best-practices/rules/client-passive-event-listeners.md": [],
+        ".agents/skills/react-best-practices/rules/client-swr-dedup.md": [],
+        ".agents/skills/react-best-practices/rules/js-batch-dom-css.md": [],
+        ".agents/skills/react-best-practices/rules/js-cache-function-results.md": [],
+        ".agents/skills/react-best-practices/rules/js-cache-property-access.md": [],
+        ".agents/skills/react-best-practices/rules/js-cache-storage.md": [],
+        ".agents/skills/react-best-practices/rules/js-combine-iterations.md": [],
+        ".agents/skills/react-best-practices/rules/js-early-exit.md": [],
+        ".agents/skills/react-best-practices/rules/js-flatmap-filter.md": [],
+        ".agents/skills/react-best-practices/rules/js-hoist-regexp.md": [],
+        ".agents/skills/react-best-practices/rules/js-index-maps.md": [],
+        ".agents/skills/react-best-practices/rules/js-length-check-first.md": [],
+        ".agents/skills/react-best-practices/rules/js-min-max-loop.md": [],
+        ".agents/skills/react-best-practices/rules/js-request-idle-callback.md": [],
+        ".agents/skills/react-best-practices/rules/js-set-map-lookups.md": [],
+        ".agents/skills/react-best-practices/rules/js-tosorted-immutable.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-activity.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-conditional-render.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-content-visibility.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 12,
+      "files": [
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-hoist-jsx.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-hydration-no-flicker.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md",
+          "language": "markdown",
+          "sizeLines": 30,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-resource-hints.md",
+          "language": "markdown",
+          "sizeLines": 85,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-script-defer-async.md",
+          "language": "markdown",
+          "sizeLines": 68,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-svg-precision.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rendering-usetransition-loading.md",
+          "language": "markdown",
+          "sizeLines": 75,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-defer-reads.md",
+          "language": "markdown",
+          "sizeLines": 39,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-dependencies.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-derived-state-no-effect.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-derived-state.md",
+          "language": "markdown",
+          "sizeLines": 29,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-functional-setstate.md",
+          "language": "markdown",
+          "sizeLines": 74,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-lazy-state-init.md",
+          "language": "markdown",
+          "sizeLines": 58,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-memo-with-default-value.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-memo.md",
+          "language": "markdown",
+          "sizeLines": 44,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-move-effect-to-event.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-no-inline-components.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md",
+          "language": "markdown",
+          "sizeLines": 35,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-split-combined-hooks.md",
+          "language": "markdown",
+          "sizeLines": 64,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-transitions.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/react-best-practices/rules/rendering-hoist-jsx.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-hydration-no-flicker.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-resource-hints.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-script-defer-async.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-svg-precision.md": [],
+        ".agents/skills/react-best-practices/rules/rendering-usetransition-loading.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-defer-reads.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-dependencies.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-derived-state-no-effect.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-derived-state.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-functional-setstate.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-lazy-state-init.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-memo-with-default-value.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-memo.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-move-effect-to-event.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-no-inline-components.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-split-combined-hooks.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-transitions.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 13,
+      "files": [
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-use-deferred-value.md",
+          "language": "markdown",
+          "sizeLines": 59,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/rerender-use-ref-transient-values.md",
+          "language": "markdown",
+          "sizeLines": 73,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-after-nonblocking.md",
+          "language": "markdown",
+          "sizeLines": 73,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-auth-actions.md",
+          "language": "markdown",
+          "sizeLines": 96,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-cache-lru.md",
+          "language": "markdown",
+          "sizeLines": 41,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-cache-react.md",
+          "language": "markdown",
+          "sizeLines": 76,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-dedup-props.md",
+          "language": "markdown",
+          "sizeLines": 65,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-hoist-static-io.md",
+          "language": "markdown",
+          "sizeLines": 149,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-no-shared-module-state.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-parallel-fetching.md",
+          "language": "markdown",
+          "sizeLines": 83,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-parallel-nested-fetching.md",
+          "language": "markdown",
+          "sizeLines": 34,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/react-best-practices/rules/server-serialization.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/react-best-practices/rules/rerender-use-deferred-value.md": [],
+        ".agents/skills/react-best-practices/rules/rerender-use-ref-transient-values.md": [],
+        ".agents/skills/react-best-practices/rules/server-after-nonblocking.md": [],
+        ".agents/skills/react-best-practices/rules/server-auth-actions.md": [],
+        ".agents/skills/react-best-practices/rules/server-cache-lru.md": [],
+        ".agents/skills/react-best-practices/rules/server-cache-react.md": [],
+        ".agents/skills/react-best-practices/rules/server-dedup-props.md": [],
+        ".agents/skills/react-best-practices/rules/server-hoist-static-io.md": [],
+        ".agents/skills/react-best-practices/rules/server-no-shared-module-state.md": [],
+        ".agents/skills/react-best-practices/rules/server-parallel-fetching.md": [],
+        ".agents/skills/react-best-practices/rules/server-parallel-nested-fetching.md": [],
+        ".agents/skills/react-best-practices/rules/server-serialization.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 14,
+      "files": [
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/_contributing.md",
+          "language": "markdown",
+          "sizeLines": 170,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/_sections.md",
+          "language": "markdown",
+          "sizeLines": 39,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/_template.md",
+          "language": "markdown",
+          "sizeLines": 34,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/advanced-full-text-search.md",
+          "language": "markdown",
+          "sizeLines": 55,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md",
+          "language": "markdown",
+          "sizeLines": 49,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/conn-idle-timeout.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/conn-limits.md",
+          "language": "markdown",
+          "sizeLines": 44,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/conn-pooling.md",
+          "language": "markdown",
+          "sizeLines": 41,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/conn-prepared-statements.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/data-batch-inserts.md",
+          "language": "markdown",
+          "sizeLines": 54,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/data-n-plus-one.md",
+          "language": "markdown",
+          "sizeLines": 53,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/data-pagination.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/data-upsert.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/lock-advisory.md",
+          "language": "markdown",
+          "sizeLines": 56,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md",
+          "language": "markdown",
+          "sizeLines": 68,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/lock-short-transactions.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/lock-skip-locked.md",
+          "language": "markdown",
+          "sizeLines": 54,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md",
+          "language": "markdown",
+          "sizeLines": 55,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md",
+          "language": "markdown",
+          "sizeLines": 55,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/supabase-postgres-best-practices/references/_contributing.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/_sections.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/_template.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/advanced-full-text-search.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/advanced-jsonb-indexing.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/conn-idle-timeout.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/conn-limits.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/conn-pooling.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/conn-prepared-statements.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/data-batch-inserts.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/data-n-plus-one.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/data-pagination.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/data-upsert.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/lock-advisory.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/lock-deadlock-prevention.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/lock-short-transactions.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/lock-skip-locked.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/monitor-explain-analyze.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/monitor-pg-stat-statements.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/monitor-vacuum-analyze.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 15,
+      "files": [
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/query-composite-indexes.md",
+          "language": "markdown",
+          "sizeLines": 44,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/query-covering-indexes.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/query-index-types.md",
+          "language": "markdown",
+          "sizeLines": 48,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/query-missing-indexes.md",
+          "language": "markdown",
+          "sizeLines": 43,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/query-partial-indexes.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/schema-constraints.md",
+          "language": "markdown",
+          "sizeLines": 80,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/schema-data-types.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md",
+          "language": "markdown",
+          "sizeLines": 59,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md",
+          "language": "markdown",
+          "sizeLines": 55,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/schema-partitioning.md",
+          "language": "markdown",
+          "sizeLines": 55,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/schema-primary-keys.md",
+          "language": "markdown",
+          "sizeLines": 61,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/security-privileges.md",
+          "language": "markdown",
+          "sizeLines": 54,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/security-rls-basics.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/references/security-rls-performance.md",
+          "language": "markdown",
+          "sizeLines": 63,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/supabase-postgres-best-practices/references/query-composite-indexes.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/query-covering-indexes.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/query-index-types.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/query-missing-indexes.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/query-partial-indexes.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/schema-constraints.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/schema-data-types.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/schema-lowercase-identifiers.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/schema-partitioning.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/schema-primary-keys.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/security-privileges.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/security-rls-basics.md": [],
+        ".agents/skills/supabase-postgres-best-practices/references/security-rls-performance.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 16,
+      "files": [
+        {
+          "path": ".agents/skills/upgrading-expo/references/expo-av-to-audio.md",
+          "language": "markdown",
+          "sizeLines": 132,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/upgrading-expo/references/expo-av-to-video.md",
+          "language": "markdown",
+          "sizeLines": 160,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/upgrading-expo/references/native-tabs.md",
+          "language": "markdown",
+          "sizeLines": 124,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/upgrading-expo/references/new-architecture.md",
+          "language": "markdown",
+          "sizeLines": 79,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/upgrading-expo/references/react-19.md",
+          "language": "markdown",
+          "sizeLines": 79,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/upgrading-expo/references/react-compiler.md",
+          "language": "markdown",
+          "sizeLines": 59,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/upgrading-expo/references/expo-av-to-audio.md": [],
+        ".agents/skills/upgrading-expo/references/expo-av-to-video.md": [],
+        ".agents/skills/upgrading-expo/references/native-tabs.md": [],
+        ".agents/skills/upgrading-expo/references/new-architecture.md": [],
+        ".agents/skills/upgrading-expo/references/react-19.md": [],
+        ".agents/skills/upgrading-expo/references/react-compiler.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 17,
+      "files": [
+        {
+          "path": ".claude/skills/building-native-ui/references/animations.md",
+          "language": "markdown",
+          "sizeLines": 220,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/controls.md",
+          "language": "markdown",
+          "sizeLines": 270,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/form-sheet.md",
+          "language": "markdown",
+          "sizeLines": 253,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/gradients.md",
+          "language": "markdown",
+          "sizeLines": 106,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/icons.md",
+          "language": "markdown",
+          "sizeLines": 213,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/media.md",
+          "language": "markdown",
+          "sizeLines": 198,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/route-structure.md",
+          "language": "markdown",
+          "sizeLines": 229,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/search.md",
+          "language": "markdown",
+          "sizeLines": 248,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/storage.md",
+          "language": "markdown",
+          "sizeLines": 121,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/tabs.md",
+          "language": "markdown",
+          "sizeLines": 433,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/toolbar-and-headers.md",
+          "language": "markdown",
+          "sizeLines": 284,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/visual-effects.md",
+          "language": "markdown",
+          "sizeLines": 197,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/webgpu-three.md",
+          "language": "markdown",
+          "sizeLines": 605,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/references/zoom-transitions.md",
+          "language": "markdown",
+          "sizeLines": 158,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/building-native-ui/references/animations.md": [],
+        ".claude/skills/building-native-ui/references/controls.md": [],
+        ".claude/skills/building-native-ui/references/form-sheet.md": [],
+        ".claude/skills/building-native-ui/references/gradients.md": [],
+        ".claude/skills/building-native-ui/references/icons.md": [],
+        ".claude/skills/building-native-ui/references/media.md": [],
+        ".claude/skills/building-native-ui/references/route-structure.md": [],
+        ".claude/skills/building-native-ui/references/search.md": [],
+        ".claude/skills/building-native-ui/references/storage.md": [],
+        ".claude/skills/building-native-ui/references/tabs.md": [],
+        ".claude/skills/building-native-ui/references/toolbar-and-headers.md": [],
+        ".claude/skills/building-native-ui/references/visual-effects.md": [],
+        ".claude/skills/building-native-ui/references/webgpu-three.md": [],
+        ".claude/skills/building-native-ui/references/zoom-transitions.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 18,
+      "files": [
+        {
+          "path": ".claude/skills/composition-patterns/AGENTS.md",
+          "language": "markdown",
+          "sizeLines": 946,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/README.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 89,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/metadata.json",
+          "language": "json",
+          "sizeLines": 11,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/composition-patterns/AGENTS.md": [],
+        ".claude/skills/composition-patterns/README.md": [],
+        ".claude/skills/composition-patterns/SKILL.md": [],
+        ".claude/skills/composition-patterns/metadata.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 19,
+      "files": [
+        {
+          "path": ".claude/skills/composition-patterns/rules/_sections.md",
+          "language": "markdown",
+          "sizeLines": 29,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/_template.md",
+          "language": "markdown",
+          "sizeLines": 24,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/architecture-avoid-boolean-props.md",
+          "language": "markdown",
+          "sizeLines": 100,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/architecture-compound-components.md",
+          "language": "markdown",
+          "sizeLines": 112,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/patterns-children-over-render-props.md",
+          "language": "markdown",
+          "sizeLines": 87,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/patterns-explicit-variants.md",
+          "language": "markdown",
+          "sizeLines": 100,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/react19-no-forwardref.md",
+          "language": "markdown",
+          "sizeLines": 42,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/state-context-interface.md",
+          "language": "markdown",
+          "sizeLines": 191,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/state-decouple-implementation.md",
+          "language": "markdown",
+          "sizeLines": 113,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/composition-patterns/rules/state-lift-state.md",
+          "language": "markdown",
+          "sizeLines": 125,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/composition-patterns/rules/_sections.md": [],
+        ".claude/skills/composition-patterns/rules/_template.md": [],
+        ".claude/skills/composition-patterns/rules/architecture-avoid-boolean-props.md": [],
+        ".claude/skills/composition-patterns/rules/architecture-compound-components.md": [],
+        ".claude/skills/composition-patterns/rules/patterns-children-over-render-props.md": [],
+        ".claude/skills/composition-patterns/rules/patterns-explicit-variants.md": [],
+        ".claude/skills/composition-patterns/rules/react19-no-forwardref.md": [],
+        ".claude/skills/composition-patterns/rules/state-context-interface.md": [],
+        ".claude/skills/composition-patterns/rules/state-decouple-implementation.md": [],
+        ".claude/skills/composition-patterns/rules/state-lift-state.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 20,
+      "files": [
+        {
+          "path": ".claude/skills/expo-deployment/references/app-store-metadata.md",
+          "language": "markdown",
+          "sizeLines": 479,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-deployment/references/ios-app-store.md",
+          "language": "markdown",
+          "sizeLines": 355,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-deployment/references/play-store.md",
+          "language": "markdown",
+          "sizeLines": 246,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-deployment/references/testflight.md",
+          "language": "markdown",
+          "sizeLines": 58,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-deployment/references/workflows.md",
+          "language": "markdown",
+          "sizeLines": 200,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/expo-deployment/references/app-store-metadata.md": [],
+        ".claude/skills/expo-deployment/references/ios-app-store.md": [],
+        ".claude/skills/expo-deployment/references/play-store.md": [],
+        ".claude/skills/expo-deployment/references/testflight.md": [],
+        ".claude/skills/expo-deployment/references/workflows.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 21,
+      "files": [
+        {
+          "path": ".claude/skills/react-best-practices/AGENTS.md",
+          "language": "markdown",
+          "sizeLines": 3810,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/README.md",
+          "language": "markdown",
+          "sizeLines": 123,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 149,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/metadata.json",
+          "language": "json",
+          "sizeLines": 15,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/react-best-practices/AGENTS.md": [],
+        ".claude/skills/react-best-practices/README.md": [],
+        ".claude/skills/react-best-practices/SKILL.md": [],
+        ".claude/skills/react-best-practices/metadata.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 22,
+      "files": [
+        {
+          "path": ".claude/skills/react-best-practices/rules/_sections.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/_template.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/advanced-effect-event-deps.md",
+          "language": "markdown",
+          "sizeLines": 56,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/advanced-event-handler-refs.md",
+          "language": "markdown",
+          "sizeLines": 55,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/advanced-init-once.md",
+          "language": "markdown",
+          "sizeLines": 42,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/advanced-use-latest.md",
+          "language": "markdown",
+          "sizeLines": 39,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/async-api-routes.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+          "language": "markdown",
+          "sizeLines": 37,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/async-defer-await.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/async-dependencies.md",
+          "language": "markdown",
+          "sizeLines": 51,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/async-parallel.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/async-suspense-boundaries.md",
+          "language": "markdown",
+          "sizeLines": 99,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/bundle-analyzable-paths.md",
+          "language": "markdown",
+          "sizeLines": 63,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/bundle-barrel-imports.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/bundle-conditional.md",
+          "language": "markdown",
+          "sizeLines": 31,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/bundle-defer-third-party.md",
+          "language": "markdown",
+          "sizeLines": 49,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/bundle-dynamic-imports.md",
+          "language": "markdown",
+          "sizeLines": 35,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/bundle-preload.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/client-event-listeners.md",
+          "language": "markdown",
+          "sizeLines": 74,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/client-localstorage-schema.md",
+          "language": "markdown",
+          "sizeLines": 71,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/react-best-practices/rules/_sections.md": [],
+        ".claude/skills/react-best-practices/rules/_template.md": [],
+        ".claude/skills/react-best-practices/rules/advanced-effect-event-deps.md": [],
+        ".claude/skills/react-best-practices/rules/advanced-event-handler-refs.md": [],
+        ".claude/skills/react-best-practices/rules/advanced-init-once.md": [],
+        ".claude/skills/react-best-practices/rules/advanced-use-latest.md": [],
+        ".claude/skills/react-best-practices/rules/async-api-routes.md": [],
+        ".claude/skills/react-best-practices/rules/async-cheap-condition-before-await.md": [],
+        ".claude/skills/react-best-practices/rules/async-defer-await.md": [],
+        ".claude/skills/react-best-practices/rules/async-dependencies.md": [],
+        ".claude/skills/react-best-practices/rules/async-parallel.md": [],
+        ".claude/skills/react-best-practices/rules/async-suspense-boundaries.md": [],
+        ".claude/skills/react-best-practices/rules/bundle-analyzable-paths.md": [],
+        ".claude/skills/react-best-practices/rules/bundle-barrel-imports.md": [],
+        ".claude/skills/react-best-practices/rules/bundle-conditional.md": [],
+        ".claude/skills/react-best-practices/rules/bundle-defer-third-party.md": [],
+        ".claude/skills/react-best-practices/rules/bundle-dynamic-imports.md": [],
+        ".claude/skills/react-best-practices/rules/bundle-preload.md": [],
+        ".claude/skills/react-best-practices/rules/client-event-listeners.md": [],
+        ".claude/skills/react-best-practices/rules/client-localstorage-schema.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 23,
+      "files": [
+        {
+          "path": ".claude/skills/react-best-practices/rules/client-passive-event-listeners.md",
+          "language": "markdown",
+          "sizeLines": 48,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/client-swr-dedup.md",
+          "language": "markdown",
+          "sizeLines": 56,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-batch-dom-css.md",
+          "language": "markdown",
+          "sizeLines": 107,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-cache-function-results.md",
+          "language": "markdown",
+          "sizeLines": 80,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-cache-property-access.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-cache-storage.md",
+          "language": "markdown",
+          "sizeLines": 70,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-combine-iterations.md",
+          "language": "markdown",
+          "sizeLines": 32,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-early-exit.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-flatmap-filter.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-hoist-regexp.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-index-maps.md",
+          "language": "markdown",
+          "sizeLines": 37,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-length-check-first.md",
+          "language": "markdown",
+          "sizeLines": 49,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-min-max-loop.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-request-idle-callback.md",
+          "language": "markdown",
+          "sizeLines": 105,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-set-map-lookups.md",
+          "language": "markdown",
+          "sizeLines": 24,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/js-tosorted-immutable.md",
+          "language": "markdown",
+          "sizeLines": 57,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-activity.md",
+          "language": "markdown",
+          "sizeLines": 26,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md",
+          "language": "markdown",
+          "sizeLines": 47,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-conditional-render.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-content-visibility.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/react-best-practices/rules/client-passive-event-listeners.md": [],
+        ".claude/skills/react-best-practices/rules/client-swr-dedup.md": [],
+        ".claude/skills/react-best-practices/rules/js-batch-dom-css.md": [],
+        ".claude/skills/react-best-practices/rules/js-cache-function-results.md": [],
+        ".claude/skills/react-best-practices/rules/js-cache-property-access.md": [],
+        ".claude/skills/react-best-practices/rules/js-cache-storage.md": [],
+        ".claude/skills/react-best-practices/rules/js-combine-iterations.md": [],
+        ".claude/skills/react-best-practices/rules/js-early-exit.md": [],
+        ".claude/skills/react-best-practices/rules/js-flatmap-filter.md": [],
+        ".claude/skills/react-best-practices/rules/js-hoist-regexp.md": [],
+        ".claude/skills/react-best-practices/rules/js-index-maps.md": [],
+        ".claude/skills/react-best-practices/rules/js-length-check-first.md": [],
+        ".claude/skills/react-best-practices/rules/js-min-max-loop.md": [],
+        ".claude/skills/react-best-practices/rules/js-request-idle-callback.md": [],
+        ".claude/skills/react-best-practices/rules/js-set-map-lookups.md": [],
+        ".claude/skills/react-best-practices/rules/js-tosorted-immutable.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-activity.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-conditional-render.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-content-visibility.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 24,
+      "files": [
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-hoist-jsx.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-hydration-no-flicker.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md",
+          "language": "markdown",
+          "sizeLines": 30,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-resource-hints.md",
+          "language": "markdown",
+          "sizeLines": 85,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-script-defer-async.md",
+          "language": "markdown",
+          "sizeLines": 68,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-svg-precision.md",
+          "language": "markdown",
+          "sizeLines": 28,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rendering-usetransition-loading.md",
+          "language": "markdown",
+          "sizeLines": 75,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-defer-reads.md",
+          "language": "markdown",
+          "sizeLines": 39,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-dependencies.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-derived-state-no-effect.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-derived-state.md",
+          "language": "markdown",
+          "sizeLines": 29,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-functional-setstate.md",
+          "language": "markdown",
+          "sizeLines": 74,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-lazy-state-init.md",
+          "language": "markdown",
+          "sizeLines": 58,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-memo-with-default-value.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-memo.md",
+          "language": "markdown",
+          "sizeLines": 44,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-move-effect-to-event.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-no-inline-components.md",
+          "language": "markdown",
+          "sizeLines": 82,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md",
+          "language": "markdown",
+          "sizeLines": 35,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-split-combined-hooks.md",
+          "language": "markdown",
+          "sizeLines": 64,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-transitions.md",
+          "language": "markdown",
+          "sizeLines": 40,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/react-best-practices/rules/rendering-hoist-jsx.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-hydration-no-flicker.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-resource-hints.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-script-defer-async.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-svg-precision.md": [],
+        ".claude/skills/react-best-practices/rules/rendering-usetransition-loading.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-defer-reads.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-dependencies.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-derived-state-no-effect.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-derived-state.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-functional-setstate.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-lazy-state-init.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-memo-with-default-value.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-memo.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-move-effect-to-event.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-no-inline-components.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-split-combined-hooks.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-transitions.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 25,
+      "files": [
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-use-deferred-value.md",
+          "language": "markdown",
+          "sizeLines": 59,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/rerender-use-ref-transient-values.md",
+          "language": "markdown",
+          "sizeLines": 73,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-after-nonblocking.md",
+          "language": "markdown",
+          "sizeLines": 73,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-auth-actions.md",
+          "language": "markdown",
+          "sizeLines": 96,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-cache-lru.md",
+          "language": "markdown",
+          "sizeLines": 41,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-cache-react.md",
+          "language": "markdown",
+          "sizeLines": 76,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-dedup-props.md",
+          "language": "markdown",
+          "sizeLines": 65,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-hoist-static-io.md",
+          "language": "markdown",
+          "sizeLines": 149,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-no-shared-module-state.md",
+          "language": "markdown",
+          "sizeLines": 50,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-parallel-fetching.md",
+          "language": "markdown",
+          "sizeLines": 83,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-parallel-nested-fetching.md",
+          "language": "markdown",
+          "sizeLines": 34,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/react-best-practices/rules/server-serialization.md",
+          "language": "markdown",
+          "sizeLines": 38,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/react-best-practices/rules/rerender-use-deferred-value.md": [],
+        ".claude/skills/react-best-practices/rules/rerender-use-ref-transient-values.md": [],
+        ".claude/skills/react-best-practices/rules/server-after-nonblocking.md": [],
+        ".claude/skills/react-best-practices/rules/server-auth-actions.md": [],
+        ".claude/skills/react-best-practices/rules/server-cache-lru.md": [],
+        ".claude/skills/react-best-practices/rules/server-cache-react.md": [],
+        ".claude/skills/react-best-practices/rules/server-dedup-props.md": [],
+        ".claude/skills/react-best-practices/rules/server-hoist-static-io.md": [],
+        ".claude/skills/react-best-practices/rules/server-no-shared-module-state.md": [],
+        ".claude/skills/react-best-practices/rules/server-parallel-fetching.md": [],
+        ".claude/skills/react-best-practices/rules/server-parallel-nested-fetching.md": [],
+        ".claude/skills/react-best-practices/rules/server-serialization.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 26,
+      "files": [
+        {
+          "path": ".claude/skills/upgrading-expo/references/expo-av-to-audio.md",
+          "language": "markdown",
+          "sizeLines": 132,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/upgrading-expo/references/expo-av-to-video.md",
+          "language": "markdown",
+          "sizeLines": 160,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/upgrading-expo/references/native-tabs.md",
+          "language": "markdown",
+          "sizeLines": 124,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/upgrading-expo/references/new-architecture.md",
+          "language": "markdown",
+          "sizeLines": 79,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/upgrading-expo/references/react-19.md",
+          "language": "markdown",
+          "sizeLines": 79,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/upgrading-expo/references/react-compiler.md",
+          "language": "markdown",
+          "sizeLines": 59,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/upgrading-expo/references/expo-av-to-audio.md": [],
+        ".claude/skills/upgrading-expo/references/expo-av-to-video.md": [],
+        ".claude/skills/upgrading-expo/references/native-tabs.md": [],
+        ".claude/skills/upgrading-expo/references/new-architecture.md": [],
+        ".claude/skills/upgrading-expo/references/react-19.md": [],
+        ".claude/skills/upgrading-expo/references/react-compiler.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 27,
+      "files": [
+        {
+          "path": ".env.example",
+          "language": "config",
+          "sizeLines": 9,
+          "fileCategory": "config"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 56,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "app.json",
+          "language": "json",
+          "sizeLines": 63,
+          "fileCategory": "config"
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 62,
+          "fileCategory": "config"
+        },
+        {
+          "path": "skills-lock.json",
+          "language": "json",
+          "sizeLines": 107,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.json",
+          "language": "json",
+          "sizeLines": 21,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".env.example": [],
+        "README.md": [],
+        "app.json": [],
+        "package.json": [],
+        "skills-lock.json": [],
+        "tsconfig.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 28,
+      "files": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "language": "markdown",
+          "sizeLines": 17,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/CLAUDE_MEMORY.md",
+          "language": "markdown",
+          "sizeLines": 33,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/MANUAL_TEST_PLAN.md",
+          "language": "markdown",
+          "sizeLines": 97,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/MasterPromot.md",
+          "language": "markdown",
+          "sizeLines": 197,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/PLAN.md",
+          "language": "markdown",
+          "sizeLines": 80,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/PRD.md",
+          "language": "markdown",
+          "sizeLines": 298,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "docs/ARCHITECTURE.md": [],
+        "docs/CLAUDE_MEMORY.md": [],
+        "docs/MANUAL_TEST_PLAN.md": [],
+        "docs/MasterPromot.md": [],
+        "docs/PLAN.md": [],
+        "docs/PRD.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 29,
+      "files": [
+        {
+          "path": ".agents/skills/accessibility/references/A11Y-PATTERNS.md",
+          "language": "markdown",
+          "sizeLines": 233,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/accessibility/references/WCAG.md",
+          "language": "markdown",
+          "sizeLines": 191,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/accessibility/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 440,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/building-native-ui/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 321,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/design-mobile-apps/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 477,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-api-routes/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 368,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-cicd-workflows/scripts/fetch.js",
+          "language": "javascript",
+          "sizeLines": 109,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".agents/skills/expo-cicd-workflows/scripts/package.json",
+          "language": "json",
+          "sizeLines": 11,
+          "fileCategory": "config"
+        },
+        {
+          "path": ".agents/skills/expo-cicd-workflows/scripts/validate.js",
+          "language": "javascript",
+          "sizeLines": 84,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".agents/skills/expo-cicd-workflows/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 92,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-deployment/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 190,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-dev-client/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 164,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/expo-tailwind-setup/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 480,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/frontend-design/LICENSE.txt",
+          "language": "txt",
+          "sizeLines": 177,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/frontend-design/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 42,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/native-data-fetching/references/expo-router-loaders.md",
+          "language": "markdown",
+          "sizeLines": 341,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/native-data-fetching/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 507,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/nodejs-backend-patterns/references/advanced-patterns.md",
+          "language": "markdown",
+          "sizeLines": 430,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/nodejs-backend-patterns/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 639,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/nodejs-best-practices/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 343,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/seo/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 513,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/CHANGELOG.md",
+          "language": "markdown",
+          "sizeLines": 29,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase-postgres-best-practices/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 64,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase/assets/feedback-issue-template.md",
+          "language": "markdown",
+          "sizeLines": 17,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase/CHANGELOG.md",
+          "language": "markdown",
+          "sizeLines": 35,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/accessibility/references/A11Y-PATTERNS.md": [],
+        ".agents/skills/accessibility/references/WCAG.md": [],
+        ".agents/skills/accessibility/SKILL.md": [],
+        ".agents/skills/building-native-ui/SKILL.md": [],
+        ".agents/skills/design-mobile-apps/SKILL.md": [],
+        ".agents/skills/expo-api-routes/SKILL.md": [],
+        ".agents/skills/expo-cicd-workflows/scripts/fetch.js": [],
+        ".agents/skills/expo-cicd-workflows/scripts/package.json": [],
+        ".agents/skills/expo-cicd-workflows/scripts/validate.js": [
+          ".agents/skills/expo-cicd-workflows/scripts/fetch.js"
+        ],
+        ".agents/skills/expo-cicd-workflows/SKILL.md": [],
+        ".agents/skills/expo-deployment/SKILL.md": [],
+        ".agents/skills/expo-dev-client/SKILL.md": [],
+        ".agents/skills/expo-tailwind-setup/SKILL.md": [],
+        ".agents/skills/frontend-design/LICENSE.txt": [],
+        ".agents/skills/frontend-design/SKILL.md": [],
+        ".agents/skills/native-data-fetching/references/expo-router-loaders.md": [],
+        ".agents/skills/native-data-fetching/SKILL.md": [],
+        ".agents/skills/nodejs-backend-patterns/references/advanced-patterns.md": [],
+        ".agents/skills/nodejs-backend-patterns/SKILL.md": [],
+        ".agents/skills/nodejs-best-practices/SKILL.md": [],
+        ".agents/skills/seo/SKILL.md": [],
+        ".agents/skills/supabase-postgres-best-practices/CHANGELOG.md": [],
+        ".agents/skills/supabase-postgres-best-practices/SKILL.md": [],
+        ".agents/skills/supabase/assets/feedback-issue-template.md": [],
+        ".agents/skills/supabase/CHANGELOG.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 30,
+      "files": [
+        {
+          "path": ".agents/skills/supabase/references/skill-feedback.md",
+          "language": "markdown",
+          "sizeLines": 17,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/supabase/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 135,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/typescript-advanced-types/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 717,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/upgrading-expo/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 133,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".agents/skills/use-dom/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 417,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/accessibility/references/A11Y-PATTERNS.md",
+          "language": "markdown",
+          "sizeLines": 233,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/accessibility/references/WCAG.md",
+          "language": "markdown",
+          "sizeLines": 191,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/accessibility/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 440,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/building-native-ui/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 321,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/design-mobile-apps/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 477,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-api-routes/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 368,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-cicd-workflows/scripts/fetch.js",
+          "language": "javascript",
+          "sizeLines": 109,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".claude/skills/expo-cicd-workflows/scripts/package.json",
+          "language": "json",
+          "sizeLines": 11,
+          "fileCategory": "config"
+        },
+        {
+          "path": ".claude/skills/expo-cicd-workflows/scripts/validate.js",
+          "language": "javascript",
+          "sizeLines": 84,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".claude/skills/expo-cicd-workflows/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 92,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-deployment/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 190,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-dev-client/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 164,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/expo-tailwind-setup/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 480,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/frontend-design/LICENSE.txt",
+          "language": "txt",
+          "sizeLines": 177,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/frontend-design/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 42,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/native-data-fetching/references/expo-router-loaders.md",
+          "language": "markdown",
+          "sizeLines": 341,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/native-data-fetching/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 507,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/nodejs-backend-patterns/references/advanced-patterns.md",
+          "language": "markdown",
+          "sizeLines": 430,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/nodejs-backend-patterns/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 639,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/nodejs-best-practices/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 343,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        ".agents/skills/supabase/references/skill-feedback.md": [],
+        ".agents/skills/supabase/SKILL.md": [],
+        ".agents/skills/typescript-advanced-types/SKILL.md": [],
+        ".agents/skills/upgrading-expo/SKILL.md": [],
+        ".agents/skills/use-dom/SKILL.md": [],
+        ".claude/skills/accessibility/references/A11Y-PATTERNS.md": [],
+        ".claude/skills/accessibility/references/WCAG.md": [],
+        ".claude/skills/accessibility/SKILL.md": [],
+        ".claude/skills/building-native-ui/SKILL.md": [],
+        ".claude/skills/design-mobile-apps/SKILL.md": [],
+        ".claude/skills/expo-api-routes/SKILL.md": [],
+        ".claude/skills/expo-cicd-workflows/scripts/fetch.js": [],
+        ".claude/skills/expo-cicd-workflows/scripts/package.json": [],
+        ".claude/skills/expo-cicd-workflows/scripts/validate.js": [
+          ".claude/skills/expo-cicd-workflows/scripts/fetch.js"
+        ],
+        ".claude/skills/expo-cicd-workflows/SKILL.md": [],
+        ".claude/skills/expo-deployment/SKILL.md": [],
+        ".claude/skills/expo-dev-client/SKILL.md": [],
+        ".claude/skills/expo-tailwind-setup/SKILL.md": [],
+        ".claude/skills/frontend-design/LICENSE.txt": [],
+        ".claude/skills/frontend-design/SKILL.md": [],
+        ".claude/skills/native-data-fetching/references/expo-router-loaders.md": [],
+        ".claude/skills/native-data-fetching/SKILL.md": [],
+        ".claude/skills/nodejs-backend-patterns/references/advanced-patterns.md": [],
+        ".claude/skills/nodejs-backend-patterns/SKILL.md": [],
+        ".claude/skills/nodejs-best-practices/SKILL.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 31,
+      "files": [
+        {
+          "path": ".claude/skills/seo/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 513,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/typescript-advanced-types/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 717,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/upgrading-expo/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 133,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".claude/skills/use-dom/SKILL.md",
+          "language": "markdown",
+          "sizeLines": 417,
+          "fileCategory": "docs"
+        },
+        {
+          "path": ".opencode/opencode.json",
+          "language": "json",
+          "sizeLines": 5,
+          "fileCategory": "config"
+        },
+        {
+          "path": ".opencode/plugins/graphify.js",
+          "language": "javascript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".understand-anything/.understandignore",
+          "language": "unknown",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".understand-anything/config.json",
+          "language": "json",
+          "sizeLines": 3,
+          "fileCategory": "config"
+        },
+        {
+          "path": ".understand-anything/intermediate/.gitkeep",
+          "language": "unknown",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": ".understand-anything/tmp/.gitkeep",
+          "language": "unknown",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "app/game/new.tsx",
+          "language": "typescript",
+          "sizeLines": 17,
+          "fileCategory": "code"
+        },
+        {
+          "path": "eslint.config.js",
+          "language": "javascript",
+          "sizeLines": 18,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/cli-latest",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/gotrue-version",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/linked-project.json",
+          "language": "json",
+          "sizeLines": 0,
+          "fileCategory": "config"
+        },
+        {
+          "path": "supabase/.temp/pooler-url",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/postgres-version",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/project-ref",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/rest-version",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/storage-migration",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/.temp/storage-version",
+          "language": "unknown",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/award-match-reward/index.ts",
+          "language": "typescript",
+          "sizeLines": 191,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/claim-opponent-left/index.ts",
+          "language": "typescript",
+          "sizeLines": 175,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/collect-daily-reward/index.ts",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/deduct-entry-fee/index.ts",
+          "language": "typescript",
+          "sizeLines": 114,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        ".claude/skills/seo/SKILL.md": [],
+        ".claude/skills/typescript-advanced-types/SKILL.md": [],
+        ".claude/skills/upgrading-expo/SKILL.md": [],
+        ".claude/skills/use-dom/SKILL.md": [],
+        ".opencode/opencode.json": [],
+        ".opencode/plugins/graphify.js": [],
+        ".understand-anything/.understandignore": [],
+        ".understand-anything/config.json": [],
+        ".understand-anything/intermediate/.gitkeep": [],
+        ".understand-anything/tmp/.gitkeep": [],
+        "app/game/new.tsx": [],
+        "eslint.config.js": [],
+        "supabase/.temp/cli-latest": [],
+        "supabase/.temp/gotrue-version": [],
+        "supabase/.temp/linked-project.json": [],
+        "supabase/.temp/pooler-url": [],
+        "supabase/.temp/postgres-version": [],
+        "supabase/.temp/project-ref": [],
+        "supabase/.temp/rest-version": [],
+        "supabase/.temp/storage-migration": [],
+        "supabase/.temp/storage-version": [],
+        "supabase/functions/award-match-reward/index.ts": [],
+        "supabase/functions/claim-opponent-left/index.ts": [],
+        "supabase/functions/collect-daily-reward/index.ts": [],
+        "supabase/functions/deduct-entry-fee/index.ts": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 32,
+      "files": [
+        {
+          "path": "supabase/functions/find-match/index.ts",
+          "language": "typescript",
+          "sizeLines": 361,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/forfeit-match/index.ts",
+          "language": "typescript",
+          "sizeLines": 169,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/grant-ad-reward/index.ts",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/move-token/index.ts",
+          "language": "typescript",
+          "sizeLines": 368,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/purchase-shop-item/index.ts",
+          "language": "typescript",
+          "sizeLines": 83,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/roll-dice/index.ts",
+          "language": "typescript",
+          "sizeLines": 304,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/skip-roll-turn/index.ts",
+          "language": "typescript",
+          "sizeLines": 183,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/sync-board-state/index.ts",
+          "language": "typescript",
+          "sizeLines": 172,
+          "fileCategory": "code"
+        },
+        {
+          "path": "supabase/functions/verify-iap-purchase/index.ts",
+          "language": "typescript",
+          "sizeLines": 75,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "supabase/functions/find-match/index.ts": [],
+        "supabase/functions/forfeit-match/index.ts": [],
+        "supabase/functions/grant-ad-reward/index.ts": [],
+        "supabase/functions/move-token/index.ts": [],
+        "supabase/functions/purchase-shop-item/index.ts": [],
+        "supabase/functions/roll-dice/index.ts": [],
+        "supabase/functions/skip-roll-turn/index.ts": [],
+        "supabase/functions/sync-board-state/index.ts": [],
+        "supabase/functions/verify-iap-purchase/index.ts": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

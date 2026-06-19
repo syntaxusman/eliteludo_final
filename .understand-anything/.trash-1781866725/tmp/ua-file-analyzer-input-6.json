@@ -1,0 +1,35 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".agents/skills/composition-patterns/AGENTS.md",
+      "language": "markdown",
+      "sizeLines": 946,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/composition-patterns/README.md",
+      "language": "markdown",
+      "sizeLines": 60,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/composition-patterns/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 89,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/composition-patterns/metadata.json",
+      "language": "json",
+      "sizeLines": 11,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    ".agents/skills/composition-patterns/AGENTS.md": [],
+    ".agents/skills/composition-patterns/README.md": [],
+    ".agents/skills/composition-patterns/SKILL.md": [],
+    ".agents/skills/composition-patterns/metadata.json": []
+  }
+}

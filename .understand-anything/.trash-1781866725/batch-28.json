@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/ARCHITECTURE.md",
+      "type": "document",
+      "name": "ARCHITECTURE.md",
+      "filePath": "docs/ARCHITECTURE.md",
+      "summary": "ARCHITECTURE.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/CLAUDE_MEMORY.md",
+      "type": "document",
+      "name": "CLAUDE_MEMORY.md",
+      "filePath": "docs/CLAUDE_MEMORY.md",
+      "summary": "CLAUDE_MEMORY.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/MANUAL_TEST_PLAN.md",
+      "type": "document",
+      "name": "MANUAL_TEST_PLAN.md",
+      "filePath": "docs/MANUAL_TEST_PLAN.md",
+      "summary": "MANUAL_TEST_PLAN.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/MasterPromot.md",
+      "type": "document",
+      "name": "MasterPromot.md",
+      "filePath": "docs/MasterPromot.md",
+      "summary": "MasterPromot.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/PLAN.md",
+      "type": "document",
+      "name": "PLAN.md",
+      "filePath": "docs/PLAN.md",
+      "summary": "PLAN.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/PRD.md",
+      "type": "document",
+      "name": "PRD.md",
+      "filePath": "docs/PRD.md",
+      "summary": "PRD.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

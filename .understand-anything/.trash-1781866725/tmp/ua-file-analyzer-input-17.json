@@ -1,0 +1,105 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".claude/skills/building-native-ui/references/animations.md",
+      "language": "markdown",
+      "sizeLines": 220,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/controls.md",
+      "language": "markdown",
+      "sizeLines": 270,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/form-sheet.md",
+      "language": "markdown",
+      "sizeLines": 253,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/gradients.md",
+      "language": "markdown",
+      "sizeLines": 106,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/icons.md",
+      "language": "markdown",
+      "sizeLines": 213,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/media.md",
+      "language": "markdown",
+      "sizeLines": 198,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/route-structure.md",
+      "language": "markdown",
+      "sizeLines": 229,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/search.md",
+      "language": "markdown",
+      "sizeLines": 248,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/storage.md",
+      "language": "markdown",
+      "sizeLines": 121,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/tabs.md",
+      "language": "markdown",
+      "sizeLines": 433,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/toolbar-and-headers.md",
+      "language": "markdown",
+      "sizeLines": 284,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/visual-effects.md",
+      "language": "markdown",
+      "sizeLines": 197,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/webgpu-three.md",
+      "language": "markdown",
+      "sizeLines": 605,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/building-native-ui/references/zoom-transitions.md",
+      "language": "markdown",
+      "sizeLines": 158,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".claude/skills/building-native-ui/references/animations.md": [],
+    ".claude/skills/building-native-ui/references/controls.md": [],
+    ".claude/skills/building-native-ui/references/form-sheet.md": [],
+    ".claude/skills/building-native-ui/references/gradients.md": [],
+    ".claude/skills/building-native-ui/references/icons.md": [],
+    ".claude/skills/building-native-ui/references/media.md": [],
+    ".claude/skills/building-native-ui/references/route-structure.md": [],
+    ".claude/skills/building-native-ui/references/search.md": [],
+    ".claude/skills/building-native-ui/references/storage.md": [],
+    ".claude/skills/building-native-ui/references/tabs.md": [],
+    ".claude/skills/building-native-ui/references/toolbar-and-headers.md": [],
+    ".claude/skills/building-native-ui/references/visual-effects.md": [],
+    ".claude/skills/building-native-ui/references/webgpu-three.md": [],
+    ".claude/skills/building-native-ui/references/zoom-transitions.md": []
+  }
+}

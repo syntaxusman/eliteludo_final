@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": "document:.claude/skills/upgrading-expo/references/expo-av-to-audio.md",
+      "type": "document",
+      "name": "expo-av-to-audio.md",
+      "filePath": ".claude/skills/upgrading-expo/references/expo-av-to-audio.md",
+      "summary": "expo-av-to-audio.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.claude/skills/upgrading-expo/references/expo-av-to-video.md",
+      "type": "document",
+      "name": "expo-av-to-video.md",
+      "filePath": ".claude/skills/upgrading-expo/references/expo-av-to-video.md",
+      "summary": "expo-av-to-video.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.claude/skills/upgrading-expo/references/native-tabs.md",
+      "type": "document",
+      "name": "native-tabs.md",
+      "filePath": ".claude/skills/upgrading-expo/references/native-tabs.md",
+      "summary": "native-tabs.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.claude/skills/upgrading-expo/references/new-architecture.md",
+      "type": "document",
+      "name": "new-architecture.md",
+      "filePath": ".claude/skills/upgrading-expo/references/new-architecture.md",
+      "summary": "new-architecture.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.claude/skills/upgrading-expo/references/react-19.md",
+      "type": "document",
+      "name": "react-19.md",
+      "filePath": ".claude/skills/upgrading-expo/references/react-19.md",
+      "summary": "react-19.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.claude/skills/upgrading-expo/references/react-compiler.md",
+      "type": "document",
+      "name": "react-compiler.md",
+      "filePath": ".claude/skills/upgrading-expo/references/react-compiler.md",
+      "summary": "react-compiler.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

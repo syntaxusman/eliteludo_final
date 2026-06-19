@@ -1,0 +1,187 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/building-native-ui/references/animations.md",
+      "type": "document",
+      "name": "animations.md",
+      "filePath": ".agents/skills/building-native-ui/references/animations.md",
+      "summary": "animations.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/controls.md",
+      "type": "document",
+      "name": "controls.md",
+      "filePath": ".agents/skills/building-native-ui/references/controls.md",
+      "summary": "controls.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/form-sheet.md",
+      "type": "document",
+      "name": "form-sheet.md",
+      "filePath": ".agents/skills/building-native-ui/references/form-sheet.md",
+      "summary": "form-sheet.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/gradients.md",
+      "type": "document",
+      "name": "gradients.md",
+      "filePath": ".agents/skills/building-native-ui/references/gradients.md",
+      "summary": "gradients.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/icons.md",
+      "type": "document",
+      "name": "icons.md",
+      "filePath": ".agents/skills/building-native-ui/references/icons.md",
+      "summary": "icons.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/media.md",
+      "type": "document",
+      "name": "media.md",
+      "filePath": ".agents/skills/building-native-ui/references/media.md",
+      "summary": "media.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/route-structure.md",
+      "type": "document",
+      "name": "route-structure.md",
+      "filePath": ".agents/skills/building-native-ui/references/route-structure.md",
+      "summary": "route-structure.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/search.md",
+      "type": "document",
+      "name": "search.md",
+      "filePath": ".agents/skills/building-native-ui/references/search.md",
+      "summary": "search.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/storage.md",
+      "type": "document",
+      "name": "storage.md",
+      "filePath": ".agents/skills/building-native-ui/references/storage.md",
+      "summary": "storage.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/tabs.md",
+      "type": "document",
+      "name": "tabs.md",
+      "filePath": ".agents/skills/building-native-ui/references/tabs.md",
+      "summary": "tabs.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/toolbar-and-headers.md",
+      "type": "document",
+      "name": "toolbar-and-headers.md",
+      "filePath": ".agents/skills/building-native-ui/references/toolbar-and-headers.md",
+      "summary": "toolbar-and-headers.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/visual-effects.md",
+      "type": "document",
+      "name": "visual-effects.md",
+      "filePath": ".agents/skills/building-native-ui/references/visual-effects.md",
+      "summary": "visual-effects.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/webgpu-three.md",
+      "type": "document",
+      "name": "webgpu-three.md",
+      "filePath": ".agents/skills/building-native-ui/references/webgpu-three.md",
+      "summary": "webgpu-three.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/references/zoom-transitions.md",
+      "type": "document",
+      "name": "zoom-transitions.md",
+      "filePath": ".agents/skills/building-native-ui/references/zoom-transitions.md",
+      "summary": "zoom-transitions.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

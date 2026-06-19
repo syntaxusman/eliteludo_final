@@ -1,0 +1,1367 @@
+{
+  "nodes": [
+    {
+      "id": "file:app/(tabs)/_layout.tsx",
+      "type": "file",
+      "name": "_layout.tsx",
+      "filePath": "app/(tabs)/_layout.tsx",
+      "summary": "_layout.tsx provides 2 functions for the app area.",
+      "tags": [
+        "component",
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/(tabs)/_layout.tsx:EliteTabBar",
+      "type": "function",
+      "name": "EliteTabBar",
+      "filePath": "app/(tabs)/_layout.tsx",
+      "lineRange": [
+        16,
+        55
+      ],
+      "summary": "EliteTabBar implements a significant behavior within _layout.tsx.",
+      "tags": [
+        "function",
+        "elite-tab-bar",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/(tabs)/_layout.tsx:TabsLayout",
+      "type": "function",
+      "name": "TabsLayout",
+      "filePath": "app/(tabs)/_layout.tsx",
+      "lineRange": [
+        57,
+        89
+      ],
+      "summary": "TabsLayout implements a significant behavior within _layout.tsx.",
+      "tags": [
+        "function",
+        "tabs-layout",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/_layout.tsx",
+      "type": "file",
+      "name": "_layout.tsx",
+      "filePath": "app/_layout.tsx",
+      "summary": "_layout.tsx provides 2 functions for the app area.",
+      "tags": [
+        "component",
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/_layout.tsx:RootLayout",
+      "type": "function",
+      "name": "RootLayout",
+      "filePath": "app/_layout.tsx",
+      "lineRange": [
+        61,
+        89
+      ],
+      "summary": "RootLayout implements a significant behavior within _layout.tsx.",
+      "tags": [
+        "function",
+        "root-layout",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/auth/_layout.tsx",
+      "type": "file",
+      "name": "_layout.tsx",
+      "filePath": "app/auth/_layout.tsx",
+      "summary": "_layout.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/auth/_layout.tsx:AuthLayout",
+      "type": "function",
+      "name": "AuthLayout",
+      "filePath": "app/auth/_layout.tsx",
+      "lineRange": [
+        5,
+        15
+      ],
+      "summary": "AuthLayout implements a significant behavior within _layout.tsx.",
+      "tags": [
+        "function",
+        "auth-layout",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:app/auth/login.tsx",
+      "type": "file",
+      "name": "login.tsx",
+      "filePath": "app/auth/login.tsx",
+      "summary": "login.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/auth/login.tsx:LoginScreen",
+      "type": "function",
+      "name": "LoginScreen",
+      "filePath": "app/auth/login.tsx",
+      "lineRange": [
+        28,
+        197
+      ],
+      "summary": "LoginScreen implements a significant behavior within login.tsx.",
+      "tags": [
+        "function",
+        "login-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/auth/phone-login.tsx",
+      "type": "file",
+      "name": "phone-login.tsx",
+      "filePath": "app/auth/phone-login.tsx",
+      "summary": "phone-login.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/auth/phone-login.tsx:PhoneLoginScreen",
+      "type": "function",
+      "name": "PhoneLoginScreen",
+      "filePath": "app/auth/phone-login.tsx",
+      "lineRange": [
+        24,
+        173
+      ],
+      "summary": "PhoneLoginScreen implements a significant behavior within phone-login.tsx.",
+      "tags": [
+        "function",
+        "phone-login-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/auth/signup.tsx",
+      "type": "file",
+      "name": "signup.tsx",
+      "filePath": "app/auth/signup.tsx",
+      "summary": "signup.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/auth/signup.tsx:SignupScreen",
+      "type": "function",
+      "name": "SignupScreen",
+      "filePath": "app/auth/signup.tsx",
+      "lineRange": [
+        26,
+        197
+      ],
+      "summary": "SignupScreen implements a significant behavior within signup.tsx.",
+      "tags": [
+        "function",
+        "signup-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/index.tsx",
+      "type": "file",
+      "name": "index.tsx",
+      "filePath": "app/index.tsx",
+      "summary": "index.tsx provides 1 function for the app area.",
+      "tags": [
+        "component",
+        "entry-point",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/index.tsx:SplashScreen",
+      "type": "function",
+      "name": "SplashScreen",
+      "filePath": "app/index.tsx",
+      "lineRange": [
+        37,
+        140
+      ],
+      "summary": "SplashScreen implements a significant behavior within index.tsx.",
+      "tags": [
+        "function",
+        "splash-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:app/settings.tsx",
+      "type": "file",
+      "name": "settings.tsx",
+      "filePath": "app/settings.tsx",
+      "summary": "settings.tsx provides 5 functions for the app area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:app/settings.tsx:SettingsScreen",
+      "type": "function",
+      "name": "SettingsScreen",
+      "filePath": "app/settings.tsx",
+      "lineRange": [
+        26,
+        175
+      ],
+      "summary": "SettingsScreen implements a significant behavior within settings.tsx.",
+      "tags": [
+        "function",
+        "settings-screen",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/settings.tsx:SwitchRow",
+      "type": "function",
+      "name": "SwitchRow",
+      "filePath": "app/settings.tsx",
+      "lineRange": [
+        183,
+        210
+      ],
+      "summary": "SwitchRow implements a significant behavior within settings.tsx.",
+      "tags": [
+        "function",
+        "switch-row",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/settings.tsx:LinkRow",
+      "type": "function",
+      "name": "LinkRow",
+      "filePath": "app/settings.tsx",
+      "lineRange": [
+        212,
+        235
+      ],
+      "summary": "LinkRow implements a significant behavior within settings.tsx.",
+      "tags": [
+        "function",
+        "link-row",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/settings.tsx:LanguageRow",
+      "type": "function",
+      "name": "LanguageRow",
+      "filePath": "app/settings.tsx",
+      "lineRange": [
+        237,
+        265
+      ],
+      "summary": "LanguageRow implements a significant behavior within settings.tsx.",
+      "tags": [
+        "function",
+        "language-row",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/PlayerProfile.tsx",
+      "type": "file",
+      "name": "PlayerProfile.tsx",
+      "filePath": "src/components/PlayerProfile.tsx",
+      "summary": "PlayerProfile.tsx provides 3 functions for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/PlayerProfile.tsx:PlayerProfile",
+      "type": "function",
+      "name": "PlayerProfile",
+      "filePath": "src/components/PlayerProfile.tsx",
+      "lineRange": [
+        44,
+        130
+      ],
+      "summary": "PlayerProfile implements a significant behavior within PlayerProfile.tsx.",
+      "tags": [
+        "function",
+        "player-profile",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/PlayerProfile.tsx:ActiveDice",
+      "type": "function",
+      "name": "ActiveDice",
+      "filePath": "src/components/PlayerProfile.tsx",
+      "lineRange": [
+        132,
+        192
+      ],
+      "summary": "ActiveDice implements a significant behavior within PlayerProfile.tsx.",
+      "tags": [
+        "function",
+        "active-dice",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/PlayerProfile.tsx:MiniDie",
+      "type": "function",
+      "name": "MiniDie",
+      "filePath": "src/components/PlayerProfile.tsx",
+      "lineRange": [
+        194,
+        213
+      ],
+      "summary": "MiniDie implements a significant behavior within PlayerProfile.tsx.",
+      "tags": [
+        "function",
+        "mini-die",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/SocialButton.tsx",
+      "type": "file",
+      "name": "SocialButton.tsx",
+      "filePath": "src/components/SocialButton.tsx",
+      "summary": "SocialButton.tsx provides 1 function for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/SocialButton.tsx:SocialButton",
+      "type": "function",
+      "name": "SocialButton",
+      "filePath": "src/components/SocialButton.tsx",
+      "lineRange": [
+        41,
+        69
+      ],
+      "summary": "SocialButton implements a significant behavior within SocialButton.tsx.",
+      "tags": [
+        "function",
+        "social-button",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/TokenDicePicker.tsx",
+      "type": "file",
+      "name": "TokenDicePicker.tsx",
+      "filePath": "src/components/TokenDicePicker.tsx",
+      "summary": "TokenDicePicker.tsx provides 1 function for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/TokenDicePicker.tsx:TokenDicePicker",
+      "type": "function",
+      "name": "TokenDicePicker",
+      "filePath": "src/components/TokenDicePicker.tsx",
+      "lineRange": [
+        23,
+        50
+      ],
+      "summary": "TokenDicePicker implements a significant behavior within TokenDicePicker.tsx.",
+      "tags": [
+        "function",
+        "token-dice-picker",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/skia/Dice.tsx",
+      "type": "file",
+      "name": "Dice.tsx",
+      "filePath": "src/skia/Dice.tsx",
+      "summary": "Dice.tsx provides 2 functions for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/skia/Dice.tsx:Dice",
+      "type": "function",
+      "name": "Dice",
+      "filePath": "src/skia/Dice.tsx",
+      "lineRange": [
+        45,
+        109
+      ],
+      "summary": "Dice implements a significant behavior within Dice.tsx.",
+      "tags": [
+        "function",
+        "dice",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/skia/Dice.tsx:DiceSparkle",
+      "type": "function",
+      "name": "DiceSparkle",
+      "filePath": "src/skia/Dice.tsx",
+      "lineRange": [
+        111,
+        178
+      ],
+      "summary": "DiceSparkle implements a significant behavior within Dice.tsx.",
+      "tags": [
+        "function",
+        "dice-sparkle",
+        "behavior"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/skia/Particles.tsx",
+      "type": "file",
+      "name": "Particles.tsx",
+      "filePath": "src/skia/Particles.tsx",
+      "summary": "Particles.tsx provides 5 functions for the src area.",
+      "tags": [
+        "component",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/skia/Particles.tsx:Particles",
+      "type": "function",
+      "name": "Particles",
+      "filePath": "src/skia/Particles.tsx",
+      "lineRange": [
+        62,
+        70
+      ],
+      "summary": "Particles implements a significant behavior within Particles.tsx.",
+      "tags": [
+        "function",
+        "particles",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/skia/Particles.tsx:BurstView",
+      "type": "function",
+      "name": "BurstView",
+      "filePath": "src/skia/Particles.tsx",
+      "lineRange": [
+        72,
+        116
+      ],
+      "summary": "BurstView implements a significant behavior within Particles.tsx.",
+      "tags": [
+        "function",
+        "burst-view",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/skia/Particles.tsx:Particle",
+      "type": "function",
+      "name": "Particle",
+      "filePath": "src/skia/Particles.tsx",
+      "lineRange": [
+        118,
+        148
+      ],
+      "summary": "Particle implements a significant behavior within Particles.tsx.",
+      "tags": [
+        "function",
+        "particle",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/stores/auth.ts",
+      "type": "file",
+      "name": "auth.ts",
+      "filePath": "src/stores/auth.ts",
+      "summary": "auth.ts provides application code and declarations for the src area.",
+      "tags": [
+        "state-management",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/stores/settings.ts",
+      "type": "file",
+      "name": "settings.ts",
+      "filePath": "src/stores/settings.ts",
+      "summary": "settings.ts provides 1 function for the src area.",
+      "tags": [
+        "state-management",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/stores/settings.ts:getCachedSettings",
+      "type": "function",
+      "name": "getCachedSettings",
+      "filePath": "src/stores/settings.ts",
+      "lineRange": [
+        37,
+        39
+      ],
+      "summary": "getCachedSettings implements a significant behavior within settings.ts.",
+      "tags": [
+        "function",
+        "get-cached-settings",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/supabase/client.ts",
+      "type": "file",
+      "name": "client.ts",
+      "filePath": "src/supabase/client.ts",
+      "summary": "client.ts provides application code and declarations for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/supabase/errors.ts",
+      "type": "file",
+      "name": "errors.ts",
+      "filePath": "src/supabase/errors.ts",
+      "summary": "errors.ts provides 1 function for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/errors.ts:getSupabaseErrorMessage",
+      "type": "function",
+      "name": "getSupabaseErrorMessage",
+      "filePath": "src/supabase/errors.ts",
+      "lineRange": [
+        1,
+        9
+      ],
+      "summary": "getSupabaseErrorMessage implements a significant behavior within errors.ts.",
+      "tags": [
+        "function",
+        "get-supabase-error-message",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/supabase/oauth.ts",
+      "type": "file",
+      "name": "oauth.ts",
+      "filePath": "src/supabase/oauth.ts",
+      "summary": "oauth.ts provides 1 function for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/supabase/oauth.ts:signInWithGoogle",
+      "type": "function",
+      "name": "signInWithGoogle",
+      "filePath": "src/supabase/oauth.ts",
+      "lineRange": [
+        8,
+        32
+      ],
+      "summary": "signInWithGoogle implements a significant behavior within oauth.ts.",
+      "tags": [
+        "function",
+        "sign-in-with-google",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/theme/colors.ts",
+      "type": "file",
+      "name": "colors.ts",
+      "filePath": "src/theme/colors.ts",
+      "summary": "colors.ts provides application code and declarations for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/theme/typography.ts",
+      "type": "file",
+      "name": "typography.ts",
+      "filePath": "src/theme/typography.ts",
+      "summary": "typography.ts provides application code and declarations for the src area.",
+      "tags": [
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/utils/haptics.ts",
+      "type": "file",
+      "name": "haptics.ts",
+      "filePath": "src/utils/haptics.ts",
+      "summary": "haptics.ts provides 1 function for the src area.",
+      "tags": [
+        "utility",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/utils/sound.ts",
+      "type": "file",
+      "name": "sound.ts",
+      "filePath": "src/utils/sound.ts",
+      "summary": "sound.ts provides application code and declarations for the src area.",
+      "tags": [
+        "utility",
+        "source-code",
+        "typescript"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/(tabs)/_layout.tsx",
+      "target": "function:app/(tabs)/_layout.tsx:EliteTabBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/_layout.tsx",
+      "target": "function:app/(tabs)/_layout.tsx:TabsLayout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/(tabs)/_layout.tsx",
+      "target": "function:app/(tabs)/_layout.tsx:TabsLayout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/_layout.tsx",
+      "target": "function:app/_layout.tsx:RootLayout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/_layout.tsx",
+      "target": "function:app/_layout.tsx:RootLayout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/auth/_layout.tsx",
+      "target": "function:app/auth/_layout.tsx:AuthLayout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/auth/_layout.tsx",
+      "target": "function:app/auth/_layout.tsx:AuthLayout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "function:app/auth/login.tsx:LoginScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "function:app/auth/login.tsx:LoginScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/auth/phone-login.tsx",
+      "target": "function:app/auth/phone-login.tsx:PhoneLoginScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/auth/phone-login.tsx",
+      "target": "function:app/auth/phone-login.tsx:PhoneLoginScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "function:app/auth/signup.tsx:SignupScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "function:app/auth/signup.tsx:SignupScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/index.tsx",
+      "target": "function:app/index.tsx:SplashScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/index.tsx",
+      "target": "function:app/index.tsx:SplashScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "function:app/settings.tsx:SettingsScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "function:app/settings.tsx:SettingsScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "function:app/settings.tsx:SwitchRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "function:app/settings.tsx:LinkRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "function:app/settings.tsx:LanguageRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "function:src/components/PlayerProfile.tsx:PlayerProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "function:src/components/PlayerProfile.tsx:PlayerProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "function:src/components/PlayerProfile.tsx:ActiveDice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "function:src/components/PlayerProfile.tsx:MiniDie",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/SocialButton.tsx",
+      "target": "function:src/components/SocialButton.tsx:SocialButton",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/SocialButton.tsx",
+      "target": "function:src/components/SocialButton.tsx:SocialButton",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/TokenDicePicker.tsx",
+      "target": "function:src/components/TokenDicePicker.tsx:TokenDicePicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/TokenDicePicker.tsx",
+      "target": "function:src/components/TokenDicePicker.tsx:TokenDicePicker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/skia/Dice.tsx",
+      "target": "function:src/skia/Dice.tsx:Dice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Dice.tsx",
+      "target": "function:src/skia/Dice.tsx:Dice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/skia/Dice.tsx",
+      "target": "function:src/skia/Dice.tsx:DiceSparkle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Particles.tsx",
+      "target": "function:src/skia/Particles.tsx:Particles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Particles.tsx",
+      "target": "function:src/skia/Particles.tsx:Particles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/skia/Particles.tsx",
+      "target": "function:src/skia/Particles.tsx:BurstView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/skia/Particles.tsx",
+      "target": "function:src/skia/Particles.tsx:Particle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/stores/settings.ts",
+      "target": "function:src/stores/settings.ts:getCachedSettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/stores/settings.ts",
+      "target": "function:src/stores/settings.ts:getCachedSettings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/errors.ts",
+      "target": "function:src/supabase/errors.ts:getSupabaseErrorMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/errors.ts",
+      "target": "function:src/supabase/errors.ts:getSupabaseErrorMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/supabase/oauth.ts",
+      "target": "function:src/supabase/oauth.ts:signInWithGoogle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/supabase/oauth.ts",
+      "target": "function:src/supabase/oauth.ts:signInWithGoogle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/(tabs)/_layout.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/(tabs)/_layout.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/_layout.tsx",
+      "target": "file:src/stores/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/_layout.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/_layout.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/_layout.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/components/SocialButton.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/supabase/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/supabase/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/login.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/phone-login.tsx",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/phone-login.tsx",
+      "target": "file:src/supabase/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/phone-login.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/phone-login.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/phone-login.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "file:src/supabase/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/auth/signup.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/index.tsx",
+      "target": "file:src/stores/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/index.tsx",
+      "target": "file:src/stores/settings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/index.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/index.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "file:src/stores/profile.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "file:src/stores/settings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/settings.tsx",
+      "target": "file:src/utils/haptics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "file:src/assets/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "file:src/game/rules.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "file:src/game/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "file:src/skia/Dice.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/PlayerProfile.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/SocialButton.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/SocialButton.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/TokenDicePicker.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/TokenDicePicker.tsx",
+      "target": "file:src/theme/typography.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Dice.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/skia/Particles.tsx",
+      "target": "file:src/theme/colors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/auth.ts",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/stores/auth.ts",
+      "target": "file:src/supabase/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/supabase/oauth.ts",
+      "target": "file:src/supabase/client.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/utils/haptics.ts",
+      "target": "file:src/stores/settings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/utils/sound.ts",
+      "target": "file:src/stores/settings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/_sections.md",
+      "type": "document",
+      "name": "_sections.md",
+      "filePath": ".agents/skills/react-best-practices/rules/_sections.md",
+      "summary": "_sections.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/_template.md",
+      "type": "document",
+      "name": "_template.md",
+      "filePath": ".agents/skills/react-best-practices/rules/_template.md",
+      "summary": "_template.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/advanced-effect-event-deps.md",
+      "type": "document",
+      "name": "advanced-effect-event-deps.md",
+      "filePath": ".agents/skills/react-best-practices/rules/advanced-effect-event-deps.md",
+      "summary": "advanced-effect-event-deps.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/advanced-event-handler-refs.md",
+      "type": "document",
+      "name": "advanced-event-handler-refs.md",
+      "filePath": ".agents/skills/react-best-practices/rules/advanced-event-handler-refs.md",
+      "summary": "advanced-event-handler-refs.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/advanced-init-once.md",
+      "type": "document",
+      "name": "advanced-init-once.md",
+      "filePath": ".agents/skills/react-best-practices/rules/advanced-init-once.md",
+      "summary": "advanced-init-once.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/advanced-use-latest.md",
+      "type": "document",
+      "name": "advanced-use-latest.md",
+      "filePath": ".agents/skills/react-best-practices/rules/advanced-use-latest.md",
+      "summary": "advanced-use-latest.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/async-api-routes.md",
+      "type": "document",
+      "name": "async-api-routes.md",
+      "filePath": ".agents/skills/react-best-practices/rules/async-api-routes.md",
+      "summary": "async-api-routes.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+      "type": "document",
+      "name": "async-cheap-condition-before-await.md",
+      "filePath": ".agents/skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+      "summary": "async-cheap-condition-before-await.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/async-defer-await.md",
+      "type": "document",
+      "name": "async-defer-await.md",
+      "filePath": ".agents/skills/react-best-practices/rules/async-defer-await.md",
+      "summary": "async-defer-await.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/async-dependencies.md",
+      "type": "document",
+      "name": "async-dependencies.md",
+      "filePath": ".agents/skills/react-best-practices/rules/async-dependencies.md",
+      "summary": "async-dependencies.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/async-parallel.md",
+      "type": "document",
+      "name": "async-parallel.md",
+      "filePath": ".agents/skills/react-best-practices/rules/async-parallel.md",
+      "summary": "async-parallel.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/async-suspense-boundaries.md",
+      "type": "document",
+      "name": "async-suspense-boundaries.md",
+      "filePath": ".agents/skills/react-best-practices/rules/async-suspense-boundaries.md",
+      "summary": "async-suspense-boundaries.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/bundle-analyzable-paths.md",
+      "type": "document",
+      "name": "bundle-analyzable-paths.md",
+      "filePath": ".agents/skills/react-best-practices/rules/bundle-analyzable-paths.md",
+      "summary": "bundle-analyzable-paths.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/bundle-barrel-imports.md",
+      "type": "document",
+      "name": "bundle-barrel-imports.md",
+      "filePath": ".agents/skills/react-best-practices/rules/bundle-barrel-imports.md",
+      "summary": "bundle-barrel-imports.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/bundle-conditional.md",
+      "type": "document",
+      "name": "bundle-conditional.md",
+      "filePath": ".agents/skills/react-best-practices/rules/bundle-conditional.md",
+      "summary": "bundle-conditional.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/bundle-defer-third-party.md",
+      "type": "document",
+      "name": "bundle-defer-third-party.md",
+      "filePath": ".agents/skills/react-best-practices/rules/bundle-defer-third-party.md",
+      "summary": "bundle-defer-third-party.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/bundle-dynamic-imports.md",
+      "type": "document",
+      "name": "bundle-dynamic-imports.md",
+      "filePath": ".agents/skills/react-best-practices/rules/bundle-dynamic-imports.md",
+      "summary": "bundle-dynamic-imports.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/bundle-preload.md",
+      "type": "document",
+      "name": "bundle-preload.md",
+      "filePath": ".agents/skills/react-best-practices/rules/bundle-preload.md",
+      "summary": "bundle-preload.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/client-event-listeners.md",
+      "type": "document",
+      "name": "client-event-listeners.md",
+      "filePath": ".agents/skills/react-best-practices/rules/client-event-listeners.md",
+      "summary": "client-event-listeners.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/react-best-practices/rules/client-localstorage-schema.md",
+      "type": "document",
+      "name": "client-localstorage-schema.md",
+      "filePath": ".agents/skills/react-best-practices/rules/client-localstorage-schema.md",
+      "summary": "client-localstorage-schema.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

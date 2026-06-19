@@ -1,0 +1,415 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/accessibility/references/A11Y-PATTERNS.md",
+      "type": "document",
+      "name": "A11Y-PATTERNS.md",
+      "filePath": ".agents/skills/accessibility/references/A11Y-PATTERNS.md",
+      "summary": "A11Y-PATTERNS.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/accessibility/references/WCAG.md",
+      "type": "document",
+      "name": "WCAG.md",
+      "filePath": ".agents/skills/accessibility/references/WCAG.md",
+      "summary": "WCAG.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/accessibility/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/accessibility/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/building-native-ui/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/building-native-ui/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/design-mobile-apps/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/design-mobile-apps/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/expo-api-routes/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/expo-api-routes/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:.agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "type": "file",
+      "name": "fetch.js",
+      "filePath": ".agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "summary": "fetch.js provides 6 functions for the .agents area.",
+      "tags": [
+        "source-code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/expo-cicd-workflows/scripts/fetch.js:fetchCached",
+      "type": "function",
+      "name": "fetchCached",
+      "filePath": ".agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "lineRange": [
+        11,
+        47
+      ],
+      "summary": "fetchCached implements a significant behavior within fetch.js.",
+      "tags": [
+        "function",
+        "fetch-cached",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/expo-cicd-workflows/scripts/fetch.js:getExpires",
+      "type": "function",
+      "name": "getExpires",
+      "filePath": ".agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "lineRange": [
+        65,
+        85
+      ],
+      "summary": "getExpires implements a significant behavior within fetch.js.",
+      "tags": [
+        "function",
+        "get-expires",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.agents/skills/expo-cicd-workflows/scripts/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": ".agents/skills/expo-cicd-workflows/scripts/package.json",
+      "summary": "package.json configures project tooling, dependencies, or runtime behavior.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.agents/skills/expo-cicd-workflows/scripts/validate.js",
+      "type": "file",
+      "name": "validate.js",
+      "filePath": ".agents/skills/expo-cicd-workflows/scripts/validate.js",
+      "summary": "validate.js provides 4 functions for the .agents area.",
+      "tags": [
+        "source-code",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/expo-cicd-workflows/scripts/validate.js:validateFile",
+      "type": "function",
+      "name": "validateFile",
+      "filePath": ".agents/skills/expo-cicd-workflows/scripts/validate.js",
+      "lineRange": [
+        27,
+        43
+      ],
+      "summary": "validateFile implements a significant behavior within validate.js.",
+      "tags": [
+        "function",
+        "validate-file",
+        "behavior"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/expo-cicd-workflows/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/expo-cicd-workflows/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/expo-deployment/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/expo-deployment/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/expo-dev-client/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/expo-dev-client/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/expo-tailwind-setup/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/expo-tailwind-setup/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/frontend-design/LICENSE.txt",
+      "type": "document",
+      "name": "LICENSE.txt",
+      "filePath": ".agents/skills/frontend-design/LICENSE.txt",
+      "summary": "LICENSE.txt documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "txt"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/frontend-design/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/frontend-design/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/native-data-fetching/references/expo-router-loaders.md",
+      "type": "document",
+      "name": "expo-router-loaders.md",
+      "filePath": ".agents/skills/native-data-fetching/references/expo-router-loaders.md",
+      "summary": "expo-router-loaders.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/native-data-fetching/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/native-data-fetching/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/nodejs-backend-patterns/references/advanced-patterns.md",
+      "type": "document",
+      "name": "advanced-patterns.md",
+      "filePath": ".agents/skills/nodejs-backend-patterns/references/advanced-patterns.md",
+      "summary": "advanced-patterns.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/nodejs-backend-patterns/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/nodejs-backend-patterns/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/nodejs-best-practices/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/nodejs-best-practices/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/seo/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/seo/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/CHANGELOG.md",
+      "summary": "CHANGELOG.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase-postgres-best-practices/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/supabase-postgres-best-practices/SKILL.md",
+      "summary": "SKILL.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/supabase/assets/feedback-issue-template.md",
+      "type": "document",
+      "name": "feedback-issue-template.md",
+      "filePath": ".agents/skills/supabase/assets/feedback-issue-template.md",
+      "summary": "feedback-issue-template.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/supabase/CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG.md",
+      "filePath": ".agents/skills/supabase/CHANGELOG.md",
+      "summary": "CHANGELOG.md documents project guidance and reference material.",
+      "tags": [
+        "documentation",
+        "reference",
+        "markdown"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:.agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "target": "function:.agents/skills/expo-cicd-workflows/scripts/fetch.js:fetchCached",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "target": "function:.agents/skills/expo-cicd-workflows/scripts/fetch.js:fetchCached",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:.agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "target": "function:.agents/skills/expo-cicd-workflows/scripts/fetch.js:getExpires",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.agents/skills/expo-cicd-workflows/scripts/validate.js",
+      "target": "function:.agents/skills/expo-cicd-workflows/scripts/validate.js:validateFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:.agents/skills/expo-cicd-workflows/scripts/validate.js",
+      "target": "file:.agents/skills/expo-cicd-workflows/scripts/fetch.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

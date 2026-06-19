@@ -1,0 +1,147 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".claude/skills/react-best-practices/rules/rendering-hoist-jsx.md",
+      "language": "markdown",
+      "sizeLines": 46,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rendering-hydration-no-flicker.md",
+      "language": "markdown",
+      "sizeLines": 82,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md",
+      "language": "markdown",
+      "sizeLines": 30,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rendering-resource-hints.md",
+      "language": "markdown",
+      "sizeLines": 85,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rendering-script-defer-async.md",
+      "language": "markdown",
+      "sizeLines": 68,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rendering-svg-precision.md",
+      "language": "markdown",
+      "sizeLines": 28,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rendering-usetransition-loading.md",
+      "language": "markdown",
+      "sizeLines": 75,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-defer-reads.md",
+      "language": "markdown",
+      "sizeLines": 39,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-dependencies.md",
+      "language": "markdown",
+      "sizeLines": 45,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-derived-state-no-effect.md",
+      "language": "markdown",
+      "sizeLines": 40,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-derived-state.md",
+      "language": "markdown",
+      "sizeLines": 29,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-functional-setstate.md",
+      "language": "markdown",
+      "sizeLines": 74,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-lazy-state-init.md",
+      "language": "markdown",
+      "sizeLines": 58,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-memo-with-default-value.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-memo.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-move-effect-to-event.md",
+      "language": "markdown",
+      "sizeLines": 45,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-no-inline-components.md",
+      "language": "markdown",
+      "sizeLines": 82,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md",
+      "language": "markdown",
+      "sizeLines": 35,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-split-combined-hooks.md",
+      "language": "markdown",
+      "sizeLines": 64,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".claude/skills/react-best-practices/rules/rerender-transitions.md",
+      "language": "markdown",
+      "sizeLines": 40,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".claude/skills/react-best-practices/rules/rendering-hoist-jsx.md": [],
+    ".claude/skills/react-best-practices/rules/rendering-hydration-no-flicker.md": [],
+    ".claude/skills/react-best-practices/rules/rendering-hydration-suppress-warning.md": [],
+    ".claude/skills/react-best-practices/rules/rendering-resource-hints.md": [],
+    ".claude/skills/react-best-practices/rules/rendering-script-defer-async.md": [],
+    ".claude/skills/react-best-practices/rules/rendering-svg-precision.md": [],
+    ".claude/skills/react-best-practices/rules/rendering-usetransition-loading.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-defer-reads.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-dependencies.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-derived-state-no-effect.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-derived-state.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-functional-setstate.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-lazy-state-init.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-memo-with-default-value.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-memo.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-move-effect-to-event.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-no-inline-components.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-simple-expression-in-memo.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-split-combined-hooks.md": [],
+    ".claude/skills/react-best-practices/rules/rerender-transitions.md": []
+  }
+}

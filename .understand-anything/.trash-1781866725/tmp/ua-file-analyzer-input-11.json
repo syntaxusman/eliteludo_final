@@ -1,0 +1,147 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".agents/skills/react-best-practices/rules/client-passive-event-listeners.md",
+      "language": "markdown",
+      "sizeLines": 48,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/client-swr-dedup.md",
+      "language": "markdown",
+      "sizeLines": 56,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-batch-dom-css.md",
+      "language": "markdown",
+      "sizeLines": 107,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-cache-function-results.md",
+      "language": "markdown",
+      "sizeLines": 80,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-cache-property-access.md",
+      "language": "markdown",
+      "sizeLines": 28,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-cache-storage.md",
+      "language": "markdown",
+      "sizeLines": 70,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-combine-iterations.md",
+      "language": "markdown",
+      "sizeLines": 32,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-early-exit.md",
+      "language": "markdown",
+      "sizeLines": 50,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-flatmap-filter.md",
+      "language": "markdown",
+      "sizeLines": 60,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-hoist-regexp.md",
+      "language": "markdown",
+      "sizeLines": 45,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-index-maps.md",
+      "language": "markdown",
+      "sizeLines": 37,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-length-check-first.md",
+      "language": "markdown",
+      "sizeLines": 49,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-min-max-loop.md",
+      "language": "markdown",
+      "sizeLines": 82,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-request-idle-callback.md",
+      "language": "markdown",
+      "sizeLines": 105,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-set-map-lookups.md",
+      "language": "markdown",
+      "sizeLines": 24,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/js-tosorted-immutable.md",
+      "language": "markdown",
+      "sizeLines": 57,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/rendering-activity.md",
+      "language": "markdown",
+      "sizeLines": 26,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md",
+      "language": "markdown",
+      "sizeLines": 47,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/rendering-conditional-render.md",
+      "language": "markdown",
+      "sizeLines": 40,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/react-best-practices/rules/rendering-content-visibility.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    ".agents/skills/react-best-practices/rules/client-passive-event-listeners.md": [],
+    ".agents/skills/react-best-practices/rules/client-swr-dedup.md": [],
+    ".agents/skills/react-best-practices/rules/js-batch-dom-css.md": [],
+    ".agents/skills/react-best-practices/rules/js-cache-function-results.md": [],
+    ".agents/skills/react-best-practices/rules/js-cache-property-access.md": [],
+    ".agents/skills/react-best-practices/rules/js-cache-storage.md": [],
+    ".agents/skills/react-best-practices/rules/js-combine-iterations.md": [],
+    ".agents/skills/react-best-practices/rules/js-early-exit.md": [],
+    ".agents/skills/react-best-practices/rules/js-flatmap-filter.md": [],
+    ".agents/skills/react-best-practices/rules/js-hoist-regexp.md": [],
+    ".agents/skills/react-best-practices/rules/js-index-maps.md": [],
+    ".agents/skills/react-best-practices/rules/js-length-check-first.md": [],
+    ".agents/skills/react-best-practices/rules/js-min-max-loop.md": [],
+    ".agents/skills/react-best-practices/rules/js-request-idle-callback.md": [],
+    ".agents/skills/react-best-practices/rules/js-set-map-lookups.md": [],
+    ".agents/skills/react-best-practices/rules/js-tosorted-immutable.md": [],
+    ".agents/skills/react-best-practices/rules/rendering-activity.md": [],
+    ".agents/skills/react-best-practices/rules/rendering-animate-svg-wrapper.md": [],
+    ".agents/skills/react-best-practices/rules/rendering-conditional-render.md": [],
+    ".agents/skills/react-best-practices/rules/rendering-content-visibility.md": []
+  }
+}

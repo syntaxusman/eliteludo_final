@@ -1,0 +1,49 @@
+{
+  "projectRoot": "D:\\LUDO\\eliteludo_final",
+  "batchFiles": [
+    {
+      "path": ".env.example",
+      "language": "config",
+      "sizeLines": 9,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 56,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "app.json",
+      "language": "json",
+      "sizeLines": 63,
+      "fileCategory": "config"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 62,
+      "fileCategory": "config"
+    },
+    {
+      "path": "skills-lock.json",
+      "language": "json",
+      "sizeLines": 107,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "sizeLines": 21,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    ".env.example": [],
+    "README.md": [],
+    "app.json": [],
+    "package.json": [],
+    "skills-lock.json": [],
+    "tsconfig.json": []
+  }
+}

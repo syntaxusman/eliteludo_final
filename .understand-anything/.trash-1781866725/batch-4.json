@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "id": "table:supabase/migrations/0001_initial_schema.sql:0001-initial-schema",
+      "type": "table",
+      "name": "0001_initial_schema.sql",
+      "filePath": "supabase/migrations/0001_initial_schema.sql",
+      "summary": "0001_initial_schema.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:supabase/migrations/0002_rls_policies.sql:0002-rls-policies",
+      "type": "table",
+      "name": "0002_rls_policies.sql",
+      "filePath": "supabase/migrations/0002_rls_policies.sql",
+      "summary": "0002_rls_policies.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:supabase/migrations/0003_add_color_id.sql:0003-add-color-id",
+      "type": "table",
+      "name": "0003_add_color_id.sql",
+      "filePath": "supabase/migrations/0003_add_color_id.sql",
+      "summary": "0003_add_color_id.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:supabase/migrations/0004_match_queue.sql:0004-match-queue",
+      "type": "table",
+      "name": "0004_match_queue.sql",
+      "filePath": "supabase/migrations/0004_match_queue.sql",
+      "summary": "0004_match_queue.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:supabase/migrations/0005_phase4_economy_multiplayer.sql:0005-phase4-economy-multiplayer",
+      "type": "table",
+      "name": "0005_phase4_economy_multiplayer.sql",
+      "filePath": "supabase/migrations/0005_phase4_economy_multiplayer.sql",
+      "summary": "0005_phase4_economy_multiplayer.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:supabase/migrations/0006_atomic_daily_reward.sql:0006-atomic-daily-reward",
+      "type": "table",
+      "name": "0006_atomic_daily_reward.sql",
+      "filePath": "supabase/migrations/0006_atomic_daily_reward.sql",
+      "summary": "0006_atomic_daily_reward.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:supabase/migrations/0007_lock_down_security_definer_functions.sql:0007-lock-down-security-definer-functions",
+      "type": "table",
+      "name": "0007_lock_down_security_definer_functions.sql",
+      "filePath": "supabase/migrations/0007_lock_down_security_definer_functions.sql",
+      "summary": "0007_lock_down_security_definer_functions.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:supabase/migrations/0008_revoke_explicit_security_definer_exec.sql:0008-revoke-explicit-security-definer-exec",
+      "type": "table",
+      "name": "0008_revoke_explicit_security_definer_exec.sql",
+      "filePath": "supabase/migrations/0008_revoke_explicit_security_definer_exec.sql",
+      "summary": "0008_revoke_explicit_security_definer_exec.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:supabase/migrations/0009_match_forfeit_move_type.sql:0009-match-forfeit-move-type",
+      "type": "table",
+      "name": "0009_match_forfeit_move_type.sql",
+      "filePath": "supabase/migrations/0009_match_forfeit_move_type.sql",
+      "summary": "0009_match_forfeit_move_type.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:supabase/migrations/0010_realtime_safe_participant_policies.sql:0010-realtime-safe-participant-policies",
+      "type": "table",
+      "name": "0010_realtime_safe_participant_policies.sql",
+      "filePath": "supabase/migrations/0010_realtime_safe_participant_policies.sql",
+      "summary": "0010_realtime_safe_participant_policies.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:supabase/migrations/0011_match_broadcast_realtime.sql:0011-match-broadcast-realtime",
+      "type": "table",
+      "name": "0011_match_broadcast_realtime.sql",
+      "filePath": "supabase/migrations/0011_match_broadcast_realtime.sql",
+      "summary": "0011_match_broadcast_realtime.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "table:supabase/migrations/0012_match_presence_realtime_policy.sql:0012-match-presence-realtime-policy",
+      "type": "table",
+      "name": "0012_match_presence_realtime_policy.sql",
+      "filePath": "supabase/migrations/0012_match_presence_realtime_policy.sql",
+      "summary": "0012_match_presence_realtime_policy.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:supabase/migrations/20260617182229_bot_sync_move_type.sql:20260617182229-bot-sync-move-type",
+      "type": "table",
+      "name": "20260617182229_bot_sync_move_type.sql",
+      "filePath": "supabase/migrations/20260617182229_bot_sync_move_type.sql",
+      "summary": "20260617182229_bot_sync_move_type.sql defines database schema, migration, or structured project data.",
+      "tags": [
+        "database",
+        "schema-definition",
+        "sql"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}
