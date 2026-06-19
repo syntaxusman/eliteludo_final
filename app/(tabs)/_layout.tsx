@@ -16,10 +16,10 @@ import { haptics } from '@/src/utils/haptics';
 
 const TAB_ITEMS = [
   { key: 'shop', label: 'Shop', icon: 'bag-handle' as const, route: '/shop' as const },
-  { key: 'friends', label: 'Friends', icon: 'people' as const, route: '/profile' as const },
+  { key: 'friends', label: 'Friends', icon: 'people' as const, route: '/friends' as const },
   { key: 'home', label: 'Home', icon: 'home' as const, route: '/home' as const },
-  { key: 'clubs', label: 'Clubs', icon: 'shield-checkmark' as const, route: '/home' as const },
-  { key: 'chest', label: 'Chest', icon: 'gift' as const, route: '/shop' as const },
+  { key: 'clubs', label: 'Clubs', icon: 'shield-checkmark' as const, route: '/clubs' as const },
+  { key: 'chest', label: 'Chest', icon: 'gift' as const, route: '/chest' as const },
 ] as const;
 
 function GlassTabItem({
@@ -81,7 +81,8 @@ function EliteTabBar({ state }: BottomTabBarProps) {
   const insets = useSafeAreaInsets();
   const viewport = useWindowDimensions();
   const currentRoute = state.routes[state.index]?.name;
-  const activeIndex = currentRoute === 'profile' ? 1 : 2;
+  const matchedIndex = TAB_ITEMS.findIndex((item) => item.key === currentRoute);
+  const activeIndex = matchedIndex >= 0 ? matchedIndex : 2;
   const width = Math.min(viewport.width - 20, 520);
   const height = 76;
 
@@ -133,7 +134,11 @@ export default function TabsLayout() {
       screenOptions={{ headerShown: false }}
     >
       <Tabs.Screen name="home" options={{ href: '/home' }} />
+      <Tabs.Screen name="shop" options={{ href: '/shop' }} />
       <Tabs.Screen name="profile" options={{ href: '/profile' }} />
+      <Tabs.Screen name="friends" options={{ href: '/friends' }} />
+      <Tabs.Screen name="clubs" options={{ href: '/clubs' }} />
+      <Tabs.Screen name="chest" options={{ href: '/chest' }} />
     </Tabs>
   );
 }
