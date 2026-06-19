@@ -557,7 +557,7 @@ export default function GameScreen() {
       : winColor === myColor;
     if (youWon) haptics.success();
     else haptics.warning();
-    sound.play('win');
+    sound.play(youWon ? 'victory' : 'defeat');
     setBursts((bs) => [
       ...bs,
       {

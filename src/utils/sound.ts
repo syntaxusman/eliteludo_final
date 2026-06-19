@@ -1,17 +1,90 @@
 import { getCachedSettings } from '@/src/stores/settings';
+import { Audio } from 'expo-av';
 
-type SoundCue = 'roll' | 'capture' | 'win' | 'tap';
+type SoundCue = 
+  | 'tap'           // Button clicks
+  | 'roll'          // Dice roll
+  | 'capture'       // Token kill
+  | 'finish'        // Token win/finish
+  | 'coin'          // Coin collection
+  | 'gem'           // Gem collection
+  | 'victory'       // Game win
+  | 'defeat';       // Game loss
+
+// Sound file paths (you'll need to add these to assets/audio/)
+// For now, we'll use a type-safe approach that doesn't require the files to exist yet
+const soundAssets: Partial<Record<SoundCue, any>> = {
+  // Uncomment these once you add the audio files to assets/audio/
+  // tap: require('@/assets/audio/tap.mp3'),
+  // roll: require('@/assets/audio/roll.mp3'),
+  // capture: require('@/assets/audio/capture.mp3'),
+  // finish: require('@/assets/audio/finish.mp3'),
+  // coin: require('@/assets/audio/coin.mp3'),
+  // gem: require('@/assets/audio/gem.mp3'),
+  // victory: require('@/assets/audio/victory.mp3'),
+  // defeat: require('@/assets/audio/defeat.mp3'),
+};
+
+// Cache loaded sounds
+const soundCache = new Map<SoundCue, Audio.Sound>();
 
 export const sound = {
   async play(cue: SoundCue) {
     const settings = getCachedSettings();
     if (!settings.soundEnabled) return;
-    // Audio assets are not delivered yet. This facade keeps all call sites
-    // behind the settings toggle so real SFX can be dropped in without UI edits.
-    void cue;
+    
+    const asset = soundAssets[cue];
+    if (!asset) {
+      console.log(`Sound asset "${cue}" not added yet. Skipping playback.`);
+      return;
+    }
+
+    try {
+      let soundObj = soundCache.get(cue);
+      if (!soundObj) {
+        // Load sound if not in cache
+        const { sound: newSound } = await Audio.Sound.createAsync(
+          asset,
+          { shouldPlay: false }
+        );
+        soundCache.set(cue, newSound);
+        soundObj = newSound;
+      }
+
+      // Replay the sound
+      await soundObj.replayAsync();
+    } catch (error) {
+      console.warn(`Failed to play sound "${cue}":`, error);
+    }
   },
 
   async music(enabled = getCachedSettings().musicEnabled) {
+    // Background music logic can be added here
     void enabled;
+  },
+
+  async preload() {
+    // Preload all sounds for better performance
+    for (const [cue, asset] of Object.entries(soundAssets) as [SoundCue, any][]) {
+      try {
+        if (!soundCache.has(cue)) {
+          const { sound } = await Audio.Sound.createAsync(
+            asset,
+            { shouldPlay: false }
+          );
+          soundCache.set(cue, sound);
+        }
+      } catch (error) {
+        console.warn(`Failed to preload sound "${cue}":`, error);
+      }
+    }
+  },
+
+  async unload() {
+    // Unload all sounds to free memory
+    for (const [, soundObj] of soundCache) {
+      await soundObj.unloadAsync();
+    }
+    soundCache.clear();
   },
 };
