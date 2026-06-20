@@ -631,6 +631,7 @@ export default function GameScreen() {
   function onHumanRoll() {
     if (!isMyTurn || state.status !== 'awaiting_roll') return;
     haptics.tap();
+    sound.play('roll');
     beginRoll();
   }
 

@@ -3,6 +3,7 @@ import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-nati
 
 import { colors } from '@/src/theme/colors';
 import { radius, spacing, typography } from '@/src/theme/typography';
+import { sound } from '@/src/utils/sound';
 
 type Provider = 'google' | 'facebook' | 'phone';
 
@@ -42,9 +43,16 @@ export function SocialButton({ provider, onPress, loading, disabled }: Props) {
   const cfg = PROVIDER_CONFIG[provider];
   const isDisabled = disabled || loading;
 
+  const handlePress = () => {
+    if (!isDisabled) {
+      sound.play('tap');
+    }
+    onPress();
+  };
+
   return (
     <Pressable
-      onPress={onPress}
+      onPress={handlePress}
       disabled={isDisabled}
       style={({ pressed }) => [
         styles.button,

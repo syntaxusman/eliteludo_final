@@ -3,26 +3,26 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import {
-  Alert,
-  Dimensions,
-  Image,
-  Modal,
-  Pressable,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-  View,
-  type ImageSourcePropType,
+    Alert,
+    Dimensions,
+    Image,
+    Modal,
+    Pressable,
+    StyleSheet,
+    Text,
+    useWindowDimensions,
+    View,
+    type ImageSourcePropType,
 } from "react-native";
 import Animated, {
-  Extrapolation,
-  FadeIn,
-  FadeInDown,
-  interpolate,
-  useAnimatedScrollHandler,
-  useAnimatedStyle,
-  useSharedValue,
-  withSpring,
+    Extrapolation,
+    FadeIn,
+    FadeInDown,
+    interpolate,
+    useAnimatedScrollHandler,
+    useAnimatedStyle,
+    useSharedValue,
+    withSpring,
 } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -30,12 +30,12 @@ import { Images } from "@/src/assets";
 import { DailyRewardModal } from "@/src/components/DailyRewardModal";
 import { BannerAd, BannerAdSize, homeBannerAdUnitId } from "@/src/services/ads";
 import {
-  HomeModeCanvas,
-  RoyalCornerActionCanvas,
-  RoyalAvatarIcon,
-  RoyalCurrencyIcon,
-  RoyalHomeBackdrop,
-  RoyalSettingsIcon,
+    HomeModeCanvas,
+    RoyalAvatarIcon,
+    RoyalCornerActionCanvas,
+    RoyalCurrencyIcon,
+    RoyalHomeBackdrop,
+    RoyalSettingsIcon,
 } from "@/src/skia/HomeArtwork";
 import { OrnateTokenCanvas } from "@/src/skia/OrnateToken";
 import { useProfileStore } from "@/src/stores/profile";
@@ -43,6 +43,7 @@ import { useWalletStore } from "@/src/stores/wallet";
 import { colors } from "@/src/theme/colors";
 import { fontFamilies } from "@/src/theme/typography";
 import { haptics } from "@/src/utils/haptics";
+import { sound } from "@/src/utils/sound";
 
 const { width: W, height: H } = Dimensions.get("window");
 
@@ -335,6 +336,7 @@ export default function HomeScreen() {
   const openMode = useCallback(
     (mode: ModeId) => {
       haptics.tap();
+      sound.play('tap');
       if (mode === "ai") {
         setOfflinePickerOpen(true);
         return;
@@ -353,6 +355,7 @@ export default function HomeScreen() {
   const startOfflineGame = useCallback(
     (playerCount: OfflinePlayerCount) => {
       haptics.tap();
+      sound.play('tap');
       setOfflinePickerOpen(false);
       router.push({
         pathname: "/game/new",
@@ -365,6 +368,7 @@ export default function HomeScreen() {
   const playClub = useCallback(
     async (city: City) => {
       haptics.tap();
+      sound.play('tap');
       if (selectedMode === "ai") {
         router.push({ pathname: "/game/new", params: { mode: "4p" } } as never);
         return;
@@ -418,10 +422,12 @@ export default function HomeScreen() {
         username={profile?.username ?? "Player"}
         onProfile={() => {
           haptics.tap();
+          sound.play('tap');
           router.push("/profile" as never);
         }}
         onSettings={() => {
           haptics.tap();
+          sound.play('tap');
           router.push("/settings");
         }}
       />
@@ -443,13 +449,15 @@ export default function HomeScreen() {
               setRewardOpen(true);
             }}
             onDiceSkins={() => {
-              haptics.tap();
-              router.push("/shop" as never);
-            }}
-            onShop={() => {
-              haptics.tap();
-              router.push("/shop" as never);
-            }}
+            haptics.tap();
+            sound.play('tap');
+            router.push("/shop" as never);
+          }}
+          onShop={() => {
+            haptics.tap();
+            sound.play('tap');
+            router.push("/shop" as never);
+          }}
           />
           <ModesHome bottom={insets.bottom} onMode={openMode} />
         </>
@@ -461,6 +469,7 @@ export default function HomeScreen() {
           scrollX={scrollX}
           onBack={() => {
             haptics.tap();
+            sound.play('tap');
             setView("modes");
           }}
           onPlay={playClub}
@@ -514,19 +523,24 @@ function OfflinePlayerPicker({
   onClose: () => void;
   onSelect: (count: OfflinePlayerCount) => void;
 }) {
+  const handleClose = () => {
+    sound.play('tap');
+    onClose();
+  };
+  
   return (
     <Modal
       visible={visible}
       transparent
       animationType="fade"
       statusBarTranslucent
-      onRequestClose={onClose}
+      onRequestClose={handleClose}
     >
       <View style={styles.offlineModalRoot}>
         <Pressable
           accessibilityRole="button"
           accessibilityLabel="Close offline game options"
-          onPress={onClose}
+          onPress={handleClose}
           style={StyleSheet.absoluteFill}
         />
         <View style={styles.offlinePanel}>
@@ -536,7 +550,7 @@ function OfflinePlayerPicker({
           />
           <View style={styles.offlinePanelInset} />
           <Pressable
-            onPress={onClose}
+            onPress={handleClose}
             accessibilityRole="button"
             accessibilityLabel="Close"
             hitSlop={10}

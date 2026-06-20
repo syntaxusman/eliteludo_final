@@ -4,15 +4,16 @@ import { Tabs, useRouter } from 'expo-router';
 import { useEffect } from 'react';
 import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withSpring,
+    useAnimatedStyle,
+    useSharedValue,
+    withSpring,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { LiquidGlassDock } from '@/src/skia/LiquidGlassDock';
 import { fontFamilies } from '@/src/theme/typography';
 import { haptics } from '@/src/utils/haptics';
+import { sound } from '@/src/utils/sound';
 
 const TAB_ITEMS = [
   { key: 'shop', label: 'Shop', icon: 'bag-handle' as const, route: '/shop' as const },
@@ -117,6 +118,7 @@ function EliteTabBar({ state }: BottomTabBarProps) {
               focused={focused}
               onPress={() => {
                 haptics.tap();
+                sound.play('tap');
                 router.push(item.route as never);
               }}
             />

@@ -15,7 +15,7 @@ type SoundCue =
 // For now, we'll use a type-safe approach that doesn't require the files to exist yet
 const soundAssets: Partial<Record<SoundCue, any>> = {
   // Uncomment these once you add the audio files to assets/audio/
-  // tap: require('@/assets/audio/tap.mp3'),
+   tap: require('@/assets/audio/tap.m4a'),
   // roll: require('@/assets/audio/roll.mp3'),
   // capture: require('@/assets/audio/capture.mp3'),
   // finish: require('@/assets/audio/finish.mp3'),
